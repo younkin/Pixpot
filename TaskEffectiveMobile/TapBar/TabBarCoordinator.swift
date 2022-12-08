@@ -35,7 +35,7 @@ final class TabBarCoordinator: BaseCoordinator {
 
         let mainNavigationController = MainNavigationController()
         mainNavigationController.tabBarItem = UITabBarItem(title: "Explorer", image: UIImage(named: "dot"), tag: 0)
-        mainNavigationController.tabBarItem.standardAppearance?.stackedItemWidth = 400
+     
         let mainCoordinator = coordinatorFactory.makeMainCoordinator(with: Router(rootController: mainNavigationController))
         
         let BasketViewController = BusketViewController()
