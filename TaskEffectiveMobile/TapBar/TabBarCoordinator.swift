@@ -34,14 +34,23 @@ final class TabBarCoordinator: BaseCoordinator {
         // стандартная реализация таба
 
         let mainNavigationController = MainNavigationController()
-        mainNavigationController.tabBarItem = UITabBarItem(title: "Главный", image: UIImage(named: "dot"), tag: 0)
-        let mainCoordinator = coordinatorFactory.makeMain(with: Router(rootController: mainNavigationController))
+        mainNavigationController.tabBarItem = UITabBarItem(title: "Explorer", image: UIImage(named: "dot"), tag: 0)
+        mainNavigationController.tabBarItem.standardAppearance?.stackedItemWidth = 400
+        let mainCoordinator = coordinatorFactory.makeMainCoordinator(with: Router(rootController: mainNavigationController))
+        
+        let BasketViewController = BusketViewController()
+        BasketViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "busket"), tag: 1)
 
+        let FavoriteViewController = FavoriteViewController()
+        FavoriteViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "heart"), tag: 2)
         
+        let ProfileViewController = ProfileViewController()
+        ProfileViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "profile"), tag: 3)
+    
        
+    
         
-        
-        tabBarController.viewControllers = [mainNavigationController]
+        tabBarController.viewControllers = [mainNavigationController,BasketViewController,FavoriteViewController,ProfileViewController]
 
        
         

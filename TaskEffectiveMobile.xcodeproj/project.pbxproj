@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		741DB4602941D3BC00F9AC84 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB45F2941D3BC00F9AC84 /* FavoriteViewController.swift */; };
+		741DB4622941D3CB00F9AC84 /* FavoriteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB4612941D3CB00F9AC84 /* FavoriteCoordinator.swift */; };
+		741DB4642941D3E900F9AC84 /* BusketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB4632941D3E900F9AC84 /* BusketViewController.swift */; };
+		741DB4662941D3F800F9AC84 /* BusketCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB4652941D3F800F9AC84 /* BusketCoordinator.swift */; };
+		741DB4692941DE4700F9AC84 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */; };
+		741DB46B2941DE5A00F9AC84 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB46A2941DE5A00F9AC84 /* ProfileViewController.swift */; };
 		747321DF2940ED4C008E7EB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747321DE2940ED4C008E7EB0 /* AppDelegate.swift */; };
 		747321E12940ED4C008E7EB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747321E02940ED4C008E7EB0 /* SceneDelegate.swift */; };
 		747321E32940ED4C008E7EB0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747321E22940ED4C008E7EB0 /* TabBarController.swift */; };
@@ -46,6 +52,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		741DB45F2941D3BC00F9AC84 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		741DB4612941D3CB00F9AC84 /* FavoriteCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCoordinator.swift; sourceTree = "<group>"; };
+		741DB4632941D3E900F9AC84 /* BusketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusketViewController.swift; sourceTree = "<group>"; };
+		741DB4652941D3F800F9AC84 /* BusketCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusketCoordinator.swift; sourceTree = "<group>"; };
+		741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		741DB46A2941DE5A00F9AC84 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		747321DB2940ED4C008E7EB0 /* TaskEffectiveMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskEffectiveMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		747321DE2940ED4C008E7EB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		747321E02940ED4C008E7EB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +108,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		741DB45D2941D37A00F9AC84 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				741DB45F2941D3BC00F9AC84 /* FavoriteViewController.swift */,
+				741DB4612941D3CB00F9AC84 /* FavoriteCoordinator.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		741DB45E2941D38A00F9AC84 /* Busket */ = {
+			isa = PBXGroup;
+			children = (
+				741DB4632941D3E900F9AC84 /* BusketViewController.swift */,
+				741DB4652941D3F800F9AC84 /* BusketCoordinator.swift */,
+			);
+			path = Busket;
+			sourceTree = "<group>";
+		};
+		741DB4672941DE0300F9AC84 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				741DB46A2941DE5A00F9AC84 /* ProfileViewController.swift */,
+				741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		747321D22940ED4C008E7EB0 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +158,9 @@
 		747321DD2940ED4C008E7EB0 /* TaskEffectiveMobile */ = {
 			isa = PBXGroup;
 			children = (
+				741DB4672941DE0300F9AC84 /* Profile */,
+				741DB45E2941D38A00F9AC84 /* Busket */,
+				741DB45D2941D37A00F9AC84 /* Favorite */,
 				7473222229411526008E7EB0 /* UIKit */,
 				7473220F2940F890008E7EB0 /* Main */,
 				7473220E2940F87C008E7EB0 /* TapBar */,
@@ -345,17 +387,23 @@
 			files = (
 				7473222C294139C1008E7EB0 /* MainViewCoordinator.swift in Sources */,
 				747322142940FC5B008E7EB0 /* BaseCoordinator.swift in Sources */,
+				741DB46B2941DE5A00F9AC84 /* ProfileViewController.swift in Sources */,
 				747322122940FB02008E7EB0 /* Router.swift in Sources */,
 				747322192941065A008E7EB0 /* CoordinatorFactory.swift in Sources */,
+				741DB4602941D3BC00F9AC84 /* FavoriteViewController.swift in Sources */,
 				7473222529411568008E7EB0 /* MainNavigationController.swift in Sources */,
 				74732221294108C4008E7EB0 /* MainViewController.swift in Sources */,
 				747321E32940ED4C008E7EB0 /* TabBarController.swift in Sources */,
+				741DB4622941D3CB00F9AC84 /* FavoriteCoordinator.swift in Sources */,
 				7473221B294106EE008E7EB0 /* AppCoordinator.swift in Sources */,
+				741DB4692941DE4700F9AC84 /* ProfileCoordinator.swift in Sources */,
 				7473221D2941074A008E7EB0 /* TabBarCoordinator.swift in Sources */,
 				747321DF2940ED4C008E7EB0 /* AppDelegate.swift in Sources */,
 				7473222A294115E2008E7EB0 /* AppFonts.swift in Sources */,
+				741DB4642941D3E900F9AC84 /* BusketViewController.swift in Sources */,
 				74732228294115B0008E7EB0 /* AppColors.swift in Sources */,
 				74732217294104B8008E7EB0 /* ModuleFactory.swift in Sources */,
+				741DB4662941D3F800F9AC84 /* BusketCoordinator.swift in Sources */,
 				747321E12940ED4C008E7EB0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
