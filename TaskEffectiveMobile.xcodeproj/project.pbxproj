@@ -132,17 +132,9 @@
 			isa = PBXGroup;
 			children = (
 				848A2027294366CD001317C4 /* Builder */,
-				74139E0729435D540002DC0F /* DI */,
 				747322102940FAD3008E7EB0 /* Coordinator */,
 			);
 			path = Foundation;
-			sourceTree = "<group>";
-		};
-		74139E0729435D540002DC0F /* DI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DI;
 			sourceTree = "<group>";
 		};
 		741DB45D2941D37A00F9AC84 /* Favorite */ = {
@@ -263,7 +255,6 @@
 		7473222629411591008E7EB0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				748EB4FD2943539000A94A79 /* Fonts */,
 				74732227294115B0008E7EB0 /* AppColors.swift */,
 				74732229294115E2008E7EB0 /* AppFonts.swift */,
 			);
@@ -299,13 +290,6 @@
 				7473222229411526008E7EB0 /* UIKit */,
 			);
 			path = "Core layer";
-			sourceTree = "<group>";
-		};
-		748EB4FD2943539000A94A79 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		848A202629436687001317C4 /* ApiClient */ = {
