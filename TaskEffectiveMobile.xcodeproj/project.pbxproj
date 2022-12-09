@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		74139E0A294360A70002DC0F /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74139E09294360A70002DC0F /* File.swift */; };
+		74139E0A294360A70002DC0F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74139E09294360A70002DC0F /* ApiClient.swift */; };
 		741DB4602941D3BC00F9AC84 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB45F2941D3BC00F9AC84 /* FavoriteViewController.swift */; };
 		741DB4622941D3CB00F9AC84 /* FavoriteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB4612941D3CB00F9AC84 /* FavoriteCoordinator.swift */; };
 		741DB4642941D3E900F9AC84 /* BusketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB4632941D3E900F9AC84 /* BusketViewController.swift */; };
@@ -31,7 +31,17 @@
 		74732228294115B0008E7EB0 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74732227294115B0008E7EB0 /* AppColors.swift */; };
 		7473222A294115E2008E7EB0 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74732229294115E2008E7EB0 /* AppFonts.swift */; };
 		7473222C294139C1008E7EB0 /* MainViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7473222B294139C1008E7EB0 /* MainViewCoordinator.swift */; };
-		748EB4FF294353A700A94A79 /* Mark-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 748EB4FE294353A700A94A79 /* Mark-Pro.ttf */; };
+		848A2029294366EC001317C4 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A2028294366EC001317C4 /* RequestBuilder.swift */; };
+		848A202B294369FC001317C4 /* BasketApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A202A294369FC001317C4 /* BasketApiClient.swift */; };
+		848A202E29438877001317C4 /* MainEntitie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A202D29438877001317C4 /* MainEntitie.swift */; };
+		848A20302943894A001317C4 /* BasketEntitie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A202F2943894A001317C4 /* BasketEntitie.swift */; };
+		848A2032294389C1001317C4 /* ProductEntitie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A2031294389C1001317C4 /* ProductEntitie.swift */; };
+		848A203429438B36001317C4 /* ProductApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A203329438B36001317C4 /* ProductApiClient.swift */; };
+		848A203629438BE8001317C4 /* MainApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A203529438BE8001317C4 /* MainApiClient.swift */; };
+		848A203929438D26001317C4 /* BasketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A203829438D26001317C4 /* BasketService.swift */; };
+		848A203B29438D34001317C4 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A203A29438D34001317C4 /* MainService.swift */; };
+		848A203D29438D47001317C4 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A203C29438D47001317C4 /* ProductService.swift */; };
+		848A204029438E89001317C4 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 848A203F29438E89001317C4 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		74139E09294360A70002DC0F /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		74139E09294360A70002DC0F /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		741DB45F2941D3BC00F9AC84 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		741DB4612941D3CB00F9AC84 /* FavoriteCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCoordinator.swift; sourceTree = "<group>"; };
 		741DB4632941D3E900F9AC84 /* BusketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusketViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +89,16 @@
 		74732227294115B0008E7EB0 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		74732229294115E2008E7EB0 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		7473222B294139C1008E7EB0 /* MainViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCoordinator.swift; sourceTree = "<group>"; };
-		748EB4FE294353A700A94A79 /* Mark-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark-Pro.ttf"; path = "../../../../../Downloads/Mark-Pro.ttf"; sourceTree = "<group>"; };
+		848A2028294366EC001317C4 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		848A202A294369FC001317C4 /* BasketApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketApiClient.swift; sourceTree = "<group>"; };
+		848A202D29438877001317C4 /* MainEntitie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEntitie.swift; sourceTree = "<group>"; };
+		848A202F2943894A001317C4 /* BasketEntitie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketEntitie.swift; sourceTree = "<group>"; };
+		848A2031294389C1001317C4 /* ProductEntitie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEntitie.swift; sourceTree = "<group>"; };
+		848A203329438B36001317C4 /* ProductApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductApiClient.swift; sourceTree = "<group>"; };
+		848A203529438BE8001317C4 /* MainApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApiClient.swift; sourceTree = "<group>"; };
+		848A203829438D26001317C4 /* BasketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketService.swift; sourceTree = "<group>"; };
+		848A203A29438D34001317C4 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
+		848A203C29438D47001317C4 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848A204029438E89001317C4 /* SDWebImage in Frameworks */,
 				741DB46E2942367500F9AC84 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,25 +131,10 @@
 		74139E0629435D1F0002DC0F /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				74139E0829435D650002DC0F /* Builder */,
-				74139E0729435D540002DC0F /* DI */,
+				848A2027294366CD001317C4 /* Builder */,
 				747322102940FAD3008E7EB0 /* Coordinator */,
 			);
 			path = Foundation;
-			sourceTree = "<group>";
-		};
-		74139E0729435D540002DC0F /* DI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DI;
-			sourceTree = "<group>";
-		};
-		74139E0829435D650002DC0F /* Builder */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Builder;
 			sourceTree = "<group>";
 		};
 		741DB45D2941D37A00F9AC84 /* Favorite */ = {
@@ -250,7 +255,6 @@
 		7473222629411591008E7EB0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				748EB4FD2943539000A94A79 /* Fonts */,
 				74732227294115B0008E7EB0 /* AppColors.swift */,
 				74732229294115E2008E7EB0 /* AppFonts.swift */,
 			);
@@ -272,7 +276,9 @@
 		748EB4FB2943522500A94A79 /* Business Logic Layer */ = {
 			isa = PBXGroup;
 			children = (
-				74139E09294360A70002DC0F /* File.swift */,
+				848A203729438CF1001317C4 /* Services */,
+				848A202C29438832001317C4 /* Entities */,
+				848A202629436687001317C4 /* ApiClient */,
 			);
 			path = "Business Logic Layer";
 			sourceTree = "<group>";
@@ -286,12 +292,43 @@
 			path = "Core layer";
 			sourceTree = "<group>";
 		};
-		748EB4FD2943539000A94A79 /* Fonts */ = {
+		848A202629436687001317C4 /* ApiClient */ = {
 			isa = PBXGroup;
 			children = (
-				748EB4FE294353A700A94A79 /* Mark-Pro.ttf */,
+				74139E09294360A70002DC0F /* ApiClient.swift */,
+				848A202A294369FC001317C4 /* BasketApiClient.swift */,
+				848A203329438B36001317C4 /* ProductApiClient.swift */,
+				848A203529438BE8001317C4 /* MainApiClient.swift */,
 			);
-			path = Fonts;
+			path = ApiClient;
+			sourceTree = "<group>";
+		};
+		848A2027294366CD001317C4 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				848A2028294366EC001317C4 /* RequestBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		848A202C29438832001317C4 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				848A202D29438877001317C4 /* MainEntitie.swift */,
+				848A202F2943894A001317C4 /* BasketEntitie.swift */,
+				848A2031294389C1001317C4 /* ProductEntitie.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		848A203729438CF1001317C4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				848A203829438D26001317C4 /* BasketService.swift */,
+				848A203A29438D34001317C4 /* MainService.swift */,
+				848A203C29438D47001317C4 /* ProductService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +349,7 @@
 			name = TaskEffectiveMobile;
 			packageProductDependencies = (
 				741DB46D2942367500F9AC84 /* SnapKit */,
+				848A203F29438E89001317C4 /* SDWebImage */,
 			);
 			productName = TaskEffectiveMobile;
 			productReference = 747321DB2940ED4C008E7EB0 /* TaskEffectiveMobile.app */;
@@ -387,6 +425,7 @@
 			mainGroup = 747321D22940ED4C008E7EB0;
 			packageReferences = (
 				741DB46C2942367500F9AC84 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				848A203E29438E89001317C4 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 747321DC2940ED4C008E7EB0 /* Products */;
 			projectDirPath = "";
@@ -404,7 +443,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				748EB4FF294353A700A94A79 /* Mark-Pro.ttf in Resources */,
 				747321EB2940ED4E008E7EB0 /* LaunchScreen.storyboard in Resources */,
 				747321E82940ED4E008E7EB0 /* Assets.xcassets in Resources */,
 			);
@@ -432,23 +470,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				7473222C294139C1008E7EB0 /* MainViewCoordinator.swift in Sources */,
+				848A203429438B36001317C4 /* ProductApiClient.swift in Sources */,
+				848A20302943894A001317C4 /* BasketEntitie.swift in Sources */,
 				747322142940FC5B008E7EB0 /* BaseCoordinator.swift in Sources */,
 				741DB46B2941DE5A00F9AC84 /* ProfileViewController.swift in Sources */,
+				848A202E29438877001317C4 /* MainEntitie.swift in Sources */,
 				747322122940FB02008E7EB0 /* Router.swift in Sources */,
+				848A203D29438D47001317C4 /* ProductService.swift in Sources */,
 				747322192941065A008E7EB0 /* CoordinatorFactory.swift in Sources */,
+				848A203929438D26001317C4 /* BasketService.swift in Sources */,
 				741DB4602941D3BC00F9AC84 /* FavoriteViewController.swift in Sources */,
+				848A202B294369FC001317C4 /* BasketApiClient.swift in Sources */,
 				7473222529411568008E7EB0 /* MainNavigationController.swift in Sources */,
+				848A2029294366EC001317C4 /* RequestBuilder.swift in Sources */,
 				74732221294108C4008E7EB0 /* MainViewController.swift in Sources */,
 				747321E32940ED4C008E7EB0 /* TabBarController.swift in Sources */,
 				741DB4622941D3CB00F9AC84 /* FavoriteCoordinator.swift in Sources */,
 				7473221B294106EE008E7EB0 /* AppCoordinator.swift in Sources */,
+				848A203629438BE8001317C4 /* MainApiClient.swift in Sources */,
 				741DB4692941DE4700F9AC84 /* ProfileCoordinator.swift in Sources */,
+				848A2032294389C1001317C4 /* ProductEntitie.swift in Sources */,
 				7473221D2941074A008E7EB0 /* TabBarCoordinator.swift in Sources */,
 				747321DF2940ED4C008E7EB0 /* AppDelegate.swift in Sources */,
 				7473222A294115E2008E7EB0 /* AppFonts.swift in Sources */,
 				741DB4642941D3E900F9AC84 /* BusketViewController.swift in Sources */,
-				74139E0A294360A70002DC0F /* File.swift in Sources */,
+				74139E0A294360A70002DC0F /* ApiClient.swift in Sources */,
 				74732228294115B0008E7EB0 /* AppColors.swift in Sources */,
+				848A203B29438D34001317C4 /* MainService.swift in Sources */,
 				74732217294104B8008E7EB0 /* ModuleFactory.swift in Sources */,
 				741DB4662941D3F800F9AC84 /* BusketCoordinator.swift in Sources */,
 				747321E12940ED4C008E7EB0 /* SceneDelegate.swift in Sources */,
@@ -786,6 +834,14 @@
 				kind = branch;
 			};
 		};
+		848A203E29438E89001317C4 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -793,6 +849,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 741DB46C2942367500F9AC84 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		848A203F29438E89001317C4 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 848A203E29438E89001317C4 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
