@@ -19,9 +19,6 @@
 		747321E32940ED4C008E7EB0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747321E22940ED4C008E7EB0 /* TabBarController.swift */; };
 		747321E82940ED4E008E7EB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 747321E72940ED4E008E7EB0 /* Assets.xcassets */; };
 		747321EB2940ED4E008E7EB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 747321E92940ED4E008E7EB0 /* LaunchScreen.storyboard */; };
-		747321F62940ED4E008E7EB0 /* TaskEffectiveMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747321F52940ED4E008E7EB0 /* TaskEffectiveMobileTests.swift */; };
-		747322002940ED4E008E7EB0 /* TaskEffectiveMobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747321FF2940ED4E008E7EB0 /* TaskEffectiveMobileUITests.swift */; };
-		747322022940ED4E008E7EB0 /* TaskEffectiveMobileUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747322012940ED4E008E7EB0 /* TaskEffectiveMobileUITestsLaunchTests.swift */; };
 		747322122940FB02008E7EB0 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747322112940FB02008E7EB0 /* Router.swift */; };
 		747322142940FC5B008E7EB0 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747322132940FC5B008E7EB0 /* BaseCoordinator.swift */; };
 		74732217294104B8008E7EB0 /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74732216294104B8008E7EB0 /* ModuleFactory.swift */; };
@@ -33,6 +30,7 @@
 		74732228294115B0008E7EB0 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74732227294115B0008E7EB0 /* AppColors.swift */; };
 		7473222A294115E2008E7EB0 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74732229294115E2008E7EB0 /* AppFonts.swift */; };
 		7473222C294139C1008E7EB0 /* MainViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7473222B294139C1008E7EB0 /* MainViewCoordinator.swift */; };
+		748EB4FF294353A700A94A79 /* Mark-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 748EB4FE294353A700A94A79 /* Mark-Pro.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,10 +65,7 @@
 		747321EA2940ED4E008E7EB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		747321EC2940ED4E008E7EB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		747321F12940ED4E008E7EB0 /* TaskEffectiveMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskEffectiveMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		747321F52940ED4E008E7EB0 /* TaskEffectiveMobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEffectiveMobileTests.swift; sourceTree = "<group>"; };
 		747321FB2940ED4E008E7EB0 /* TaskEffectiveMobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskEffectiveMobileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		747321FF2940ED4E008E7EB0 /* TaskEffectiveMobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEffectiveMobileUITests.swift; sourceTree = "<group>"; };
-		747322012940ED4E008E7EB0 /* TaskEffectiveMobileUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEffectiveMobileUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		747322112940FB02008E7EB0 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		747322132940FC5B008E7EB0 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		74732216294104B8008E7EB0 /* ModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactory.swift; sourceTree = "<group>"; };
@@ -82,6 +77,7 @@
 		74732227294115B0008E7EB0 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		74732229294115E2008E7EB0 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		7473222B294139C1008E7EB0 /* MainViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCoordinator.swift; sourceTree = "<group>"; };
+		748EB4FE294353A700A94A79 /* Mark-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark-Pro.ttf"; path = "../../../../../Downloads/Mark-Pro.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +106,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74139E0629435D1F0002DC0F /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				74139E0829435D650002DC0F /* Builder */,
+				74139E0729435D540002DC0F /* DI */,
+				747322102940FAD3008E7EB0 /* Coordinator */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		74139E0729435D540002DC0F /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		74139E0829435D650002DC0F /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
 		741DB45D2941D37A00F9AC84 /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,8 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				747321DD2940ED4C008E7EB0 /* TaskEffectiveMobile */,
-				747321F42940ED4E008E7EB0 /* TaskEffectiveMobileTests */,
-				747321FE2940ED4E008E7EB0 /* TaskEffectiveMobileUITests */,
 				747321DC2940ED4C008E7EB0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -160,39 +178,18 @@
 		747321DD2940ED4C008E7EB0 /* TaskEffectiveMobile */ = {
 			isa = PBXGroup;
 			children = (
-				741DB4672941DE0300F9AC84 /* Profile */,
-				741DB45E2941D38A00F9AC84 /* Busket */,
-				741DB45D2941D37A00F9AC84 /* Favorite */,
-				7473222229411526008E7EB0 /* UIKit */,
-				7473220F2940F890008E7EB0 /* Main */,
-				7473220E2940F87C008E7EB0 /* TapBar */,
-				747322102940FAD3008E7EB0 /* Coordinator */,
 				747321DE2940ED4C008E7EB0 /* AppDelegate.swift */,
-				747321E02940ED4C008E7EB0 /* SceneDelegate.swift */,
 				7473221A294106EE008E7EB0 /* AppCoordinator.swift */,
+				747321E02940ED4C008E7EB0 /* SceneDelegate.swift */,
+				748EB4FA2943519100A94A79 /* Presentation layer */,
+				748EB4FB2943522500A94A79 /* Business Logic Layer */,
+				748EB4FC294352A100A94A79 /* Core layer */,
+				7473222629411591008E7EB0 /* Helpers */,
 				747321E72940ED4E008E7EB0 /* Assets.xcassets */,
 				747321E92940ED4E008E7EB0 /* LaunchScreen.storyboard */,
 				747321EC2940ED4E008E7EB0 /* Info.plist */,
-				7473222629411591008E7EB0 /* Helpers */,
 			);
 			path = TaskEffectiveMobile;
-			sourceTree = "<group>";
-		};
-		747321F42940ED4E008E7EB0 /* TaskEffectiveMobileTests */ = {
-			isa = PBXGroup;
-			children = (
-				747321F52940ED4E008E7EB0 /* TaskEffectiveMobileTests.swift */,
-			);
-			path = TaskEffectiveMobileTests;
-			sourceTree = "<group>";
-		};
-		747321FE2940ED4E008E7EB0 /* TaskEffectiveMobileUITests */ = {
-			isa = PBXGroup;
-			children = (
-				747321FF2940ED4E008E7EB0 /* TaskEffectiveMobileUITests.swift */,
-				747322012940ED4E008E7EB0 /* TaskEffectiveMobileUITestsLaunchTests.swift */,
-			);
-			path = TaskEffectiveMobileUITests;
 			sourceTree = "<group>";
 		};
 		7473220E2940F87C008E7EB0 /* TapBar */ = {
@@ -251,10 +248,47 @@
 		7473222629411591008E7EB0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				748EB4FD2943539000A94A79 /* Fonts */,
 				74732227294115B0008E7EB0 /* AppColors.swift */,
 				74732229294115E2008E7EB0 /* AppFonts.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		748EB4FA2943519100A94A79 /* Presentation layer */ = {
+			isa = PBXGroup;
+			children = (
+				7473220E2940F87C008E7EB0 /* TapBar */,
+				7473220F2940F890008E7EB0 /* Main */,
+				741DB45D2941D37A00F9AC84 /* Favorite */,
+				741DB45E2941D38A00F9AC84 /* Busket */,
+				741DB4672941DE0300F9AC84 /* Profile */,
+			);
+			path = "Presentation layer";
+			sourceTree = "<group>";
+		};
+		748EB4FB2943522500A94A79 /* Business Logic Layer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Business Logic Layer";
+			sourceTree = "<group>";
+		};
+		748EB4FC294352A100A94A79 /* Core layer */ = {
+			isa = PBXGroup;
+			children = (
+				74139E0629435D1F0002DC0F /* Foundation */,
+				7473222229411526008E7EB0 /* UIKit */,
+			);
+			path = "Core layer";
+			sourceTree = "<group>";
+		};
+		748EB4FD2943539000A94A79 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				748EB4FE294353A700A94A79 /* Mark-Pro.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,6 +401,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				748EB4FF294353A700A94A79 /* Mark-Pro.ttf in Resources */,
 				747321EB2940ED4E008E7EB0 /* LaunchScreen.storyboard in Resources */,
 				747321E82940ED4E008E7EB0 /* Assets.xcassets in Resources */,
 			);
@@ -420,7 +455,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				747321F62940ED4E008E7EB0 /* TaskEffectiveMobileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,8 +462,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				747322002940ED4E008E7EB0 /* TaskEffectiveMobileUITests.swift in Sources */,
-				747322022940ED4E008E7EB0 /* TaskEffectiveMobileUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
