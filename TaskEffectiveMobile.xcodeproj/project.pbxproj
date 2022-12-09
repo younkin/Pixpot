@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74139E0A294360A70002DC0F /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74139E09294360A70002DC0F /* File.swift */; };
 		741DB4602941D3BC00F9AC84 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB45F2941D3BC00F9AC84 /* FavoriteViewController.swift */; };
 		741DB4622941D3CB00F9AC84 /* FavoriteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB4612941D3CB00F9AC84 /* FavoriteCoordinator.swift */; };
 		741DB4642941D3E900F9AC84 /* BusketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB4632941D3E900F9AC84 /* BusketViewController.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		74139E09294360A70002DC0F /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		741DB45F2941D3BC00F9AC84 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		741DB4612941D3CB00F9AC84 /* FavoriteCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCoordinator.swift; sourceTree = "<group>"; };
 		741DB4632941D3E900F9AC84 /* BusketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusketViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 		748EB4FB2943522500A94A79 /* Business Logic Layer */ = {
 			isa = PBXGroup;
 			children = (
+				74139E09294360A70002DC0F /* File.swift */,
 			);
 			path = "Business Logic Layer";
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				747321DF2940ED4C008E7EB0 /* AppDelegate.swift in Sources */,
 				7473222A294115E2008E7EB0 /* AppFonts.swift in Sources */,
 				741DB4642941D3E900F9AC84 /* BusketViewController.swift in Sources */,
+				74139E0A294360A70002DC0F /* File.swift in Sources */,
 				74732228294115B0008E7EB0 /* AppColors.swift in Sources */,
 				74732217294104B8008E7EB0 /* ModuleFactory.swift in Sources */,
 				741DB4662941D3F800F9AC84 /* BusketCoordinator.swift in Sources */,
