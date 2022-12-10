@@ -11,7 +11,8 @@ final class MainNavigationController: UINavigationController {
 
     init() {
         super.init(nibName: nil, bundle: nil)
-//        self.setStatusBar()
+        self.setStatusBar()
+        setConstraints()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -26,18 +27,25 @@ extension MainNavigationController {
 
 // MARK: - Private API
 private extension MainNavigationController {
+    
+    
+    func setConstraints() {
+        
+    }
 
     func setStatusBar() {
         let arrowImage = UIImage(systemName: "arrow.left")
         let transImage = UIImage(systemName: "arrow.left")
         let navBarAppearance = UINavigationBarAppearance()
-
+        
+        
+        
         navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.titleTextAttributes = [.foregroundColor: AppColors.orange]
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: AppColors.darkBlue]
-        navBarAppearance.backgroundColor = AppColors.white
+        navBarAppearance.backgroundColor = AppColors.darkBlue
         navBarAppearance.setBackIndicatorImage(arrowImage, transitionMaskImage: transImage)
-        navBarAppearance.shadowColor = AppColors.white
+        navBarAppearance.shadowColor = AppColors.black
 
         navigationBar.tintColor = UIColor.black
         navigationBar.standardAppearance = navBarAppearance

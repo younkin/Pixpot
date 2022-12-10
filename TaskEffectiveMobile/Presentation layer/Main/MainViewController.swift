@@ -7,17 +7,303 @@
 
 import UIKit
 
-
-
 class MainViewController: UIViewController {
     
+    private let collectionView: UICollectionView = {
+        let collectionViewLayout = UICollectionViewLayout()
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+        collectionView.backgroundColor = .none
+        collectionView.bounces = false
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
+    }()
+    
+    
+    
+    private let sections = MockData.shared.pageData
+    
+   
+    
+    
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDelegates()
+        setupViews()
+        setConstraints()
+    }
+    
+    
+    private func setupViews() {
+        navigationController?.navigationBar.isHidden = true
+        view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        title = "FoodSHop"
+        view.addSubview(collectionView)
+        collectionView.register(SelectCollectionViewCell.self, forCellWithReuseIdentifier: "StoriesCollectionViewCell")
+        collectionView.register(HotSalesCollectionViewCell.self, forCellWithReuseIdentifier: "PopelarCollectionViewCell")
+        collectionView.register(BestSellerCollectionViewCell.self, forCellWithReuseIdentifier: "ComingSoonCollectionViewCell")
+        collectionView.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: "SearchCollectionViewCell")
         
-        view.backgroundColor = .white
+        collectionView.register(HeaderSupplementaryView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderSupplementaryView")
+        collectionView.collectionViewLayout = createLayout()
+    }
+    
+    
+    private func setDelegates() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+    }
+
+
+}
+//MARK: Create Layout
+
+extension MainViewController {
+    private func createLayout() -> UICollectionViewCompositionalLayout {
+        UICollectionViewCompositionalLayout { [weak self] sectionIndex, _ in
+            guard let self = self else {return nil}
+            let section = self.sections[sectionIndex]
+            switch section {
+
+            case .selectCategory(_):
+                return self.createSaleSection()
+            case .search(_):
+                return self.createSearchSection()
+            case .hotSales(_):
+                return self.createHotSalesSection()
+            case .bestSellers(_):
+                return self.createBestSellersSection()
+            }
+       
+            
+        }
+    }
+    
+    private func createlayoutSection(group: NSCollectionLayoutGroup,
+                                     behavior: UICollectionLayoutSectionOrthogonalScrollingBehavior,
+                                     interGroupSpacing: CGFloat,
+                                     supplementaryItem: [NSCollectionLayoutBoundarySupplementaryItem]) -> NSCollectionLayoutSection {
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = behavior
+        section.interGroupSpacing = interGroupSpacing
+        section.boundarySupplementaryItems = supplementaryItem
+     return section
+        
+    }
+    
+    
+    private func createSaleSection() -> NSCollectionLayoutSection {
+        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(0.2),
+                                                            heightDimension: .fractionalHeight(1)))
+        
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(0.9),
+                                                                         heightDimension: .fractionalHeight(0.1)),
+                                                                          subitems: [item])
+        
+        let section = createlayoutSection(group: group, behavior: .groupPaging, interGroupSpacing: 5, supplementaryItem: [supplementaryHeaderItem()])
+        
+        section.contentInsets = .init(top: 0, leading: -10, bottom: 0, trailing: 0)
+        
+        
+        return section
+    }
+    
+    
+    private func createSearchSection() -> NSCollectionLayoutSection {
+        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1),
+                                                            heightDimension: .fractionalHeight(1)))
+        
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(0.9),
+                                                                         heightDimension: .absolute(70)),
+                                                                          subitems: [item])
+        
+        let section = createlayoutSection(group: group, behavior: .none, interGroupSpacing: 5, supplementaryItem: [])
+        
+        section.contentInsets = .init(top: 0, leading: -10, bottom: 0, trailing: 0)
+        
+        
+        return section
     }
     
     
     
     
+    
+    private func createHotSalesSection() -> NSCollectionLayoutSection {
+        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1),
+                                                            heightDimension: .fractionalHeight(1)))
+        
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1),
+                                                                         heightDimension: .fractionalHeight(0.2)),
+                                                                          subitems: [item])
+        
+        let section = createlayoutSection(group: group,
+                                          behavior: .groupPaging,
+                                          interGroupSpacing: 10,
+                                          supplementaryItem: [supplementaryHeaderItem()]
+                                        )
+        
+        section.contentInsets = .init(top: 0, leading: 10, bottom: 0, trailing: 0)
+        
+        
+        return section
+    }
+    
+    
+    private func createBestSellersSection() -> NSCollectionLayoutSection {
+        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(0.5),
+                                                            heightDimension: .fractionalHeight(1)))
+        
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1),
+                                                                         heightDimension: .fractionalHeight(0.2)),
+                                                                          subitems: [item])
+        
+        let section = createlayoutSection(group: group,
+                                          behavior: .none,
+                                          interGroupSpacing: 10,
+                                          supplementaryItem: [supplementaryHeaderItem()]
+                                        )
+        
+        section.contentInsets = .init(top: 0, leading: 10, bottom: 0, trailing: 0)
+        
+        
+        return section
+    }
+    
+    
+    
+    
+    
+    
+    
+    private func supplementaryHeaderItem() -> NSCollectionLayoutBoundarySupplementaryItem {
+        .init(layoutSize: .init(widthDimension: .fractionalWidth(1),
+                                heightDimension: .estimated(30)),
+              elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+    }
+    
 }
+
+//MARK: - UICollectionViewDelegate
+extension MainViewController: UICollectionViewDelegate {
+    
+}
+
+
+//MARK: - UICollectionViewDataSource
+extension MainViewController: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        sections.count
+    }
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        sections[section].count
+    }
+    
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        switch sections[indexPath.section] {
+            
+        case .selectCategory(let sale):
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoriesCollectionViewCell", for: indexPath) as? SelectCollectionViewCell
+            
+            else {
+                return UICollectionViewCell()
+            }
+            cell.configureCell(imageName: sale[indexPath.row].image)
+            return cell
+            
+            
+        case .search(let search):
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell
+            
+            else {
+                return UICollectionViewCell()
+            }
+            cell.configureCell(imageName: search[indexPath.row].image)
+            return cell
+            
+            
+            
+        case .hotSales(let category):
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopelarCollectionViewCell", for: indexPath) as? HotSalesCollectionViewCell
+            
+            else {
+                return UICollectionViewCell()
+            }
+            cell.configureCell(categoryName: category[indexPath.row].title, imageName: category[indexPath.row].image)
+
+            return cell
+            
+            
+        case .bestSellers(let example):
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ComingSoonCollectionViewCell", for: indexPath) as? BestSellerCollectionViewCell
+            
+            else {
+                return UICollectionViewCell()
+            }
+            cell.configureCell(imageName: example[indexPath.row].image)
+            return cell
+            
+            
+            
+            
+            
+  
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderSupplementaryView", for: indexPath) as! HeaderSupplementaryView
+            
+            
+            header.configureHeader(categoryname: sections[indexPath.section].title)
+            
+            
+            
+            return header
+        default:
+            return UICollectionReusableView()
+        }
+        
+        
+    }
+    
+}
+
+
+//MARK: -  Set Constraints
+
+
+extension MainViewController {
+    
+    
+    private func setConstraints() {
+        NSLayoutConstraint.activate([
+
+        
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10)
+            
+            
+        
+        ])
+        
+    }
+}
+
