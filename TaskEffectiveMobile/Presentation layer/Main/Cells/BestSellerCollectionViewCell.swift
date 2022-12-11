@@ -16,6 +16,11 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
+    
+    private var onSaleImage: RoundedImageView = {
+        let image = RoundedImageView(color: AppColors.orange, iconImage: "heartSelect")
+        return image
+    }()
 //    private let backgroundTitleView: UIView = {
 //        let view = UIView()
 //        view.backgroundColor = .white
@@ -23,15 +28,38 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
 //        view.translatesAutoresizingMaskIntoConstraints = false
 //        return view
 //    }()
-//    private let nameLabel: UILabel = {
-//        let label = UILabel ()
-//        label.text = "Egg Top Burber"
-//        label.textAlignment = .center
-//        label.font = UIFont (name: "Arial", size: 16)
-//        label.textColor = .black
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        return label
-//    }()
+    private let productDiscription: UILabel = {
+        let label = UILabel ()
+        label.text = "Sumsung note 20 Ultra"
+        label.textAlignment = .center
+        label.font = UIFont (name: "Arial", size: 10)
+        label.textColor = .black
+        label.backgroundColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let discountedPrice: UILabel = {
+        let label = UILabel ()
+        label.text = "$400"
+        label.textAlignment = .center
+        label.font = UIFont (name: "Arial", size: 16)
+        label.textColor = .black
+        label.backgroundColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let fullPrice: UILabel = {
+        let label = UILabel ()
+        label.text = "$1500"
+        label.textAlignment = .center
+        label.font = UIFont (name: "Arial", size: 10)
+        label.textColor = .black
+        label.backgroundColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     
 //    private let priceLabel: UILabel = {
@@ -62,9 +90,10 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = 10
         
         addSubview (bestSellerImage)
-//        addSubview (backgroundTitleView)
-//        addSubview (nameLabel)
-//        addSubview (priceLabel)
+        bestSellerImage.addSubview(onSaleImage)
+        addSubview (productDiscription)
+        addSubview (discountedPrice)
+        addSubview (fullPrice)
     }
     
     func configureCell(imageName: String) {
@@ -81,7 +110,38 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
             $0.top.equalToSuperview()
             $0.left.equalToSuperview()
             $0.right.equalToSuperview()
+            $0.bottom.equalTo(fullPrice.snp.top)
+        }
+        
+        discountedPrice.snp.makeConstraints {
+            $0.left.equalToSuperview().offset(21)
+            $0.right.equalTo(fullPrice.snp.left)
+            $0.bottom.equalTo(productDiscription.snp.top)
+            $0.height.equalTo(30)
+            
+         
+        }
+        fullPrice.snp.makeConstraints {
+//            $0.left.equalTo(fullPrice.snp.right)
+            $0.right.equalToSuperview()
+            $0.bottom.equalTo(productDiscription.snp.top)
+            $0.height.equalTo(30)
+          
+        }
+        
+        productDiscription.snp.makeConstraints {
+            $0.left.equalToSuperview()
+            $0.right.equalToSuperview()
             $0.bottom.equalToSuperview()
+            $0.height.equalTo(30)
+        }
+        
+        onSaleImage.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(12)
+            $0.right.equalToSuperview().inset(12)
+            $0.width.height.equalTo(25)
+//            $0.right.equalToSuperview()
+//            $0.bottom.equalToSuperview()
         }
         
     }

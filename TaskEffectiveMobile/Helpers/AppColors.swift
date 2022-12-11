@@ -20,6 +20,4 @@ enum AppColors {
     static let background = UIColor(named: "background") ?? missingColor
     
     
-    
-    
 }
