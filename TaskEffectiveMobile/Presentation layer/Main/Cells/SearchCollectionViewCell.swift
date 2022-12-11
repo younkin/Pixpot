@@ -11,22 +11,38 @@ import UIKit
 class SearchCollectionViewCell: UICollectionViewCell {
     
     
-    private let searchView: UIImageView = {
+    private let searchImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "iconSearch")
         return imageView
     }()
     
-//    private let search: UISearchController = {
-//        let searchBar = UISearchController()
-//
-//
-//    }()
-//
+    private let search: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.searchTextField.backgroundColor = .white
+        
+        searchBar.backgroundColor = AppColors.background
+        searchBar.barTintColor = AppColors.background
+
+        searchBar.backgroundColor = AppColors.background
+        searchBar.backgroundImage = .none
+
+        searchBar.layer.backgroundColor = AppColors.background.cgColor
+
+        searchBar.layer.borderColor = AppColors.background.cgColor
+     
+        return searchBar
+    }()
+
+    
+
+    
+    
     override init (frame: CGRect) {
         super.init(frame: frame)
-        
+        self.contentView.backgroundColor = AppColors.background
         setupView()
         setConstraints()
     }
@@ -38,24 +54,36 @@ class SearchCollectionViewCell: UICollectionViewCell {
     
     
     func setupView() {
-        backgroundColor = .white
-        addSubview(searchView)
+      
+        addSubview(search)
+        addSubview(searchImage)
     }
     
     
     func configureCell(imageName:String) {
         
-        searchView.image = UIImage(named: imageName)
+//        searchView.image = UIImage(named: imageName)
     }
     
     
     func setConstraints() {
-        NSLayoutConstraint.activate([
-            searchView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
-            searchView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            searchView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            searchView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
-        ])
+      
+        search.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.left.equalToSuperview().offset(32)
+            $0.right.equalTo(searchImage.snp.left)
+            $0.bottom.equalToSuperview()
+        }
+        
+        searchImage.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.right.equalToSuperview().inset(40)
+            
+            $0.width.equalTo(40)
+            $0.height.equalTo(40)
+        
+        }
+        
     }
     
     

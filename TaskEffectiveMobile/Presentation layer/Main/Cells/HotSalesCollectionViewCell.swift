@@ -18,26 +18,55 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
     
     
     
-    private let categoryImageView: UIImageView = {
+    private let HotSalesBackgroundView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+//        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
 //        ImageView.image = UIImage(named: "categoryBurger")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
+    private let saleIcon: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleToFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+//        imageView.image = UIImage(named: "Rect")
+        imageView.backgroundColor = AppColors.orange
+        imageView.layer.cornerRadius = 16
+        return imageView
+    }()
     
-    private let categoryLabel: UILabel = {
+    
+    private let productBigTitle: UILabel = {
         let label = UILabel()
-        label.text = "Category"
+        label.text = "Iphone 12"
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 25)
+        label.textColor = AppColors.white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
+    
+    private let saleButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = AppColors.white
+        button.setTitle("Buy Now", for: .normal)
+        button.setTitleColor(AppColors.black, for: .normal)
+        button.layer.cornerRadius = 5
+        return button
+        
+    }()
 
+    private let productSmallTitle: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.textColor = AppColors.white
+        label.font = UIFont.systemFont(ofSize: 13)
+        label.text = "super mega rapido"
+        return label
+    }()
     
     
     
@@ -58,34 +87,66 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
     func setupView() {
         backgroundColor = .white
         layer.cornerRadius = 10
-        addSubview(categoryImageView)
-        addSubview(categoryLabel)
+        addSubview(HotSalesBackgroundView)
+        HotSalesBackgroundView.addSubview(saleButton)
+        HotSalesBackgroundView.addSubview(productSmallTitle)
+        HotSalesBackgroundView.addSubview(productBigTitle)
+        HotSalesBackgroundView.addSubview(saleIcon)
+        
+        
+  
+//        addSubview(categoryLabel)
     }
     
     
     func configureCell(categoryName: String, imageName:String) {
-        categoryLabel.text = categoryName
-        categoryImageView.image = UIImage(named: imageName)
+       
+        HotSalesBackgroundView.image = UIImage(named: imageName)
     }
     
     
     func setConstraints() {
-        NSLayoutConstraint.activate([
+       
+        HotSalesBackgroundView.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.left.equalToSuperview()
+            $0.right.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
+        
+        saleIcon.snp.makeConstraints {
+            $0.left.equalTo(HotSalesBackgroundView.snp.left).offset(24)
+            $0.top.equalTo(HotSalesBackgroundView.snp.top).inset(14)
+            $0.height.width.equalTo(32)
+            
 
-            categoryLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
-            categoryLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            categoryLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
-            categoryLabel.heightAnchor.constraint(equalToConstant: 16),
-            
-            
-            categoryImageView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            categoryImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
-            categoryImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            categoryImageView.bottomAnchor.constraint(equalTo: categoryLabel.topAnchor, constant: 0)
-            
-            
-            
-        ])
+        }
+        
+        saleButton.snp.makeConstraints {
+            $0.left.equalTo(HotSalesBackgroundView.snp.left).offset(32)
+            $0.bottom.equalTo(HotSalesBackgroundView.snp.bottom).inset(34)
+            $0.width.equalTo(98)
+            $0.height.equalTo(23)
+
+        }
+        
+        productSmallTitle.snp.makeConstraints {
+            $0.left.equalTo(HotSalesBackgroundView.snp.left).offset(35)
+            $0.bottom.equalTo(saleButton.snp.top).offset(-26)
+//            $0.width.equalTo(98)
+//            $0.height.equalTo(23)
+
+        }
+        
+        productBigTitle.snp.makeConstraints {
+            $0.left.equalTo(HotSalesBackgroundView.snp.left).offset(35)
+            $0.bottom.equalTo(productSmallTitle.snp.top).offset(-5)
+//            $0.width.equalTo(98)
+//            $0.height.equalTo(23)
+
+        }
+        
+        
     }
     
     

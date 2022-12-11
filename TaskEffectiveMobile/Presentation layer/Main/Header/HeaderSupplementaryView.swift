@@ -26,6 +26,7 @@ class HeaderSupplementaryView: UICollectionReusableView {
         label.text = "header"
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
         label.textColor = AppColors.black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -63,6 +64,7 @@ class HeaderSupplementaryView: UICollectionReusableView {
         
         headerLabel.snp.makeConstraints {
             $0.left.equalToSuperview().offset(20)
+            $0.bottom.equalToSuperview()
         }
         
         
@@ -70,6 +72,7 @@ class HeaderSupplementaryView: UICollectionReusableView {
             $0.right.equalToSuperview().inset(20)
             $0.height.equalTo(19)
             $0.width.equalTo(70)
+            $0.bottom.equalToSuperview()
             
         }
 //        NSLayoutConstraint.activate([

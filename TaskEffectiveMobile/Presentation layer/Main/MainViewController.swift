@@ -98,7 +98,7 @@ extension MainViewController {
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(0.25),
                                                             heightDimension: .fractionalHeight(1)))
    
-        item.contentInsets = .init(top: 10, leading: 10, bottom: 10, trailing: 10)
+        item.contentInsets = .init(top: 0, leading: 10, bottom: 10, trailing: 10)
      
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1),
                                                                          heightDimension: .fractionalHeight(0.15)),
@@ -107,7 +107,7 @@ extension MainViewController {
         group.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
         let section = createlayoutSection(group: group, behavior: .continuousGroupLeadingBoundary, interGroupSpacing: 0, supplementaryItem: [supplementaryHeaderItem()])
         
-        section.contentInsets = .init(top: 10, leading: 0, bottom: 10, trailing: 0)
+        section.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
         
         
         return section
@@ -123,7 +123,7 @@ extension MainViewController {
                                                                          heightDimension: .absolute(70)),
                                                                           subitems: [item])
         
-        let section = createlayoutSection(group: group, behavior: .none, interGroupSpacing: 5, supplementaryItem: [])
+        let section = createlayoutSection(group: group, behavior: .none, interGroupSpacing: 0, supplementaryItem: [])
         
         section.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
         
@@ -138,15 +138,15 @@ extension MainViewController {
     private func createHotSalesSection() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1),
                                                             heightDimension: .fractionalHeight(1)))
-        
+        item.contentInsets = .init(top: 10, leading: 10, bottom: 10, trailing: 10)
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1),
-                                                                         heightDimension: .fractionalHeight(0.2)),
+                                                                         heightDimension: .fractionalHeight(0.25)),
                                                                           subitems: [item])
         
         let section = createlayoutSection(group: group,
                                           behavior: .groupPaging,
-                                          interGroupSpacing: 10,
+                                          interGroupSpacing: 0,
                                           supplementaryItem: [supplementaryHeaderItem()]
                                         )
         
@@ -160,19 +160,20 @@ extension MainViewController {
     private func createBestSellersSection() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(0.5),
                                                             heightDimension: .fractionalHeight(1)))
-        
-        
+        item.contentInsets = .init(top: 5, leading: 5, bottom: 5, trailing: 5)
+       
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1),
-                                                                         heightDimension: .fractionalHeight(0.2)),
+                                                                         heightDimension: .fractionalHeight(0.3)),
                                                                           subitems: [item])
-        
+//        group.interItemSpacing = .flexible(1)
+        group.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
         let section = createlayoutSection(group: group,
                                           behavior: .none,
-                                          interGroupSpacing: 10,
+                                          interGroupSpacing: 0,
                                           supplementaryItem: [supplementaryHeaderItem()]
                                         )
         
-        section.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
+        section.contentInsets = .init(top: 0, leading: 10, bottom: 0, trailing: 10)
         
         
         return section
@@ -223,7 +224,7 @@ extension MainViewController: UICollectionViewDataSource {
             else {
                 return UICollectionViewCell()
             }
-            cell.configureCell(titleName: sale[indexPath.row].title, makeCurcle: true)
+            cell.configureCell(titleName: sale[indexPath.row].title, iconLink: sale[indexPath.row].image)
           
             return cell
             
