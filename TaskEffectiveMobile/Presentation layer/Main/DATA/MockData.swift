@@ -16,13 +16,13 @@ struct MockData {
     
     private let selectCategory: ListSection = {
         .selectCategory([
-               .init(title: "", image: "imagename1"),
-               .init(title: "", image: "imagename1"),
-               .init(title: "", image: "imagename1"),
-               .init(title: "", image: "imagename1"),
-               .init(title: "", image: "imagename1"),
-               .init(title: "", image: "imagename1"),
-               .init(title: "", image: "imagename1")
+               .init(title: "Phones", image: "imagename1"),
+               .init(title: "Computers", image: "imagename1"),
+               .init(title: "Health", image: "imagename1"),
+               .init(title: "Books", image: "imagename1"),
+               .init(title: "Sport", image: "imagename1"),
+               .init(title: "Watches", image: "imagename1"),
+               .init(title: "Dogs", image: "imagename1")
         ])
     }()
     
