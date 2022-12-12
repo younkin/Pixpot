@@ -105,7 +105,10 @@ extension MainViewController {
                                                                           subitems: [item])
 //        group.interItemSpacing = .fixed(10)
         group.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
-        let section = createlayoutSection(group: group, behavior: .continuousGroupLeadingBoundary, interGroupSpacing: 0, supplementaryItem: [supplementaryHeaderItem()])
+        let section = createlayoutSection(group: group,
+                                          behavior: .continuousGroupLeadingBoundary,
+                                          interGroupSpacing: 0,
+                                          supplementaryItem: [supplementaryHeaderItem()])
         
         section.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
         
@@ -123,7 +126,10 @@ extension MainViewController {
                                                                          heightDimension: .absolute(70)),
                                                                           subitems: [item])
         
-        let section = createlayoutSection(group: group, behavior: .none, interGroupSpacing: 0, supplementaryItem: [])
+        let section = createlayoutSection(group: group,
+                                          behavior: .none,
+                                          interGroupSpacing: 0,
+                                          supplementaryItem: [])
         
         section.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
         
@@ -225,7 +231,7 @@ extension MainViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             cell.configureCell(titleName: sale[indexPath.row].title, iconLink: sale[indexPath.row].image)
-          
+           
             return cell
             
             
@@ -259,9 +265,6 @@ extension MainViewController: UICollectionViewDataSource {
             }
             cell.configureCell(imageName: example[indexPath.row].image)
             return cell
-            
-            
-            
             
             
   

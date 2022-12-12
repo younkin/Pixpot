@@ -22,7 +22,10 @@ class SearchCollectionViewCell: UICollectionViewCell {
     private let search: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.searchTextField.backgroundColor = .white
-        
+        searchBar.layer.borderWidth = 2
+        searchBar.layer.borderColor = .none
+        searchBar.barTintColor = .white
+        searchBar.searchTextField.borderStyle = .none
         searchBar.backgroundColor = AppColors.background
         searchBar.barTintColor = AppColors.background
 
