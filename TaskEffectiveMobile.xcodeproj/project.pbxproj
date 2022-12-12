@@ -52,6 +52,18 @@
 		848A203B29438D34001317C4 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A203A29438D34001317C4 /* MainService.swift */; };
 		848A203D29438D47001317C4 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A203C29438D47001317C4 /* ProductService.swift */; };
 		848A204029438E89001317C4 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 848A203F29438E89001317C4 /* SDWebImage */; };
+		848A20462943AA1C001317C4 /* MarkPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848A20422943AA1C001317C4 /* MarkPro-Regular.ttf */; };
+		848A20472943AA1C001317C4 /* MarkPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848A20432943AA1C001317C4 /* MarkPro-Bold.ttf */; };
+		848A20482943AA1C001317C4 /* MarkPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848A20442943AA1C001317C4 /* MarkPro-Medium.ttf */; };
+		848A20492943AA1C001317C4 /* MarkPro-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848A20452943AA1C001317C4 /* MarkPro-Heavy.ttf */; };
+		848A204C2943AB1A001317C4 /* BusketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A204B2943AB1A001317C4 /* BusketView.swift */; };
+		848A204E2943AB25001317C4 /* BusketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A204D2943AB25001317C4 /* BusketViewModel.swift */; };
+		848A20512943AD31001317C4 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A20502943AD30001317C4 /* DIContainer.swift */; };
+		848A20562943D281001317C4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A20552943D281001317C4 /* TableViewCell.swift */; };
+		848A205B2943DAE4001317C4 /* UIVc+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A205A2943DAE4001317C4 /* UIVc+Preview.swift */; };
+		84F1FC2529450DD800FFF63E /* QuantityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1FC2429450DD800FFF63E /* QuantityButton.swift */; };
+		84F1FC272945F13400FFF63E /* BusketTableViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1FC262945F13400FFF63E /* BusketTableViewFooter.swift */; };
+		84F1FC29294601FF00FFF63E /* CustomBasketTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1FC28294601FF00FFF63E /* CustomBasketTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +131,18 @@
 		848A203829438D26001317C4 /* BasketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketService.swift; sourceTree = "<group>"; };
 		848A203A29438D34001317C4 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
 		848A203C29438D47001317C4 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
+		848A20422943AA1C001317C4 /* MarkPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkPro-Regular.ttf"; sourceTree = "<group>"; };
+		848A20432943AA1C001317C4 /* MarkPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkPro-Bold.ttf"; sourceTree = "<group>"; };
+		848A20442943AA1C001317C4 /* MarkPro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkPro-Medium.ttf"; sourceTree = "<group>"; };
+		848A20452943AA1C001317C4 /* MarkPro-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkPro-Heavy.ttf"; sourceTree = "<group>"; };
+		848A204B2943AB1A001317C4 /* BusketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusketView.swift; sourceTree = "<group>"; };
+		848A204D2943AB25001317C4 /* BusketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusketViewModel.swift; sourceTree = "<group>"; };
+		848A20502943AD30001317C4 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		848A20552943D281001317C4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		848A205A2943DAE4001317C4 /* UIVc+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVc+Preview.swift"; sourceTree = "<group>"; };
+		84F1FC2429450DD800FFF63E /* QuantityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityButton.swift; sourceTree = "<group>"; };
+		84F1FC262945F13400FFF63E /* BusketTableViewFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusketTableViewFooter.swift; sourceTree = "<group>"; };
+		84F1FC28294601FF00FFF63E /* CustomBasketTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBasketTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +175,7 @@
 		74139E0629435D1F0002DC0F /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				848A204F2943AD1B001317C4 /* DI */,
 				848A2027294366CD001317C4 /* Builder */,
 				747322102940FAD3008E7EB0 /* Coordinator */,
 			);
@@ -169,8 +194,9 @@
 		741DB45E2941D38A00F9AC84 /* Busket */ = {
 			isa = PBXGroup;
 			children = (
-				741DB4632941D3E900F9AC84 /* BusketViewController.swift */,
+				848A20522943BFB1001317C4 /* View */,
 				741DB4652941D3F800F9AC84 /* BusketCoordinator.swift */,
+				848A204D2943AB25001317C4 /* BusketViewModel.swift */,
 			);
 			path = Busket;
 			sourceTree = "<group>";
@@ -220,7 +246,7 @@
 				748EB4FB2943522500A94A79 /* Business Logic Layer */,
 				748EB4FC294352A100A94A79 /* Core layer */,
 				7473222629411591008E7EB0 /* Helpers */,
-				747321E72940ED4E008E7EB0 /* Assets.xcassets */,
+				848A20412943A970001317C4 /* Resourses */,
 				747321E92940ED4E008E7EB0 /* LaunchScreen.storyboard */,
 				747321EC2940ED4E008E7EB0 /* Info.plist */,
 			);
@@ -319,6 +345,7 @@
 		748EB4FC294352A100A94A79 /* Core layer */ = {
 			isa = PBXGroup;
 			children = (
+				848A20582943DABF001317C4 /* Extensions */,
 				74139E0629435D1F0002DC0F /* Foundation */,
 				7473222229411526008E7EB0 /* UIKit */,
 			);
@@ -391,6 +418,55 @@
 				848A203C29438D47001317C4 /* ProductService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		848A20412943A970001317C4 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				848A20432943AA1C001317C4 /* MarkPro-Bold.ttf */,
+				848A20452943AA1C001317C4 /* MarkPro-Heavy.ttf */,
+				848A20442943AA1C001317C4 /* MarkPro-Medium.ttf */,
+				848A20422943AA1C001317C4 /* MarkPro-Regular.ttf */,
+				747321E72940ED4E008E7EB0 /* Assets.xcassets */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		848A204F2943AD1B001317C4 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				848A20502943AD30001317C4 /* DIContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		848A20522943BFB1001317C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				848A20572943D32A001317C4 /* Cell */,
+				741DB4632941D3E900F9AC84 /* BusketViewController.swift */,
+				848A204B2943AB1A001317C4 /* BusketView.swift */,
+				84F1FC2429450DD800FFF63E /* QuantityButton.swift */,
+				84F1FC28294601FF00FFF63E /* CustomBasketTable.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		848A20572943D32A001317C4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				848A20552943D281001317C4 /* TableViewCell.swift */,
+				84F1FC262945F13400FFF63E /* BusketTableViewFooter.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		848A20582943DABF001317C4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				848A205A2943DAE4001317C4 /* UIVc+Preview.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -507,7 +583,11 @@
 			files = (
 				74D5FFD329452A4700029FF8 /* Mark-Pro.ttf in Resources */,
 				747321EB2940ED4E008E7EB0 /* LaunchScreen.storyboard in Resources */,
+				848A20462943AA1C001317C4 /* MarkPro-Regular.ttf in Resources */,
+				848A20472943AA1C001317C4 /* MarkPro-Bold.ttf in Resources */,
+				848A20492943AA1C001317C4 /* MarkPro-Heavy.ttf in Resources */,
 				747321E82940ED4E008E7EB0 /* Assets.xcassets in Resources */,
+				848A20482943AA1C001317C4 /* MarkPro-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,16 +623,19 @@
 				747322142940FC5B008E7EB0 /* BaseCoordinator.swift in Sources */,
 				741DB46B2941DE5A00F9AC84 /* ProfileViewController.swift in Sources */,
 				848A202E29438877001317C4 /* MainEntitie.swift in Sources */,
+				84F1FC29294601FF00FFF63E /* CustomBasketTable.swift in Sources */,
 				747322122940FB02008E7EB0 /* Router.swift in Sources */,
 				848A203D29438D47001317C4 /* ProductService.swift in Sources */,
 				747322192941065A008E7EB0 /* CoordinatorFactory.swift in Sources */,
 				848A203929438D26001317C4 /* BasketService.swift in Sources */,
 				741DB4602941D3BC00F9AC84 /* FavoriteViewController.swift in Sources */,
+				84F1FC2529450DD800FFF63E /* QuantityButton.swift in Sources */,
 				848A202B294369FC001317C4 /* BasketApiClient.swift in Sources */,
 				74D5FFD129451DC200029FF8 /* MockData.swift in Sources */,
 				74D5FFC729451D2B00029FF8 /* BestSellerCollectionViewCell.swift in Sources */,
 				7473222529411568008E7EB0 /* MainNavigationController.swift in Sources */,
 				848A2029294366EC001317C4 /* RequestBuilder.swift in Sources */,
+				848A204E2943AB25001317C4 /* BusketViewModel.swift in Sources */,
 				74732221294108C4008E7EB0 /* MainViewController.swift in Sources */,
 				747321E32940ED4C008E7EB0 /* TabBarController.swift in Sources */,
 				741DB4622941D3CB00F9AC84 /* FavoriteCoordinator.swift in Sources */,
@@ -561,6 +644,9 @@
 				848A203629438BE8001317C4 /* MainApiClient.swift in Sources */,
 				74D5FFCF29451DAD00029FF8 /* ListSection.swift in Sources */,
 				741DB4692941DE4700F9AC84 /* ProfileCoordinator.swift in Sources */,
+				848A20562943D281001317C4 /* TableViewCell.swift in Sources */,
+				848A204C2943AB1A001317C4 /* BusketView.swift in Sources */,
+				848A20512943AD31001317C4 /* DIContainer.swift in Sources */,
 				848A2032294389C1001317C4 /* ProductEntitie.swift in Sources */,
 				7473221D2941074A008E7EB0 /* TabBarCoordinator.swift in Sources */,
 				747321DF2940ED4C008E7EB0 /* AppDelegate.swift in Sources */,
@@ -569,6 +655,7 @@
 				74139E0A294360A70002DC0F /* ApiClient.swift in Sources */,
 				74732228294115B0008E7EB0 /* AppColors.swift in Sources */,
 				848A203B29438D34001317C4 /* MainService.swift in Sources */,
+				84F1FC272945F13400FFF63E /* BusketTableViewFooter.swift in Sources */,
 				74732217294104B8008E7EB0 /* ModuleFactory.swift in Sources */,
 				741DB4662941D3F800F9AC84 /* BusketCoordinator.swift in Sources */,
 				747321E12940ED4C008E7EB0 /* SceneDelegate.swift in Sources */,

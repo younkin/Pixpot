@@ -18,12 +18,11 @@ protocol ModuleFactoryProtocol {
 
 final class ModuleFactory: ModuleFactoryProtocol {
     
-    
+    private lazy var container = DIContainer()
     
     func makeMainModule() -> MainViewController {
         return MainViewController()
     }
-    
     
     func makeTabBarModule() -> TabBarController {
         return TabBarController()
@@ -33,7 +32,8 @@ final class ModuleFactory: ModuleFactoryProtocol {
         return FavoriteViewController()
     }
     func makeBusketModule() -> BusketViewController {
-        return BusketViewController()
+        let viewModel = BasketViewModel(basketService: container.basketService)
+        return BusketViewController(basketViewModel: viewModel)
     }
     func makeProfileModule() -> ProfileViewController {
         return ProfileViewController()
