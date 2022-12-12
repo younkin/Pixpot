@@ -88,7 +88,7 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
     func setupView() {
         clipsToBounds = true
         layer.cornerRadius = 10
-        
+        backgroundColor = AppColors.white
         addSubview (bestSellerImage)
         bestSellerImage.addSubview(onSaleImage)
         addSubview (productDiscription)
@@ -114,10 +114,10 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
         }
         
         discountedPrice.snp.makeConstraints {
-            $0.left.equalToSuperview().offset(21)
+            $0.left.equalTo(self)
             $0.right.equalTo(fullPrice.snp.left)
             $0.bottom.equalTo(productDiscription.snp.top)
-            $0.height.equalTo(30)
+            $0.height.equalTo(20)
             
          
         }
@@ -125,7 +125,7 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
 //            $0.left.equalTo(fullPrice.snp.right)
             $0.right.equalToSuperview()
             $0.bottom.equalTo(productDiscription.snp.top)
-            $0.height.equalTo(30)
+            $0.height.equalTo(20)
           
         }
         
