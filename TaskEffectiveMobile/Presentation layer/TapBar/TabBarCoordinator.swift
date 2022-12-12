@@ -35,12 +35,11 @@ final class TabBarCoordinator: BaseCoordinator {
 
         let mainNavigationController = MainNavigationController()
         mainNavigationController.tabBarItem = UITabBarItem(title: "Explorer", image: UIImage(named: "dot"), tag: 0)
-     
         let mainCoordinator = coordinatorFactory.makeMainCoordinator(with: Router(rootController: mainNavigationController))
         
-        let BasketViewController = BusketViewController()
-        BasketViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "busket"), tag: 1)
-
+        let basketNavigationController = MainNavigationController()
+        basketNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "busket"), tag: 1)
+        let basketCoordinator = coordinatorFactory.makeBusketCoordinator(with: Router(rootController: basketNavigationController))
         let FavoriteViewController = FavoriteViewController()
         FavoriteViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "heart"), tag: 2)
         
@@ -50,16 +49,16 @@ final class TabBarCoordinator: BaseCoordinator {
        
     
         
-        tabBarController.viewControllers = [mainNavigationController,BasketViewController,FavoriteViewController,ProfileViewController]
-
-       
+        tabBarController.viewControllers = [mainNavigationController,basketNavigationController,FavoriteViewController,ProfileViewController]
+        
         
         router.setRoot(tabBarController, animated: false, hideBar: true)
 
         retain(mainCoordinator)
-
+        retain(basketCoordinator)
 
         mainCoordinator.start()
+        basketCoordinator.start()
 
 
     

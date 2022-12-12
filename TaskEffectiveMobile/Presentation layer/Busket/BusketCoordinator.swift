@@ -26,7 +26,7 @@ final class BusketCoordinator: BaseCoordinator {
 
     // MARK: -
     private func showBusketScreen() {
-
-        
+        let basketVC = moduleFactory.makeBusketModule()
+        router.push(basketVC)
     }
 }
