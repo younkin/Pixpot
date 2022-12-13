@@ -39,6 +39,9 @@ final class TabBarCoordinator: BaseCoordinator {
         
         let basketNavigationController = MainNavigationController()
         basketNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "busket"), tag: 1)
+        
+
+
         let basketCoordinator = coordinatorFactory.makeBusketCoordinator(with: Router(rootController: basketNavigationController))
         let FavoriteViewController = FavoriteViewController()
         FavoriteViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "heart"), tag: 2)

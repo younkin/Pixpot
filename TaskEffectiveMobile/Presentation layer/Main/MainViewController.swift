@@ -6,8 +6,17 @@
 //
 
 import UIKit
+import Combine
 
 class MainViewController: UIViewController {
+    
+    
+
+    
+    
+
+    
+    
     
     private let collectionView: UICollectionView = {
         let collectionViewLayout = UICollectionViewLayout()
@@ -18,7 +27,7 @@ class MainViewController: UIViewController {
         return collectionView
     }()
     
-    
+
     
     private let sections = MockData.shared.pageData
     
@@ -33,14 +42,14 @@ class MainViewController: UIViewController {
         setupViews()
         setConstraints()
 
-        
+     
     }
     
     
     private func setupViews() {
         navigationController?.navigationBar.isHidden = true
         view.backgroundColor = AppColors.background
-//        title = "Shop"
+
         view.addSubview(collectionView)
         collectionView.register(SelectCollectionViewCell.self, forCellWithReuseIdentifier: "StoriesCollectionViewCell")
         collectionView.register(HotSalesCollectionViewCell.self, forCellWithReuseIdentifier: "PopelarCollectionViewCell")
@@ -244,6 +253,8 @@ extension MainViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             cell.configureCell(imageName: search[indexPath.row].image)
+        
+//            cell.bringSubviewToFront(cell.searchIButton)
             return cell
             
             
@@ -255,7 +266,7 @@ extension MainViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             cell.configureCell(categoryName: category[indexPath.row].title, imageName: category[indexPath.row].image)
-
+            cell.bringSubviewToFront(cell.saleIcon)
             return cell
             
             

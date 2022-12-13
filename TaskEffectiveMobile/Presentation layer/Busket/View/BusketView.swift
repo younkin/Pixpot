@@ -41,7 +41,7 @@ final class BasketView: UIView {
         var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "My Cart"
-        label.font = AppFont.montserratFont(ofSize: 35, weight: .bold)
+        label.font = AppFont.markProFont(ofSize: 35, weight: .bold)
         label.textColor = AppColors.darkBlue
         return label
     }()

@@ -17,9 +17,9 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    private var onSaleImage: RoundedImageView = {
-        let image = RoundedImageView(color: AppColors.orange, iconImage: "heartSelect")
-        return image
+    private var isFavorite: UIButton = {
+        let icon = UIButtonRounded(icon: UIImage(named: "heart"))
+        return icon
     }()
 //    private let backgroundTitleView: UIView = {
 //        let view = UIView()
@@ -90,7 +90,7 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = 10
         backgroundColor = AppColors.white
         addSubview (bestSellerImage)
-        bestSellerImage.addSubview(onSaleImage)
+        bestSellerImage.addSubview(isFavorite)
         addSubview (productDiscription)
         addSubview (discountedPrice)
         addSubview (fullPrice)
@@ -136,7 +136,7 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
             $0.height.equalTo(30)
         }
         
-        onSaleImage.snp.makeConstraints {
+        isFavorite.snp.makeConstraints {
             $0.top.equalToSuperview().offset(12)
             $0.right.equalToSuperview().inset(12)
             $0.width.height.equalTo(25)

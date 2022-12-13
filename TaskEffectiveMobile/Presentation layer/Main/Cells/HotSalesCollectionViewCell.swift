@@ -27,14 +27,11 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    private let saleIcon: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-//        imageView.image = UIImage(named: "Rect")
-        imageView.backgroundColor = AppColors.orange
-        imageView.layer.cornerRadius = 16
-        return imageView
+    let saleIcon: UIButton = {
+        let button = UIButtonRounded(title: "New")
+//        let button = UIButtonRounded()
+//        let button = UIButtonRounded(icon: UIImage(named: "MapBasket"))
+        return button
     }()
     
     
@@ -49,12 +46,13 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
     }()
     
     
-    private let saleButton: UIButton = {
+ let saleButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = AppColors.white
         button.setTitle("Buy Now", for: .normal)
         button.setTitleColor(AppColors.black, for: .normal)
         button.layer.cornerRadius = 5
+     button.addTarget(self, action: #selector(tapped2), for: .touchUpInside)
         return button
         
     }()
@@ -82,9 +80,12 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    @objc func tapped2() {
+        print("123")
+    }
     
     func setupView() {
+//        contentView.isUserInteractionEnabled = false
         backgroundColor = .white
         layer.cornerRadius = 10
         addSubview(HotSalesBackgroundView)

@@ -8,16 +8,20 @@
 import UIKit
 
 
+
 class SearchCollectionViewCell: UICollectionViewCell {
     
+
     
-    private let searchImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "iconSearch")
-        return imageView
+    
+ let searchIButton: UIButton = {
+     let button = UIButtonRounded(icon: UIImage(named: "MapBasket"))
+
+        return button
     }()
+    
+
+    
     
     private let search: UISearchBar = {
         let searchBar = UISearchBar()
@@ -48,6 +52,8 @@ class SearchCollectionViewCell: UICollectionViewCell {
         self.contentView.backgroundColor = AppColors.background
         setupView()
         setConstraints()
+//        contentView.isUserInteractionEnabled = false
+        
     }
     
     required init?(coder: NSCoder) {
@@ -59,7 +65,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
     func setupView() {
       
         addSubview(search)
-        addSubview(searchImage)
+        addSubview(searchIButton)
     }
     
     
@@ -74,11 +80,11 @@ class SearchCollectionViewCell: UICollectionViewCell {
         search.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.left.equalToSuperview().offset(32)
-            $0.right.equalTo(searchImage.snp.left)
+            $0.right.equalTo(searchIButton.snp.left)
             $0.bottom.equalToSuperview()
         }
         
-        searchImage.snp.makeConstraints {
+        searchIButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.right.equalToSuperview().inset(40)
             

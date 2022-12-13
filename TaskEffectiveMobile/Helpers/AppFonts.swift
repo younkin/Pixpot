@@ -16,7 +16,7 @@ struct AppFont {
         case regular = "-Regular"
     }
 
-    static func montserratFont(ofSize size: CGFloat = UIFont.systemFontSize, weight: MarkProWeight = .regular) -> UIFont {
+    static func markProFont(ofSize size: CGFloat = UIFont.systemFontSize, weight: MarkProWeight = .regular) -> UIFont {
         return UIFont(name: "MarkPro\(weight.rawValue)", size: size) ?? .systemFont(ofSize: size)
     }
 }
