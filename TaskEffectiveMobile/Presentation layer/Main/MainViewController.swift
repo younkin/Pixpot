@@ -32,13 +32,15 @@ class MainViewController: UIViewController {
         setDelegates()
         setupViews()
         setConstraints()
+
+        
     }
     
     
     private func setupViews() {
         navigationController?.navigationBar.isHidden = true
         view.backgroundColor = AppColors.background
-        title = "Shop"
+//        title = "Shop"
         view.addSubview(collectionView)
         collectionView.register(SelectCollectionViewCell.self, forCellWithReuseIdentifier: "StoriesCollectionViewCell")
         collectionView.register(HotSalesCollectionViewCell.self, forCellWithReuseIdentifier: "PopelarCollectionViewCell")
