@@ -129,7 +129,7 @@
 		74D5FFD029451DC200029FF8 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		74D9A242294912870003C24F /* Button + Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button + Publisher.swift"; sourceTree = "<group>"; };
 		74D9A244294912C60003C24F /* UIContol + Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIContol + Publisher.swift"; sourceTree = "<group>"; };
-		8418E8F0294A4CB800D2E310 /* MarkPro-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MarkPro-Heavy.ttf"; path = "../../../../Downloads/MarkPro-Heavy.ttf"; sourceTree = "<group>"; };
+		8418E8F0294A4CB800D2E310 /* MarkPro-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MarkPro-Heavy.ttf"; path = "../../../MarkPro-Heavy.ttf"; sourceTree = "<group>"; };
 		848A2028294366EC001317C4 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		848A202A294369FC001317C4 /* BasketApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketApiClient.swift; sourceTree = "<group>"; };
 		848A202D29438877001317C4 /* MainEntitie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEntitie.swift; sourceTree = "<group>"; };

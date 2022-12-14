@@ -25,19 +25,9 @@ final class UIButtonRounded: UIButton {
         return label
     }()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
-       
-//        backgroundColor = AppColors.orange
-//        setTitleColor(AppColor.white, for: .normal)
-//        titleLabel?.font = AppFont.markProFont(ofSize: 16, weight: .bold)
-       
-        
-    }
 
 
-    
+
     init(icon: UIImage?) {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
@@ -46,8 +36,6 @@ final class UIButtonRounded: UIButton {
         addSubview(self.icon)
         makeIconConstrate()
     }
-    
-    
     
     init(title: String?) {
         super.init(frame: .zero)
@@ -59,14 +47,6 @@ final class UIButtonRounded: UIButton {
         
     }
     
-    
-    init() {
-        super.init(frame: .zero)
-        translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = AppColors.orange
-   
-        
-    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
