@@ -10,33 +10,23 @@ import Combine
 
 class MainViewController: UIViewController {
     
-    
-
     var mainViewModel: MainViewModel
-    
-
-    
+    var subscriptions = Set<AnyCancellable>()
     private let sections = MockData.shared.pageData
-
-    lazy var storeView = self.view as? MainView
+    lazy var mainView = self.view as? MainView
+    
     
 
-    
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
+        getData()
     }
     
-    
-    
-   
     init(mainViewModel: MainViewModel) {
         self.mainViewModel = mainViewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
     
     // MARK: - View lifecycle
     override func loadView() {
@@ -48,18 +38,26 @@ class MainViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
 
-   
+    func getData() {
+        mainViewModel.getMain()
+        
+        mainViewModel.mainData.sink(receiveCompletion: { completion in
+            switch completion {
+            case .failure(let error):
+                print("Error with \(error)")
+            case .finished:
+                print("Success!")
+            }
+        }, receiveValue: { [weak self] mainData in
+            DispatchQueue.main.async {
+                self?.mainView?.mainData = mainData
+                self?.mainView?.collectionView.reloadData()
+                
+            }
+        }).store(in: &subscriptions)
+    }
     
-    
-
-    
-    
-  
-
-
 }
 
 
