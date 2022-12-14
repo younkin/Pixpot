@@ -22,10 +22,6 @@ class MainViewController: UIViewController {
     
     private let sections = MockData.shared.pageData
     
-   
-    
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()

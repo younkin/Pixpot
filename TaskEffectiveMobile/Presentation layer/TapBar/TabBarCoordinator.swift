@@ -46,7 +46,6 @@ final class TabBarCoordinator: BaseCoordinator {
         let ProfileViewController = ProfileViewController()
         ProfileViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "profile"), tag: 3)
     
-       
     
         
         tabBarController.viewControllers = [mainNavigationController,basketNavigationController,FavoriteViewController,ProfileViewController]

@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - BasketEntitie
 struct BasketEntitie: Codable {
-    let basket: [Products]
+    var basket: [Products]
     let delivery, id: String
     let total: Int
 }

@@ -9,17 +9,21 @@ import Foundation
 import UIKit
 import SnapKit
 import SDWebImage
-import SwiftUI
+import Combine
 
  class BasketTableViewCell: UITableViewCell {
     
+     let tapDeleteBtn = PassthroughSubject<IndexPath?, Never>()
+     var cancellable: AnyCancellable?
+     var index: IndexPath?
+     
     private lazy var nameLabel: UILabel = {
        var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = AppFont.montserratFont(ofSize: 20, weight: .medium)
         label.textColor = AppColors.white
         label.numberOfLines = 0
-        label.text = "dsadasdasdasrewrewrewrewrwerwer"
+        label.text = ""
         label.minimumScaleFactor = 0.2
         label.sizeToFit()
         return label
@@ -31,7 +35,7 @@ import SwiftUI
           label.font = AppFont.montserratFont(ofSize: 25, weight: .medium)
           label.textColor = AppColors.orange
           label.numberOfLines = 0
-          label.text = "$3000"
+          label.text = ""
           label.minimumScaleFactor = 0.2
           label.sizeToFit()
           return label
@@ -47,12 +51,13 @@ import SwiftUI
         return imageView
     }()
      
-     private lazy var trashButton: UIButton = {
+     private(set) lazy var trashButton: UIButton = {
          let button = UIButton()
          button.translatesAutoresizingMaskIntoConstraints = false
          button.backgroundColor = .clear
          button.setImage(UIImage(named: "Trash"), for: .normal)
          button.tintColor = AppColors.grey
+         button.addTarget(self, action: #selector(deleteBtnTpd), for: .touchUpInside)
          return button
      }()
      
@@ -70,23 +75,30 @@ import SwiftUI
         contentView.backgroundColor = .clear
         setupUI()
         
+        quantityButton.cancellable = quantityButton.zeroCount.sink(receiveValue: { [weak self] in
+            self?.tapDeleteBtn.send(self?.index)
+        })
     }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-     
-     override func layoutSubviews() {
-         super.layoutSubviews()
-         
-     }
      
      override func layoutIfNeeded() {
          super.layoutIfNeeded()
          productImage.layer.cornerRadius = productImage.frame.height / 5
          print(productImage.frame.height)
      }
+     
+     func setupCell(title: String, image: String, price: String, indexPath: IndexPath) {
+         nameLabel.text = title
+         priceLabel.text = price
+         productImage.sd_setImage(with: URL(string: image))
+         index = indexPath
+     }
     
+     @objc func deleteBtnTpd() {
+         print("delete")
+         tapDeleteBtn.send(index)
+     }
+     
+     
     private func setupUI() {
         contentView.addSubview(productImage)
         contentView.addSubview(nameLabel)
@@ -130,10 +142,9 @@ import SwiftUI
         }
         
     }
+     
+     required init?(coder: NSCoder) {
+         fatalError("init(coder:) has not been implemented")
+     }
 }
 
-//struct BasketCellPreview: PreviewProvider {
-//    static var previews: some View {
-//        return BasketTableViewCell().preview
-//    }
-//}

@@ -8,9 +8,15 @@
 import Foundation
 import UIKit
 import SnapKit
+import Combine
 
 final class CustomBasketTable: UIView {
     
+    var basket: [Products] = []
+    
+    var deleteProduct: ((IndexPath)->Void)?
+    
+    // MARK: - Private variables
     private(set) lazy var basketTableView: UITableView = {
        var table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
@@ -21,7 +27,6 @@ final class CustomBasketTable: UIView {
         table.backgroundColor = .clear
         return table
     }()
-    //Separator Images
     private lazy var separatorImage1: UIImageView = {
         var imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -38,7 +43,7 @@ final class CustomBasketTable: UIView {
         return imageView
     }()
     
-    //Labels
+
     private lazy var totalLabel: UILabel = {
        var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -57,19 +62,19 @@ final class CustomBasketTable: UIView {
         return label
     }()
     
-    private lazy var totalCostLbl: UILabel = {
+     lazy var totalCostLbl: UILabel = {
        var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "$6,000 us"
+        label.text = "$89,000 us"
         label.font = AppFont.montserratFont(ofSize: 15, weight: .bold)
         label.textColor = AppColors.white
         return label
     }()
     
-    private lazy var delivaryCostLbl: UILabel = {
+     lazy var delivaryCostLbl: UILabel = {
        var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Free"
+        label.text = "Placeholder"
         label.font = AppFont.montserratFont(ofSize: 15, weight: .bold)
         label.textColor = AppColors.white
         return label
@@ -85,6 +90,7 @@ final class CustomBasketTable: UIView {
         return button
     }()
     
+    // MARK: - Initialisers
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -94,10 +100,6 @@ final class CustomBasketTable: UIView {
         backgroundColor = AppColors.darkBlue
         setupUI()
         
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     override func layoutSubviews() {
@@ -162,6 +164,10 @@ final class CustomBasketTable: UIView {
             $0.height.equalTo(54)
         }
     }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 extension CustomBasketTable: UITableViewDelegate {
@@ -175,15 +181,28 @@ extension CustomBasketTable: UITableViewDelegate {
 extension CustomBasketTable: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: BasketTableViewCell  = tableView.dequeueReusableCell(withIdentifier: "BasketCell", for: indexPath) as? BasketTableViewCell else { return UITableViewCell() }
-        return cell
+        print(basket.count)
+        return basket.count
     }
 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell: BasketTableViewCell  = tableView.dequeueReusableCell(withIdentifier: "BasketCell", for: indexPath) as? BasketTableViewCell else { return UITableViewCell() }
+
+        let product = basket[indexPath.row]
+
+        cell.setupCell(title: product.title, image: product.images, price: String(product.price), indexPath: indexPath)
+        
+        cell.cancellable = cell.tapDeleteBtn.sink { [weak self] index in
+            self?.deleteProduct?(index!)
+        }
+            
+        return cell
     
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
 
 }

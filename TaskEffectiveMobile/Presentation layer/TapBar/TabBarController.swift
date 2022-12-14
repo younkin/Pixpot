@@ -28,7 +28,6 @@ final class TabBarController: UITabBarController {
         tabBar.tintColor = AppColors.white
         tabBar.unselectedItemTintColor = AppColors.white
       
-    
         
 }
     func setupBackground() {
@@ -43,8 +42,6 @@ final class TabBarController: UITabBarController {
         rounderLayer.fillColor = AppColors.darkBlue.cgColor
         tabBar.layer.insertSublayer(rounderLayer, at: 0)
     }
-
-
 
    
 }

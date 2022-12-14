@@ -24,9 +24,16 @@ final class BusketCoordinator: BaseCoordinator {
         showBusketScreen()
     }
 
-    // MARK: -
+    // MARK: - 
     private func showBusketScreen() {
         let basketVC = moduleFactory.makeBusketModule()
+        basketVC.basketViewModel.onMainScreen = { [weak self] in
+            basketVC.tabBarController?.selectedIndex = 0
+            basketVC.tabBarController?.tabBar.isHidden = false 
+        }
         router.push(basketVC)
+        
     }
+    
+    
 }

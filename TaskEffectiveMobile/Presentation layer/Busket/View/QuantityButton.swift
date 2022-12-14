@@ -8,16 +8,22 @@
 import Foundation
 import UIKit
 import SnapKit
+import Combine
 
 class QuantityButton: UIControl {
     
     enum ActionState {
        case initial(Int), tap, increase, decrease, start(Int)
    }
-
-   // MARK: - Private Properties
-
-   private var count: Int = 0
+    
+    // MARK: - Private variables
+    private var count: Int = 2 {
+        didSet {
+            if count <= 0 {
+                zeroCount.send()
+            }
+        }
+    }
 
     private lazy var plusButton: UIButton = {
        let button = UIButton()
@@ -47,20 +53,17 @@ class QuantityButton: UIControl {
     
    private lazy var textField: UITextField = {
        let textField = UITextField()
-
        textField.layer.masksToBounds = true
        textField.backgroundColor = .clear
        textField.text = quantity
        textField.textColor = AppColors.white
        textField.font = AppFont.montserratFont(ofSize: 20, weight: .medium)
        textField.textAlignment = .center
-
        textField.delegate = self
        return textField
    }()
 
    // MARK: - Public Properties
-
    let maxCount: Int = 50
     
    var quantity: String {
@@ -68,6 +71,10 @@ class QuantityButton: UIControl {
    }
     
    var onChange: ((String) -> Void)?
+    
+    let zeroCount = PassthroughSubject<Void, Never>()
+    var cancellable: AnyCancellable?
+    var index: IndexPath?
 
    // MARK: - Initialisers
 
@@ -87,22 +94,11 @@ class QuantityButton: UIControl {
        
    }
 
-   required init?(coder: NSCoder) {
-       fatalError("init(coder:) has not been implemented")
-   }
-
-   // MARK: - Lifecycle
-
    override func layoutSubviews() {
        super.layoutSubviews()
        layer.cornerRadius = frame.height / 6
        
    }
-    
-    override func layoutIfNeeded() {
-        super.layoutIfNeeded()
-       
-    }
 
    // MARK: - Private Methods
 
@@ -114,41 +110,24 @@ class QuantityButton: UIControl {
        updateCount(action: .increase)
    }
 
-//   @objc private func buyButtonTapped() {
-//       updateCount(action: .tap)
-//   }
-// swiftlint:disable identifier_name
-//   private func performAnimation(from: UIView, to: UIView) {
-//       UIView.transition(from: from,
-//                         to: to,
-//                         duration: 0.3,
-//                         options: [.transitionCrossDissolve, .showHideTransitionViews, .curveEaseInOut],
-//                         completion: nil)
-//   }
-   // swiftlint:enable identifier_name
-
-    func updateCount(action: ActionState) {
+    private func updateCount(action: ActionState) {
        switch action {
        case .initial(let value):
            if value == 0 {
                count = value
-             //  performAnimation(from: textField, to: buyButton)
            }
        case .tap:
            count += 1
-           //performAnimation(from: buyButton, to: textField)
        case .increase:
            if count >= maxCount { return }
            count += 1
        case .decrease:
            count -= 1
            if count < 1 {
-              // performAnimation(from: textField, to: buyButton)
            }
        case .start(let value):
            if value != 0 {
                count = value
-               //performAnimation(from: buyButton, to: textField)
            }
        }
        textField.text = quantity
@@ -156,13 +135,15 @@ class QuantityButton: UIControl {
        textField.resignFirstResponder()
    }
 
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 extension QuantityButton: UITextFieldDelegate {
 
    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
        return string.isEmpty || Int(string) != nil && textField.text?.count ?? 0 < 3
-
    }
 
    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -183,8 +164,6 @@ extension QuantityButton: UITextFieldDelegate {
    }
     
     private func setupUI() {
-        
-    
         
         minusButton.snp.makeConstraints {
             $0.top.equalToSuperview()

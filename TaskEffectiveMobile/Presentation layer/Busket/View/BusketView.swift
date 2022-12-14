@@ -8,13 +8,14 @@
 import Foundation
 import UIKit
 import SnapKit
+import Combine
 
 final class BasketView: UIView {
     
-    let viewModel: BasketViewModel
+    private lazy var activityIndicator = UIActivityIndicatorView(style: .large)
     
     private(set) lazy var customTable: CustomBasketTable = {
-       var view = CustomBasketTable()
+        var view = CustomBasketTable()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -46,24 +47,35 @@ final class BasketView: UIView {
         return label
     }()
     
-    
-    
-    init(viewModel: BasketViewModel) {
-        self.viewModel = viewModel
+     init() {
         super.init(frame: .zero)
         
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        backgroundColor = AppColors.white
+        setupUI()
     }
     
     override func layoutSubviews() {
-        super.layoutSubviews()
-        backgroundColor = AppColors.white
+       super.layoutSubviews()
+        
         backButton.layer.cornerRadius = backButton.frame.height / 4
         mapButton.layer.cornerRadius = mapButton.frame.height / 4
-        setupUI()
+    }
+    
+    func startingActivityIndicator() {
+        activityIndicator.startAnimating()
+    }
+
+    func stopActivityIndicator() {
+        activityIndicator.stopAnimating()
+        
+    }
+    
+    func isHiddenCollectionView(isLoadingIndicator: Bool) {
+        if isLoadingIndicator {
+            customTable.alpha = 0
+        } else {
+            customTable.alpha = 1
+        }
     }
     
     private func setupUI() {
@@ -71,6 +83,7 @@ final class BasketView: UIView {
         addSubview(customTable)
         addSubview(mapButton)
         addSubview(nameLabel)
+        addSubview(activityIndicator)
         
         backButton.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide).offset(29)
@@ -94,47 +107,14 @@ final class BasketView: UIView {
             $0.bottom.equalTo(customTable.snp.top).offset(-25)
             $0.leading.equalTo(self).offset(21)
         }
-    }
-}
-
-extension BasketView: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return  124
-    }
-  
-}
-
-extension BasketView: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        1
+        
+        activityIndicator.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.centerX.equalToSuperview()
+        }
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: BasketTableViewCell  = tableView.dequeueReusableCell(withIdentifier: "BasketCell", for: indexPath) as? BasketTableViewCell else { return UITableViewCell() }
-        return cell
-    }
-    
-//    private func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        if section == 0 {
-//            return UITableView.automaticDimension
-//        }
-//        return 0
-//    }
-    
-
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-            guard let footer: BusketTableViewFooter = tableView.tableFooterView as? BusketTableViewFooter else {
-                return UIView()
-            }
-            return footer
-    }
-    
-    
-
 }
