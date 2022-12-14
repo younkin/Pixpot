@@ -21,7 +21,8 @@ final class ModuleFactory: ModuleFactoryProtocol {
     private lazy var container = DIContainer()
     
     func makeMainModule() -> MainViewController {
-        return MainViewController()
+        let viewModel = MainViewModel(basketService: container.basketService, mainService: container.mainService, productService: container.productService)
+        return MainViewController(mainViewModel: viewModel)
     }
     
     func makeTabBarModule() -> TabBarController {

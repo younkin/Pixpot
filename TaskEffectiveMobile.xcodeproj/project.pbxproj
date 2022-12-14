@@ -16,6 +16,8 @@
 		741DB46B2941DE5A00F9AC84 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB46A2941DE5A00F9AC84 /* ProfileViewController.swift */; };
 		741DB46E2942367500F9AC84 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 741DB46D2942367500F9AC84 /* SnapKit */; };
 		7460E715294A191B00BE0637 /* String + Exct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460E714294A191B00BE0637 /* String + Exct.swift */; };
+		7460E717294A1C1C00BE0637 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460E716294A1C1C00BE0637 /* MainModel.swift */; };
+		7460E719294A21C400BE0637 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460E718294A21C400BE0637 /* MainView.swift */; };
 		7468D26E2946390B00674261 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7468D26D2946390B00674261 /* RoundedImageView.swift */; };
 		746F3B2A2948E7BC002BC66D /* UIButtonRounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746F3B292948E7BC002BC66D /* UIButtonRounded.swift */; };
 		747321DF2940ED4C008E7EB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747321DE2940ED4C008E7EB0 /* AppDelegate.swift */; };
@@ -94,6 +96,8 @@
 		741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		741DB46A2941DE5A00F9AC84 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7460E714294A191B00BE0637 /* String + Exct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Exct.swift"; sourceTree = "<group>"; };
+		7460E716294A1C1C00BE0637 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		7460E718294A21C400BE0637 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		7468D26D2946390B00674261 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		746F3B292948E7BC002BC66D /* UIButtonRounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonRounded.swift; sourceTree = "<group>"; };
 		747321DB2940ED4C008E7EB0 /* TaskEffectiveMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskEffectiveMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -281,8 +285,10 @@
 				74D5FFCB29451D7100029FF8 /* DATA */,
 				74D5FFC829451D3700029FF8 /* Header */,
 				74D5FFBF29451C3000029FF8 /* Cells */,
+				7460E718294A21C400BE0637 /* MainView.swift */,
 				74732220294108C4008E7EB0 /* MainViewController.swift */,
 				7473222B294139C1008E7EB0 /* MainViewCoordinator.swift */,
+				7460E716294A1C1C00BE0637 /* MainModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -645,6 +651,7 @@
 				74D5FFCA29451D4900029FF8 /* HeaderSupplementaryView.swift in Sources */,
 				747322142940FC5B008E7EB0 /* BaseCoordinator.swift in Sources */,
 				741DB46B2941DE5A00F9AC84 /* ProfileViewController.swift in Sources */,
+				7460E719294A21C400BE0637 /* MainView.swift in Sources */,
 				848A202E29438877001317C4 /* MainEntitie.swift in Sources */,
 				84F1FC29294601FF00FFF63E /* CustomBasketTable.swift in Sources */,
 				747322122940FB02008E7EB0 /* Router.swift in Sources */,
@@ -675,6 +682,7 @@
 				848A204C2943AB1A001317C4 /* BusketView.swift in Sources */,
 				848A20512943AD31001317C4 /* DIContainer.swift in Sources */,
 				848A2032294389C1001317C4 /* ProductEntitie.swift in Sources */,
+				7460E717294A1C1C00BE0637 /* MainModel.swift in Sources */,
 				7473221D2941074A008E7EB0 /* TabBarCoordinator.swift in Sources */,
 				747321DF2940ED4C008E7EB0 /* AppDelegate.swift in Sources */,
 				7473222A294115E2008E7EB0 /* AppFonts.swift in Sources */,
