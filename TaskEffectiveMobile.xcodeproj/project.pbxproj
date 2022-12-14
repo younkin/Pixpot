@@ -18,7 +18,6 @@
 		7460E715294A191B00BE0637 /* String + Exct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460E714294A191B00BE0637 /* String + Exct.swift */; };
 		7460E717294A1C1C00BE0637 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460E716294A1C1C00BE0637 /* MainModel.swift */; };
 		7460E719294A21C400BE0637 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460E718294A21C400BE0637 /* MainView.swift */; };
-		7460E71B294A466E00BE0637 /* MarkPro-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7460E71A294A466E00BE0637 /* MarkPro-Heavy.ttf */; };
 		7468D26E2946390B00674261 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7468D26D2946390B00674261 /* RoundedImageView.swift */; };
 		746F3B2A2948E7BC002BC66D /* UIButtonRounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746F3B292948E7BC002BC66D /* UIButtonRounded.swift */; };
 		747321DF2940ED4C008E7EB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747321DE2940ED4C008E7EB0 /* AppDelegate.swift */; };
@@ -47,6 +46,7 @@
 		74D5FFD129451DC200029FF8 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5FFD029451DC200029FF8 /* MockData.swift */; };
 		74D9A243294912870003C24F /* Button + Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D9A242294912870003C24F /* Button + Publisher.swift */; };
 		74D9A245294912C60003C24F /* UIContol + Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D9A244294912C60003C24F /* UIContol + Publisher.swift */; };
+		8418E8F1294A4CB800D2E310 /* MarkPro-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8418E8F0294A4CB800D2E310 /* MarkPro-Heavy.ttf */; };
 		848A2029294366EC001317C4 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A2028294366EC001317C4 /* RequestBuilder.swift */; };
 		848A202B294369FC001317C4 /* BasketApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A202A294369FC001317C4 /* BasketApiClient.swift */; };
 		848A202E29438877001317C4 /* MainEntitie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A202D29438877001317C4 /* MainEntitie.swift */; };
@@ -97,7 +97,6 @@
 		7460E714294A191B00BE0637 /* String + Exct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Exct.swift"; sourceTree = "<group>"; };
 		7460E716294A1C1C00BE0637 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		7460E718294A21C400BE0637 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		7460E71A294A466E00BE0637 /* MarkPro-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MarkPro-Heavy.ttf"; path = "../../../MarkPro-Heavy.ttf"; sourceTree = "<group>"; };
 		7468D26D2946390B00674261 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		746F3B292948E7BC002BC66D /* UIButtonRounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonRounded.swift; sourceTree = "<group>"; };
 		747321DB2940ED4C008E7EB0 /* TaskEffectiveMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskEffectiveMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +129,7 @@
 		74D5FFD029451DC200029FF8 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		74D9A242294912870003C24F /* Button + Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button + Publisher.swift"; sourceTree = "<group>"; };
 		74D9A244294912C60003C24F /* UIContol + Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIContol + Publisher.swift"; sourceTree = "<group>"; };
+		8418E8F0294A4CB800D2E310 /* MarkPro-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MarkPro-Heavy.ttf"; path = "../../../../Downloads/MarkPro-Heavy.ttf"; sourceTree = "<group>"; };
 		848A2028294366EC001317C4 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		848A202A294369FC001317C4 /* BasketApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketApiClient.swift; sourceTree = "<group>"; };
 		848A202D29438877001317C4 /* MainEntitie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEntitie.swift; sourceTree = "<group>"; };
@@ -452,7 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				848A20432943AA1C001317C4 /* MarkPro-Bold.ttf */,
-				7460E71A294A466E00BE0637 /* MarkPro-Heavy.ttf */,
+				8418E8F0294A4CB800D2E310 /* MarkPro-Heavy.ttf */,
 				848A20442943AA1C001317C4 /* MarkPro-Medium.ttf */,
 				848A20422943AA1C001317C4 /* MarkPro-Regular.ttf */,
 				747321E72940ED4E008E7EB0 /* Assets.xcassets */,
@@ -608,10 +608,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7460E71B294A466E00BE0637 /* MarkPro-Heavy.ttf in Resources */,
 				747321EB2940ED4E008E7EB0 /* LaunchScreen.storyboard in Resources */,
 				848A20462943AA1C001317C4 /* MarkPro-Regular.ttf in Resources */,
 				848A20472943AA1C001317C4 /* MarkPro-Bold.ttf in Resources */,
+				8418E8F1294A4CB800D2E310 /* MarkPro-Heavy.ttf in Resources */,
 				747321E82940ED4E008E7EB0 /* Assets.xcassets in Resources */,
 				848A20482943AA1C001317C4 /* MarkPro-Medium.ttf in Resources */,
 			);

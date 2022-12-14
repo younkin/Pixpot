@@ -62,6 +62,23 @@ final class BusketViewController: UIViewController {
         })
         .store(in: &subscriptions)
         
+        basketViewModel.basket.sink(receiveCompletion: { completion in
+                    switch completion {
+                    case .failure(let error):
+                        print("Error with \(error)")
+                    case .finished:
+                        print("Success!")
+                    }
+                }, receiveValue: { [weak self] basket in
+                    DispatchQueue.main.async {
+                        self?.basketView?.customTable.totalCostLbl.text = String(basket.total)
+                        self?.basketView?.customTable.delivaryCostLbl.text = basket.delivery
+                        self?.basketView?.customTable.basket = basket.basket
+                        self?.basketView?.customTable.basketTableView.reloadData()
+                    }
+                }).store(in: &subscriptions)
+        
+        
         basketViewModel.basketService.basketSubject.sink(receiveCompletion: { completion in
             switch completion {
             case .failure(let error):
@@ -71,10 +88,6 @@ final class BusketViewController: UIViewController {
             }
         }, receiveValue: { [weak self] basket in
             DispatchQueue.main.async {
-                self?.basketView?.customTable.totalCostLbl.text = String(basket.total)
-                self?.basketView?.customTable.delivaryCostLbl.text = basket.delivery
-                self?.basketView?.customTable.basket = basket.basket
-                self?.basketView?.customTable.basketTableView.reloadData()
                 guard let item = self?.navigationController?.tabBarController?.tabBar.items?[1] else { return }
                 if basket.basket.count <= 0 {
                     item.badgeValue = nil

@@ -31,9 +31,10 @@ final class BasketViewModel {
                     print("Func getBasket success!")
                     self.isLoadingIndicator.send(false)
                 }
-            }, receiveValue: { _ in
+            }, receiveValue: { [weak self] basket in
+               // self?.basketService.basketSubject.send(basket)
+                self?.basket.send(basket)
             }).store(in: &cancellable)
-        
     }
     
     func removeProduct(at index: Int) {

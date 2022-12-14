@@ -24,8 +24,8 @@ final class BasketService: BasketServiceProtocol {
     
     func getBasket() -> AnyPublisher<BasketEntitie, Error> {
        return  apiClient.getBasket()
-            .map { basket in
-                self.basketSubject.send(basket)
+            .map { [weak self] basket in
+                self?.basketSubject.send(basket)
                 return basket
             }
             .eraseToAnyPublisher()
