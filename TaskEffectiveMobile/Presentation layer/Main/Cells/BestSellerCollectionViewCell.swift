@@ -86,10 +86,12 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
     
     
     func setupView() {
+        self.isUserInteractionEnabled = true
         clipsToBounds = true
         layer.cornerRadius = 10
         backgroundColor = AppColors.white
         addSubview (bestSellerImage)
+        bestSellerImage.isUserInteractionEnabled = true
         bestSellerImage.addSubview(isFavorite)
         addSubview (productDiscription)
         addSubview (discountedPrice)

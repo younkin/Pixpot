@@ -89,6 +89,7 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
         backgroundColor = .white
         layer.cornerRadius = 10
         addSubview(HotSalesBackgroundView)
+        HotSalesBackgroundView.isUserInteractionEnabled = true
         HotSalesBackgroundView.addSubview(saleButton)
         HotSalesBackgroundView.addSubview(productSmallTitle)
         HotSalesBackgroundView.addSubview(productBigTitle)
