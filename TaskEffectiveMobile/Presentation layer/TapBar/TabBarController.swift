@@ -19,6 +19,7 @@ final class TabBarController: UITabBarController {
     }
     
     
+    
     func setup() {
         
 
@@ -27,8 +28,7 @@ final class TabBarController: UITabBarController {
         
         tabBar.tintColor = AppColors.white
         tabBar.unselectedItemTintColor = AppColors.white
-      
-        
+
 }
     func setupBackground() {
         let positionX: CGFloat = 0

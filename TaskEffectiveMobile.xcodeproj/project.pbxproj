@@ -15,7 +15,11 @@
 		741DB4692941DE4700F9AC84 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */; };
 		741DB46B2941DE5A00F9AC84 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB46A2941DE5A00F9AC84 /* ProfileViewController.swift */; };
 		741DB46E2942367500F9AC84 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 741DB46D2942367500F9AC84 /* SnapKit */; };
+		7460E715294A191B00BE0637 /* String + Exct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460E714294A191B00BE0637 /* String + Exct.swift */; };
+		7460E717294A1C1C00BE0637 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460E716294A1C1C00BE0637 /* MainModel.swift */; };
+		7460E719294A21C400BE0637 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460E718294A21C400BE0637 /* MainView.swift */; };
 		7468D26E2946390B00674261 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7468D26D2946390B00674261 /* RoundedImageView.swift */; };
+		746F3B2A2948E7BC002BC66D /* UIButtonRounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746F3B292948E7BC002BC66D /* UIButtonRounded.swift */; };
 		747321DF2940ED4C008E7EB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747321DE2940ED4C008E7EB0 /* AppDelegate.swift */; };
 		747321E12940ED4C008E7EB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747321E02940ED4C008E7EB0 /* SceneDelegate.swift */; };
 		747321E32940ED4C008E7EB0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747321E22940ED4C008E7EB0 /* TabBarController.swift */; };
@@ -40,8 +44,8 @@
 		74D5FFCD29451D9700029FF8 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5FFCC29451D9700029FF8 /* ListItem.swift */; };
 		74D5FFCF29451DAD00029FF8 /* ListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5FFCE29451DAD00029FF8 /* ListSection.swift */; };
 		74D5FFD129451DC200029FF8 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5FFD029451DC200029FF8 /* MockData.swift */; };
-		84088C442947D68C00E06066 /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84088C432947D68C00E06066 /* UIControl.swift */; };
-		84088C462947D6E700E06066 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84088C452947D6E700E06066 /* UIButton.swift */; };
+		74D9A243294912870003C24F /* Button + Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D9A242294912870003C24F /* Button + Publisher.swift */; };
+		74D9A245294912C60003C24F /* UIContol + Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D9A244294912C60003C24F /* UIContol + Publisher.swift */; };
 		848A2029294366EC001317C4 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A2028294366EC001317C4 /* RequestBuilder.swift */; };
 		848A202B294369FC001317C4 /* BasketApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A202A294369FC001317C4 /* BasketApiClient.swift */; };
 		848A202E29438877001317C4 /* MainEntitie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A202D29438877001317C4 /* MainEntitie.swift */; };
@@ -90,7 +94,11 @@
 		741DB4652941D3F800F9AC84 /* BusketCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusketCoordinator.swift; sourceTree = "<group>"; };
 		741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		741DB46A2941DE5A00F9AC84 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7460E714294A191B00BE0637 /* String + Exct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Exct.swift"; sourceTree = "<group>"; };
+		7460E716294A1C1C00BE0637 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		7460E718294A21C400BE0637 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		7468D26D2946390B00674261 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
+		746F3B292948E7BC002BC66D /* UIButtonRounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonRounded.swift; sourceTree = "<group>"; };
 		747321DB2940ED4C008E7EB0 /* TaskEffectiveMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskEffectiveMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		747321DE2940ED4C008E7EB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		747321E02940ED4C008E7EB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,8 +127,8 @@
 		74D5FFCC29451D9700029FF8 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		74D5FFCE29451DAD00029FF8 /* ListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSection.swift; sourceTree = "<group>"; };
 		74D5FFD029451DC200029FF8 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
-		84088C432947D68C00E06066 /* UIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControl.swift; sourceTree = "<group>"; };
-		84088C452947D6E700E06066 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		74D9A242294912870003C24F /* Button + Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button + Publisher.swift"; sourceTree = "<group>"; };
+		74D9A244294912C60003C24F /* UIContol + Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIContol + Publisher.swift"; sourceTree = "<group>"; };
 		848A2028294366EC001317C4 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		848A202A294369FC001317C4 /* BasketApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketApiClient.swift; sourceTree = "<group>"; };
 		848A202D29438877001317C4 /* MainEntitie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEntitie.swift; sourceTree = "<group>"; };
@@ -217,6 +225,14 @@
 			path = ImageViews;
 			sourceTree = "<group>";
 		};
+		746F3B282948E789002BC66D /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				746F3B292948E7BC002BC66D /* UIButtonRounded.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		747321D22940ED4C008E7EB0 = {
 			isa = PBXGroup;
 			children = (
@@ -267,8 +283,10 @@
 				74D5FFCB29451D7100029FF8 /* DATA */,
 				74D5FFC829451D3700029FF8 /* Header */,
 				74D5FFBF29451C3000029FF8 /* Cells */,
+				7460E718294A21C400BE0637 /* MainView.swift */,
 				74732220294108C4008E7EB0 /* MainViewController.swift */,
 				7473222B294139C1008E7EB0 /* MainViewCoordinator.swift */,
+				7460E716294A1C1C00BE0637 /* MainModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -295,6 +313,7 @@
 		7473222229411526008E7EB0 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				746F3B282948E789002BC66D /* Buttons */,
 				7468D26C2946387200674261 /* ImageViews */,
 				7473222329411532008E7EB0 /* NavigationControllers */,
 			);
@@ -312,6 +331,7 @@
 		7473222629411591008E7EB0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				74D9A2412949125D0003C24F /* Exstensions */,
 				74732227294115B0008E7EB0 /* AppColors.swift */,
 				74732229294115E2008E7EB0 /* AppFonts.swift */,
 			);
@@ -377,6 +397,16 @@
 				74D5FFD029451DC200029FF8 /* MockData.swift */,
 			);
 			path = DATA;
+			sourceTree = "<group>";
+		};
+		74D9A2412949125D0003C24F /* Exstensions */ = {
+			isa = PBXGroup;
+			children = (
+				74D9A242294912870003C24F /* Button + Publisher.swift */,
+				74D9A244294912C60003C24F /* UIContol + Publisher.swift */,
+				7460E714294A191B00BE0637 /* String + Exct.swift */,
+			);
+			path = Exstensions;
 			sourceTree = "<group>";
 		};
 		848A202629436687001317C4 /* ApiClient */ = {
@@ -620,12 +650,14 @@
 				74D5FFCA29451D4900029FF8 /* HeaderSupplementaryView.swift in Sources */,
 				747322142940FC5B008E7EB0 /* BaseCoordinator.swift in Sources */,
 				741DB46B2941DE5A00F9AC84 /* ProfileViewController.swift in Sources */,
+				7460E719294A21C400BE0637 /* MainView.swift in Sources */,
 				848A202E29438877001317C4 /* MainEntitie.swift in Sources */,
 				84F1FC29294601FF00FFF63E /* CustomBasketTable.swift in Sources */,
 				747322122940FB02008E7EB0 /* Router.swift in Sources */,
 				848A203D29438D47001317C4 /* ProductService.swift in Sources */,
 				747322192941065A008E7EB0 /* CoordinatorFactory.swift in Sources */,
 				848A203929438D26001317C4 /* BasketService.swift in Sources */,
+				746F3B2A2948E7BC002BC66D /* UIButtonRounded.swift in Sources */,
 				741DB4602941D3BC00F9AC84 /* FavoriteViewController.swift in Sources */,
 				84F1FC2529450DD800FFF63E /* QuantityButton.swift in Sources */,
 				84088C462947D6E700E06066 /* UIButton.swift in Sources */,
@@ -633,12 +665,15 @@
 				74D5FFD129451DC200029FF8 /* MockData.swift in Sources */,
 				74D5FFC729451D2B00029FF8 /* BestSellerCollectionViewCell.swift in Sources */,
 				7473222529411568008E7EB0 /* MainNavigationController.swift in Sources */,
+				7460E715294A191B00BE0637 /* String + Exct.swift in Sources */,
+				74D9A245294912C60003C24F /* UIContol + Publisher.swift in Sources */,
 				848A2029294366EC001317C4 /* RequestBuilder.swift in Sources */,
 				848A204E2943AB25001317C4 /* BusketViewModel.swift in Sources */,
 				74732221294108C4008E7EB0 /* MainViewController.swift in Sources */,
 				747321E32940ED4C008E7EB0 /* TabBarController.swift in Sources */,
 				741DB4622941D3CB00F9AC84 /* FavoriteCoordinator.swift in Sources */,
 				7473221B294106EE008E7EB0 /* AppCoordinator.swift in Sources */,
+				74D9A243294912870003C24F /* Button + Publisher.swift in Sources */,
 				74D5FFC529451D1200029FF8 /* HotSalesCollectionViewCell.swift in Sources */,
 				848A203629438BE8001317C4 /* MainApiClient.swift in Sources */,
 				74D5FFCF29451DAD00029FF8 /* ListSection.swift in Sources */,
@@ -647,6 +682,7 @@
 				848A204C2943AB1A001317C4 /* BusketView.swift in Sources */,
 				848A20512943AD31001317C4 /* DIContainer.swift in Sources */,
 				848A2032294389C1001317C4 /* ProductEntitie.swift in Sources */,
+				7460E717294A1C1C00BE0637 /* MainModel.swift in Sources */,
 				7473221D2941074A008E7EB0 /* TabBarCoordinator.swift in Sources */,
 				747321DF2940ED4C008E7EB0 /* AppDelegate.swift in Sources */,
 				7473222A294115E2008E7EB0 /* AppFonts.swift in Sources */,

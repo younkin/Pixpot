@@ -57,7 +57,7 @@ class QuantityButton: UIControl {
        textField.backgroundColor = .clear
        textField.text = quantity
        textField.textColor = AppColors.white
-       textField.font = AppFont.montserratFont(ofSize: 20, weight: .medium)
+       textField.font = AppFont.markProFont(ofSize: 20, weight: .medium)
        textField.textAlignment = .center
        textField.delegate = self
        return textField

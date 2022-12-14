@@ -20,7 +20,7 @@ import Combine
     private lazy var nameLabel: UILabel = {
        var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = AppFont.montserratFont(ofSize: 20, weight: .medium)
+        label.font = AppFont.markProFont(ofSize: 20, weight: .medium)
         label.textColor = AppColors.white
         label.numberOfLines = 0
         label.text = ""
@@ -32,7 +32,7 @@ import Combine
      private lazy var priceLabel: UILabel = {
          var label = UILabel()
           label.translatesAutoresizingMaskIntoConstraints = false
-          label.font = AppFont.montserratFont(ofSize: 25, weight: .medium)
+          label.font = AppFont.markProFont(ofSize: 25, weight: .medium)
           label.textColor = AppColors.orange
           label.numberOfLines = 0
           label.text = ""

@@ -48,7 +48,7 @@ final class CustomBasketTable: UIView {
        var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Total"
-        label.font = AppFont.montserratFont(ofSize: 15, weight: .medium)
+        label.font = AppFont.markProFont(ofSize: 15, weight: .medium)
         label.textColor = AppColors.white
         return label
     }()
@@ -57,7 +57,7 @@ final class CustomBasketTable: UIView {
        var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Delivary"
-        label.font = AppFont.montserratFont(ofSize: 15, weight: .medium)
+        label.font = AppFont.markProFont(ofSize: 15, weight: .medium)
         label.textColor = AppColors.white
         return label
     }()
@@ -65,8 +65,11 @@ final class CustomBasketTable: UIView {
      lazy var totalCostLbl: UILabel = {
        var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+
         label.text = "$89,000 us"
-        label.font = AppFont.montserratFont(ofSize: 15, weight: .bold)
+
+        label.font = AppFont.markProFont(ofSize: 15, weight: .bold)
+
         label.textColor = AppColors.white
         return label
     }()
@@ -74,8 +77,11 @@ final class CustomBasketTable: UIView {
      lazy var delivaryCostLbl: UILabel = {
        var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+
         label.text = "Placeholder"
-        label.font = AppFont.montserratFont(ofSize: 15, weight: .bold)
+
+        label.font = AppFont.markProFont(ofSize: 15, weight: .bold)
+
         label.textColor = AppColors.white
         return label
     }()
@@ -86,7 +92,7 @@ final class CustomBasketTable: UIView {
         button.setTitle("Checkout", for: .normal)
         button.titleLabel?.textColor = AppColors.white
         button.backgroundColor = AppColors.orange
-        button.titleLabel?.font = AppFont.montserratFont(ofSize: 20, weight: .bold)
+        button.titleLabel?.font = AppFont.markProFont(ofSize: 20, weight: .bold)
         return button
     }()
     
