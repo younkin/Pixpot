@@ -6,31 +6,20 @@
 //
 
 import UIKit
+import SDWebImage
 
 
 class HotSalesCollectionViewCell: UICollectionViewCell {
     
-    
-    
-    
-    
-    
-    
-    
-    
     private let HotSalesBackgroundView: UIImageView = {
         let imageView = UIImageView()
-//        imageView.contentMode = .scaleAspectFill
         imageView.contentMode = .scaleToFill
-//        ImageView.image = UIImage(named: "categoryBurger")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     let saleIcon: UIButton = {
         let button = UIButtonRounded(title: "New")
-//        let button = UIButtonRounded()
-//        let button = UIButtonRounded(icon: UIImage(named: "MapBasket"))
         return button
     }()
     
@@ -46,17 +35,17 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
     }()
     
     
- let saleButton: UIButton = {
+    let saleButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = AppColors.white
         button.setTitle("Buy Now", for: .normal)
         button.setTitleColor(AppColors.black, for: .normal)
         button.layer.cornerRadius = 5
-     button.addTarget(self, action: #selector(tapped2), for: .touchUpInside)
+        button.addTarget(self, action: #selector(tapped2), for: .touchUpInside)
         return button
         
     }()
-
+    
     private let productSmallTitle: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -65,9 +54,6 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
         label.text = "super mega rapido"
         return label
     }()
-    
-    
-    
     
     override init (frame: CGRect) {
         super.init(frame: frame)
@@ -85,7 +71,6 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
     }
     
     func setupView() {
-//        contentView.isUserInteractionEnabled = false
         backgroundColor = .white
         layer.cornerRadius = 10
         addSubview(HotSalesBackgroundView)
@@ -94,21 +79,35 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
         HotSalesBackgroundView.addSubview(productSmallTitle)
         HotSalesBackgroundView.addSubview(productBigTitle)
         HotSalesBackgroundView.addSubview(saleIcon)
-        
-        
-  
-//        addSubview(categoryLabel)
     }
     
     
-    func configureCell(categoryName: String, imageName:String) {
-       
-        HotSalesBackgroundView.image = UIImage(named: imageName)
+    func configureCell(title: String,
+                       subtitle: String,
+                       image:String,
+                       isNew: Bool,
+                       IsBuy : Bool,
+                       id: Int) {
+        
+        HotSalesBackgroundView.sd_setImage(with: URL(string: image))
+        self.productSmallTitle.text = subtitle
+        self.productBigTitle.text = title
+        
+        if isNew {
+            saleIcon.isHidden = false
+        } else {
+            saleIcon.isHidden = true
+        }
+        
+        if id == 2 {
+            self.productBigTitle.text = ""
+        }
+           
     }
     
     
     func setConstraints() {
-       
+        
         HotSalesBackgroundView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.left.equalToSuperview()
@@ -120,8 +119,6 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
             $0.left.equalTo(HotSalesBackgroundView.snp.left).offset(24)
             $0.top.equalTo(HotSalesBackgroundView.snp.top).inset(14)
             $0.height.width.equalTo(32)
-            
-
         }
         
         saleButton.snp.makeConstraints {
@@ -129,23 +126,17 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
             $0.bottom.equalTo(HotSalesBackgroundView.snp.bottom).inset(34)
             $0.width.equalTo(98)
             $0.height.equalTo(23)
-
+            
         }
         
         productSmallTitle.snp.makeConstraints {
             $0.left.equalTo(HotSalesBackgroundView.snp.left).offset(35)
             $0.bottom.equalTo(saleButton.snp.top).offset(-26)
-//            $0.width.equalTo(98)
-//            $0.height.equalTo(23)
-
         }
         
         productBigTitle.snp.makeConstraints {
             $0.left.equalTo(HotSalesBackgroundView.snp.left).offset(35)
             $0.bottom.equalTo(productSmallTitle.snp.top).offset(-5)
-//            $0.width.equalTo(98)
-//            $0.height.equalTo(23)
-
         }
         
         

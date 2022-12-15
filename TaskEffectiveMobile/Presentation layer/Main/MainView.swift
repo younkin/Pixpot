@@ -10,8 +10,12 @@ import UIKit
 
 
 final class MainView: UIView {
-//MARK: outlets
-    private let collectionView: UICollectionView = {
+    //MARK: outlets
+    
+    var mainData: MainEntitie?
+    
+    
+    let collectionView: UICollectionView = {
         let collectionViewLayout = UICollectionViewLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         collectionView.backgroundColor = .none
@@ -23,6 +27,8 @@ final class MainView: UIView {
     
     
     private let sections = MockData.shared.pageData
+    
+    
     // MARK: - Init
     init() {
         super.init(frame: .zero)
@@ -30,15 +36,15 @@ final class MainView: UIView {
         setupViews()
         setConstraints()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     // MARK: - View lifecycle
     override func layoutSubviews() {
         super.layoutSubviews()
-      
+        
     }
     
     
@@ -46,7 +52,7 @@ final class MainView: UIView {
     private func setupViews() {
         
         backgroundColor = AppColors.background
-
+        
         addSubview(collectionView)
         collectionView.register(SelectCollectionViewCell.self, forCellWithReuseIdentifier: "StoriesCollectionViewCell")
         collectionView.register(HotSalesCollectionViewCell.self, forCellWithReuseIdentifier: "PopelarCollectionViewCell")
@@ -77,7 +83,7 @@ extension MainView {
             guard let self = self else {return nil}
             let section = self.sections[sectionIndex]
             switch section {
-
+                
             case .selectCategory(_):
                 return self.createSaleSection()
             case .search(_):
@@ -87,7 +93,7 @@ extension MainView {
             case .bestSellers(_):
                 return self.createBestSellersSection()
             }
-       
+            
             
         }
     }
@@ -100,7 +106,7 @@ extension MainView {
         section.orthogonalScrollingBehavior = behavior
         section.interGroupSpacing = interGroupSpacing
         section.boundarySupplementaryItems = supplementaryItem
-     return section
+        return section
         
     }
     
@@ -108,13 +114,13 @@ extension MainView {
     private func createSaleSection() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(0.25),
                                                             heightDimension: .fractionalHeight(1)))
-   
+        
         item.contentInsets = .init(top: 0, leading: 10, bottom: 10, trailing: 10)
-     
+        
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1),
                                                                          heightDimension: .fractionalHeight(0.15)),
-                                                                          subitems: [item])
-//        group.interItemSpacing = .fixed(10)
+                                                       subitems: [item])
+        //        group.interItemSpacing = .fixed(10)
         group.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
         let section = createlayoutSection(group: group,
                                           behavior: .continuousGroupLeadingBoundary,
@@ -135,7 +141,7 @@ extension MainView {
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1),
                                                                          heightDimension: .absolute(70)),
-                                                                          subitems: [item])
+                                                       subitems: [item])
         
         let section = createlayoutSection(group: group,
                                           behavior: .none,
@@ -159,13 +165,13 @@ extension MainView {
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1),
                                                                          heightDimension: .fractionalHeight(0.25)),
-                                                                          subitems: [item])
+                                                       subitems: [item])
         
         let section = createlayoutSection(group: group,
                                           behavior: .groupPaging,
                                           interGroupSpacing: 0,
                                           supplementaryItem: [supplementaryHeaderItem()]
-                                        )
+        )
         
         section.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
         
@@ -178,17 +184,17 @@ extension MainView {
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(0.5),
                                                             heightDimension: .fractionalHeight(1)))
         item.contentInsets = .init(top: 5, leading: 5, bottom: 5, trailing: 5)
-       
+        
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1),
                                                                          heightDimension: .fractionalHeight(0.3)),
-                                                                          subitems: [item])
-//        group.interItemSpacing = .flexible(1)
+                                                       subitems: [item])
+        //        group.interItemSpacing = .flexible(1)
         group.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
         let section = createlayoutSection(group: group,
                                           behavior: .none,
                                           interGroupSpacing: 0,
                                           supplementaryItem: [supplementaryHeaderItem()]
-                                        )
+        )
         
         section.contentInsets = .init(top: 0, leading: 10, bottom: 0, trailing: 10)
         
@@ -229,7 +235,20 @@ extension MainView: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        sections[section].count
+        
+        switch section {
+        case 0:
+            return sections[section].count
+        case 1:
+            return sections[section].count
+        case 2:
+            return mainData?.homeStore.count ?? 0
+        case 3:
+            return mainData?.bestSeller.count ?? 0
+        default:
+            return 0
+        }
+        
     }
     
     
@@ -240,50 +259,50 @@ extension MainView: UICollectionViewDataSource {
             
         case .selectCategory(let sale):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoriesCollectionViewCell", for: indexPath) as? SelectCollectionViewCell
-            
+                    
             else {
                 return UICollectionViewCell()
             }
             cell.configureCell(titleName: sale[indexPath.row].title, iconLink: sale[indexPath.row].image)
-           
+            
             return cell
             
             
         case .search(let search):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell
-            
+                    
             else {
                 return UICollectionViewCell()
             }
             cell.configureCell(imageName: search[indexPath.row].image)
-        
-//            cell.bringSubviewToFront(cell.searchIButton)
             return cell
             
             
             
         case .hotSales(let category):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopelarCollectionViewCell", for: indexPath) as? HotSalesCollectionViewCell
-            
+                    
             else {
                 return UICollectionViewCell()
             }
-            cell.configureCell(categoryName: category[indexPath.row].title, imageName: category[indexPath.row].image)
-            cell.bringSubviewToFront(cell.saleIcon)
+            guard let data = self.mainData?.homeStore[indexPath.row] else { return UICollectionViewCell() }
+            
+            
+            cell.configureCell(title: data.title, subtitle: data.subtitle, image: data.picture, isNew: data.isNew ?? false, IsBuy: data.isBuy, id: data.id)
             return cell
             
             
-        case .bestSellers(let example):
+        case .bestSellers(_):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ComingSoonCollectionViewCell", for: indexPath) as? BestSellerCollectionViewCell
-            
+                    
             else {
                 return UICollectionViewCell()
             }
-            cell.configureCell(imageName: example[indexPath.row].image)
+            //            mainData?.bestSeller[0].
+            guard let data = self.mainData?.bestSeller[indexPath.row] else { return UICollectionViewCell() }
+            
+            cell.configureCell(imageName: data.picture, fullPrice: data.priceWithoutDiscount, priceWithDiscount: data.priceWithoutDiscount, title: data.title, isFavorite: data.isFavorites)
             return cell
-            
-            
-  
         }
     }
     
@@ -291,12 +310,7 @@ extension MainView: UICollectionViewDataSource {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderSupplementaryView", for: indexPath) as! HeaderSupplementaryView
-            
-            
             header.configureHeader(categoryname: sections[indexPath.section].title, buttonTitle: "see more")
-            
-            
-            
             return header
         default:
             return UICollectionReusableView()
@@ -315,15 +329,10 @@ extension MainView {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-
-        
             collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
-            
-            
-        
         ])
         
     }

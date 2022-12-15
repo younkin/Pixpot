@@ -11,16 +11,14 @@ import UIKit
 
 class SearchCollectionViewCell: UICollectionViewCell {
     
-
     
     
- let searchIButton: UIButton = {
-     let button = UIButtonRounded(icon: UIImage(named: "MapBasket"))
-
+    
+    let searchIButton: UIButton = {
+        let button = UIButtonRounded(icon: UIImage(named: "MapBasket"))
+        
         return button
     }()
-    
-
     
     
     private let search: UISearchBar = {
@@ -32,19 +30,15 @@ class SearchCollectionViewCell: UICollectionViewCell {
         searchBar.searchTextField.borderStyle = .none
         searchBar.backgroundColor = AppColors.background
         searchBar.barTintColor = AppColors.background
-
         searchBar.backgroundColor = AppColors.background
         searchBar.backgroundImage = .none
-
         searchBar.layer.backgroundColor = AppColors.background.cgColor
-
         searchBar.layer.borderColor = AppColors.background.cgColor
-     
         return searchBar
     }()
-
     
-
+    
+    
     
     
     override init (frame: CGRect) {
@@ -52,8 +46,6 @@ class SearchCollectionViewCell: UICollectionViewCell {
         self.contentView.backgroundColor = AppColors.background
         setupView()
         setConstraints()
-//        contentView.isUserInteractionEnabled = false
-        
     }
     
     required init?(coder: NSCoder) {
@@ -63,7 +55,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
     
     
     func setupView() {
-      
+        searchIButton.isEnabled = false
         addSubview(search)
         addSubview(searchIButton)
     }
@@ -71,12 +63,11 @@ class SearchCollectionViewCell: UICollectionViewCell {
     
     func configureCell(imageName:String) {
         
-//        searchView.image = UIImage(named: imageName)
     }
     
     
     func setConstraints() {
-      
+        
         search.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.left.equalToSuperview().offset(32)
@@ -87,17 +78,12 @@ class SearchCollectionViewCell: UICollectionViewCell {
         searchIButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.right.equalToSuperview().inset(40)
-            
             $0.width.equalTo(40)
             $0.height.equalTo(40)
-        
+            
         }
         
     }
-    
-    
-    
-    
     
     
     
