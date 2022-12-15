@@ -16,6 +16,8 @@ final class CustomBasketTable: UIView {
     
     var deleteProduct: ((IndexPath)->Void)?
     
+    let cellTouch = PassthroughSubject<Void, Never>()
+    
     // MARK: - Private variables
     private(set) lazy var basketTableView: UITableView = {
        var table = UITableView()
@@ -178,13 +180,19 @@ final class CustomBasketTable: UIView {
 
 extension CustomBasketTable: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return  124
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        cellTouch.send()
+        tableView.deselectRow(at: indexPath, animated: false)
+        
     }
   
 }
 
 extension CustomBasketTable: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return  124
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(basket.count)
@@ -210,5 +218,5 @@ extension CustomBasketTable: UITableViewDataSource {
         return true
     }
     
-
+    
 }

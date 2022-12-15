@@ -14,6 +14,7 @@ protocol ModuleFactoryProtocol {
     func makeFavoriteModule() -> FavoriteViewController
     func makeBusketModule() -> BusketViewController
     func makeProfileModule() -> ProfileViewController
+    func makeProductModule() -> ProductViewController
 }
 
 final class ModuleFactory: ModuleFactoryProtocol {
@@ -40,8 +41,9 @@ final class ModuleFactory: ModuleFactoryProtocol {
         return ProfileViewController()
     }
     
-    
-    
-    
+    func makeProductModule() -> ProductViewController {
+        let viewModel = ProductViewModel(service: container.productService)
+        return ProductViewController(viewModel: viewModel)
+    }
 }
 

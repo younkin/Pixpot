@@ -107,6 +107,10 @@ final class BusketViewController: UIViewController {
                 self?.basketView?.customTable.basketTableView.reloadData()
             }
         }
+        
+        basketView?.customTable.cellTouch.sink(receiveValue: { [weak self] in
+            self?.basketViewModel.onProductScreen?()
+        }).store(in: &subscriptions)
     }
     
     required init?(coder: NSCoder) {

@@ -43,12 +43,6 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
         return ProfileCoordinator(router: router, moduleFactory: moduleFactory)
     }
     
-    
-    
-    
-    
-    
-    
     func makeApplicationCoordinator(with router: Router) -> AppCoordinator {
         return AppCoordinator(router: router, coordinatorFactory: self)
     }
@@ -57,5 +51,4 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
         return TabBarCoordinator(router: router, coordinatorFactory: self)
     }
 
-    
 }

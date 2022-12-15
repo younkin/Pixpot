@@ -13,6 +13,7 @@ final class BasketViewModel {
     private var cancellable = Set<AnyCancellable>()
     var basketService: BasketService
     var onMainScreen: (()-> Void)?
+    var onProductScreen: (()-> Void)?
     var basket = PassthroughSubject<BasketEntitie, Never>()
     var isLoadingIndicator = PassthroughSubject<Bool, Never>()
     
