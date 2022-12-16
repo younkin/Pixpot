@@ -11,9 +11,9 @@ import UIKit
 
 final class MainView: UIView {
     //MARK: outlets
-    
     var mainData: MainEntitie?
-    
+    let stackView = UIStackView()
+    private let sections = MockData.shared.pageData
     
     let collectionView: UICollectionView = {
         let collectionViewLayout = UICollectionViewLayout()
@@ -23,18 +23,14 @@ final class MainView: UIView {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
-    
-    
-    
-    private let sections = MockData.shared.pageData
-    
-    
+
     // MARK: - Init
     init() {
         super.init(frame: .zero)
         setDelegates()
         setupViews()
         setConstraints()
+        registerCells()
     }
     
     required init?(coder: NSCoder) {
@@ -50,10 +46,14 @@ final class MainView: UIView {
     
     
     private func setupViews() {
-        
         backgroundColor = AppColors.background
-        
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+        addSubview(stackView)
         addSubview(collectionView)
+    }
+    
+    private func registerCells() {
         collectionView.register(SelectCollectionViewCell.self, forCellWithReuseIdentifier: "StoriesCollectionViewCell")
         collectionView.register(HotSalesCollectionViewCell.self, forCellWithReuseIdentifier: "PopelarCollectionViewCell")
         collectionView.register(BestSellerCollectionViewCell.self, forCellWithReuseIdentifier: "ComingSoonCollectionViewCell")
@@ -63,16 +63,11 @@ final class MainView: UIView {
         collectionView.collectionViewLayout = createLayout()
     }
     
-    
     private func setDelegates() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        
     }
-    
-    
-    
-    
+
 }
 
 //MARK: Create Layout
@@ -83,9 +78,8 @@ extension MainView {
             guard let self = self else {return nil}
             let section = self.sections[sectionIndex]
             switch section {
-                
             case .selectCategory(_):
-                return self.createSaleSection()
+                return self.createSalectSection()
             case .search(_):
                 return self.createSearchSection()
             case .hotSales(_):
@@ -93,8 +87,6 @@ extension MainView {
             case .bestSellers(_):
                 return self.createBestSellersSection()
             }
-            
-            
         }
     }
     
@@ -107,29 +99,21 @@ extension MainView {
         section.interGroupSpacing = interGroupSpacing
         section.boundarySupplementaryItems = supplementaryItem
         return section
-        
     }
-    
-    
-    private func createSaleSection() -> NSCollectionLayoutSection {
+
+    private func createSalectSection() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(0.25),
                                                             heightDimension: .fractionalHeight(1)))
-        
         item.contentInsets = .init(top: 0, leading: 10, bottom: 10, trailing: 10)
-        
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1),
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(0.9),
                                                                          heightDimension: .fractionalHeight(0.15)),
                                                        subitems: [item])
-        //        group.interItemSpacing = .fixed(10)
         group.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
         let section = createlayoutSection(group: group,
                                           behavior: .continuousGroupLeadingBoundary,
                                           interGroupSpacing: 0,
                                           supplementaryItem: [supplementaryHeaderItem()])
-        
-        section.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
-        
-        
+        section.contentInsets = .init(top: 0, leading: 10, bottom: 0, trailing: 0)
         return section
     }
     
@@ -137,48 +121,31 @@ extension MainView {
     private func createSearchSection() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1),
                                                             heightDimension: .fractionalHeight(1)))
-        
-        
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1),
                                                                          heightDimension: .absolute(70)),
                                                        subitems: [item])
-        
         let section = createlayoutSection(group: group,
                                           behavior: .none,
                                           interGroupSpacing: 0,
                                           supplementaryItem: [])
-        
         section.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
-        
-        
         return section
     }
-    
-    
-    
-    
-    
+
     private func createHotSalesSection() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1),
                                                             heightDimension: .fractionalHeight(1)))
         item.contentInsets = .init(top: 10, leading: 10, bottom: 10, trailing: 10)
-        
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1),
                                                                          heightDimension: .fractionalHeight(0.25)),
                                                        subitems: [item])
-        
         let section = createlayoutSection(group: group,
                                           behavior: .groupPaging,
                                           interGroupSpacing: 0,
-                                          supplementaryItem: [supplementaryHeaderItem()]
-        )
-        
+                                          supplementaryItem: [supplementaryHeaderItem()])
         section.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
-        
-        
         return section
     }
-    
     
     private func createBestSellersSection() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(0.5),
@@ -188,26 +155,15 @@ extension MainView {
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1),
                                                                          heightDimension: .fractionalHeight(0.3)),
                                                        subitems: [item])
-        //        group.interItemSpacing = .flexible(1)
         group.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
         let section = createlayoutSection(group: group,
                                           behavior: .none,
                                           interGroupSpacing: 0,
-                                          supplementaryItem: [supplementaryHeaderItem()]
-        )
-        
+                                          supplementaryItem: [supplementaryHeaderItem()])
         section.contentInsets = .init(top: 0, leading: 10, bottom: 0, trailing: 10)
-        
-        
         return section
     }
-    
-    
-    
-    
-    
-    
-    
+
     private func supplementaryHeaderItem() -> NSCollectionLayoutBoundarySupplementaryItem {
         .init(layoutSize: .init(widthDimension: .fractionalWidth(1),
                                 heightDimension: .estimated(30)),
@@ -216,26 +172,27 @@ extension MainView {
     
 }
 
-
-
 //MARK: - UICollectionViewDelegate
 extension MainView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.section)
+        print(indexPath.row)
+        
+        if indexPath.section == 3 {
+            //переход на детали самсунга
+        }
+        
+    }
     
 }
-
-
-
 //MARK: - UICollectionViewDataSource
 extension MainView: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         sections.count
     }
-    
-    
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         switch section {
         case 0:
             return sections[section].count
@@ -248,12 +205,8 @@ extension MainView: UICollectionViewDataSource {
         default:
             return 0
         }
-        
     }
-    
-    
-    
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch sections[indexPath.section] {
             
@@ -279,7 +232,7 @@ extension MainView: UICollectionViewDataSource {
             
             
             
-        case .hotSales(let category):
+        case .hotSales(_):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopelarCollectionViewCell", for: indexPath) as? HotSalesCollectionViewCell
                     
             else {
@@ -325,15 +278,20 @@ extension MainView: UICollectionViewDataSource {
 
 
 extension MainView {
-    
-    
     private func setConstraints() {
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
-        ])
+        stackView.snp.makeConstraints {
+            $0.top.equalTo(self.snp.top).offset(30)
+            $0.left.equalTo(self.snp.left)
+            $0.right.equalTo(self.snp.right)
+            $0.height.equalTo(30)
+        }
+
+        collectionView.snp.makeConstraints {
+            $0.top.equalTo(stackView.snp.bottom)
+            $0.left.equalTo(self.snp.left)
+            $0.right.equalTo(self.snp.right)
+            $0.bottom.equalTo(self.snp.bottom)
+        }
         
     }
 }

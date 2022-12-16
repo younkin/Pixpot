@@ -23,7 +23,6 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
         return button
     }()
     
-    
     private let productBigTitle: UILabel = {
         let label = UILabel()
         label.text = "Iphone 12"
@@ -34,16 +33,13 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    
     let saleButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = AppColors.white
         button.setTitle("Buy Now", for: .normal)
         button.setTitleColor(AppColors.black, for: .normal)
         button.layer.cornerRadius = 5
-        button.addTarget(self, action: #selector(tapped2), for: .touchUpInside)
         return button
-        
     }()
     
     private let productSmallTitle: UILabel = {
@@ -54,10 +50,9 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
         label.text = "super mega rapido"
         return label
     }()
-    
+    // MARK: - Init
     override init (frame: CGRect) {
         super.init(frame: frame)
-        
         setupView()
         setConstraints()
     }
@@ -66,12 +61,15 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func tapped2() {
-        print("123")
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let size = min(HotSalesBackgroundView.layer.frame.width , HotSalesBackgroundView.layer.frame.height)
+        HotSalesBackgroundView.layer.cornerRadius = size / 10
+        HotSalesBackgroundView.layer.masksToBounds = true
     }
     
     func setupView() {
-        backgroundColor = .white
+        backgroundColor = AppColors.background
         layer.cornerRadius = 10
         addSubview(HotSalesBackgroundView)
         HotSalesBackgroundView.isUserInteractionEnabled = true
@@ -80,8 +78,7 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
         HotSalesBackgroundView.addSubview(productBigTitle)
         HotSalesBackgroundView.addSubview(saleIcon)
     }
-    
-    
+
     func configureCell(title: String,
                        subtitle: String,
                        image:String,
@@ -99,55 +96,35 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
             saleIcon.isHidden = true
         }
         
-        if id == 2 {
-            self.productBigTitle.text = ""
-        }
-           
+        if id == 2 {self.productBigTitle.text = ""}
     }
-    
-    
+//MARK: Constraints
     func setConstraints() {
-        
         HotSalesBackgroundView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.left.equalToSuperview()
             $0.right.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
-        
         saleIcon.snp.makeConstraints {
             $0.left.equalTo(HotSalesBackgroundView.snp.left).offset(24)
             $0.top.equalTo(HotSalesBackgroundView.snp.top).inset(14)
-            $0.height.width.equalTo(32)
+            $0.height.width.equalTo(27)
         }
-        
-        saleButton.snp.makeConstraints {
-            $0.left.equalTo(HotSalesBackgroundView.snp.left).offset(32)
-            $0.bottom.equalTo(HotSalesBackgroundView.snp.bottom).inset(34)
-            $0.width.equalTo(98)
-            $0.height.equalTo(23)
-            
-        }
-        
-        productSmallTitle.snp.makeConstraints {
-            $0.left.equalTo(HotSalesBackgroundView.snp.left).offset(35)
-            $0.bottom.equalTo(saleButton.snp.top).offset(-26)
-        }
-        
         productBigTitle.snp.makeConstraints {
-            $0.left.equalTo(HotSalesBackgroundView.snp.left).offset(35)
+            $0.left.equalTo(HotSalesBackgroundView.snp.left).offset(24)
             $0.bottom.equalTo(productSmallTitle.snp.top).offset(-5)
         }
-        
-        
+        productSmallTitle.snp.makeConstraints {
+            $0.left.equalTo(HotSalesBackgroundView.snp.left).offset(24)
+            $0.bottom.equalTo(saleButton.snp.top).offset(-17)
+        }
+        saleButton.snp.makeConstraints {
+            $0.left.equalTo(HotSalesBackgroundView.snp.left).offset(24)
+            $0.bottom.equalTo(HotSalesBackgroundView.snp.bottom).inset(30)
+            $0.width.equalTo(98)
+            $0.height.equalTo(23)
+        }
     }
-    
-    
-    
-    
-    
-    
-    
-    
 }
 

@@ -7,8 +7,8 @@
 
 import UIKit
 
-final class UIButtonRounded: UIButton {
-
+class UIButtonRounded: UIButton {
+    
     var icon: UIImageView = {
         let icon = UIImageView()
         icon.backgroundColor = .clear
@@ -55,19 +55,7 @@ final class UIButtonRounded: UIButton {
         layer.masksToBounds = true
     }
     
-    func makeIconConstrate() {
-        icon.snp.makeConstraints {
-            $0.center.equalTo(self.snp.center)
-            $0.size.equalTo(self.snp.size).multipliedBy(0.5)
-        }
-    }
     
-    func makeTitleConstrate() {
-        titleText.snp.makeConstraints {
-            $0.center.equalTo(self.snp.center)
-            $0.size.equalTo(self.snp.size).multipliedBy(0.8)
-        }
-    }
     
     override var isSelected: Bool {
         didSet {
@@ -81,6 +69,12 @@ final class UIButtonRounded: UIButton {
         }
     }
     
+    
+    
+    
+}
+//MARK: Animation
+extension UIButtonRounded {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         UIView.animate(withDuration: 0.5,
@@ -114,3 +108,24 @@ final class UIButtonRounded: UIButton {
     
 }
 
+
+
+//MARK: Constraints
+extension UIButtonRounded {
+    
+    
+    func makeIconConstrate() {
+        icon.snp.makeConstraints {
+            $0.center.equalTo(self.snp.center)
+            $0.size.equalTo(self.snp.size).multipliedBy(0.5)
+        }
+    }
+    
+    func makeTitleConstrate() {
+        titleText.snp.makeConstraints {
+            $0.center.equalTo(self.snp.center)
+            $0.size.equalTo(self.snp.size).multipliedBy(0.8)
+        }
+    }
+    
+}

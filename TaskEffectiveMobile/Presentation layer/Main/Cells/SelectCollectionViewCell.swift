@@ -37,7 +37,7 @@ class SelectCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+    // MARK: - Init
     override init (frame: CGRect) {
         super.init(frame: frame)
         self.contentView.backgroundColor = AppColors.background
@@ -53,9 +53,7 @@ class SelectCollectionViewCell: UICollectionViewCell {
         didSet{
             if isSelected {
                 saleImageView.backgroundColor = AppColors.orange
-                
             } else {
-                
                 saleImageView.backgroundColor = AppColors.white
             }
         }
@@ -76,7 +74,6 @@ class SelectCollectionViewCell: UICollectionViewCell {
     
     
     func setConstraints() {
-        
         saleImageView.snp.makeConstraints {
             $0.height.equalTo(self.saleImageView.snp.width)
             $0.bottom.equalTo(saleLabel.snp.top).inset(-7)

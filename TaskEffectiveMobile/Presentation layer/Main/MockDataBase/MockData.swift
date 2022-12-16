@@ -34,27 +34,12 @@ struct MockData {
     
     private let hotSales: ListSection = {
         .hotSales([
-               .init(title: "Burger", image: "hotsales"),
-               .init(title: "Chcken", image: "hotsales"),
-               .init(title: "Hot-dog", image: "hotsales"),
-               .init(title: "Pizza", image: "hotsales"),
-               .init(title: "Taco", image: "hotsales"),
-               .init(title: "Wok", image: "hotsales")
         ])
     }()
     
     
     private let bestSellers: ListSection = {
                .bestSellers([
-                .init(title: "", image: "imagename3"),
-               .init(title: "", image: "imagename3"),
-                .init(title: "", image: "imagename3"),
-               .init(title: "", image: "imagename3"),
-                .init(title: "", image: "imagename3"),
-               .init(title: "", image: "imagename3"),
-                .init(title: "", image: "imagename3"),
-               .init(title: "", image: "imagename3"),
-               .init(title: "", image: "imagename3")
         
         ])
     }()
