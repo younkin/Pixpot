@@ -30,5 +30,14 @@ final class MainViewCoordinator: BaseCoordinator {
 //        vc.modalPresentationStyle = .overFullScreen
         self.router.push(vc, animated: true)
         
+        
+        vc.showFilter = { [weak self] showFilter in
+            
+            if showFilter {
+//                self.router.push(FilterView, animated: true)
+            }
+            
+        }
+        
     }
 }

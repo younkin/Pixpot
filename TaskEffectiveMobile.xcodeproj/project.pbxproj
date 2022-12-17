@@ -19,6 +19,7 @@
 		7460E717294A1C1C00BE0637 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460E716294A1C1C00BE0637 /* MainModel.swift */; };
 		7460E719294A21C400BE0637 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460E718294A21C400BE0637 /* MainView.swift */; };
 		7468D26E2946390B00674261 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7468D26D2946390B00674261 /* RoundedImageView.swift */; };
+		746A2475294E61720090FA8F /* UIButtonFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746A2474294E61720090FA8F /* UIButtonFilter.swift */; };
 		746F3B2A2948E7BC002BC66D /* UIButtonRounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746F3B292948E7BC002BC66D /* UIButtonRounded.swift */; };
 		747321DF2940ED4C008E7EB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747321DE2940ED4C008E7EB0 /* AppDelegate.swift */; };
 		747321E12940ED4C008E7EB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747321E02940ED4C008E7EB0 /* SceneDelegate.swift */; };
@@ -98,6 +99,7 @@
 		7460E716294A1C1C00BE0637 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		7460E718294A21C400BE0637 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		7468D26D2946390B00674261 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
+		746A2474294E61720090FA8F /* UIButtonFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonFilter.swift; sourceTree = "<group>"; };
 		746F3B292948E7BC002BC66D /* UIButtonRounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonRounded.swift; sourceTree = "<group>"; };
 		747321DB2940ED4C008E7EB0 /* TaskEffectiveMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskEffectiveMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		747321DE2940ED4C008E7EB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				746F3B292948E7BC002BC66D /* UIButtonRounded.swift */,
+				746A2474294E61720090FA8F /* UIButtonFilter.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -657,6 +660,7 @@
 				848A203929438D26001317C4 /* BasketService.swift in Sources */,
 				746F3B2A2948E7BC002BC66D /* UIButtonRounded.swift in Sources */,
 				741DB4602941D3BC00F9AC84 /* FavoriteViewController.swift in Sources */,
+				746A2475294E61720090FA8F /* UIButtonFilter.swift in Sources */,
 				84F1FC2529450DD800FFF63E /* QuantityButton.swift in Sources */,
 				848A202B294369FC001317C4 /* BasketApiClient.swift in Sources */,
 				74D5FFD129451DC200029FF8 /* MockData.swift in Sources */,

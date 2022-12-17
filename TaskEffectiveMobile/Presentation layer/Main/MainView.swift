@@ -15,6 +15,21 @@ final class MainView: UIView {
     let stackView = UIStackView()
     private let sections = MockData.shared.pageData
     
+    let filterButtontext: UIButtonFilter = {
+        let button = UIButtonFilter(titleText: "Zihuatanejo, Gro")
+
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let filterButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "filterIcon"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+  
     let collectionView: UICollectionView = {
         let collectionViewLayout = UICollectionViewLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
@@ -50,6 +65,8 @@ final class MainView: UIView {
         stackView.axis = .horizontal
         stackView.alignment = .center
         addSubview(stackView)
+        stackView.addArrangedSubview(filterButtontext)
+        stackView.addArrangedSubview(filterButton)
         addSubview(collectionView)
     }
     
@@ -280,7 +297,7 @@ extension MainView: UICollectionViewDataSource {
 extension MainView {
     private func setConstraints() {
         stackView.snp.makeConstraints {
-            $0.top.equalTo(self.snp.top).offset(30)
+            $0.top.equalTo(self.snp.top).offset(50)
             $0.left.equalTo(self.snp.left)
             $0.right.equalTo(self.snp.right)
             $0.height.equalTo(30)
@@ -293,5 +310,16 @@ extension MainView {
             $0.bottom.equalTo(self.snp.bottom)
         }
         
+        filterButton.snp.makeConstraints {
+            $0.center.equalTo(stackView.snp.center)
+            $0.right.equalTo(self.snp.right).offset(-30)
+            $0.height.width.equalTo(stackView.snp.height).multipliedBy(0.9)
+        }
+  
+        filterButtontext.snp.makeConstraints {
+            $0.center.equalTo(stackView.snp.center)
+            $0.height.equalTo(stackView.snp.height)
+            $0.width.equalTo(stackView.contentScaleFactor)
+        }
     }
 }
