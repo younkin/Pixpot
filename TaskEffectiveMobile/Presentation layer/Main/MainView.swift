@@ -90,7 +90,7 @@ final class MainView: UIView {
 //MARK: Create Layout
 
 extension MainView {
-    private func createLayout() -> UICollectionViewCompositionalLayout {
+    private func createLayout() -> UICollectionViewCompositionalLayout  {
         UICollectionViewCompositionalLayout { [weak self] sectionIndex, _ in
             guard let self = self else {return nil}
             let section = self.sections[sectionIndex]

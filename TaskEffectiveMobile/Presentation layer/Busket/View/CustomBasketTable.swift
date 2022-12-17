@@ -16,6 +16,8 @@ final class CustomBasketTable: UIView {
     
     var deleteProduct: ((IndexPath)->Void)?
     
+    let cellTouch = PassthroughSubject<Void, Never>()
+    
     // MARK: - Private variables
     private(set) lazy var basketTableView: UITableView = {
        var table = UITableView()
@@ -96,6 +98,8 @@ final class CustomBasketTable: UIView {
         return button
     }()
     
+    
+    
     // MARK: - Initialisers
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -111,8 +115,11 @@ final class CustomBasketTable: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        layer.cornerRadius = frame.height / 15
+        let size = min(frame.height, frame.width)
+        layer.cornerRadius = size / 15
         deliveryBtn.layer.cornerRadius = deliveryBtn.frame.width / 17
+        
+       
     }
     
     private func setupUI() {
@@ -124,6 +131,7 @@ final class CustomBasketTable: UIView {
         addSubview(delivaryCostLbl)
         addSubview(separatorImage2)
         addSubview(deliveryBtn)
+        
         
         basketTableView.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide).offset(25)
@@ -169,6 +177,8 @@ final class CustomBasketTable: UIView {
             $0.trailing.equalTo(self).inset(44)
             $0.height.equalTo(54)
         }
+        
+        
     }
     
     required init?(coder: NSCoder) {
@@ -178,13 +188,19 @@ final class CustomBasketTable: UIView {
 
 extension CustomBasketTable: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return  124
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        cellTouch.send()
+        tableView.deselectRow(at: indexPath, animated: false)
+        
     }
   
 }
 
 extension CustomBasketTable: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return  124
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(basket.count)
@@ -210,5 +226,5 @@ extension CustomBasketTable: UITableViewDataSource {
         return true
     }
     
-
+    
 }

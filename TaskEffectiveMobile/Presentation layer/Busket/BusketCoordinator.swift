@@ -8,7 +8,7 @@
 import UIKit
 
 final class BusketCoordinator: BaseCoordinator {
-
+    
     // MARK: - Properies
     private let moduleFactory: ModuleFactoryProtocol
     private let router: Router
@@ -31,9 +31,20 @@ final class BusketCoordinator: BaseCoordinator {
             basketVC.tabBarController?.selectedIndex = 0
             basketVC.tabBarController?.tabBar.isHidden = false 
         }
+    
+        basketVC.basketViewModel.onProductScreen = { [weak self] in
+            self?.makeProductScreen()
+        }
         router.push(basketVC)
         
     }
     
+    private func makeProductScreen() {
+        let productVC = self.moduleFactory.makeProductModule()
+        productVC.productViewModel.isFinish = { [weak self] in
+            self?.router.pop(animated: true)
+        }
+        self.router.push(productVC)
+    }
     
 }

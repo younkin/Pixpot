@@ -20,23 +20,9 @@ final class BasketView: UIView {
         return view
     }()
     
-    private(set) lazy var backButton: UIButton = {
-        var button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "BasketBack"), for: .normal)
-        button.backgroundColor = AppColors.darkBlue
-        button.tintColor = AppColors.white
-        return button
-    }()
+    private(set) lazy var mapButton = RoundedNavButton(image: UIImage(named: "MapBasket")!, color: AppColors.orange)
     
-    private(set) lazy var mapButton: UIButton = {
-        var button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "MapBasket"), for: .normal)
-        button.backgroundColor = AppColors.orange
-        button.tintColor = AppColors.white
-        return button
-    }()
+    private(set) lazy var backButton = RoundedNavButton(image: UIImage(named: "BasketBack")!, color: AppColors.darkBlue)
     
     private lazy var nameLabel :UILabel = {
         var label = UILabel()
