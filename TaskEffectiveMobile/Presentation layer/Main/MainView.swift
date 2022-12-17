@@ -13,6 +13,7 @@ final class MainView: UIView {
     //MARK: outlets
     var mainData: MainEntitie?
     let stackView = UIStackView()
+    var bestSellTapped: ((Int) -> Void)?
     private let sections = MockData.shared.pageData
     
     let filterButtontext: UIButtonFilter = {
@@ -196,7 +197,7 @@ extension MainView: UICollectionViewDelegate {
         print(indexPath.row)
         
         if indexPath.section == 3 {
-            //переход на детали самсунга
+            bestSellTapped!(indexPath.row)
         }
         
     }
@@ -268,10 +269,10 @@ extension MainView: UICollectionViewDataSource {
             else {
                 return UICollectionViewCell()
             }
-            //            mainData?.bestSeller[0].
+           
             guard let data = self.mainData?.bestSeller[indexPath.row] else { return UICollectionViewCell() }
             
-            cell.configureCell(imageName: data.picture, fullPrice: data.priceWithoutDiscount, priceWithDiscount: data.priceWithoutDiscount, title: data.title, isFavorite: data.isFavorites)
+            cell.configureCell(imageName: data.picture, fullPrice: data.priceWithoutDiscount, priceWithDiscount: data.discountPrice, title: data.title, isFavorite: data.isFavorites)
             return cell
         }
     }

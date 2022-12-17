@@ -33,6 +33,7 @@ final class ProductViewController: UIViewController  {
         productViewModel.getProduct()
         setupBindings()
         
+        
     }
     
     private func setupBindings() {

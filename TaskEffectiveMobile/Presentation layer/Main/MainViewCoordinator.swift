@@ -26,16 +26,23 @@ final class MainViewCoordinator: BaseCoordinator {
 
     // MARK: -
     private func showMainScreen() {
-        let vc = moduleFactory.makeMainModule()
+        let mainPage = moduleFactory.makeMainModule()
 //        vc.modalPresentationStyle = .overFullScreen
-        self.router.push(vc, animated: true)
+        self.router.push(mainPage, animated: true)
         
         
-        vc.showFilter = { [weak self] showFilter in
+        mainPage.showFilter = { [weak self] showFilter in
             
             if showFilter {
 //                self.router.push(FilterView, animated: true)
             }
+            
+        }
+        
+        mainPage.showDitailProduct = {[weak self] IndexPath in
+            let product = self?.moduleFactory.makeProductModule()
+            
+            self?.router.push(product!, animated: true)
             
         }
         
