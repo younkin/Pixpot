@@ -24,23 +24,57 @@ final class ProductView: UIView {
     private(set) lazy var backButton = RoundedNavButton(image: UIImage(named: "BasketBack")!, color: AppColors.darkBlue)
     private(set) lazy var basketButton = RoundedNavButton(image: UIImage(named: "busket")!, color: AppColors.orange)
     
-    private lazy var collectionView: UICollectionView = {
+    private(set) lazy var collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
         layout.itemSize = CGSize(width: 60, height: 60)
         
-        var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: "CustomCell")
+        collectionView.backgroundColor = AppColors.background
         return collectionView
     }()
     
+    private(set) lazy var infoView =  ProductInfoView()
+    
+    var product = ProductEntitie()
+    
     init() {
         super.init(frame: .zero)
-        backgroundColor = AppColors.white
+        backgroundColor = AppColors.background
         
         setDelegates()
         setupUI()
+    }
+    
+    private func setDelegates() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+    }
+    
+    private func createLayout() -> UICollectionViewLayout {
+            let itemSize = NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1.0),
+                heightDimension: .fractionalHeight(1))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            let groupSize = NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(0.6),
+                heightDimension: .fractionalHeight(1.0))
+         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, repeatingSubitem: item, count: 1)
+            let section = NSCollectionLayoutSection(group: group)
+            section.orthogonalScrollingBehavior = .groupPaging
+            section.contentInsets = .init(top: 5, leading: 70, bottom: 5, trailing: 70)
+            section.interGroupSpacing = 33
+            let layout = UICollectionViewCompositionalLayout(section: section)
+            return layout
+        }
+
+    private func supplementaryHeaderItem() -> NSCollectionLayoutBoundarySupplementaryItem {
+        .init(layoutSize: .init(widthDimension: .fractionalWidth(1),
+                                heightDimension: .estimated(30)),
+              elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
     }
     
     private func setupUI() {
@@ -48,6 +82,7 @@ final class ProductView: UIView {
         addSubview(backButton)
         addSubview(basketButton)
         addSubview(collectionView)
+        addSubview(infoView)
         
         screenNameLbl.snp.makeConstraints {
             $0.centerX.equalToSuperview()
@@ -67,16 +102,17 @@ final class ProductView: UIView {
         }
         
         collectionView.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide).offset(146)
+            $0.top.equalTo(safeAreaLayoutGuide).offset(76)
             $0.leading.trailing.equalTo(self)
-            $0.height.equalTo(349)
+            $0.height.equalTo(300)
         }
-    }
-    
-    private func setDelegates() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
         
+        infoView.snp.makeConstraints {
+            $0.top.equalTo(collectionView.snp.bottom).offset(7)
+            $0.left.equalToSuperview().offset(7)
+            $0.right.equalToSuperview().offset(-7)
+            $0.bottom.equalTo(safeAreaLayoutGuide)
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -90,20 +126,17 @@ extension ProductView: UICollectionViewDelegate {
 
 extension ProductView: UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        1
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
-    }
+        return product.images.count    }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as? ProductCollectionViewCell else { return UICollectionViewCell() }
         
+        cell.shadowDecorate()
+        cell.setupCell(url: product.images[indexPath.row])
         return cell
     }
     
-    
 }
+

@@ -22,4 +22,19 @@ struct ProductEntitie: Codable {
         case cpu = "CPU"
         case camera, capacity, color, id, images, isFavorites, price, rating, sd, ssd, title
     }
+    
+    init() {
+        cpu = ""
+        camera = ""
+        capacity = []
+        color = []
+        id = ""
+        images = []
+        isFavorites = false
+        price = 0
+        rating = 0
+        sd = ""
+        ssd = ""
+        title = ""
+    }
 }

@@ -41,6 +41,9 @@ final class BusketCoordinator: BaseCoordinator {
     
     private func makeProductScreen() {
         let productVC = self.moduleFactory.makeProductModule()
+        productVC.productViewModel.isFinish = { [weak self] in
+            self?.router.pop(animated: true)
+        }
         self.router.push(productVC)
     }
     

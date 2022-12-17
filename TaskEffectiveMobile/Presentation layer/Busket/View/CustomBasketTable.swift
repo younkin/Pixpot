@@ -98,6 +98,8 @@ final class CustomBasketTable: UIView {
         return button
     }()
     
+    
+    
     // MARK: - Initialisers
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -113,8 +115,11 @@ final class CustomBasketTable: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        layer.cornerRadius = frame.height / 15
+        let size = min(frame.height, frame.width)
+        layer.cornerRadius = size / 15
         deliveryBtn.layer.cornerRadius = deliveryBtn.frame.width / 17
+        
+       
     }
     
     private func setupUI() {
@@ -126,6 +131,7 @@ final class CustomBasketTable: UIView {
         addSubview(delivaryCostLbl)
         addSubview(separatorImage2)
         addSubview(deliveryBtn)
+        
         
         basketTableView.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide).offset(25)
@@ -171,6 +177,8 @@ final class CustomBasketTable: UIView {
             $0.trailing.equalTo(self).inset(44)
             $0.height.equalTo(54)
         }
+        
+        
     }
     
     required init?(coder: NSCoder) {
