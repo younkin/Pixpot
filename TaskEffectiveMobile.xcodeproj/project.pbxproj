@@ -307,7 +307,7 @@
 		7473220F2940F890008E7EB0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				74D5FFCB29451D7100029FF8 /* DATA */,
+				74D5FFCB29451D7100029FF8 /* MockDataBase */,
 				74D5FFC829451D3700029FF8 /* Header */,
 				74D5FFBF29451C3000029FF8 /* Cells */,
 				7460E718294A21C400BE0637 /* MainView.swift */,
@@ -418,14 +418,14 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
-		74D5FFCB29451D7100029FF8 /* DATA */ = {
+		74D5FFCB29451D7100029FF8 /* MockDataBase */ = {
 			isa = PBXGroup;
 			children = (
 				74D5FFCC29451D9700029FF8 /* ListItem.swift */,
 				74D5FFCE29451DAD00029FF8 /* ListSection.swift */,
 				74D5FFD029451DC200029FF8 /* MockData.swift */,
 			);
-			path = DATA;
+			path = MockDataBase;
 			sourceTree = "<group>";
 		};
 		74D9A2412949125D0003C24F /* Exstensions */ = {

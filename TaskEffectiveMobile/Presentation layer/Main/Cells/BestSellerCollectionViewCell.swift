@@ -19,7 +19,6 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleToFill
         imageView.image = UIImage (named: "iphone-13")
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        
         return imageView
     }()
     
@@ -65,30 +64,30 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
         label.alpha = 0.8
         return label
     }()
-    
+    // MARK: - Init
     override init (frame: CGRect) {
         super.init(frame: frame)
+        addSubViews()
         setupView()
         setConstraints()
-    }
+}
     
     required init?(coder: NSCoder) {
         fatalError ("init (coder:) has not been implemented")
     }
     
-    
-    
     func setupView() {
-        
         stackView.axis = .horizontal
         stackView.alignment = .center
-        
         self.isUserInteractionEnabled = true
         clipsToBounds = true
         layer.cornerRadius = 10
         backgroundColor = AppColors.white
-        addSubview (bestSellerImage)
         bestSellerImage.isUserInteractionEnabled = true
+    }
+    
+    func addSubViews() {
+        addSubview (bestSellerImage)
         bestSellerImage.addSubview(isFavoriteIcon)
         addSubview (productDiscription)
         addSubview(stackView)
@@ -98,29 +97,26 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
     
     func configureCell(imageName: String, fullPrice: Int, priceWithDiscount: Int, title: String, isFavorite: Bool) {
         self.bestSellerImage.sd_setImage(with: URL(string: imageName))
-        self.fullPrice.text = String(fullPrice)
-        self.discountedPrice.text = String(priceWithDiscount)
-        self.fullPrice.attributedText = String(fullPrice).strikeThrough()
+        self.fullPrice.text = String("$\(fullPrice)")
+        self.discountedPrice.text = String("$\(priceWithDiscount)")
+        self.fullPrice.attributedText = String("$\(fullPrice)").strikeThrough()
         self.productDiscription.text = title
         self.isFavoriteIcon.isSelected = isFavorite
     }
     
     func setConstraints() {
-        
         bestSellerImage.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.left.equalToSuperview()
             $0.right.equalToSuperview()
             $0.bottom.equalTo(stackView.snp.top)
         }
-        
         stackView.snp.makeConstraints {
             $0.left.equalToSuperview()
             $0.right.equalToSuperview()
             $0.bottom.equalTo(productDiscription.snp.top)
             $0.height.equalTo(20)
         }
-        
         discountedPrice.snp.makeConstraints {
             $0.bottom.equalTo(stackView.snp.bottom)
             $0.left.equalToSuperview().offset(20)
@@ -133,20 +129,17 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
             $0.height.equalToSuperview().multipliedBy(0.8)
             $0.width.equalTo(40)
         }
-
         productDiscription.snp.makeConstraints {
             $0.left.equalToSuperview().offset(20)
             $0.right.equalToSuperview()
             $0.bottom.equalToSuperview().inset(10)
             $0.height.equalTo(30)
         }
-        
         isFavoriteIcon.snp.makeConstraints {
             $0.top.equalToSuperview().offset(12)
             $0.right.equalToSuperview().inset(12)
             $0.width.height.equalTo(25)
         }
-        
     }
 }
 

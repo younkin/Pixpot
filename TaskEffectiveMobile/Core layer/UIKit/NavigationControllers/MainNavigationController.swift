@@ -38,8 +38,6 @@ private extension MainNavigationController {
         let transImage = UIImage(systemName: "arrow.left")
         let navBarAppearance = UINavigationBarAppearance()
         
-        
-        
         navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.titleTextAttributes = [.foregroundColor: AppColors.orange]
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: AppColors.darkBlue]
