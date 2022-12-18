@@ -45,5 +45,6 @@ final class ModuleFactory: ModuleFactoryProtocol {
         let viewModel = ProductViewModel(service: container.productService)
         return ProductViewController(viewModel: viewModel)
     }
+    
 }
 
