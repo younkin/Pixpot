@@ -28,14 +28,15 @@ final class MainViewCoordinator: BaseCoordinator {
     private func showMainScreen() {
         let mainPage = moduleFactory.makeMainModule()
 //        vc.modalPresentationStyle = .overFullScreen
+        
         self.router.push(mainPage, animated: true)
         
         
         mainPage.showFilter = { [weak self] showFilter in
+//            let vc = FilterView()
+//            if showFilter {
+//                self?.router.push(vc, animated: true)
             
-            if showFilter {
-//                self.router.push(FilterView, animated: true)
-            }
             
         }
         
