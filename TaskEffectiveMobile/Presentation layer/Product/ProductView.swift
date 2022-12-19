@@ -90,28 +90,30 @@ final class ProductView: UIView {
         }
         
         backButton.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide).offset(29)
+            $0.top.equalTo(safeAreaLayoutGuide).offset(10)
             $0.leading.equalTo(self).offset(21)
             $0.width.height.equalTo(37)
         }
         
         basketButton.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide).offset(29)
+            $0.top.equalTo(safeAreaLayoutGuide).offset(10)
             $0.trailing.equalTo(self).inset(21)
             $0.width.height.equalTo(37)
         }
         
         collectionView.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide).offset(79)
+           // $0.top.equalTo(safeAreaLayoutGuide).offset(50)
             $0.leading.trailing.equalTo(self)
-            $0.height.equalTo(300)
+           // $0.height.equalTo(300)
+            $0.top.equalTo( backButton.snp.bottom).offset(30)
+            $0.bottom.equalTo(infoView.snp.top).offset(-7)
         }
         
         infoView.snp.makeConstraints {
-            $0.top.equalTo(collectionView.snp.bottom).offset(7)
+            //$0.top.equalTo(collectionView.snp.bottom).offset(7)
             $0.left.equalToSuperview().offset(7)
             $0.right.equalToSuperview().offset(-7)
-            $0.bottom.equalTo(safeAreaLayoutGuide)
+            $0.bottom.equalTo(safeAreaLayoutGuide).offset(-15)
         }
     }
     

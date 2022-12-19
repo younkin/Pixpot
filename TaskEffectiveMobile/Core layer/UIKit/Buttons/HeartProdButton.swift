@@ -48,7 +48,7 @@ final class HeartButton: UIButton {
                 self.icon.image = UIImage(named: "heartActive")
                 self.backgroundColor = AppColors.darkBlue
             } else {
-                self.icon.image = UIImage(named: "heartDisable")
+                self.icon.image = UIImage(named: "HeartWhite")
                 self.backgroundColor = AppColors.darkBlue
             }
         }

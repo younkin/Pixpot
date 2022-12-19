@@ -215,8 +215,9 @@ final class ProductInfoView: UIView {
         addSubview(ramControl)
         
         nameLabel.snp.makeConstraints {
-            $0.top.equalTo(self).offset(28)
             $0.leading.equalTo(self).offset(38)
+            $0.bottom.equalTo(starStackView.snp.top).offset(-7)
+            $0.top.equalTo(self).offset(25)
         }
         
         favouriteBTn.snp.makeConstraints {
@@ -226,55 +227,55 @@ final class ProductInfoView: UIView {
         }
         
         starStackView.snp.makeConstraints {
-            $0.top.equalTo(nameLabel.snp.bottom).offset(7)
             $0.leading.equalTo(nameLabel.snp.leading)
+            $0.bottom.equalTo(detailsControl.snp.top).offset(-30)
         }
         
         detailsControl.snp.makeConstraints {
             $0.centerX.equalTo(self.snp.centerX)
-            $0.top.equalTo(nameLabel.snp.bottom).offset(50)
+            $0.bottom.equalTo(infoStackView.snp.top).offset(-30)
             }
         
         infoStackView.snp.makeConstraints {
-            $0.top.equalTo(detailsControl.snp.bottom).offset(17)
             $0.leading.equalTo(self).offset(45)
             $0.trailing.equalTo(self).inset(45)
+            $0.bottom.equalTo(cpuLbl.snp.top).offset(-5)
         }
         
         cpuLbl.snp.makeConstraints {
-            $0.top.equalTo(infoStackView.snp.bottom).offset(5)
             $0.centerX.equalTo(imageView1.snp.centerX)
+            $0.bottom.equalTo( selectLbl.snp.top).offset(-20)
         }
         
         photoLbl.snp.makeConstraints {
-            $0.top.equalTo(infoStackView.snp.bottom).offset(5)
             $0.centerX.equalTo(imageView2.snp.centerX)
+            $0.centerY.equalTo(cpuLbl.snp.centerY)
         }
         
         ramLbl.snp.makeConstraints {
-            $0.top.equalTo(infoStackView.snp.bottom).offset(5)
             $0.centerX.equalTo(imageView3.snp.centerX)
+            $0.centerY.equalTo(cpuLbl.snp.centerY)
         }
         
         memoryLbl.snp.makeConstraints {
-            $0.top.equalTo(infoStackView.snp.bottom).offset(5)
             $0.centerX.equalTo(imageView4.snp.centerX)
+            $0.centerY.equalTo(cpuLbl.snp.centerY)
         }
         
         selectLbl.snp.makeConstraints {
-            $0.top.equalTo(cpuLbl.snp.bottom).offset(15)
             $0.leading.equalTo(cpuLbl.snp.leading)
+            $0.bottom.equalTo(colorControl.snp.top).offset(-12)
         }
         
         buyButton.snp.makeConstraints {
-            $0.bottom.equalTo(self).inset(20)
+            $0.bottom.equalTo(self).inset(10)
             $0.leading.equalTo(self).offset(29)
             $0.trailing.equalTo(self).inset(29)
             $0.height.equalTo(54)
         }
         
         colorControl.snp.makeConstraints {
-            $0.bottom.equalTo(buyButton.snp.top).offset(-15)
+            $0.bottom.equalTo(buyButton.snp.top).offset(-10)
             $0.leading.equalTo(buyButton.snp.leading)
             $0.height.equalTo(39)
             $0.trailing.equalTo(self).inset(200)
