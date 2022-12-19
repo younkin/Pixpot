@@ -28,7 +28,6 @@ final class DropDownButtonPrice: UIButton, dropDownProtocol {
         super.init(frame: frame)
         
         self.backgroundColor = AppColors.white
-        self.titleLabel!.text = "Price"
         self.titleLabel?.snp.makeConstraints {
             $0.centerY.equalTo(self)
             $0.leading.equalTo(self).offset(15)

@@ -18,9 +18,9 @@ final class MainView: UIView {
     
     
 //    let filterView = FilterView()
-    private lazy var filterView: FilterView = {
+     lazy var filterView: FilterView = {
         let view = FilterView()
-        view.isHidden = false
+        view.isHidden = true
         return view
     }()
     

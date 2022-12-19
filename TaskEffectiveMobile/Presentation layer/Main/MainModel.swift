@@ -10,7 +10,7 @@ import Combine
 
 final class MainViewModel {
     
-    var basketService: BasketServiceProtocol
+    var basketService: BasketService
     var mainService: MainServiceProtocol
     var productService: ProductServiceProtocol
     
@@ -19,7 +19,7 @@ final class MainViewModel {
     var mainData = PassthroughSubject<MainEntitie, Never>()
     var isLoadingIndicator = PassthroughSubject<Bool, Never>()
     
-    init(basketService: BasketServiceProtocol, mainService: MainServiceProtocol, productService: ProductServiceProtocol) {
+    init(basketService: BasketService, mainService: MainServiceProtocol, productService: ProductServiceProtocol) {
         self.basketService = basketService
         self.mainService = mainService
         self.productService = productService
@@ -43,4 +43,17 @@ final class MainViewModel {
             }).store(in: &cancellable)
     }
     
+    func getBasket() {
+        basketService.getBasket()
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure(let error):
+                    print("Func getBasket end with failure: \(error)")
+                case .finished:
+                    print("Func getBasket success!")
+                }
+            }, receiveValue: { _ in
+            }).store(in: &cancellable)
+    }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 final class TabBarCoordinator: BaseCoordinator {
 
@@ -39,7 +40,6 @@ final class TabBarCoordinator: BaseCoordinator {
         
         let basketNavigationController = MainNavigationController()
         basketNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "busket"), tag: 1)
-        
 
 
         let basketCoordinator = coordinatorFactory.makeBusketCoordinator(with: Router(rootController: basketNavigationController))
@@ -49,10 +49,7 @@ final class TabBarCoordinator: BaseCoordinator {
         let ProfileViewController = ProfileViewController()
         ProfileViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "profile"), tag: 3)
     
-    
-        
         tabBarController.viewControllers = [mainNavigationController,basketNavigationController,FavoriteViewController,ProfileViewController]
-        
         
         router.setRoot(tabBarController, animated: false, hideBar: true)
 
@@ -62,11 +59,6 @@ final class TabBarCoordinator: BaseCoordinator {
         mainCoordinator.start()
         basketCoordinator.start()
 
-
-    
-        
-        
-      
     }
 
 

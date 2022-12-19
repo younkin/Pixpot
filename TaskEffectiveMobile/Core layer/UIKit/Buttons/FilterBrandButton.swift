@@ -28,8 +28,11 @@ final class DropDownButtonBrand: UIButton, dropDownProtocol {
         self.titleLabel?.snp.makeConstraints {
             $0.centerY.equalTo(self)
             $0.leading.equalTo(self).offset(15)
-            $0.width.equalTo(100)
+            $0.width.equalTo(200)
         }
+        
+        self.titleLabel?.adjustsFontSizeToFitWidth = true
+      
         self.setTitleColor(AppColors.darkBlue, for: .normal)
         self.setImage(UIImage(named: "FilterDrop"), for: .normal)
         self.imageView?.snp.makeConstraints {

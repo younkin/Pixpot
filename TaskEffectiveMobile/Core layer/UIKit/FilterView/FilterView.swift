@@ -29,7 +29,7 @@ class FilterView: UIView {
     }()
     
     
-    private(set) lazy var backButton = RoundedNavButton(image: UIImage(named: "FilterClouse")!, color: AppColors.darkBlue)
+     lazy var backButton = RoundedNavButton(image: UIImage(named: "FilterClouse")!, color: AppColors.darkBlue)
     private(set) lazy var doneButton = {
         let button = UIButton(type: .system)
         button.setTitle("Done", for: .normal)
@@ -52,7 +52,6 @@ class FilterView: UIView {
        var button = DropDownButtonBrand()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Brand", for: .normal)
-        button.dropView.dropDownOptions = ["Blue", "Green", "Magenta", "White", "Black", "Pink"]
         return button
     }()
     
@@ -68,7 +67,7 @@ class FilterView: UIView {
     lazy var priceBtn: DropDownButtonPrice = {
         var button = DropDownButtonPrice()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Price", for: .normal)
+        button.setTitle("$300 - $500", for: .normal)
         return button
     }()
     
@@ -159,7 +158,7 @@ class FilterView: UIView {
             $0.height.equalTo(24)
         }
         doneButton.snp.makeConstraints {
-//            $0.centerY.equalTo(stackView.snp.centerY)
+            $0.centerY.equalTo(stackView.snp.centerY)
             $0.right.equalToSuperview().offset(-20)
             $0.right.equalTo(self).offset(-20)
             $0.width.equalTo(86)
