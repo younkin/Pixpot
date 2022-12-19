@@ -16,6 +16,14 @@ final class MainView: UIView {
     var bestSellTapped: ((Int) -> Void)?
     private let sections = MockData.shared.pageData
     
+    
+//    let filterView = FilterView()
+    private lazy var filterView: FilterView = {
+        let view = FilterView()
+        view.isHidden = false
+        return view
+    }()
+    
     let filterButtontext: UIButtonFilter = {
         let button = UIButtonFilter(titleText: "Zihuatanejo, Gro")
 
@@ -69,6 +77,8 @@ final class MainView: UIView {
         stackView.addArrangedSubview(filterButtontext)
         stackView.addArrangedSubview(filterButton)
         addSubview(collectionView)
+        addSubview(filterView)
+        
     }
     
     private func registerCells() {
@@ -321,6 +331,12 @@ extension MainView {
             $0.center.equalTo(stackView.snp.center)
             $0.height.equalTo(stackView.snp.height)
             $0.width.equalTo(stackView.contentScaleFactor)
+        }
+        
+        filterView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(safeAreaLayoutGuide).offset(-10)
+            $0.top.equalTo(self.snp.top).offset(UIScreen.main.bounds.height / 2)
         }
     }
 }
