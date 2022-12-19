@@ -334,8 +334,9 @@ extension MainView {
         }
         
         filterView.snp.makeConstraints {
-            $0.leading.trailing.bottom.equalTo(safeAreaLayoutGuide)
-            $0.top.equalTo(safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(safeAreaLayoutGuide).offset(-10)
+            $0.top.equalTo(self.snp.top).offset(UIScreen.main.bounds.height / 2)
         }
     }
 }
