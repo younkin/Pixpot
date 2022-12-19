@@ -55,6 +55,8 @@ final class MainView: UIView {
         setupViews()
         setConstraints()
         registerCells()
+        
+        
     }
     
     required init?(coder: NSCoder) {

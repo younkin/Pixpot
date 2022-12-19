@@ -68,6 +68,8 @@
 		848A204E2943AB25001317C4 /* BusketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A204D2943AB25001317C4 /* BusketViewModel.swift */; };
 		848A20512943AD31001317C4 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A20502943AD30001317C4 /* DIContainer.swift */; };
 		848A20562943D281001317C4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A20552943D281001317C4 /* TableViewCell.swift */; };
+		84AB9ACD2950F33300D35F2D /* FilterPriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB9ACC2950F33300D35F2D /* FilterPriceButton.swift */; };
+		84AB9ACF29510B6600D35F2D /* SizeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB9ACE29510B6600D35F2D /* SizeButton.swift */; };
 		84D5F91C294A6C4900392899 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5F91B294A6C4900392899 /* ProductViewController.swift */; };
 		84D5F91E294A6CBD00392899 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5F91D294A6CBD00392899 /* ProductViewModel.swift */; };
 		84D5F920294A6D3E00392899 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5F91F294A6D3E00392899 /* ProductView.swift */; };
@@ -76,6 +78,7 @@
 		84D6FFB8294D06B100405398 /* RamControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6FFB7294D06B100405398 /* RamControl.swift */; };
 		84D6FFBA294D19C100405398 /* HeartProdButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6FFB9294D19C100405398 /* HeartProdButton.swift */; };
 		84D6FFBC294E082F00405398 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6FFBB294E082F00405398 /* UIColorHex.swift */; };
+		84D6FFDE2950B1DA00405398 /* FilterBrandButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6FFDD2950B1DA00405398 /* FilterBrandButton.swift */; };
 		84E5858E294B95880098C311 /* ProductInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5858D294B95880098C311 /* ProductInfoView.swift */; };
 		84E58590294BCA050098C311 /* ProductBuyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5858F294BCA050098C311 /* ProductBuyButton.swift */; };
 		84E58593294C805F0098C311 /* DetailsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E58592294C805F0098C311 /* DetailsControl.swift */; };
@@ -165,6 +168,8 @@
 		848A20502943AD30001317C4 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		848A20552943D281001317C4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		848A205A2943DAE4001317C4 /* UIVc+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVc+Preview.swift"; sourceTree = "<group>"; };
+		84AB9ACC2950F33300D35F2D /* FilterPriceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPriceButton.swift; sourceTree = "<group>"; };
+		84AB9ACE29510B6600D35F2D /* SizeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeButton.swift; sourceTree = "<group>"; };
 		84D5F91B294A6C4900392899 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		84D5F91D294A6CBD00392899 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		84D5F91F294A6D3E00392899 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
@@ -173,6 +178,7 @@
 		84D6FFB7294D06B100405398 /* RamControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamControl.swift; sourceTree = "<group>"; };
 		84D6FFB9294D19C100405398 /* HeartProdButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartProdButton.swift; sourceTree = "<group>"; };
 		84D6FFBB294E082F00405398 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
+		84D6FFDD2950B1DA00405398 /* FilterBrandButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBrandButton.swift; sourceTree = "<group>"; };
 		84E5858D294B95880098C311 /* ProductInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoView.swift; sourceTree = "<group>"; };
 		84E5858F294BCA050098C311 /* ProductBuyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductBuyButton.swift; sourceTree = "<group>"; };
 		84E58592294C805F0098C311 /* DetailsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsControl.swift; sourceTree = "<group>"; };
@@ -269,6 +275,9 @@
 				8418E8F2294A5B6900D2E310 /* RoundedNavButton.swift */,
 				84E5858F294BCA050098C311 /* ProductBuyButton.swift */,
 				84D6FFB9294D19C100405398 /* HeartProdButton.swift */,
+				84D6FFDD2950B1DA00405398 /* FilterBrandButton.swift */,
+				84AB9ACC2950F33300D35F2D /* FilterPriceButton.swift */,
+				84AB9ACE29510B6600D35F2D /* SizeButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -707,6 +716,7 @@
 				7468D26E2946390B00674261 /* RoundedImageView.swift in Sources */,
 				74D5FFCD29451D9700029FF8 /* ListItem.swift in Sources */,
 				84E58590294BCA050098C311 /* ProductBuyButton.swift in Sources */,
+				84D6FFDE2950B1DA00405398 /* FilterBrandButton.swift in Sources */,
 				74D5FFC129451CCF00029FF8 /* SelectCollectionViewCell.swift in Sources */,
 				7473222C294139C1008E7EB0 /* MainViewCoordinator.swift in Sources */,
 				74D5FFC329451CF600029FF8 /* SearchCollectionViewCell.swift in Sources */,
@@ -745,6 +755,7 @@
 				7473221B294106EE008E7EB0 /* AppCoordinator.swift in Sources */,
 				74D9A243294912870003C24F /* Button + Publisher.swift in Sources */,
 				84D6FFBA294D19C100405398 /* HeartProdButton.swift in Sources */,
+				84AB9ACF29510B6600D35F2D /* SizeButton.swift in Sources */,
 				74D5FFC529451D1200029FF8 /* HotSalesCollectionViewCell.swift in Sources */,
 				84D5F922294A7C2100392899 /* ProductCollectionViewCell.swift in Sources */,
 				848A203629438BE8001317C4 /* MainApiClient.swift in Sources */,
@@ -754,6 +765,7 @@
 				84D6FFBC294E082F00405398 /* UIColorHex.swift in Sources */,
 				84E5858E294B95880098C311 /* ProductInfoView.swift in Sources */,
 				848A20562943D281001317C4 /* TableViewCell.swift in Sources */,
+				84AB9ACD2950F33300D35F2D /* FilterPriceButton.swift in Sources */,
 				848A204C2943AB1A001317C4 /* BusketView.swift in Sources */,
 				848A20512943AD31001317C4 /* DIContainer.swift in Sources */,
 				848A2032294389C1001317C4 /* ProductEntitie.swift in Sources */,
