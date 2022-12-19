@@ -46,8 +46,8 @@
             filePath = "TaskEffectiveMobile/Presentation layer/Busket/View/Cell/TableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "setupUI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "TaskEffectiveMobile/Presentation layer/Busket/View/Cell/TableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "setupUI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "TaskEffectiveMobile/Presentation layer/Busket/View/Cell/TableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "layoutIfNeeded()"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "TaskEffectiveMobile/Presentation layer/Busket/View/Cell/TableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "layoutIfNeeded()"
             landmarkType = "7">
          </BreakpointContent>
@@ -135,38 +135,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0ADFF93E-83AC-4B50-836D-346AC19B6CB0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TaskEffectiveMobile/Presentation layer/Busket/View/CustomBasketTable.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "setupUI()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A5B98531-CA84-4543-98C6-FA6AAC93F798"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TaskEffectiveMobile/Presentation layer/Busket/View/CustomBasketTable.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "setupUI()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "38387693-5F24-4107-9884-B8596F048411"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -174,8 +142,8 @@
             filePath = "TaskEffectiveMobile/Presentation layer/Busket/View/BusketViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -350,8 +318,8 @@
             filePath = "TaskEffectiveMobile/Presentation layer/Busket/View/BusketViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "setupBindings()"
             landmarkType = "7">
          </BreakpointContent>
@@ -366,8 +334,8 @@
             filePath = "TaskEffectiveMobile/Presentation layer/Busket/BusketViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "removeProduct(at:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -376,22 +344,6 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "2FFD8604-68A2-4776-BCB1-ECC19FA1120D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TaskEffectiveMobile/Presentation layer/Busket/View/BusketViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "setupBindings()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AD53ACB9-7346-4C40-AB16-B2B5FA0F3F7C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -407,7 +359,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "70BA1B5C-5292-4914-9600-BBDA4B15DBC4"
+            uuid = "AD53ACB9-7346-4C40-AB16-B2B5FA0F3F7C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -423,6 +375,22 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "70BA1B5C-5292-4914-9600-BBDA4B15DBC4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TaskEffectiveMobile/Presentation layer/Busket/View/BusketViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "setupBindings()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "C2BC8530-620F-43DE-A1FE-FCE03DFB4F6F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -430,8 +398,8 @@
             filePath = "TaskEffectiveMobile/Presentation layer/Busket/View/BusketViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "setupBindings()"
             landmarkType = "7">
          </BreakpointContent>
@@ -446,8 +414,8 @@
             filePath = "TaskEffectiveMobile/Presentation layer/Busket/View/BusketViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "setupBindings()"
             landmarkType = "7">
             <Locations>
@@ -494,8 +462,8 @@
             filePath = "TaskEffectiveMobile/Presentation layer/Busket/View/BusketViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "setupBindings()"
             landmarkType = "7">
          </BreakpointContent>
@@ -510,8 +478,8 @@
             filePath = "TaskEffectiveMobile/Presentation layer/Busket/View/BusketViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "setupBindings()"
             landmarkType = "7">
          </BreakpointContent>
@@ -961,6 +929,175 @@
             startingLineNumber = "43"
             endingLineNumber = "43"
             landmarkName = "setupBindings()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DC1800FB-CE9A-4F09-9285-A0122C51C25E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TaskEffectiveMobile/Presentation layer/Busket/View/CustomBasketTable.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "CustomBasketTable"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "DC1800FB-CE9A-4F09-9285-A0122C51C25E - ef4638e5bccf9a14"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of TaskEffectiveMobile.CustomBasketTable.basket : Swift.Array&lt;TaskEffectiveMobile.Products&gt;"
+                  moduleName = "TaskEffectiveMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/TestTaskForEffictiveMobile/TaskEffectiveMobile/Presentation%20layer/Busket/View/CustomBasketTable.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "DC1800FB-CE9A-4F09-9285-A0122C51C25E - 66c0c25b8098bbc7"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TaskEffectiveMobile.CustomBasketTable.basket.getter : Swift.Array&lt;TaskEffectiveMobile.Products&gt;"
+                  moduleName = "TaskEffectiveMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/TestTaskForEffictiveMobile/TaskEffectiveMobile/Presentation%20layer/Busket/View/CustomBasketTable.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "DC1800FB-CE9A-4F09-9285-A0122C51C25E - 689131eddbfaefcb"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TaskEffectiveMobile.CustomBasketTable.basket.setter : Swift.Array&lt;TaskEffectiveMobile.Products&gt;"
+                  moduleName = "TaskEffectiveMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/TestTaskForEffictiveMobile/TaskEffectiveMobile/Presentation%20layer/Busket/View/CustomBasketTable.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "DC1800FB-CE9A-4F09-9285-A0122C51C25E - 3a9ab654cf2a3ec4"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TaskEffectiveMobile.CustomBasketTable.basket.modify : Swift.Array&lt;TaskEffectiveMobile.Products&gt;"
+                  moduleName = "TaskEffectiveMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/TestTaskForEffictiveMobile/TaskEffectiveMobile/Presentation%20layer/Busket/View/CustomBasketTable.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "DC1800FB-CE9A-4F09-9285-A0122C51C25E - 72742a3f8c93fe69"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TaskEffectiveMobile.CustomBasketTable.basket.modify : Swift.Array&lt;TaskEffectiveMobile.Products&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "TaskEffectiveMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/TestTaskForEffictiveMobile/TaskEffectiveMobile/Presentation%20layer/Busket/View/CustomBasketTable.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "DC1800FB-CE9A-4F09-9285-A0122C51C25E - c289714d5ada1fb6"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TaskEffectiveMobile.CustomBasketTable.$basket.getter : Combine.Published&lt;Swift.Array&lt;TaskEffectiveMobile.Products&gt;&gt;.Publisher"
+                  moduleName = "TaskEffectiveMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/TestTaskForEffictiveMobile/TaskEffectiveMobile/Presentation%20layer/Busket/View/CustomBasketTable.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "DC1800FB-CE9A-4F09-9285-A0122C51C25E - d204a22c2aab2bba"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TaskEffectiveMobile.CustomBasketTable.$basket.setter : Combine.Published&lt;Swift.Array&lt;TaskEffectiveMobile.Products&gt;&gt;.Publisher"
+                  moduleName = "TaskEffectiveMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/TestTaskForEffictiveMobile/TaskEffectiveMobile/Presentation%20layer/Busket/View/CustomBasketTable.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  uuid = "DC1800FB-CE9A-4F09-9285-A0122C51C25E - 5110d2237e1362cd"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TaskEffectiveMobile.CustomBasketTable.$basket.modify : Combine.Published&lt;Swift.Array&lt;TaskEffectiveMobile.Products&gt;&gt;.Publisher"
+                  moduleName = "TaskEffectiveMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/TestTaskForEffictiveMobile/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "DC1800FB-CE9A-4F09-9285-A0122C51C25E - 12254da16b0d3632"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TaskEffectiveMobile.CustomBasketTable.$basket.modify : Combine.Published&lt;Swift.Array&lt;TaskEffectiveMobile.Products&gt;&gt;.Publisher with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "TaskEffectiveMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/TestTaskForEffictiveMobile/TaskEffectiveMobile/Presentation%20layer/Busket/View/CustomBasketTable.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4A747022-3DB3-4767-80D2-5B1D79A903B4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TaskEffectiveMobile/Presentation layer/Busket/BusketViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "getBasket()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

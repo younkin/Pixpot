@@ -15,7 +15,7 @@ final class CustomBasketTable: UIView {
     var basket: [Products] = []
     
     var deleteProduct: ((IndexPath)->Void)?
-    
+    var reloadCount: ((Int, Int)->Void)?
     let cellTouch = PassthroughSubject<Void, Never>()
     
     // MARK: - Private variables
@@ -98,7 +98,25 @@ final class CustomBasketTable: UIView {
         return button
     }()
     
+    private lazy var labelsStackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [totalLabel , delivaryLabel])
+        stack.axis = .vertical
+        stack.alignment = .leading
+        stack.distribution = .equalSpacing
+        stack.spacing = 12
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
     
+    private lazy var labelsStackViewTotal: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [totalCostLbl, delivaryCostLbl])
+        stack.axis = .vertical
+        stack.alignment = .leading
+        stack.distribution = .equalSpacing
+        stack.spacing = 12
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
     
     // MARK: - Initialisers
     override init(frame: CGRect) {
@@ -125,59 +143,45 @@ final class CustomBasketTable: UIView {
     private func setupUI() {
         addSubview(basketTableView)
         addSubview(separatorImage1)
-        addSubview(totalLabel)
-        addSubview(delivaryLabel)
-        addSubview(totalCostLbl)
-        addSubview(delivaryCostLbl)
         addSubview(separatorImage2)
         addSubview(deliveryBtn)
-        
+        addSubview(labelsStackView)
+        addSubview(labelsStackViewTotal)
         
         basketTableView.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide).offset(25)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(360)
+            $0.bottom.equalTo(separatorImage1.snp.top).offset(-5)
         }
         
         separatorImage1.snp.makeConstraints {
-            $0.top.equalTo(basketTableView.snp.bottom)
             $0.leading.equalTo(self).offset(4)
             $0.trailing.equalTo(self).inset(4)
+            $0.bottom.equalTo(labelsStackViewTotal.snp.top).offset(-15)
         }
         
-        totalLabel.snp.makeConstraints {
-            $0.top.equalTo(separatorImage1.snp.bottom).offset(15)
+        labelsStackViewTotal.snp.makeConstraints {
+            $0.bottom.equalTo(separatorImage2.snp.top).offset(-26)
+            $0.centerX.equalTo(self).offset(120)
+        }
+        
+        labelsStackView.snp.makeConstraints {
+            $0.bottom.equalTo(separatorImage2.snp.top).offset(-26)
             $0.leading.equalTo(self).offset(55)
-        }
-        
-        delivaryLabel.snp.makeConstraints {
-            $0.top.equalTo(totalLabel.snp.bottom).offset(12)
-            $0.leading.equalTo(self).offset(55)
-        }
-        
-        totalCostLbl.snp.makeConstraints {
-            $0.centerY.equalTo(totalLabel.snp.centerY)
-            $0.leading.equalTo(self).offset(300)
-        }
-        
-        delivaryCostLbl.snp.makeConstraints {
-            $0.centerY.equalTo(delivaryLabel.snp.centerY)
-            $0.leading.equalTo(self).offset(300)
         }
         
         separatorImage2.snp.makeConstraints {
-            $0.top.equalTo(delivaryCostLbl.snp.bottom).offset(26)
             $0.leading.equalTo(self).offset(4)
             $0.trailing.equalTo(self).inset(4)
+            $0.bottom.equalTo(deliveryBtn.snp.top).offset(-25)
         }
         
         deliveryBtn.snp.makeConstraints {
-            $0.top.equalTo(separatorImage2.snp.bottom).offset(25)
             $0.leading.equalTo(self).offset(44)
             $0.trailing.equalTo(self).inset(44)
             $0.height.equalTo(54)
+            $0.bottom.equalTo(safeAreaLayoutGuide)
         }
-        
         
     }
     
@@ -217,6 +221,10 @@ extension CustomBasketTable: UITableViewDataSource {
         cell.cancellable = cell.tapDeleteBtn.sink { [weak self] index in
             self?.deleteProduct?(index!)
         }
+        
+        cell.quantityButton.cancellable2 =  cell.quantityButton.reloadCount.sink(receiveValue: { [weak self] count in
+            self?.reloadCount?(count,indexPath.row)
+        })
             
         return cell
     

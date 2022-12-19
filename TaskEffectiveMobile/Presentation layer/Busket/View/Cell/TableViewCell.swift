@@ -61,7 +61,7 @@ import Combine
          return button
      }()
      
-     private lazy var quantityButton:  QuantityButton = {
+      lazy var quantityButton:  QuantityButton = {
         let button = QuantityButton()
          button.translatesAutoresizingMaskIntoConstraints = false
          return button
@@ -78,6 +78,7 @@ import Combine
         quantityButton.cancellable = quantityButton.zeroCount.sink(receiveValue: { [weak self] in
             self?.tapDeleteBtn.send(self?.index)
         })
+        
     }
      
      override func layoutIfNeeded() {
@@ -132,13 +133,13 @@ import Combine
             $0.centerY.equalTo(contentView)
             $0.height.equalTo(68)
             $0.width.equalTo(26)
-            $0.leading.equalTo(nameLabel.snp.trailing).offset(33)
+            $0.trailing.equalTo(trashButton.snp.leading).offset(-17)
         }
         
         trashButton.snp.makeConstraints {
-            $0.leading.equalTo(quantityButton.snp.trailing).offset(17)
             $0.centerY.equalTo(quantityButton.snp.centerY)
             $0.height.equalTo(18)
+            $0.trailing.equalTo(self).inset(30)
         }
         
     }

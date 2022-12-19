@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - BasketEntitie
-struct BasketEntitie: Codable {
+struct BasketEntitie: Decodable {
     var basket: [Products]
     let delivery, id: String
     let total: Int
@@ -20,4 +20,14 @@ struct Products: Codable {
     let images: String
     let price: Int
     let title: String
+    private var _count: Int? 
+    var count: Int {
+        get { _count ?? 1}
+        set { _count = newValue}
+    }
+    
+    enum CodingKeys: String, CodingKey {
+            case _count = "count"
+            case id, images, price, title
+        }
 }

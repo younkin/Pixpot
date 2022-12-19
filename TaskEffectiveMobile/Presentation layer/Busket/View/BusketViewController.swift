@@ -30,11 +30,9 @@ final class BusketViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.isHidden = true
-        
-        
+    
         refreshData()
         setupBindings()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,12 +68,12 @@ final class BusketViewController: UIViewController {
                         print("Success!")
                     }
                 }, receiveValue: { [weak self] basket in
-                    DispatchQueue.main.async {
-                        self?.basketView?.customTable.totalCostLbl.text = String(basket.total)
-                        self?.basketView?.customTable.delivaryCostLbl.text = basket.delivery
-                        self?.basketView?.customTable.basket = basket.basket
-                        self?.basketView?.customTable.basketTableView.reloadData()
-                    }
+//                    DispatchQueue.main.async {
+//                        self?.basketView?.customTable.totalCostLbl.text = String(basket.basket.compactMap{ $0.count * $0.price}.reduce(0) { $0 + $1})
+//                        self?.basketView?.customTable.delivaryCostLbl.text = basket.delivery
+//                        self?.basketView?.customTable.basket = basket.basket
+//                        self?.basketView?.customTable.basketTableView.reloadData()
+//                    }
                 }).store(in: &subscriptions)
         
         
@@ -96,6 +94,13 @@ final class BusketViewController: UIViewController {
                     item.badgeValue = String(basket.basket.count)
                     item.badgeColor = AppColors.orange
                 }
+                
+                DispatchQueue.main.async {
+                    self?.basketView?.customTable.totalCostLbl.text = String(basket.basket.compactMap{ $0.count * $0.price}.reduce(0) { $0 + $1})
+                    self?.basketView?.customTable.delivaryCostLbl.text = basket.delivery
+                    self?.basketView?.customTable.basket = basket.basket
+                    self?.basketView?.customTable.basketTableView.reloadData()
+                }
             }
         }).store(in: &subscriptions)
         
@@ -111,6 +116,11 @@ final class BusketViewController: UIViewController {
         basketView?.customTable.cellTouch.sink(receiveValue: { [weak self] in
             self?.basketViewModel.onProductScreen?()
         }).store(in: &subscriptions)
+        
+        basketView?.customTable.reloadCount = { [weak self] count, index in
+            self?.basketViewModel.basketService.basketSubject.value.basket[index].count = count
+        }
+        
     }
     
     required init?(coder: NSCoder) {

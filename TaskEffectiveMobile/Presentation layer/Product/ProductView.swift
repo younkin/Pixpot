@@ -102,7 +102,7 @@ final class ProductView: UIView {
         }
         
         collectionView.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide).offset(76)
+            $0.top.equalTo(safeAreaLayoutGuide).offset(79)
             $0.leading.trailing.equalTo(self)
             $0.height.equalTo(300)
         }

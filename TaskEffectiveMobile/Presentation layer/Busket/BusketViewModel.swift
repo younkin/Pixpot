@@ -33,7 +33,6 @@ final class BasketViewModel {
                     self.isLoadingIndicator.send(false)
                 }
             }, receiveValue: { [weak self] basket in
-               // self?.basketService.basketSubject.send(basket)
                 self?.basket.send(basket)
             }).store(in: &cancellable)
     }

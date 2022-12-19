@@ -17,10 +17,12 @@ class QuantityButton: UIControl {
    }
     
     // MARK: - Private variables
-    private var count: Int = 2 {
+    private var count: Int = 1 {
         didSet {
             if count <= 0 {
                 zeroCount.send()
+            } else {
+                reloadCount.send(count)
             }
         }
     }
@@ -73,7 +75,9 @@ class QuantityButton: UIControl {
    var onChange: ((String) -> Void)?
     
     let zeroCount = PassthroughSubject<Void, Never>()
+    let reloadCount = PassthroughSubject<Int, Never>()
     var cancellable: AnyCancellable?
+    var cancellable2: AnyCancellable?
     var index: IndexPath?
 
    // MARK: - Initialisers
