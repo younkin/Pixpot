@@ -128,6 +128,10 @@ class FilterView: UIView {
         addSubview(sizeLbl)
         addSubview(sizeBtn)
     
+        sendSubviewToBack(priceLbl)
+        sendSubviewToBack(priceBtn)
+        sendSubviewToBack(sizeLbl)
+        sendSubviewToBack(sizeBtn)
         
        stackView.addSubview(backButton)
        stackView.addSubview(titleLabel)
@@ -136,7 +140,6 @@ class FilterView: UIView {
     
     
     func makeConstraints() {
-        
         
         
         stackView.snp.makeConstraints {
