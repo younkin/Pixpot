@@ -35,7 +35,7 @@ final class TabBarCoordinator: BaseCoordinator {
         // стандартная реализация таба
 
         let mainNavigationController = MainNavigationController()
-        mainNavigationController.tabBarItem = UITabBarItem(title: "Explorer", image: UIImage(named: "dot"), tag: 0)
+        mainNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Explorer"), tag: 0)
         let mainCoordinator = coordinatorFactory.makeMainCoordinator(with: Router(rootController: mainNavigationController))
         
         let basketNavigationController = MainNavigationController()
