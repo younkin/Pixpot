@@ -17,11 +17,13 @@ final class CatalogFoodView: UIView {
     private let viewModel: CatalogFoodViewModel
     var canceballe = Set<AnyCancellable>()
     
+    
+    
     // MARK: - Outlets
     let collectionView: UICollectionView = {
         let collectionViewLayout = UICollectionViewLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
-        collectionView.backgroundColor = AppColors.white
+        collectionView.backgroundColor = AppColors.darkBlue
         collectionView.bounces = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
@@ -105,7 +107,7 @@ extension CatalogFoodView {
                                                             heightDimension: .fractionalHeight(1)))
         item.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1),
-                                                                         heightDimension: .fractionalHeight(0.27)),
+                                                                         heightDimension: .fractionalHeight(0.2)),
                                                        subitems: [item])
         group.contentInsets = .init(top: 16, leading: 10, bottom: 0, trailing: 10)
         let section = createlayoutSection(group: group,
@@ -131,13 +133,13 @@ extension CatalogFoodView {
                                                             heightDimension: .fractionalHeight(1)))
         item.contentInsets = .init(top: 5, leading: 5, bottom: 5, trailing: 5)
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1),
-                                                                         heightDimension: .fractionalHeight(0.18)),
+                                                                         heightDimension: .fractionalHeight(0.15)),
                                                        subitems: [item])
         group.contentInsets = .init(top: 0, leading: 10, bottom: 0, trailing: 10)
         let section = createlayoutSection(group: group,
                                           behavior: .none,
                                           interGroupSpacing: 0,
-                                          supplementaryItem: [])
+                                          supplementaryItem: [supplementaryHeaderItem()])
         section.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
         return section
     }
@@ -237,7 +239,8 @@ extension CatalogFoodView: UICollectionViewDataSource {
             else {
                 return UICollectionViewCell()
             }
-            let name = self.sections[indexPath.section].items[indexPath.row].title
+//            let name = self.sections[indexPath.section].items[indexPath.row].title
+            let name = ""
                 let image = self.sections[indexPath.section].items[indexPath.row].image
                cell.configureCell(imageString: image, productTitle: name)
 
@@ -261,7 +264,14 @@ extension CatalogFoodView: UICollectionViewDataSource {
             return footer
         case UICollectionView.elementKindSectionHeader:
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderSupplementaryView", for: indexPath) as! HeaderSupplementaryView
-  
+            if indexPath.section == 0 {
+                header.setupTitle(title: "Suggections")
+            }
+            if indexPath.section == 1 {
+                header.setupTitle(title: "Find in categories")
+            }
+            
+            
             return header
         default:
             return UICollectionReusableView()

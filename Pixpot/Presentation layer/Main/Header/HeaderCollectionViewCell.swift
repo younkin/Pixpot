@@ -14,24 +14,26 @@ class HeaderCollectionViewCell: UICollectionViewCell {
     
     private let BackgroundImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
+//        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Еще выгоднее!"
+        label.text = ""
         label.textAlignment = .left
         label.numberOfLines = 0
         label.font = AppFont.markProFont(ofSize: 20, weight: .medium)
-        
         label.textColor = AppColors.black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
     private let discriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Мы собрали все акции в одном месте"
+        label.text = ""
         label.textAlignment = .left
         label.numberOfLines = 0
         label.font = AppFont.markProFont(ofSize: 17, weight: .regular)

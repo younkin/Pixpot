@@ -54,38 +54,27 @@ struct MockData {
     
     private let headSection: ListSection = {
         .headSection([
-               .init(title: "Еще выгоднее!", image: "catalogHeader"),
-               .init(title: "Еще более", image: "catalogHeader"),
-               .init(title: "Еще более более", image: "catalogHeader"),
-               .init(title: "Более более", image: "catalogHeader")
+            .init(title: "", image: "BasketballHeader"),
+            .init(title: "", image: "FootballHeader"),
+            .init(title: "", image: "GymnasticsHeader"),
+            .init(title: "", image: "MartialHeader"),
+            .init(title: "", image: "RunningHeader"),
+            .init(title: "", image: "SkiHeader"),
+            .init(title: "", image: "SwimmingHeader"),
+            .init(title: "", image: "VolleyHeader")
         ])
     }()
     
     private let productSection: ListSection = {
         .productSection([
-            .init(title: "категория", image: "Напитки"),
-            .init(title: "категория", image: "Стирка"),
-            .init(title: "категория", image: "Beautyful"),
-            .init(title: "категория", image: "Bread"),
-            .init(title: "категория", image: "Cooked"),
-            .init(title: "категория", image: "deserts"),
-            .init(title: "категория", image: "Fish"),
-            .init(title: "категория", image: "Flour"),
-            .init(title: "категория", image: "frozeFoods"),
-            .init(title: "категория", image: "Healthy"),
-            .init(title: "категория", image: "Kidswear"),
-            .init(title: "категория", image: "Meat"),
-            .init(title: "категория", image: "Milk,chees"),
-            .init(title: "категория", image: "Muesli"),
-            .init(title: "категория", image: "nuts"),
-            .init(title: "категория", image: "Oil"),
-            .init(title: "категория", image: "Pasta"),
-            .init(title: "категория", image: "Petswear"),
-            .init(title: "категория", image: "Sausage"),
-            .init(title: "категория", image: "Season"),
-            .init(title: "категория", image: "snacks"),
-            .init(title: "категория", image: "TeaCoffee"),
-            .init(title: "категория", image: "Vegetables")
+            .init(title: "категория", image: "Basketball"),
+            .init(title: "категория", image: "Football"),
+            .init(title: "категория", image: "Gymnastics"),
+            .init(title: "категория", image: "Martial"),
+            .init(title: "категория", image: "Running"),
+            .init(title: "категория", image: "Ski"),
+            .init(title: "категория", image: "Swimming"),
+            .init(title: "категория", image: "Volley")
         ])
     }()
     

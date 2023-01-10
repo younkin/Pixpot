@@ -27,6 +27,8 @@ final class ProfileCoordinator: BaseCoordinator {
     // MARK: -
     private func showProfileScreen() {
 
+        let profilePage = moduleFactory.makeProfileModule()
         
+        self.router.push(profilePage, animated: true)
     }
 }

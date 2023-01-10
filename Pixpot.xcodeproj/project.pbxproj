@@ -49,6 +49,8 @@
 		74D5FFD129451DC200029FF8 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5FFD029451DC200029FF8 /* MockData.swift */; };
 		74D9A243294912870003C24F /* Button + Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D9A242294912870003C24F /* Button + Publisher.swift */; };
 		74D9A245294912C60003C24F /* UIContol + Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D9A244294912C60003C24F /* UIContol + Publisher.swift */; };
+		74F87612296D8AA000A8328C /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F87611296D8AA000A8328C /* WKWebViewController.swift */; };
+		74F87616296D9F6300A8328C /* UICustomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F87615296D9F6300A8328C /* UICustomBar.swift */; };
 		8418E8F1294A4CB800D2E310 /* MarkPro-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8418E8F0294A4CB800D2E310 /* MarkPro-Heavy.ttf */; };
 		8418E8F3294A5B6900D2E310 /* RoundedNavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418E8F2294A5B6900D2E310 /* RoundedNavButton.swift */; };
 		848A2029294366EC001317C4 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A2028294366EC001317C4 /* RequestBuilder.swift */; };
@@ -150,6 +152,8 @@
 		74D5FFD029451DC200029FF8 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		74D9A242294912870003C24F /* Button + Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button + Publisher.swift"; sourceTree = "<group>"; };
 		74D9A244294912C60003C24F /* UIContol + Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIContol + Publisher.swift"; sourceTree = "<group>"; };
+		74F87611296D8AA000A8328C /* WKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
+		74F87615296D9F6300A8328C /* UICustomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomBar.swift; sourceTree = "<group>"; };
 		8418E8F0294A4CB800D2E310 /* MarkPro-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkPro-Heavy.ttf"; sourceTree = "<group>"; };
 		8418E8F2294A5B6900D2E310 /* RoundedNavButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedNavButton.swift; sourceTree = "<group>"; };
 		848A2028294366EC001317C4 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
@@ -319,13 +323,13 @@
 			path = Pixpot;
 			sourceTree = "<group>";
 		};
-		7473220E2940F87C008E7EB0 /* TapBar */ = {
+		7473220E2940F87C008E7EB0 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
 				747321E22940ED4C008E7EB0 /* TabBarController.swift */,
 				7473221C2941074A008E7EB0 /* TabBarCoordinator.swift */,
 			);
-			path = TapBar;
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		7473220F2940F890008E7EB0 /* Main */ = {
@@ -369,6 +373,7 @@
 				746F3B282948E789002BC66D /* Buttons */,
 				7468D26C2946387200674261 /* ImageViews */,
 				7473222329411532008E7EB0 /* NavigationControllers */,
+				74F87611296D8AA000A8328C /* WKWebViewController.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 			isa = PBXGroup;
 			children = (
 				7473222429411568008E7EB0 /* MainNavigationController.swift */,
+				74F87615296D9F6300A8328C /* UICustomBar.swift */,
 			);
 			path = NavigationControllers;
 			sourceTree = "<group>";
@@ -394,9 +400,11 @@
 		748EB4FA2943519100A94A79 /* Presentation layer */ = {
 			isa = PBXGroup;
 			children = (
-				84D5F91A294A6BF300392899 /* Product */,
-				7473220E2940F87C008E7EB0 /* TapBar */,
+				74B452FA296CC60F00912206 /* WebView */,
+				74B452F9296CC5F800912206 /* CountySelection */,
 				7473220F2940F890008E7EB0 /* Main */,
+				7473220E2940F87C008E7EB0 /* TabBar */,
+				84D5F91A294A6BF300392899 /* Product */,
 				741DB45D2941D37A00F9AC84 /* Favorite */,
 				741DB45E2941D38A00F9AC84 /* Busket */,
 				741DB4672941DE0300F9AC84 /* Profile */,
@@ -422,6 +430,20 @@
 				7473222229411526008E7EB0 /* UIKit */,
 			);
 			path = "Core layer";
+			sourceTree = "<group>";
+		};
+		74B452F9296CC5F800912206 /* CountySelection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CountySelection;
+			sourceTree = "<group>";
+		};
+		74B452FA296CC60F00912206 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		74D5FFBF29451C3000029FF8 /* Cells */ = {
@@ -777,10 +799,12 @@
 				7473221D2941074A008E7EB0 /* TabBarCoordinator.swift in Sources */,
 				747321DF2940ED4C008E7EB0 /* AppDelegate.swift in Sources */,
 				7473222A294115E2008E7EB0 /* AppFonts.swift in Sources */,
+				74F87616296D9F6300A8328C /* UICustomBar.swift in Sources */,
 				741DB4642941D3E900F9AC84 /* BusketViewController.swift in Sources */,
 				74139E0A294360A70002DC0F /* ApiClient.swift in Sources */,
 				74732228294115B0008E7EB0 /* AppColors.swift in Sources */,
 				848A203B29438D34001317C4 /* MainService.swift in Sources */,
+				74F87612296D8AA000A8328C /* WKWebViewController.swift in Sources */,
 				74732217294104B8008E7EB0 /* ModuleFactory.swift in Sources */,
 				741DB4662941D3F800F9AC84 /* BusketCoordinator.swift in Sources */,
 				84E58593294C805F0098C311 /* DetailsControl.swift in Sources */,

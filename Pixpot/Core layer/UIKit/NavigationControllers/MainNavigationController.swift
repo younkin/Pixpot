@@ -13,6 +13,7 @@ final class MainNavigationController: UINavigationController {
         super.init(nibName: nil, bundle: nil)
         self.setStatusBar()
         setConstraints()
+
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -22,7 +23,9 @@ final class MainNavigationController: UINavigationController {
 
 // MARK: - Public API
 extension MainNavigationController {
-
+    
+   
+    
 }
 
 // MARK: - Private API
@@ -51,3 +54,4 @@ private extension MainNavigationController {
         navigationBar.isTranslucent = true
     }
 }
+

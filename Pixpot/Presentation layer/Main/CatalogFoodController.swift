@@ -38,7 +38,7 @@ final class CatalogFoodController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = AppColors.white
+        view.backgroundColor = AppColors.darkBlue
 //        viewModel.getAllFoodMainCatalogs()
 //
         refreshingData()

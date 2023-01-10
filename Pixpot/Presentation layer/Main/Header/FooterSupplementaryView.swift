@@ -15,8 +15,8 @@ class FooterSupplementaryView: UICollectionReusableView {
     
     private var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
-        pageControl.currentPageIndicatorTintColor = .black
-        pageControl.pageIndicatorTintColor = .systemGray2
+        pageControl.currentPageIndicatorTintColor = AppColors.green
+        pageControl.pageIndicatorTintColor = AppColors.grey
         return pageControl
     }()
     
@@ -31,7 +31,7 @@ class FooterSupplementaryView: UICollectionReusableView {
     }
 
     func setupView() {
-        backgroundColor = AppColors.white
+        backgroundColor = AppColors.darkBlue
     addSubview(pageControl)
     }
     

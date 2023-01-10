@@ -11,13 +11,12 @@ import SnapKit
 
 class HeaderSupplementaryView: UICollectionReusableView {
     
-    private let headerLabel: UILabel = {
+    private var headerLabel: UILabel = {
         let label = UILabel()
-        label.text = "Каталог"
+        label.text = "Suggections"
         label.textAlignment = .center
-        label.font = AppFont.markProFont(ofSize: 22, weight: .medium)
-        
-        label.textColor = AppColors.black
+        label.font = AppFont.markProFont(ofSize: 22, weight: .bold)
+        label.textColor = AppColors.white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -33,8 +32,13 @@ class HeaderSupplementaryView: UICollectionReusableView {
     }
  
     func setupView() {
-        backgroundColor = AppColors.white
+        backgroundColor = AppColors.darkBlue
         addSubview(headerLabel)
+    }
+    
+    func setupTitle(title: String?) {
+        guard let titletext = title else {return}
+        self.headerLabel.text = titletext
     }
     
     func setConstraints() {
