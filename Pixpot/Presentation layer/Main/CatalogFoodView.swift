@@ -17,7 +17,11 @@ final class CatalogFoodView: UIView {
     private let viewModel: CatalogFoodViewModel
     var canceballe = Set<AnyCancellable>()
     
-    
+    private let customBar: UICustomBar = {
+        let bar = UICustomBar()
+        bar.configure(title: "Find all sports \n near you", imageName: "PixtopLogo")
+        return bar
+    }()
     
     // MARK: - Outlets
     let collectionView: UICollectionView = {
@@ -107,7 +111,7 @@ extension CatalogFoodView {
                                                             heightDimension: .fractionalHeight(1)))
         item.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1),
-                                                                         heightDimension: .fractionalHeight(0.2)),
+                                                                         heightDimension: .fractionalHeight(0.25)),
                                                        subitems: [item])
         group.contentInsets = .init(top: 16, leading: 10, bottom: 0, trailing: 10)
         let section = createlayoutSection(group: group,
@@ -133,7 +137,7 @@ extension CatalogFoodView {
                                                             heightDimension: .fractionalHeight(1)))
         item.contentInsets = .init(top: 5, leading: 5, bottom: 5, trailing: 5)
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1),
-                                                                         heightDimension: .fractionalHeight(0.15)),
+                                                                         heightDimension: .fractionalHeight(0.17)),
                                                        subitems: [item])
         group.contentInsets = .init(top: 0, leading: 10, bottom: 0, trailing: 10)
         let section = createlayoutSection(group: group,
@@ -286,9 +290,16 @@ extension CatalogFoodView: UICollectionViewDataSource {
 private extension CatalogFoodView {
 
     func configureUI() {
-    
+       addSubview(customBar)
+        customBar.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(70)
+            $0.left.equalToSuperview().offset(20)
+            $0.right.equalToSuperview().offset(-20)
+            $0.height.equalTo(60)
+        }
+        
         collectionView.snp.makeConstraints {
-            $0.top.equalTo(self.snp.top).offset(0)
+            $0.top.equalTo(customBar.snp.bottom).offset(20)
             $0.leading.trailing.bottom.equalTo(self).offset(0)
         }
 

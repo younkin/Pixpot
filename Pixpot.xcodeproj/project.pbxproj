@@ -51,6 +51,8 @@
 		74D9A245294912C60003C24F /* UIContol + Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D9A244294912C60003C24F /* UIContol + Publisher.swift */; };
 		74F87612296D8AA000A8328C /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F87611296D8AA000A8328C /* WKWebViewController.swift */; };
 		74F87616296D9F6300A8328C /* UICustomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F87615296D9F6300A8328C /* UICustomBar.swift */; };
+		74F87619296E059400A8328C /* CalendarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F87618296E059400A8328C /* CalendarCoordinator.swift */; };
+		74F8761B296E05C300A8328C /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F8761A296E05C300A8328C /* CalendarViewController.swift */; };
 		8418E8F1294A4CB800D2E310 /* MarkPro-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8418E8F0294A4CB800D2E310 /* MarkPro-Heavy.ttf */; };
 		8418E8F3294A5B6900D2E310 /* RoundedNavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418E8F2294A5B6900D2E310 /* RoundedNavButton.swift */; };
 		848A2029294366EC001317C4 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A2028294366EC001317C4 /* RequestBuilder.swift */; };
@@ -67,10 +69,8 @@
 		848A20462943AA1C001317C4 /* MarkPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848A20422943AA1C001317C4 /* MarkPro-Regular.ttf */; };
 		848A20472943AA1C001317C4 /* MarkPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848A20432943AA1C001317C4 /* MarkPro-Bold.ttf */; };
 		848A20482943AA1C001317C4 /* MarkPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848A20442943AA1C001317C4 /* MarkPro-Medium.ttf */; };
-		848A204C2943AB1A001317C4 /* BusketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A204B2943AB1A001317C4 /* BusketView.swift */; };
 		848A204E2943AB25001317C4 /* BusketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A204D2943AB25001317C4 /* BusketViewModel.swift */; };
 		848A20512943AD31001317C4 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A20502943AD30001317C4 /* DIContainer.swift */; };
-		848A20562943D281001317C4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A20552943D281001317C4 /* TableViewCell.swift */; };
 		84AB9ACD2950F33300D35F2D /* FilterPriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB9ACC2950F33300D35F2D /* FilterPriceButton.swift */; };
 		84AB9ACF29510B6600D35F2D /* SizeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB9ACE29510B6600D35F2D /* SizeButton.swift */; };
 		84D5F91C294A6C4900392899 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5F91B294A6C4900392899 /* ProductViewController.swift */; };
@@ -85,8 +85,6 @@
 		84E5858E294B95880098C311 /* ProductInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5858D294B95880098C311 /* ProductInfoView.swift */; };
 		84E58590294BCA050098C311 /* ProductBuyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5858F294BCA050098C311 /* ProductBuyButton.swift */; };
 		84E58593294C805F0098C311 /* DetailsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E58592294C805F0098C311 /* DetailsControl.swift */; };
-		84F1FC2529450DD800FFF63E /* QuantityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1FC2429450DD800FFF63E /* QuantityButton.swift */; };
-		84F1FC29294601FF00FFF63E /* CustomBasketTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1FC28294601FF00FFF63E /* CustomBasketTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +152,8 @@
 		74D9A244294912C60003C24F /* UIContol + Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIContol + Publisher.swift"; sourceTree = "<group>"; };
 		74F87611296D8AA000A8328C /* WKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
 		74F87615296D9F6300A8328C /* UICustomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomBar.swift; sourceTree = "<group>"; };
+		74F87618296E059400A8328C /* CalendarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCoordinator.swift; sourceTree = "<group>"; };
+		74F8761A296E05C300A8328C /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		8418E8F0294A4CB800D2E310 /* MarkPro-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkPro-Heavy.ttf"; sourceTree = "<group>"; };
 		8418E8F2294A5B6900D2E310 /* RoundedNavButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedNavButton.swift; sourceTree = "<group>"; };
 		848A2028294366EC001317C4 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
@@ -169,10 +169,8 @@
 		848A20422943AA1C001317C4 /* MarkPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkPro-Regular.ttf"; sourceTree = "<group>"; };
 		848A20432943AA1C001317C4 /* MarkPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkPro-Bold.ttf"; sourceTree = "<group>"; };
 		848A20442943AA1C001317C4 /* MarkPro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkPro-Medium.ttf"; sourceTree = "<group>"; };
-		848A204B2943AB1A001317C4 /* BusketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusketView.swift; sourceTree = "<group>"; };
 		848A204D2943AB25001317C4 /* BusketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusketViewModel.swift; sourceTree = "<group>"; };
 		848A20502943AD30001317C4 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
-		848A20552943D281001317C4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		848A205A2943DAE4001317C4 /* UIVc+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVc+Preview.swift"; sourceTree = "<group>"; };
 		84AB9ACC2950F33300D35F2D /* FilterPriceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPriceButton.swift; sourceTree = "<group>"; };
 		84AB9ACE29510B6600D35F2D /* SizeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeButton.swift; sourceTree = "<group>"; };
@@ -188,8 +186,6 @@
 		84E5858D294B95880098C311 /* ProductInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoView.swift; sourceTree = "<group>"; };
 		84E5858F294BCA050098C311 /* ProductBuyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductBuyButton.swift; sourceTree = "<group>"; };
 		84E58592294C805F0098C311 /* DetailsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsControl.swift; sourceTree = "<group>"; };
-		84F1FC2429450DD800FFF63E /* QuantityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityButton.swift; sourceTree = "<group>"; };
-		84F1FC28294601FF00FFF63E /* CustomBasketTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBasketTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +396,7 @@
 		748EB4FA2943519100A94A79 /* Presentation layer */ = {
 			isa = PBXGroup;
 			children = (
+				74F87617296E057200A8328C /* Calendar */,
 				74B452FA296CC60F00912206 /* WebView */,
 				74B452F9296CC5F800912206 /* CountySelection */,
 				7473220F2940F890008E7EB0 /* Main */,
@@ -487,6 +484,15 @@
 			path = Exstensions;
 			sourceTree = "<group>";
 		};
+		74F87617296E057200A8328C /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				74F87618296E059400A8328C /* CalendarCoordinator.swift */,
+				74F8761A296E05C300A8328C /* CalendarViewController.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 		848A202629436687001317C4 /* ApiClient */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,9 +557,6 @@
 			children = (
 				848A20572943D32A001317C4 /* Cell */,
 				741DB4632941D3E900F9AC84 /* BusketViewController.swift */,
-				848A204B2943AB1A001317C4 /* BusketView.swift */,
-				84F1FC2429450DD800FFF63E /* QuantityButton.swift */,
-				84F1FC28294601FF00FFF63E /* CustomBasketTable.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -561,7 +564,6 @@
 		848A20572943D32A001317C4 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				848A20552943D281001317C4 /* TableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -741,6 +743,7 @@
 				7468D26E2946390B00674261 /* RoundedImageView.swift in Sources */,
 				746C78AC296C0A3000D8DAA6 /* FooterSupplementaryView.swift in Sources */,
 				84E58590294BCA050098C311 /* ProductBuyButton.swift in Sources */,
+				74F8761B296E05C300A8328C /* CalendarViewController.swift in Sources */,
 				84D6FFDE2950B1DA00405398 /* FilterBrandButton.swift in Sources */,
 				74D5FFC129451CCF00029FF8 /* SelectCollectionViewCell.swift in Sources */,
 				7473222C294139C1008E7EB0 /* CatalogFoodCoordinator.swift in Sources */,
@@ -753,7 +756,6 @@
 				741DB46B2941DE5A00F9AC84 /* ProfileViewController.swift in Sources */,
 				7460E719294A21C400BE0637 /* CatalogFoodView.swift in Sources */,
 				848A202E29438877001317C4 /* MainEntitie.swift in Sources */,
-				84F1FC29294601FF00FFF63E /* CustomBasketTable.swift in Sources */,
 				747322122940FB02008E7EB0 /* Router.swift in Sources */,
 				848A203D29438D47001317C4 /* ProductService.swift in Sources */,
 				746C78AA296C0A0600D8DAA6 /* HeaderCollectionViewCell.swift in Sources */,
@@ -762,7 +764,6 @@
 				746F3B2A2948E7BC002BC66D /* UIButtonRounded.swift in Sources */,
 				741DB4602941D3BC00F9AC84 /* FavoriteViewController.swift in Sources */,
 				746A2475294E61720090FA8F /* UIButtonFilter.swift in Sources */,
-				84F1FC2529450DD800FFF63E /* QuantityButton.swift in Sources */,
 				745F4DD5294F91E0003FEA78 /* FilterView.swift in Sources */,
 				848A202B294369FC001317C4 /* BasketApiClient.swift in Sources */,
 				74D5FFD129451DC200029FF8 /* MockData.swift in Sources */,
@@ -790,15 +791,14 @@
 				84D5F91E294A6CBD00392899 /* ProductViewModel.swift in Sources */,
 				84D6FFBC294E082F00405398 /* UIColorHex.swift in Sources */,
 				84E5858E294B95880098C311 /* ProductInfoView.swift in Sources */,
-				848A20562943D281001317C4 /* TableViewCell.swift in Sources */,
 				84AB9ACD2950F33300D35F2D /* FilterPriceButton.swift in Sources */,
-				848A204C2943AB1A001317C4 /* BusketView.swift in Sources */,
 				848A20512943AD31001317C4 /* DIContainer.swift in Sources */,
 				848A2032294389C1001317C4 /* ProductEntitie.swift in Sources */,
 				7460E717294A1C1C00BE0637 /* CatalogFoodViewModel.swift in Sources */,
 				7473221D2941074A008E7EB0 /* TabBarCoordinator.swift in Sources */,
 				747321DF2940ED4C008E7EB0 /* AppDelegate.swift in Sources */,
 				7473222A294115E2008E7EB0 /* AppFonts.swift in Sources */,
+				74F87619296E059400A8328C /* CalendarCoordinator.swift in Sources */,
 				74F87616296D9F6300A8328C /* UICustomBar.swift in Sources */,
 				741DB4642941D3E900F9AC84 /* BusketViewController.swift in Sources */,
 				74139E0A294360A70002DC0F /* ApiClient.swift in Sources */,

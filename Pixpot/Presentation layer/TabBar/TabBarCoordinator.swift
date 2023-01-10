@@ -35,31 +35,34 @@ final class TabBarCoordinator: BaseCoordinator {
         // стандартная реализация таба
 
         let mainNavigationController = MainNavigationController()
-        mainNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Home"), tag: 0)
+        mainNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(named:"homeOn"), tag: 0)
+        
         let mainCoordinator = coordinatorFactory.makeMainCoordinator(with: Router(rootController: mainNavigationController))
         
+        let calendarController = MainNavigationController()
+        calendarController.tabBarItem = UITabBarItem(title: "", image: UIImage(named:"calendarOff"), tag: 1)
+        let calendarCoordinator = coordinatorFactory.makeCalendarCoordinator(with: Router(rootController: calendarController))
         
-        
-        let basketNavigationController = MainNavigationController()
-        basketNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "busket"), tag: 1)
-        let basketCoordinator = coordinatorFactory.makeBusketCoordinator(with: Router(rootController: basketNavigationController))
-        
+//        let basketNavigationController = MainNavigationController()
+//        basketNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(named:"calendarOff"), tag: 1)
+//        let basketCoordinator = coordinatorFactory.makeBusketCoordinator(with: Router(rootController: basketNavigationController))
+//
         
         
         let profileViewController = MainNavigationController()
-        profileViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "heart"), tag: 2)
+        profileViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named:"userOff"), tag: 2)
         let profileCoordinator = coordinatorFactory.makeProfileCoordinator(with: Router(rootController: profileViewController))
     
-        tabBarController.viewControllers = [mainNavigationController,basketNavigationController,profileViewController]
+        tabBarController.viewControllers = [mainNavigationController,calendarController,profileViewController]
         
         router.setRoot(tabBarController, animated: false, hideBar: true)
 
         retain(mainCoordinator)
-        retain(basketCoordinator)
+        retain(calendarCoordinator)
         retain(profileCoordinator)
         
         mainCoordinator.start()
-        basketCoordinator.start()
+        calendarCoordinator.start()
         profileCoordinator.start()
     }
 

@@ -9,21 +9,29 @@
 import UIKit
 import WebKit
 
-class WebViewViewController: UIViewController {
+class WebViewController: UIViewController {
     
     private let webView: WKWebView = WKWebView()
     private let site: String
     private let navigationTitle: String?
+    private let loadindicator = UIActivityIndicatorView()
+    
     
     private let bottomView: UIView = {
         let view = UIView()
         view.backgroundColor = AppColors.darkBlue
         return view
     }()
+    private let exitButton: UIButton = {
+        let button = UIButton(type: .close)
+        button.addTarget(self, action: #selector(exitTapped), for: .touchUpInside)
+        return button
+    }()
+    
     private let loaderBackgroundView: UIView = {
         let view = UIView()
         view.isHidden = true
-        view.backgroundColor = .white
+        view.backgroundColor = .none
         view.layer.cornerRadius = 10
 //        view.dropShadow()
         return view
@@ -40,10 +48,12 @@ class WebViewViewController: UIViewController {
 //        return v
 //    }()
     
-    init(site: String, title: String?) {
+    init(site: String, title: String?, withExitButton: Bool) {
         self.site = site
         self.navigationTitle = title
+        self.exitButton.isHidden = !withExitButton
         super.init(nibName: nil, bundle: nil)
+        
     }
     
     required init?(coder: NSCoder) {
@@ -57,6 +67,9 @@ class WebViewViewController: UIViewController {
         startLoading()
     }
     
+    @objc func exitTapped() {
+        dismiss(animated: true)
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 //        navigationController?.setNavigationBarHidden(false, animated: true)
@@ -70,17 +83,17 @@ class WebViewViewController: UIViewController {
     }
     
     private func setupView() {
-        view.backgroundColor = .white
+        view.backgroundColor = .none
         navigationController?.navigationBar.barTintColor = AppColors.darkBlue
         webView.navigationDelegate = self
         view.addSubview(webView)
         view.addSubview(bottomView)
-//        webView.addSubview(loaderView)
+        view.addSubview(loadindicator)
         webView.addSubview(loaderBackgroundView)
-
+        webView.addSubview(exitButton)
         webViewConstraints()
         loaderBackgroundViewConstraints()
-//        laoderViewConstraints()
+        loadindicatorConstraints()
         addGoBackButton()
     }
     
@@ -106,28 +119,47 @@ class WebViewViewController: UIViewController {
         }
     }
     
+    private func loadindicatorConstraints() {
+        loadindicator.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.width.equalTo(35)
+            make.height.equalTo(35)
+        }
+    }
+
     private func webViewConstraints() {
-        webView.topAnchor.constraint(equalTo: webView.superview!.topAnchor).isActive = true
-        webView.rightAnchor.constraint(equalTo: webView.superview!.rightAnchor).isActive = true
-        webView.leftAnchor.constraint(equalTo: webView.superview!.leftAnchor).isActive = true
-        webView.bottomAnchor.constraint(equalTo: webView.superview!.bottomAnchor, constant: -25).isActive = true
-        webView.translatesAutoresizingMaskIntoConstraints = false
+     
+        exitButton.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(20)
+            make.right.equalToSuperview().offset(-20)
+            
+            make.width.height.equalTo(30)
+        }
         
-        bottomView.topAnchor.constraint(equalTo: webView.bottomAnchor).isActive = true
-        bottomView.bottomAnchor.constraint(equalTo: bottomView.superview!.bottomAnchor).isActive = true
-        bottomView.leftAnchor.constraint(equalTo: bottomView.superview!.leftAnchor).isActive = true
-        bottomView.rightAnchor.constraint(equalTo: bottomView.superview!.rightAnchor).isActive = true
-        bottomView.translatesAutoresizingMaskIntoConstraints = false
+        webView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.right.equalToSuperview()
+            make.left.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-25)
+        }
+
+        bottomView.snp.makeConstraints { make in
+            make.top.equalTo(webView.snp.bottom)
+            make.bottom.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+        }
     }
-    
+
     private func loaderBackgroundViewConstraints() {
-        loaderBackgroundView.widthAnchor.constraint(equalToConstant: 60).isActive = true
-        loaderBackgroundView.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        loaderBackgroundView.centerXAnchor.constraint(equalTo: loaderBackgroundView.superview!.centerXAnchor).isActive = true
-        loaderBackgroundView.centerYAnchor.constraint(equalTo: loaderBackgroundView.superview!.centerYAnchor).isActive = true
-        loaderBackgroundView.translatesAutoresizingMaskIntoConstraints = false
+        loaderBackgroundView.snp.makeConstraints { make in
+            make.width.equalTo(60)
+            make.height.equalTo(60)
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
     }
-    
     
     private func startLoading() {
         guard let url = URL(string: site) else {return}
@@ -137,28 +169,28 @@ class WebViewViewController: UIViewController {
     
     private func showLoader(toggle: Bool) {
         if toggle {
-//            loaderView.startAnimating()
-//            loaderBackgroundView.isHidden = false
+            loadindicator.startAnimating()
+            loaderBackgroundView.isHidden = false
         } else {
-//            loaderView.stopAnimating()
-//            loaderBackgroundView.isHidden = true
+            loadindicator.stopAnimating()
+            loaderBackgroundView.isHidden = true
         }
     }
 }
 
 //MARK: - WKWebView
-extension WebViewViewController: WKNavigationDelegate, WKUIDelegate {
+extension WebViewController: WKNavigationDelegate, WKUIDelegate {
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-//        showLoader(toggle: true)
+        showLoader(toggle: true)
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-//        showLoader(toggle: false)
+        showLoader(toggle: false)
         addGoBackButton()
     }
 
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-//        showLoader(toggle: false)
+        showLoader(toggle: false)
         addGoBackButton()
     }
 }

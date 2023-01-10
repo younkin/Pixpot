@@ -12,9 +12,10 @@ protocol ModuleFactoryProtocol {
     func makeCatalogFoodModule() -> CatalogFoodController
     
     func makeFavoriteModule() -> FavoriteViewController
-    func makeBusketModule() -> BusketViewController
+  
     func makeProfileModule() -> ProfileViewController
     func makeProductModule() -> ProductViewController
+    func makeCalendarModule() -> CalendarViewController
 }
 
 final class ModuleFactory: ModuleFactoryProtocol {
@@ -36,12 +37,12 @@ final class ModuleFactory: ModuleFactoryProtocol {
     func makeFavoriteModule() -> FavoriteViewController {
         return FavoriteViewController()
     }
-    func makeBusketModule() -> BusketViewController {
-        let viewModel = BasketViewModel(basketService: container.basketService)
-        return BusketViewController(basketViewModel: viewModel)
-    }
+    
     func makeProfileModule() -> ProfileViewController {
         return ProfileViewController()
+    }
+    func makeCalendarModule() -> CalendarViewController {
+        return CalendarViewController()
     }
     
     func makeProductModule() -> ProductViewController {

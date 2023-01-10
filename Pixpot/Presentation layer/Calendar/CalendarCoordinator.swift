@@ -1,14 +1,14 @@
 //
-//  BusketCoordinator.swift
-//  TaskEffectiveMobile
+//  CalendarCoordinator.swift
+//  Pixpot
 //
-//  Created by Евгений Юнкин on 08.12.22.
+//  Created by Евгений Юнкин on 11.01.23.
 //
 
 import UIKit
 
-final class BusketCoordinator: BaseCoordinator {
-    
+final class CalendarCoordinator: BaseCoordinator {
+
     // MARK: - Properies
     private let moduleFactory: ModuleFactoryProtocol
     private let router: Router
@@ -21,11 +21,15 @@ final class BusketCoordinator: BaseCoordinator {
 
     // MARK: - Navigation functions
     override func start() {
-  
+        showProfileScreen()
     }
 
-    // MARK: - 
-   
-    
+    // MARK: -
+    private func showProfileScreen() {
 
+        let profilePage = moduleFactory.makeCalendarModule()
+        
+        self.router.push(profilePage, animated: true)
+    }
 }
+

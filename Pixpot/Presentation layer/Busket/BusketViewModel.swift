@@ -21,24 +21,6 @@ final class BasketViewModel {
         self.basketService = basketService
     }
     
-    func getBasket() {
-        basketService.getBasket()
-            .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .failure(let error):
-                    print("Func getBasket end with failure: \(error)")
-                case .finished:
-                    print("Func getBasket success!")
-                    self.isLoadingIndicator.send(false)
-                }
-            }, receiveValue: { [weak self] basket in
-                self?.basket.send(basket)
-            }).store(in: &cancellable)
-    }
-    
-    func removeProduct(at index: Int) {
-        basketService.basketSubject.value.basket.remove(at: index)
-    }
+   
     
 }
