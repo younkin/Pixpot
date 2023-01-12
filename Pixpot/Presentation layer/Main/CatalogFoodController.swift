@@ -41,6 +41,7 @@ final class CatalogFoodController: UIViewController {
         view.backgroundColor = AppColors.darkBlue
 //        viewModel.getAllFoodMainCatalogs()
 //
+       
         refreshingData()
 //        setupBindings()
         

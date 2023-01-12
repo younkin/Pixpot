@@ -15,6 +15,10 @@
 		741DB4692941DE4700F9AC84 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */; };
 		741DB46B2941DE5A00F9AC84 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB46A2941DE5A00F9AC84 /* ProfileViewController.swift */; };
 		741DB46E2942367500F9AC84 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 741DB46D2942367500F9AC84 /* SnapKit */; };
+		744E0ECA29700C450036F531 /* PresentationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E0EC929700C450036F531 /* PresentationAssembly.swift */; };
+		744E0ECE297015B00036F531 /* WebViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E0ECD297015B00036F531 /* WebViewCoordinator.swift */; };
+		744E0ED029701BB80036F531 /* CountrySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E0ECF29701BB80036F531 /* CountrySelection.swift */; };
+		744E0ED329701EFB0036F531 /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E0ED229701EFB0036F531 /* PermissionsViewController.swift */; };
 		745F4DD5294F91E0003FEA78 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745F4DD4294F91E0003FEA78 /* FilterView.swift */; };
 		7460E715294A191B00BE0637 /* String + Exct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460E714294A191B00BE0637 /* String + Exct.swift */; };
 		7460E717294A1C1C00BE0637 /* CatalogFoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460E716294A1C1C00BE0637 /* CatalogFoodViewModel.swift */; };
@@ -112,6 +116,10 @@
 		741DB4652941D3F800F9AC84 /* BusketCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusketCoordinator.swift; sourceTree = "<group>"; };
 		741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		741DB46A2941DE5A00F9AC84 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		744E0EC929700C450036F531 /* PresentationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationAssembly.swift; sourceTree = "<group>"; };
+		744E0ECD297015B00036F531 /* WebViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewCoordinator.swift; sourceTree = "<group>"; };
+		744E0ECF29701BB80036F531 /* CountrySelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelection.swift; sourceTree = "<group>"; };
+		744E0ED229701EFB0036F531 /* PermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
 		745F4DD4294F91E0003FEA78 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		7460E714294A191B00BE0637 /* String + Exct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Exct.swift"; sourceTree = "<group>"; };
 		7460E716294A1C1C00BE0637 /* CatalogFoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFoodViewModel.swift; sourceTree = "<group>"; };
@@ -253,6 +261,22 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		744E0EC829700C070036F531 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				744E0EC929700C450036F531 /* PresentationAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		744E0ED129701EAF0036F531 /* PermissionsViews */ = {
+			isa = PBXGroup;
+			children = (
+				744E0ED229701EFB0036F531 /* PermissionsViewController.swift */,
+			);
+			path = PermissionsViews;
+			sourceTree = "<group>";
+		};
 		745F4DD3294F91C2003FEA78 /* FilterView */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,8 +330,8 @@
 			isa = PBXGroup;
 			children = (
 				747321DE2940ED4C008E7EB0 /* AppDelegate.swift */,
-				7473221A294106EE008E7EB0 /* AppCoordinator.swift */,
 				747321E02940ED4C008E7EB0 /* SceneDelegate.swift */,
+				7473221A294106EE008E7EB0 /* AppCoordinator.swift */,
 				748EB4FA2943519100A94A79 /* Presentation layer */,
 				748EB4FB2943522500A94A79 /* Business Logic Layer */,
 				748EB4FC294352A100A94A79 /* Core layer */,
@@ -364,12 +388,12 @@
 		7473222229411526008E7EB0 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				744E0ED129701EAF0036F531 /* PermissionsViews */,
 				745F4DD3294F91C2003FEA78 /* FilterView */,
 				84E58591294C80460098C311 /* UIControl */,
 				746F3B282948E789002BC66D /* Buttons */,
 				7468D26C2946387200674261 /* ImageViews */,
 				7473222329411532008E7EB0 /* NavigationControllers */,
-				74F87611296D8AA000A8328C /* WKWebViewController.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -396,6 +420,7 @@
 		748EB4FA2943519100A94A79 /* Presentation layer */ = {
 			isa = PBXGroup;
 			children = (
+				744E0EC829700C070036F531 /* Assembly */,
 				74F87617296E057200A8328C /* Calendar */,
 				74B452FA296CC60F00912206 /* WebView */,
 				74B452F9296CC5F800912206 /* CountySelection */,
@@ -432,6 +457,7 @@
 		74B452F9296CC5F800912206 /* CountySelection */ = {
 			isa = PBXGroup;
 			children = (
+				744E0ECF29701BB80036F531 /* CountrySelection.swift */,
 			);
 			path = CountySelection;
 			sourceTree = "<group>";
@@ -439,6 +465,8 @@
 		74B452FA296CC60F00912206 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
+				74F87611296D8AA000A8328C /* WKWebViewController.swift */,
+				744E0ECD297015B00036F531 /* WebViewCoordinator.swift */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -741,6 +769,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7468D26E2946390B00674261 /* RoundedImageView.swift in Sources */,
+				744E0ECA29700C450036F531 /* PresentationAssembly.swift in Sources */,
 				746C78AC296C0A3000D8DAA6 /* FooterSupplementaryView.swift in Sources */,
 				84E58590294BCA050098C311 /* ProductBuyButton.swift in Sources */,
 				74F8761B296E05C300A8328C /* CalendarViewController.swift in Sources */,
@@ -752,6 +781,7 @@
 				848A20302943894A001317C4 /* BasketEntitie.swift in Sources */,
 				74D5FFCA29451D4900029FF8 /* HeaderSupplementaryView.swift in Sources */,
 				747322142940FC5B008E7EB0 /* BaseCoordinator.swift in Sources */,
+				744E0ED329701EFB0036F531 /* PermissionsViewController.swift in Sources */,
 				746C78AE296C0A4900D8DAA6 /* ProductsCollectionViewCell.swift in Sources */,
 				741DB46B2941DE5A00F9AC84 /* ProfileViewController.swift in Sources */,
 				7460E719294A21C400BE0637 /* CatalogFoodView.swift in Sources */,
@@ -771,6 +801,7 @@
 				7473222529411568008E7EB0 /* MainNavigationController.swift in Sources */,
 				84D5F91C294A6C4900392899 /* ProductViewController.swift in Sources */,
 				7460E715294A191B00BE0637 /* String + Exct.swift in Sources */,
+				744E0ECE297015B00036F531 /* WebViewCoordinator.swift in Sources */,
 				74D9A245294912C60003C24F /* UIContol + Publisher.swift in Sources */,
 				848A2029294366EC001317C4 /* RequestBuilder.swift in Sources */,
 				848A204E2943AB25001317C4 /* BusketViewModel.swift in Sources */,
@@ -786,6 +817,7 @@
 				84AB9ACF29510B6600D35F2D /* SizeButton.swift in Sources */,
 				74D5FFC529451D1200029FF8 /* HotSalesCollectionViewCell.swift in Sources */,
 				84D5F922294A7C2100392899 /* ProductCollectionViewCell.swift in Sources */,
+				744E0ED029701BB80036F531 /* CountrySelection.swift in Sources */,
 				848A203629438BE8001317C4 /* MainApiClient.swift in Sources */,
 				741DB4692941DE4700F9AC84 /* ProfileCoordinator.swift in Sources */,
 				84D5F91E294A6CBD00392899 /* ProductViewModel.swift in Sources */,

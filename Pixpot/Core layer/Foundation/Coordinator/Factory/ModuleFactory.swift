@@ -16,6 +16,7 @@ protocol ModuleFactoryProtocol {
     func makeProfileModule() -> ProfileViewController
     func makeProductModule() -> ProductViewController
     func makeCalendarModule() -> CalendarViewController
+    func makeWebViewModule(site: String,title: String) -> WebViewController
 }
 
 final class ModuleFactory: ModuleFactoryProtocol {
@@ -32,6 +33,9 @@ final class ModuleFactory: ModuleFactoryProtocol {
     
     func makeTabBarModule() -> TabBarController {
         return TabBarController()
+    }
+    func makeWebViewModule(site: String,title: String) -> WebViewController {
+        return WebViewController(site: site, title: title, withExitButton: false, withBackButton: false)
     }
 
     func makeFavoriteModule() -> FavoriteViewController {

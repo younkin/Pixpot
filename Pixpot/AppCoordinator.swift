@@ -48,13 +48,20 @@ final class AppCoordinator: BaseCoordinator {
         router.setRoot(UIViewController(), animated: false)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-            self.launch = .app
-            self.performAppFlow()
+//            self.launch = .app
+            self.launch = .webView
+//            self.performAppFlow()
+            self.performWebViewFlow()
         })
     }
     
     private func performWebViewFlow() {
         
+        let webViewCoordinator = coordinatorFactory.makeWebViewCoordinator(with: router)
+        retain(webViewCoordinator)
+        webViewCoordinator.start()
+        
+
     }
     
     private func performAppFlow() {

@@ -46,6 +46,9 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
     func makeCalendarCoordinator(with router: Router) -> CalendarCoordinator {
         return CalendarCoordinator(router: router, moduleFactory: moduleFactory)
     }
+    func makeWebViewCoordinator(with router: Router) -> WebViewCoordinator {
+        return WebViewCoordinator(router: router, moduleFactory: moduleFactory)
+    }
     
     
     func makeApplicationCoordinator(with router: Router) -> AppCoordinator {

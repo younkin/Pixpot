@@ -48,7 +48,7 @@ class WebViewController: UIViewController {
 //        return v
 //    }()
     
-    init(site: String, title: String?, withExitButton: Bool) {
+    init(site: String, title: String?, withExitButton: Bool, withBackButton:Bool) {
         self.site = site
         self.navigationTitle = title
         self.exitButton.isHidden = !withExitButton
@@ -83,7 +83,7 @@ class WebViewController: UIViewController {
     }
     
     private func setupView() {
-        view.backgroundColor = .none
+        view.backgroundColor = AppColors.white
         navigationController?.navigationBar.barTintColor = AppColors.darkBlue
         webView.navigationDelegate = self
         view.addSubview(webView)
@@ -138,7 +138,7 @@ class WebViewController: UIViewController {
         }
         
         webView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().offset(40)
             make.right.equalToSuperview()
             make.left.equalToSuperview()
             make.bottom.equalToSuperview().offset(-25)

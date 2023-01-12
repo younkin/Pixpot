@@ -140,7 +140,7 @@ override func viewDidLoad() {
     
     
     func showWebView(url: String, title: String) {
-        let web = WebViewController(site: url, title: title, withExitButton: true)
+        let web = WebViewController(site: url, title: title, withExitButton: true, withBackButton: false)
          self.present(web, animated: true)
     }
 

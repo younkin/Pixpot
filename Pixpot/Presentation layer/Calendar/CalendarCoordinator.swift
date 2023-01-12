@@ -28,7 +28,7 @@ final class CalendarCoordinator: BaseCoordinator {
     private func showProfileScreen() {
 
         let profilePage = moduleFactory.makeCalendarModule()
-        
+
         self.router.push(profilePage, animated: true)
     }
 }

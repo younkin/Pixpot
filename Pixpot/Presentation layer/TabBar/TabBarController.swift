@@ -19,27 +19,15 @@ final class TabBarController: UITabBarController {
     }
     
     
-    
     func setup() {
-        tabBar.backgroundColor = .none
-        
-
         tabBar.itemWidth = tabBar.bounds.width / 5
         tabBar.itemPositioning = .centered
-    
-        
-  
-        
-//        tabBar.tintColor = AppColors.white
-//        tabBar.unselectedItemTintColor = AppColors.white
         tabBar.barTintColor = AppColors.darkBlue
-        
 }
+    
     func setupBackground() {
         let positionX: CGFloat = 40
         let PositionY: CGFloat = 10
-//        let width = tabBar.bounds.width - positionX * 2
-//        let height = tabBar.bounds.height + PositionY * 2
         let width = tabBar.bounds.width - positionX * 2
         let height = tabBar.bounds.height + PositionY * 2
         let rounderLayer = CAShapeLayer()
@@ -61,13 +49,11 @@ extension TabBarController: UITabBarControllerDelegate {
             tabBar.items![1].image = UIImage(named: "calendarOff")
             tabBar.items![2].image = UIImage(named: "userOff")
             item.image = UIImage(named: "homeOn")
-        
         }
         if item == tabBar.items![1] {
             tabBar.items![0].image = UIImage(named: "homeOff")
             tabBar.items![2].image = UIImage(named: "userOff")
             item.image = UIImage(named: "calendarOn")
-           
         }
         if item == tabBar.items![2] {
             tabBar.items![0].image = UIImage(named: "homeOff")
