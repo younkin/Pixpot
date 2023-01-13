@@ -14,7 +14,7 @@ protocol CoordinatorFactoryProtocol {
     func makeTabBarCoordinator(with router: Router) -> TabBarCoordinator
     
     func makeFavoriteCoordinator(with router: Router) -> FavoriteCoordinator
-    func makeBusketCoordinator(with router: Router) -> BusketCoordinator
+
     func makeProfileCoordinator(with router: Router) -> ProfileCoordinator
     func makeCalendarCoordinator(with router: Router) -> CalendarCoordinator
 
@@ -36,9 +36,7 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
         return FavoriteCoordinator(router: router, moduleFactory: moduleFactory)
     }
     
-    func makeBusketCoordinator(with router: Router) -> BusketCoordinator {
-        return BusketCoordinator(router: router, moduleFactory: moduleFactory)
-    }
+
     
     func makeProfileCoordinator(with router: Router) -> ProfileCoordinator {
         return ProfileCoordinator(router: router, moduleFactory: moduleFactory)
@@ -46,9 +44,7 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
     func makeCalendarCoordinator(with router: Router) -> CalendarCoordinator {
         return CalendarCoordinator(router: router, moduleFactory: moduleFactory)
     }
-    func makeWebViewCoordinator(with router: Router) -> WebViewCoordinator {
-        return WebViewCoordinator(router: router, moduleFactory: moduleFactory)
-    }
+   
     
     
     func makeApplicationCoordinator(with router: Router) -> AppCoordinator {

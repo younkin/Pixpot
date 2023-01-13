@@ -37,16 +37,7 @@ class WebViewController: UIViewController {
         return view
     }()
     
-//    private let loaderView: NVActivityIndicatorView = {
-//        let v = NVActivityIndicatorView(frame: CGRect(x: 0,
-//                                                      y: 0,
-//                                                      width: CGFloat(40).dp,
-//                                                      height: CGFloat(40).dp),
-//                                        type: NVActivityIndicatorType.circleStrokeSpin)
-//        v.color = UIColor.AppCollors.backgroundBlue
-//        v.layer.zPosition = 100
-//        return v
-//    }()
+
     
     init(site: String, title: String?, withExitButton: Bool, withBackButton:Bool) {
         self.site = site
@@ -70,17 +61,7 @@ class WebViewController: UIViewController {
     @objc func exitTapped() {
         dismiss(animated: true)
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-//        navigationController?.setNavigationBarHidden(false, animated: true)
-//        (tabBarController as? CustomTabBarController)?.setTabBar(hidden: true)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-//        navigationController?.setNavigationBarHidden(true, animated: true)
-//        (tabBarController as? CustomTabBarController)?.setTabBar(hidden: false)
-    }
+
     
     private func setupView() {
         view.backgroundColor = AppColors.white

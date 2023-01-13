@@ -67,7 +67,6 @@ final class TabBarCoordinator: BaseCoordinator {
                 DispatchQueue.main.async {
                     self.showWebScreen(link: link)
                 }
-                   
             case.app:
                 self.startApp()
             default:

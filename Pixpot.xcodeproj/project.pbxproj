@@ -10,13 +10,10 @@
 		74139E0A294360A70002DC0F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74139E09294360A70002DC0F /* ApiClient.swift */; };
 		741DB4602941D3BC00F9AC84 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB45F2941D3BC00F9AC84 /* FavoriteViewController.swift */; };
 		741DB4622941D3CB00F9AC84 /* FavoriteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB4612941D3CB00F9AC84 /* FavoriteCoordinator.swift */; };
-		741DB4642941D3E900F9AC84 /* BusketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB4632941D3E900F9AC84 /* BusketViewController.swift */; };
-		741DB4662941D3F800F9AC84 /* BusketCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB4652941D3F800F9AC84 /* BusketCoordinator.swift */; };
 		741DB4692941DE4700F9AC84 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */; };
 		741DB46B2941DE5A00F9AC84 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB46A2941DE5A00F9AC84 /* ProfileViewController.swift */; };
 		741DB46E2942367500F9AC84 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 741DB46D2942367500F9AC84 /* SnapKit */; };
 		744E0ECA29700C450036F531 /* PresentationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E0EC929700C450036F531 /* PresentationAssembly.swift */; };
-		744E0ECE297015B00036F531 /* WebViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E0ECD297015B00036F531 /* WebViewCoordinator.swift */; };
 		744E0ED329701EFB0036F531 /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E0ED229701EFB0036F531 /* PermissionsViewController.swift */; };
 		744E0ED52970BF1F0036F531 /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E0ED42970BF1F0036F531 /* CountryService.swift */; };
 		744E0ED72970BF7F0036F531 /* CountryApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E0ED62970BF7F0036F531 /* CountryApiClient.swift */; };
@@ -76,7 +73,6 @@
 		848A20462943AA1C001317C4 /* MarkPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848A20422943AA1C001317C4 /* MarkPro-Regular.ttf */; };
 		848A20472943AA1C001317C4 /* MarkPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848A20432943AA1C001317C4 /* MarkPro-Bold.ttf */; };
 		848A20482943AA1C001317C4 /* MarkPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848A20442943AA1C001317C4 /* MarkPro-Medium.ttf */; };
-		848A204E2943AB25001317C4 /* BusketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A204D2943AB25001317C4 /* BusketViewModel.swift */; };
 		848A20512943AD31001317C4 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A20502943AD30001317C4 /* DIContainer.swift */; };
 		84AB9ACD2950F33300D35F2D /* FilterPriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB9ACC2950F33300D35F2D /* FilterPriceButton.swift */; };
 		84AB9ACF29510B6600D35F2D /* SizeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB9ACE29510B6600D35F2D /* SizeButton.swift */; };
@@ -115,12 +111,9 @@
 		74139E09294360A70002DC0F /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		741DB45F2941D3BC00F9AC84 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		741DB4612941D3CB00F9AC84 /* FavoriteCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCoordinator.swift; sourceTree = "<group>"; };
-		741DB4632941D3E900F9AC84 /* BusketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusketViewController.swift; sourceTree = "<group>"; };
-		741DB4652941D3F800F9AC84 /* BusketCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusketCoordinator.swift; sourceTree = "<group>"; };
 		741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		741DB46A2941DE5A00F9AC84 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		744E0EC929700C450036F531 /* PresentationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationAssembly.swift; sourceTree = "<group>"; };
-		744E0ECD297015B00036F531 /* WebViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewCoordinator.swift; sourceTree = "<group>"; };
 		744E0ED229701EFB0036F531 /* PermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
 		744E0ED42970BF1F0036F531 /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
 		744E0ED62970BF7F0036F531 /* CountryApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryApiClient.swift; sourceTree = "<group>"; };
@@ -183,7 +176,6 @@
 		848A20422943AA1C001317C4 /* MarkPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkPro-Regular.ttf"; sourceTree = "<group>"; };
 		848A20432943AA1C001317C4 /* MarkPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkPro-Bold.ttf"; sourceTree = "<group>"; };
 		848A20442943AA1C001317C4 /* MarkPro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkPro-Medium.ttf"; sourceTree = "<group>"; };
-		848A204D2943AB25001317C4 /* BusketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusketViewModel.swift; sourceTree = "<group>"; };
 		848A20502943AD30001317C4 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		848A205A2943DAE4001317C4 /* UIVc+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVc+Preview.swift"; sourceTree = "<group>"; };
 		84AB9ACC2950F33300D35F2D /* FilterPriceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPriceButton.swift; sourceTree = "<group>"; };
@@ -246,16 +238,6 @@
 				741DB4612941D3CB00F9AC84 /* FavoriteCoordinator.swift */,
 			);
 			path = Favorite;
-			sourceTree = "<group>";
-		};
-		741DB45E2941D38A00F9AC84 /* Busket */ = {
-			isa = PBXGroup;
-			children = (
-				848A20522943BFB1001317C4 /* View */,
-				741DB4652941D3F800F9AC84 /* BusketCoordinator.swift */,
-				848A204D2943AB25001317C4 /* BusketViewModel.swift */,
-			);
-			path = Busket;
 			sourceTree = "<group>";
 		};
 		741DB4672941DE0300F9AC84 /* Profile */ = {
@@ -434,7 +416,6 @@
 				7473220F2940F890008E7EB0 /* Main */,
 				84D5F91A294A6BF300392899 /* Product */,
 				741DB45D2941D37A00F9AC84 /* Favorite */,
-				741DB45E2941D38A00F9AC84 /* Busket */,
 				741DB4672941DE0300F9AC84 /* Profile */,
 			);
 			path = "Presentation layer";
@@ -472,7 +453,6 @@
 			isa = PBXGroup;
 			children = (
 				74F87611296D8AA000A8328C /* WKWebViewController.swift */,
-				744E0ECD297015B00036F531 /* WebViewCoordinator.swift */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -587,22 +567,6 @@
 				848A20502943AD30001317C4 /* DIContainer.swift */,
 			);
 			path = DI;
-			sourceTree = "<group>";
-		};
-		848A20522943BFB1001317C4 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				848A20572943D32A001317C4 /* Cell */,
-				741DB4632941D3E900F9AC84 /* BusketViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		848A20572943D32A001317C4 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		848A20582943DABF001317C4 /* Extensions */ = {
@@ -812,10 +776,8 @@
 				7473222529411568008E7EB0 /* MainNavigationController.swift in Sources */,
 				84D5F91C294A6C4900392899 /* ProductViewController.swift in Sources */,
 				7460E715294A191B00BE0637 /* String + Exct.swift in Sources */,
-				744E0ECE297015B00036F531 /* WebViewCoordinator.swift in Sources */,
 				74D9A245294912C60003C24F /* UIContol + Publisher.swift in Sources */,
 				848A2029294366EC001317C4 /* RequestBuilder.swift in Sources */,
-				848A204E2943AB25001317C4 /* BusketViewModel.swift in Sources */,
 				74732221294108C4008E7EB0 /* CatalogFoodController.swift in Sources */,
 				8418E8F3294A5B6900D2E310 /* RoundedNavButton.swift in Sources */,
 				747321E32940ED4C008E7EB0 /* TabBarController.swift in Sources */,
@@ -843,14 +805,12 @@
 				7473222A294115E2008E7EB0 /* AppFonts.swift in Sources */,
 				74F87619296E059400A8328C /* CalendarCoordinator.swift in Sources */,
 				74F87616296D9F6300A8328C /* UICustomBar.swift in Sources */,
-				741DB4642941D3E900F9AC84 /* BusketViewController.swift in Sources */,
 				74139E0A294360A70002DC0F /* ApiClient.swift in Sources */,
 				74732228294115B0008E7EB0 /* AppColors.swift in Sources */,
 				848A203B29438D34001317C4 /* MainService.swift in Sources */,
 				744E0EDB2970C6850036F531 /* CountrySelector.swift in Sources */,
 				74F87612296D8AA000A8328C /* WKWebViewController.swift in Sources */,
 				74732217294104B8008E7EB0 /* ModuleFactory.swift in Sources */,
-				741DB4662941D3F800F9AC84 /* BusketCoordinator.swift in Sources */,
 				84E58593294C805F0098C311 /* DetailsControl.swift in Sources */,
 				84D6FFB6294CE1F100405398 /* ColorControl .swift in Sources */,
 				747321E12940ED4C008E7EB0 /* SceneDelegate.swift in Sources */,

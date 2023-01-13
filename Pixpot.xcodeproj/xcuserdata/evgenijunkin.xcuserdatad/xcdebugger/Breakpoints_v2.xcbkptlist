@@ -574,10 +574,10 @@
             filePath = "Pixpot/Presentation layer/WebView/WKWebViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "addGoBackButton()"
-            landmarkType = "7">
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "WebViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -606,8 +606,8 @@
             filePath = "Pixpot/Presentation layer/TabBar/TabBarCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "showLoadingScreen()"
             landmarkType = "7">
          </BreakpointContent>
@@ -657,22 +657,6 @@
             startingLineNumber = "86"
             endingLineNumber = "86"
             landmarkName = "linkRequest()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3D9BB107-5FD2-4D22-B5B8-0CE66EEC4EED"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pixpot/Presentation layer/TabBar/TabBarCoordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "showLoadingScreen()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

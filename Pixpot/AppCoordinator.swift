@@ -62,10 +62,7 @@ final class AppCoordinator: BaseCoordinator {
     
     private func performWebViewFlow() {
         
-        let webViewCoordinator = coordinatorFactory.makeWebViewCoordinator(with: router)
-        retain(webViewCoordinator)
-        webViewCoordinator.start()
-        
+     
 
     }
     
