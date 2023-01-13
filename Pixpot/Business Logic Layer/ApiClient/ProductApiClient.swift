@@ -15,7 +15,7 @@ protocol ProductApiClientProtocol {
 extension APIClient: ProductApiClientProtocol {
     func getProduct() -> AnyPublisher<ProductEntitie, Error> {
         let request = requestBuilder
-            .set(path: .product)
+//            .set(path: .product)
             .set(method: .GET)
             .build()
         return performRequest(request)

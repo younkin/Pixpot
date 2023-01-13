@@ -18,6 +18,7 @@ final class DIContainer {
     lazy var basketService = BasketService(apiClient: apiClient)
     lazy var mainService = MainService(apiClient: apiClient)
     lazy var productService = ProductService(apiClient: apiClient)
+    lazy var countryService = CountryService(apiClient: apiClient)
     
     init() {
         decoder = JSONDecoder()

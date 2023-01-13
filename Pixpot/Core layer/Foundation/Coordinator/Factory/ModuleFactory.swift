@@ -17,6 +17,7 @@ protocol ModuleFactoryProtocol {
     func makeProductModule() -> ProductViewController
     func makeCalendarModule() -> CalendarViewController
     func makeWebViewModule(site: String,title: String) -> WebViewController
+    func makeLoadingModule() -> LoadingScreenViewController
 }
 
 final class ModuleFactory: ModuleFactoryProtocol {
@@ -49,6 +50,10 @@ final class ModuleFactory: ModuleFactoryProtocol {
         return CalendarViewController()
     }
     
+    func makeLoadingModule() -> LoadingScreenViewController{
+        let viewmodel = LoadingScreenViewModel(service: container.countryService)
+        return LoadingScreenViewController(viewModel: viewmodel)
+    }
     func makeProductModule() -> ProductViewController {
         let viewModel = ProductViewModel(service: container.productService)
         return ProductViewController(viewModel: viewModel)

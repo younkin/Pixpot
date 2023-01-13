@@ -9,23 +9,42 @@ import Foundation
 
 enum Endpoint {
     case none
-    case main
-    case product
+    case country
+    case appleAuth
     case cart
+    case auth
+    case delete
+    case setPremium
+    case revokeAppleToken
+    case updatePushToken
     
     var rawValue: String {
         switch self {
         case .none:
             return "/"
-        case .main:
-            return  "/v3/654bd15e-b121-49ba-a588-960956b15175"
-        case .product:
-            return "/v3/6c14c560-15c6-4248-b9d2-b4508df7d4f5"
+        case .country:
+            return  "/api/getCountry"
+        case .appleAuth:
+            return "/api/appleAuth"
+        case .auth:
+            return "/api/auth"
+        case .delete:
+            return "/api/profile/delete"
+        case .setPremium:
+            return "/api/profile/premium"
+        case .revokeAppleToken:
+            return "/api/apauth.php"
+        case .updatePushToken:
+            return "/api/profile/push"
         case .cart:
-            return "/v3/53539a72-3c5f-4f30-bbb1-6ca10d42c149"
+            return "/"
         }
     }
 }
+
+
+
+
 
 enum HTTPMethod: String {
     case POST
@@ -55,7 +74,9 @@ protocol RequestBuildable {
 
 class RequestBuilder: RequestBuildable {
 
-    private(set) var host: String = "https://run.mocky.io"
+//    private(set) var host: String = "https://run.mocky.io"
+    private(set) var host: String = "https://pixpot.host"
+
     private(set) var path: Endpoint = .none
 
     private(set) var method: HTTPMethod = .GET
