@@ -28,3 +28,10 @@ struct DataClass: Codable {
         case countryCode = "country_code"
     }
 }
+
+
+
+
+struct Link: Codable {
+    let link: String
+}

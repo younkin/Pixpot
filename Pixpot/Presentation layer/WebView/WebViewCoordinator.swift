@@ -22,16 +22,16 @@ final class WebViewCoordinator: BaseCoordinator {
 
     // MARK: - Navigation functions
     override func start() {
-        showWebScreen()
+//        showWebScreen()
     }
 
     // MARK: -
-    private func showWebScreen() {
-
-        let webView = WebViewController(site: "https://www.google.com/", title: "some title", withExitButton: false, withBackButton: false)
-        webView.modalPresentationStyle = .fullScreen
-        self.router.setRoot(webView, animated: false)
-//        self.router.present(webView, animated: false)
-         }
+//    private func showWebScreen() {
+//
+//        let webView = WebViewController(site: "https://www.google.com/", title: "some title", withExitButton: false, withBackButton: false)
+//        webView.modalPresentationStyle = .fullScreen
+//        self.router.setRoot(webView, animated: false)
+////        self.router.present(webView, animated: false)
+//         }
 }
 

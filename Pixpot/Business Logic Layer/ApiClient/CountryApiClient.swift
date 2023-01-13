@@ -10,17 +10,22 @@ import Foundation
 import Combine
 
 protocol CountryApiClientProtocol {
-    func getCountry(ip: String) -> AnyPublisher<CountryEntitie, Error>
+    func getCountry() -> AnyPublisher<CountryEntitie, Error>
+ 
+    
 }
  
 extension APIClient: CountryApiClientProtocol {
-    func getCountry(ip: String) -> AnyPublisher<CountryEntitie, Error> {
+    func getCountry() -> AnyPublisher<CountryEntitie, Error> {
         let request = requestBuilder
             .set(path: .country)
             .set(method: .GET)
-            .add(header: "ip", value: ip)
+//            .add(header: "ip", value: ip)
             .build()
         return performRequest(request)
     }
+    
+ 
+    
     
 }

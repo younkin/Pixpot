@@ -17,7 +17,7 @@ protocol CoordinatorFactoryProtocol {
     func makeBusketCoordinator(with router: Router) -> BusketCoordinator
     func makeProfileCoordinator(with router: Router) -> ProfileCoordinator
     func makeCalendarCoordinator(with router: Router) -> CalendarCoordinator
-    func makeScreenCoordinator(with router: Router) -> LoadingScreenCoordinator
+
     
 }
 
@@ -56,11 +56,9 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
     }
 
     func makeTabBarCoordinator(with router: Router) -> TabBarCoordinator {
-        return TabBarCoordinator(router: router, coordinatorFactory: self)
+        return TabBarCoordinator(router: router, coordinatorFactory: self, moduleFactory: moduleFactory)
     }
-    func makeScreenCoordinator(with router: Router) -> LoadingScreenCoordinator {
-        return LoadingScreenCoordinator(router: router, moduleFactory: moduleFactory)
-    }
+  
   
     
 

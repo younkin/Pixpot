@@ -15,7 +15,7 @@ final class AppCoordinator: BaseCoordinator {
 
     private let coordinatorFactory: CoordinatorFactory
     private let router: Router
-    private var launch: LaunchInstructor = .countryVerify
+    
 
     // MARK: - Initialisers
 
@@ -27,38 +27,30 @@ final class AppCoordinator: BaseCoordinator {
     // MARK: - Public Methods
 
     override func start() {
-        switch launch {
-        case .countryVerify:
-            performCountryFlow()
-        case .webView:
-            performWebViewFlow()
-        case .app:
-            performAppFlow()
-        }
+        startTabbar()
     }
 
     // MARK: - Private Methods
     
     private func performCountryFlow() {
         
-        let loadingScreenCoordinator = coordinatorFactory.makeScreenCoordinator(with: router)
-        retain(loadingScreenCoordinator)
-        loadingScreenCoordinator.start()
+       
         
 //        router.setRoot(UIViewController(), animated: false)
         
-            loadingScreenCoordinator.appWay = {[weak self] appWay in
-                guard let self = self else {return}
-                switch appWay {
-                case .webView:
-                    self.performWebViewFlow()
-                case .app:
-                    self.performAppFlow()
-                case .countryVerify:
-                    break
-                }
-            
-        }
+//            loadingScreenCoordinator.appWay = {[weak self] appWay in
+//                guard let self = self else {return}
+//                switch appWay {
+//                case .webView:
+//                    self.launch = .webView
+//                    self.start()
+//                case .app:
+//                    self.performAppFlow()
+//                case .countryVerify:
+//                    break
+//                }
+//            
+//        }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
 //            self.launch = .app
@@ -77,7 +69,7 @@ final class AppCoordinator: BaseCoordinator {
 
     }
     
-    private func performAppFlow() {
+    private func startTabbar() {
         let tabBarCoordinator = coordinatorFactory.makeTabBarCoordinator(with: router)
         retain(tabBarCoordinator)
         tabBarCoordinator.start()

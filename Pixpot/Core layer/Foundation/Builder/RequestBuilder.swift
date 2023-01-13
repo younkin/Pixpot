@@ -17,11 +17,14 @@ enum Endpoint {
     case setPremium
     case revokeAppleToken
     case updatePushToken
+    case link
     
     var rawValue: String {
         switch self {
         case .none:
             return "/"
+        case .link:
+            return "/user/auth.json"
         case .country:
             return  "/api/getCountry"
         case .appleAuth:

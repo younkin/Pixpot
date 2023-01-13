@@ -9,7 +9,8 @@ import Foundation
 import Combine
 
 protocol CountryServiceProtocol {
-    func getCountry(ip: String) -> AnyPublisher<CountryEntitie, Error>
+    func getCountry() -> AnyPublisher<CountryEntitie, Error>
+
 }
 
 final class CountryService: CountryServiceProtocol {
@@ -20,8 +21,10 @@ final class CountryService: CountryServiceProtocol {
         self.apiClient = apiClient
     }
     
-    func getCountry(ip: String) -> AnyPublisher<CountryEntitie, Error> {
-        return apiClient.getCountry(ip: ip)
+    func getCountry() -> AnyPublisher<CountryEntitie, Error> {
+        return apiClient.getCountry()
             .eraseToAnyPublisher()
     }
+    
+   
 }

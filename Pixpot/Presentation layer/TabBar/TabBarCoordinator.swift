@@ -8,6 +8,12 @@
 import UIKit
 import SnapKit
 
+enum LaunchInstructor {
+    case countryVerify
+    case webView
+    case app
+}
+
 final class TabBarCoordinator: BaseCoordinator {
 
     // MARK: - Private Properties
@@ -15,10 +21,14 @@ final class TabBarCoordinator: BaseCoordinator {
     private let coordinatorFactory: CoordinatorFactory
     private let router: Router
     private var tabBarController = TabBarController()
+    private let moduleFactory: ModuleFactoryProtocol
+    private var launch: LaunchInstructor = .countryVerify
+    private lazy var container = DIContainer()
 
     // MARK: - Initialisers
 
-    init(router: Router, coordinatorFactory: CoordinatorFactory) {
+    init(router: Router, coordinatorFactory: CoordinatorFactory, moduleFactory: ModuleFactoryProtocol ) {
+        self.moduleFactory = moduleFactory
         self.coordinatorFactory = coordinatorFactory
         self.router = router
     }
@@ -26,12 +36,58 @@ final class TabBarCoordinator: BaseCoordinator {
     // MARK: - Public Methods
 
     override func start() {
-        initializeTabBar()
+        switch launch {
+        case .countryVerify:
+            break
+//            performCountryFlow()
+        case .webView:
+            break
+//            performWebViewFlow()
+        case .app:
+            break
+//            performAppFlow()
+        }
+//        initializeTabBar()
+        showLoadingScreen()
     }
 
     // MARK: - Private Methods
+    
+    
+    private func showLoadingScreen() {
+        
+//        let loadingPage = moduleFactory.makeLoadingModule()
+//        self.router.present(loadingPage, animated: true)
+        let viewmodel = CountrySelector(service: container.countryService)
+        
+        viewmodel.appWay = { [weak self] appWay , link in
+            guard let self = self else {return}
+            switch appWay {
+            case.webView:
+                DispatchQueue.main.async {
+                    self.showWebScreen(link: link)
+                }
+                   
+            case.app:
+                self.startApp()
+            default:
+                break
+            }
+            
+        }
+         }
+    
+    
+    private func showWebScreen(link: String) {
 
-    private func initializeTabBar() {
+        let webView = WebViewController(site: link, title: "some title", withExitButton: false, withBackButton: false)
+        webView.modalPresentationStyle = .fullScreen
+        self.router.setRoot(webView, animated: false)
+//        self.router.present(webView, animated: false)
+         }
+    
+
+    private func startApp() {
         // стандартная реализация таба
 
         let mainNavigationController = MainNavigationController()
