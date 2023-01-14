@@ -18,4 +18,5 @@ final class DefaultsManager {
     
     @UDStorage(key: "isAskedForPush", defaultValue: false)
     static var isAskedForPush: Bool
+    
 }
