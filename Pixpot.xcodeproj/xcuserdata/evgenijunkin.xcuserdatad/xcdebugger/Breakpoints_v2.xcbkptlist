@@ -576,8 +576,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
             endingLineNumber = "86"
-            landmarkName = "WebViewController"
-            landmarkType = "3">
+            landmarkName = "addGoBackButton()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -590,8 +590,8 @@
             filePath = "Pixpot/Presentation layer/TabBar/TabBarCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "showLoadingScreen()"
             landmarkType = "7">
          </BreakpointContent>
@@ -606,8 +606,8 @@
             filePath = "Pixpot/Presentation layer/TabBar/TabBarCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "showLoadingScreen()"
             landmarkType = "7">
          </BreakpointContent>
@@ -673,6 +673,194 @@
             startingLineNumber = "89"
             endingLineNumber = "89"
             landmarkName = "linkRequest()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0DEAD595-0288-4FAC-AA2F-D8C78CBDA68C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pixpot/Presentation layer/AskPermisions/AskPermisionsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "setupUI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0DEAD595-0288-4FAC-AA2F-D8C78CBDA68C - 3942f7ad53818c8e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pixpot.AskPermisionsVS.setupUI() -&gt; ()"
+                  moduleName = "Pixpot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evgenijunkin/Documents/Pixpot/Pixpot/Presentation%20layer/AskPermisions/AskPermisionsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  uuid = "0DEAD595-0288-4FAC-AA2F-D8C78CBDA68C - 96de03a770755941"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SnapKit.ConstraintMaker) -&gt; () in Pixpot.AskPermisionsVS.setupUI() -&gt; ()"
+                  moduleName = "Pixpot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evgenijunkin/Documents/Pixpot/Pixpot/Presentation%20layer/AskPermisions/AskPermisionsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F912F522-C24B-4F0A-981E-CE654CD8D82D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pixpot/Presentation layer/AskPermisions/AskPermisionsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "AskPermisionsVS"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "F912F522-C24B-4F0A-981E-CE654CD8D82D - e6497d0b4f8cc8aa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pixpot.AskPermisionsVS.locationService.getter : Pixpot.DeviceLocationService"
+                  moduleName = "Pixpot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evgenijunkin/Documents/Pixpot/Pixpot/Presentation%20layer/AskPermisions/AskPermisionsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "F912F522-C24B-4F0A-981E-CE654CD8D82D - 5ea737e3f71158be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pixpot.AskPermisionsVS.locationService.setter : Pixpot.DeviceLocationService"
+                  moduleName = "Pixpot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evgenijunkin/Documents/Pixpot/Pixpot/Presentation%20layer/AskPermisions/AskPermisionsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "F912F522-C24B-4F0A-981E-CE654CD8D82D - 5b696045ef7754af"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pixpot.AskPermisionsVS.locationService.modify : Pixpot.DeviceLocationService"
+                  moduleName = "Pixpot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evgenijunkin/Documents/Pixpot/Pixpot/Presentation%20layer/AskPermisions/AskPermisionsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "F912F522-C24B-4F0A-981E-CE654CD8D82D - 177f627cf966411a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pixpot.AskPermisionsVS.locationService.modify : Pixpot.DeviceLocationService with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Pixpot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evgenijunkin/Documents/Pixpot/Pixpot/Presentation%20layer/AskPermisions/AskPermisionsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "F912F522-C24B-4F0A-981E-CE654CD8D82D - 303ee713c0360306"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pixpot.AskPermisionsVS.init(permissionsType: Pixpot.PermissionsType) -&gt; Pixpot.AskPermisionsVS"
+                  moduleName = "Pixpot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evgenijunkin/Documents/Pixpot/Pixpot/Presentation%20layer/AskPermisions/AskPermisionsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "F912F522-C24B-4F0A-981E-CE654CD8D82D - cfc56691a43297b0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pixpot.AskPermisionsVS.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Pixpot.AskPermisionsVS&gt;"
+                  moduleName = "Pixpot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evgenijunkin/Documents/Pixpot/Pixpot/Presentation%20layer/AskPermisions/AskPermisionsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AC90354A-FAA6-4DAD-8137-CA1DB088FB6D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pixpot/Presentation layer/AskPermisions/AskPermisionsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "allowTapped()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0BE0234F-38DE-4C24-8A41-979193FBD114"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pixpot/Presentation layer/AskPermisions/AskPermisionsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "allowTapped()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

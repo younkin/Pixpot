@@ -12,6 +12,8 @@ import WebKit
 class ProfileViewController: UIViewController, UIWebViewDelegate {
     
     let webView = WKWebView()
+    let location = DeviceLocationService.shared
+    
     
     private let customBar: UICustomBar = {
         let bar = UICustomBar()
@@ -120,7 +122,7 @@ override func viewDidLoad() {
         switch sender.tag {
         case 1:
             print(sender.tag)
-            
+            print(location.currentLocation)
         case 2:
             print(sender.tag)
             

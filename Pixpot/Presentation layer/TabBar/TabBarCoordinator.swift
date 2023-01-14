@@ -48,11 +48,22 @@ final class TabBarCoordinator: BaseCoordinator {
 //            performAppFlow()
         }
 //        initializeTabBar()
-        showLoadingScreen()
+//        showLoadingScreen()
+        askPermisions()
     }
 
     // MARK: - Private Methods
+    private func askPermisions() {
+        var type: PermissionsType
+        type = .location
     
+        let vc = AskPermisionsVS(permissionsType: type)
+        self.router.setRoot(vc, animated: false)
+        
+        vc.skipped = {
+            self.startApp()
+        }
+    }
     
     private func showLoadingScreen() {
         

@@ -18,7 +18,7 @@ final class CountrySelector {
     var getLink = PassthroughSubject<String, Never>()
     private let countryService: CountryService
     private var cancellable = Set<AnyCancellable>()
-
+    
 
 
  
@@ -36,7 +36,7 @@ final class CountrySelector {
     func sinkData() {
         countryData.sink {[weak self] data in
             guard let self = self else {return}
-            if data.data.tabs == "2" {
+            if data.data.tabs == "1" {
                 self.appWay?(.app, "")
             } else {
                 self.linkRequest()
