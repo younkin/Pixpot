@@ -49,6 +49,10 @@
 		749460CE297336B8008A0501 /* UDStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749460CD297336B8008A0501 /* UDStorage.swift */; };
 		749460D0297336F7008A0501 /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749460CF297336F7008A0501 /* DefaultsManager.swift */; };
 		749460D229733F43008A0501 /* 123.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749460D129733F43008A0501 /* 123.swift */; };
+		749511002973FEF50032E79B /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749510FF2973FEF50032E79B /* CustomCell.swift */; };
+		74951102297400ED0032E79B /* AskForPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74951101297400ED0032E79B /* AskForPermissionView.swift */; };
+		7495110429740D510032E79B /* UICollectionViewCell + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7495110329740D510032E79B /* UICollectionViewCell + Ext.swift */; };
+		7495110629743C020032E79B /* SportStadium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7495110529743C020032E79B /* SportStadium.swift */; };
 		74D5FFC129451CCF00029FF8 /* SelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5FFC029451CCF00029FF8 /* SelectCollectionViewCell.swift */; };
 		74D5FFC329451CF600029FF8 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5FFC229451CF600029FF8 /* SearchCollectionViewCell.swift */; };
 		74D5FFC529451D1200029FF8 /* HotSalesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5FFC429451D1200029FF8 /* HotSalesCollectionViewCell.swift */; };
@@ -157,6 +161,10 @@
 		749460CD297336B8008A0501 /* UDStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDStorage.swift; sourceTree = "<group>"; };
 		749460CF297336F7008A0501 /* DefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
 		749460D129733F43008A0501 /* 123.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 123.swift; sourceTree = "<group>"; };
+		749510FF2973FEF50032E79B /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		74951101297400ED0032E79B /* AskForPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskForPermissionView.swift; sourceTree = "<group>"; };
+		7495110329740D510032E79B /* UICollectionViewCell + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell + Ext.swift"; sourceTree = "<group>"; };
+		7495110529743C020032E79B /* SportStadium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportStadium.swift; sourceTree = "<group>"; };
 		74D5FFC029451CCF00029FF8 /* SelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		74D5FFC229451CF600029FF8 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		74D5FFC429451D1200029FF8 /* HotSalesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSalesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -512,6 +520,7 @@
 				74D9A244294912C60003C24F /* UIContol + Publisher.swift */,
 				7460E714294A191B00BE0637 /* String + Exct.swift */,
 				84D6FFBB294E082F00405398 /* UIColorHex.swift */,
+				7495110329740D510032E79B /* UICollectionViewCell + Ext.swift */,
 			);
 			path = Exstensions;
 			sourceTree = "<group>";
@@ -522,6 +531,8 @@
 				74F87618296E059400A8328C /* CalendarCoordinator.swift */,
 				74F8761A296E05C300A8328C /* CalendarViewController.swift */,
 				749460D129733F43008A0501 /* 123.swift */,
+				749510FF2973FEF50032E79B /* CustomCell.swift */,
+				74951101297400ED0032E79B /* AskForPermissionView.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -553,6 +564,7 @@
 				848A202F2943894A001317C4 /* BasketEntitie.swift */,
 				848A2031294389C1001317C4 /* ProductEntitie.swift */,
 				744E0ED82970BFAF0036F531 /* CountryEntitie.swift */,
+				7495110529743C020032E79B /* SportStadium.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -795,12 +807,16 @@
 				74D5FFC729451D2B00029FF8 /* BestSellerCollectionViewCell.swift in Sources */,
 				7473222529411568008E7EB0 /* MainNavigationController.swift in Sources */,
 				84D5F91C294A6C4900392899 /* ProductViewController.swift in Sources */,
+				7495110429740D510032E79B /* UICollectionViewCell + Ext.swift in Sources */,
 				7460E715294A191B00BE0637 /* String + Exct.swift in Sources */,
 				749460CE297336B8008A0501 /* UDStorage.swift in Sources */,
 				74D9A245294912C60003C24F /* UIContol + Publisher.swift in Sources */,
 				848A2029294366EC001317C4 /* RequestBuilder.swift in Sources */,
 				74732221294108C4008E7EB0 /* CatalogFoodController.swift in Sources */,
 				8418E8F3294A5B6900D2E310 /* RoundedNavButton.swift in Sources */,
+				7495110629743C020032E79B /* SportStadium.swift in Sources */,
+				74951102297400ED0032E79B /* AskForPermissionView.swift in Sources */,
+				749511002973FEF50032E79B /* CustomCell.swift in Sources */,
 				747321E32940ED4C008E7EB0 /* TabBarController.swift in Sources */,
 				84D5F920294A6D3E00392899 /* ProductView.swift in Sources */,
 				84D6FFB8294D06B100405398 /* RamControl.swift in Sources */,

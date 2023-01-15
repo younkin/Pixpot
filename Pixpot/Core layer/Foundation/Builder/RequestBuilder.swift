@@ -18,9 +18,12 @@ enum Endpoint {
     case revokeAppleToken
     case updatePushToken
     case link
+    case geoApi
     
     var rawValue: String {
         switch self {
+        case .geoApi:
+            return "/v2/places"
         case .none:
             return "/"
         case .link:
@@ -76,7 +79,9 @@ protocol RequestBuildable {
 }
 
 class RequestBuilder: RequestBuildable {
-
+//    apikey
+//    2f1bbcbf5aac4ece8c7a0777b645e51f
+//https://api.geoapify.com/v2/places?categories=commercial.supermarket&filter=rect%3A10.716463143326969%2C48.755151258420966%2C10.835314015356737%2C48.680903341613316&limit=20&apiKey=2f1bbcbf5aac4ece8c7a0777b645e51f
 //    private(set) var host: String = "https://run.mocky.io"
     private(set) var host: String = "https://pixpot.host"
 

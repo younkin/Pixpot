@@ -13,7 +13,7 @@ class ProfileViewController: UIViewController, UIWebViewDelegate {
     
     let webView = WKWebView()
     let location = DeviceLocationService.shared
-    
+
     
     private let customBar: UICustomBar = {
         let bar = UICustomBar()

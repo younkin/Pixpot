@@ -72,6 +72,19 @@ extension CountrySelector {
             }).store(in: &cancellable)
         
         
+        countryService.getSportStadiums(long: "-122.406417", lat: "37.785834")
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure(let error):
+                    print(error.localizedDescription)
+                case .finished:
+                    break
+                }
+            }, receiveValue:{ data in
+                print(data.features.first?.properties.name)
+                print("тут")
+            }).store(in: &cancellable)
     
 
     }

@@ -5,10 +5,8 @@ import SnapKit
 import CoreLocation
 
 class CalendarViewController: UIViewController {
- 
     
-    
-    
+    private var sections = MockData.shared.pageData
     var locationService = DeviceLocationService.shared
     
     
@@ -19,7 +17,7 @@ class CalendarViewController: UIViewController {
     }()
     
     private var headLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Budaörs, Sport u. 2-4,\n 2040 Hungary"
         label.numberOfLines = 0
         label.textColor = AppColors.white
@@ -31,65 +29,73 @@ class CalendarViewController: UIViewController {
         image.image = UIImage(named: "BasketballHeader")
         return image
     }()
-    
-    private lazy var askButton: UIButton = {
-         let button = UIButton(type: .system)
-         button.setTitle("Allow", for: .normal)
-        button.setTitleColor(AppColors.white, for: .normal)
-        button.backgroundColor = AppColors.blue
-        button.titleLabel?.font = AppFont.markProFont(ofSize: 18, weight: .heavy)
-        button.addTarget(self, action: #selector(allowTapped), for: .touchUpInside)
-         return button
-     }()
-    
-    private lazy var infoView: UIView = {
-       let view = UIView()
-        view.layer.bounds = CGRect(x: 0, y: 0, width: 3, height: 3)
-        view.layer.borderColor = AppColors.green.cgColor
-        view.layer.borderWidth = 1
+
+    private lazy var infoView: AskForPermissionView = {
+        let view = AskForPermissionView()
         return view
     }()
     
-    private lazy var infoHeadLabel: UILabel = {
-       let label = UILabel()
-        label.text = "We did not have permission to check your location"
-        label.numberOfLines = 0
-        label.font = AppFont.markProFont(ofSize: 16, weight: .heavy)
-        label.textColor = AppColors.white
-        return label
-    }()
-    private lazy var infoLabel: UILabel = {
-       let label = UILabel()
-        label.text = "Please, allow us to track your location to find the most relevant sports facilities. "
-        label.textColor = AppColors.white
-        label.numberOfLines = 0
-        label.font = AppFont.markProFont(ofSize: 12, weight: .regular)
-        return label
+    
+    
+    private let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 20
+        layout.minimumInteritemSpacing = 20
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(CustomCell.self, forCellWithReuseIdentifier: "CustomCell")
+        collectionView.backgroundColor = AppColors.darkBlue
+        collectionView.contentMode = .center
+        return collectionView
     }()
     
-
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.infoView.isHidden = true
+        setupCollectionView()
         setupViews()
+        
         view.backgroundColor = AppColors.darkBlue
         navigationController?.isNavigationBarHidden = true
+        
+        
+        infoView.allowTap = {
+            self.allowTapped()
+            
+        }
+        
+        
+    }
+    
+    
+    private func setupCollectionView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        view.addSubview(collectionView)
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let itemSize = CGSize(width: (view.frame.width), height: 100)
+        layout.itemSize = itemSize
+        // Add your layout constraints
     }
     
     override func viewDidLayoutSubviews() {
-      
+        
         infoView.layer.cornerRadius = min(infoView.bounds.size.width, infoView.bounds.size.height) / 10
         infoView.clipsToBounds = true
         
-        askButton.layer.cornerRadius = min(askButton.bounds.size.width, askButton.bounds.size.height) / 10
-        askButton.clipsToBounds = true
+        
+        //        collectionView.layer.cornerRadius = min(collectionView.bounds.size.width, infoView.bounds.size.height) / 20
+        //        collectionView.clipsToBounds = true
     }
     
-    @objc
+    
     func allowTapped() {
-            locationService.delegate = self
-            locationService.requestLocationUpdates()
+        locationService.delegate = self
+        locationService.requestLocationUpdates()
     }
     
     private func setupViews() {
@@ -97,23 +103,16 @@ class CalendarViewController: UIViewController {
         view.addSubview(customBar)
         view.addSubview(headLabel)
         view.addSubview(headImage)
-        view.addSubview(askButton)
-        view.addSubview(infoView)
-        infoView.addSubview(infoHeadLabel)
-        infoView.addSubview(infoLabel)
- 
         
-        infoHeadLabel.snp.makeConstraints {
-            $0.top.equalTo(infoView).offset(16)
-            $0.left.equalTo(infoView).offset(21)
-            $0.width.equalTo(infoView).multipliedBy(0.8)
-            $0.height.equalTo(50)
-        }
-        infoLabel.snp.makeConstraints {
-            $0.top.equalTo(infoHeadLabel.snp.bottom).offset(5)
-            $0.left.equalTo(infoView).offset(21)
-            $0.width.equalTo(infoView).multipliedBy(0.8)
-            $0.height.equalTo(40)
+        view.addSubview(infoView)
+        view.addSubview(collectionView)
+        
+        
+        collectionView.snp.makeConstraints {
+            $0.top.equalTo(headImage.snp.bottom).offset(20)
+            $0.left.equalToSuperview().offset(20)
+            $0.right.equalToSuperview().offset(-20)
+            $0.bottom.equalToSuperview().offset(-100)
         }
         
         customBar.snp.makeConstraints {
@@ -122,7 +121,7 @@ class CalendarViewController: UIViewController {
             $0.right.equalToSuperview().offset(-20)
             $0.height.equalTo(60)
         }
-       
+        
         headLabel.snp.makeConstraints {
             $0.top.equalTo(customBar.snp.bottom).offset(10)
             $0.left.equalToSuperview().offset(20)
@@ -132,34 +131,48 @@ class CalendarViewController: UIViewController {
             $0.top.equalTo(headLabel.snp.bottom).offset(10)
             $0.centerX.equalTo(view.snp.centerX)
             $0.width.equalToSuperview().multipliedBy(0.9)
-            
         }
-        
-        
-        askButton.snp.makeConstraints {
-            $0.top.equalTo(infoView.snp.bottom).offset(20)
-            $0.centerX.equalTo(view.snp.centerX)
-            $0.width.equalToSuperview().multipliedBy(0.7)
-            $0.height.equalTo(60)
-        }
-        
         
         infoView.snp.makeConstraints {
             $0.top.equalTo(headImage.snp.bottom).offset(10)
             $0.centerX.equalTo(view.snp.centerX)
             $0.width.equalToSuperview().multipliedBy(0.9)
-            $0.height.equalTo(130)
+            $0.height.equalTo(view.snp.height).multipliedBy(0.3)
         }
         
+    }
+}
+
+
+//MARK: UICollectionViewDataSource
+extension CalendarViewController: UICollectionViewDelegate {
+    
+}
+
+//MARK: UICollectionViewDataSource
+extension CalendarViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return sections[1].count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
+        let productTitle = "Budapest, Istvánmezei út 3-5,\n 1146, Hungary"
+        let headLabel = "Puskás Aréna"
+        let image = self.sections[1].items[indexPath.row].image
+        cell.configureCell(imageString: image, productTitle: productTitle, headLabel: headLabel)
         
         
-        
-        
+        return cell
     }
     
     
-    
 }
+
+//MARK: DeviceLocationServiceDelegate
 
 extension CalendarViewController: DeviceLocationServiceDelegate {
     

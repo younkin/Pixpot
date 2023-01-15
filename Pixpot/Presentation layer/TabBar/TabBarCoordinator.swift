@@ -48,8 +48,8 @@ final class TabBarCoordinator: BaseCoordinator {
 //            performAppFlow()
         }
 //        initializeTabBar()
-//        showLoadingScreen()
-        askPermisions()
+        showLoadingScreen()
+//        askPermisions()
     }
 
     // MARK: - Private Methods

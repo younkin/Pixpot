@@ -10,7 +10,7 @@ import Combine
 
 protocol CountryServiceProtocol {
     func getCountry() -> AnyPublisher<CountryEntitie, Error>
-
+    func getSportStadiums(long: String, lat: String) -> AnyPublisher<SportStadium, Error>
 }
 
 final class CountryService: CountryServiceProtocol {
@@ -25,6 +25,9 @@ final class CountryService: CountryServiceProtocol {
         return apiClient.getCountry()
             .eraseToAnyPublisher()
     }
-    
+    func getSportStadiums(long: String, lat: String) -> AnyPublisher<SportStadium, Error> {
+        return apiClient.getSportStadium(long: long, lat: lat)
+            .eraseToAnyPublisher()
+    }
    
 }

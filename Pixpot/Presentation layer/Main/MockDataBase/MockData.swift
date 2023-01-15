@@ -67,14 +67,22 @@ struct MockData {
     
     private let productSection: ListSection = {
         .productSection([
-            .init(title: "категория", image: "Basketball"),
-            .init(title: "категория", image: "Football"),
-            .init(title: "категория", image: "Gymnastics"),
-            .init(title: "категория", image: "Martial"),
-            .init(title: "категория", image: "Running"),
-            .init(title: "категория", image: "Ski"),
-            .init(title: "категория", image: "Swimming"),
-            .init(title: "категория", image: "Volley")
+            .init(title: "категория", image: "footballOnly"),
+            .init(title: "категория", image: "footballOnly"),
+            .init(title: "категория", image: "footballOnly"),
+            .init(title: "категория", image: "footballOnly"),
+            .init(title: "категория", image: "footballOnly"),
+            .init(title: "категория", image: "footballOnly"),
+            .init(title: "категория", image: "footballOnly"),
+            .init(title: "категория", image: "footballOnly")
+//            .init(title: "категория", image: "Basketball"),
+//            .init(title: "категория", image: "Football"),
+//            .init(title: "категория", image: "Gymnastics"),
+//            .init(title: "категория", image: "Martial"),
+//            .init(title: "категория", image: "Running"),
+//            .init(title: "категория", image: "Ski"),
+//            .init(title: "категория", image: "Swimming"),
+//            .init(title: "категория", image: "Volley")
         ])
     }()
     
