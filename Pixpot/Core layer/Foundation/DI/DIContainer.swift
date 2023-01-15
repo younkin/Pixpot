@@ -8,22 +8,14 @@
 import Foundation
 
 final class DIContainer {
+    private let apiClient: NetworkProviderProtocol
     
-    let session: URLSession
-    let decoder: JSONDecoder
-
-    let requestBuilder: RequestBuilder
-    let apiClient: APIClient
-    
-    lazy var basketService = BasketService(apiClient: apiClient)
-    lazy var mainService = MainService(apiClient: apiClient)
-    lazy var productService = ProductService(apiClient: apiClient)
-    lazy var countryService = CountryService(apiClient: apiClient)
+    let countryService: CountryServiceProtocol
+    let helperService: HelperServiceProtocol
     
     init() {
-        decoder = JSONDecoder()
-        session = URLSession.shared
-        requestBuilder = RequestBuilder()
-        apiClient = APIClient(requestBuilder: requestBuilder, session: session, decoder: decoder)
+        apiClient = NetworkSessionProvider.shared
+        self.countryService = CountryService(apiClient: apiClient)
+        self.helperService = HelperService(apiClient: apiClient)
     }
 }

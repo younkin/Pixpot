@@ -67,12 +67,12 @@ final class CatalogFoodController: UIViewController {
 //        catalogFoodView?.isHiddenCollectionView(isLoadingIndicator: true)
 
      
-        viewModel.isLoadingIndicator.sink(receiveValue: { isLoadingIndicator in
-            UIView.animate(withDuration: 0.2) {
-                self.catalogFoodView?.stopActivityIndicator()
-                self.catalogFoodView?.isHiddenCollectionView(isLoadingIndicator: isLoadingIndicator)
-            }
-        }).store(in: &canceballe)
+//        viewModel.isLoadingIndicator.sink(receiveValue: { isLoadingIndicator in
+//            UIView.animate(withDuration: 0.2) {
+//                self.catalogFoodView?.stopActivityIndicator()
+//                self.catalogFoodView?.isHiddenCollectionView(isLoadingIndicator: isLoadingIndicator)
+//            }
+//        }).store(in: &canceballe)
     }
 }
 

@@ -11,10 +11,8 @@ protocol ModuleFactoryProtocol {
     func makeTabBarModule() -> TabBarController
     func makeCatalogFoodModule() -> CatalogFoodController
     
-    func makeFavoriteModule() -> FavoriteViewController
   
     func makeProfileModule() -> ProfileViewController
-    func makeProductModule() -> ProductViewController
     func makeCalendarModule() -> CalendarViewController
     func makeWebViewModule(site: String,title: String) -> WebViewController
 
@@ -25,8 +23,7 @@ final class ModuleFactory: ModuleFactoryProtocol {
     private lazy var container = DIContainer()
     
     func makeCatalogFoodModule() -> CatalogFoodController {
-        let viewModel = CatalogFoodViewModel(productService: container.productService
-        )
+        let viewModel = CatalogFoodViewModel()
   
         let controller = CatalogFoodController(viewModel: viewModel)
         return controller
@@ -38,22 +35,12 @@ final class ModuleFactory: ModuleFactoryProtocol {
     func makeWebViewModule(site: String,title: String) -> WebViewController {
         return WebViewController(site: site, title: title, withExitButton: false, withBackButton: false)
     }
-
-    func makeFavoriteModule() -> FavoriteViewController {
-        return FavoriteViewController()
-    }
     
     func makeProfileModule() -> ProfileViewController {
         return ProfileViewController()
     }
     func makeCalendarModule() -> CalendarViewController {
         return CalendarViewController()
-    }
-    
-  
-    func makeProductModule() -> ProductViewController {
-        let viewModel = ProductViewModel(service: container.productService)
-        return ProductViewController(viewModel: viewModel)
     }
     
 }

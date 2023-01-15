@@ -29,9 +29,3 @@ struct DataClass: Codable {
     }
 }
 
-
-
-
-struct Link: Codable {
-    let link: String
-}

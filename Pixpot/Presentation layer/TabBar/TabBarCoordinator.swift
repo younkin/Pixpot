@@ -64,12 +64,13 @@ final class TabBarCoordinator: BaseCoordinator {
             self.startApp()
         }
     }
+
+    lazy var viewmodel = CountrySelector(service: container.countryService, helperService: container.helperService)
     
     private func showLoadingScreen() {
         
 //        let loadingPage = moduleFactory.makeLoadingModule()
 //        self.router.present(loadingPage, animated: true)
-        let viewmodel = CountrySelector(service: container.countryService)
         
         viewmodel.appWay = { [weak self] appWay , link in
             guard let self = self else {return}
@@ -79,13 +80,15 @@ final class TabBarCoordinator: BaseCoordinator {
                     self.showWebScreen(link: link)
                 }
             case.app:
-                self.startApp()
+                DispatchQueue.main.async {
+                    self.startApp()
+                }
             default:
                 break
             }
             
         }
-         }
+    }
     
     
     private func showWebScreen(link: String) {
@@ -94,7 +97,7 @@ final class TabBarCoordinator: BaseCoordinator {
         webView.modalPresentationStyle = .fullScreen
         self.router.setRoot(webView, animated: false)
 //        self.router.present(webView, animated: false)
-         }
+    }
     
 
     private func startApp() {
@@ -138,3 +141,17 @@ final class TabBarCoordinator: BaseCoordinator {
 
 
 }
+
+/*
+ geoService.getSportStadiums(
+     place: .stadium,
+     filter: .circle(lat: 37.785834, long: -122.406417, radius: 5000)
+ ) { [weak self] result in
+     switch result {
+     case .success(let stadiums):
+         debugPrint(stadiums)
+     case .failure(let error):
+         print(error.localizedDescription)
+     }
+ }
+ */

@@ -8,17 +8,17 @@
 import Foundation
 import Combine
 
-protocol MainApiClientProtocol {
-    func getMain() -> AnyPublisher<MainEntitie, Error>
-}
+//protocol MainApiClientProtocol {
+//    func getMain() -> AnyPublisher<MainEntitie, Error>
+//}
  
-extension APIClient: MainApiClientProtocol {
-    func getMain() -> AnyPublisher<MainEntitie, Error> {
-        let request = requestBuilder
-//            .set(path: .main)
-            .set(method: .GET)
-            .build()
-        return performRequest(request)
-    }
-    
-}
+//extension APIClient: MainApiClientProtocol {
+//    func getMain() -> AnyPublisher<MainEntitie, Error> {
+//        let request = requestBuilder
+////            .set(path: .main)
+//            .set(method: .GET)
+//            .build()
+//        return performRequest(request)
+//    }
+//
+//}

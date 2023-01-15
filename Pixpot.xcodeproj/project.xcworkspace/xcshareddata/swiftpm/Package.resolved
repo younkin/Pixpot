@@ -1,6 +1,24 @@
 {
   "pins" : [
     {
+      "identity" : "codablegeojson",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/guykogus/CodableGeoJSON",
+      "state" : {
+        "revision" : "67f7d9ce2ad7c809d87f77c428f0a6a058e55668",
+        "version" : "2.0.0"
+      }
+    },
+    {
+      "identity" : "codablejson",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/guykogus/CodableJSON.git",
+      "state" : {
+        "revision" : "06b9b1552d5265f4b702836eb140dab7e84bd1d1",
+        "version" : "2.0.2"
+      }
+    },
+    {
       "identity" : "sdwebimage",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SDWebImage/SDWebImage",

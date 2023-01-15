@@ -6,28 +6,33 @@
 //
 
 import Foundation
-import Combine
 
 protocol CountryServiceProtocol {
-    func getCountry() -> AnyPublisher<CountryEntitie, Error>
-    func getSportStadiums(long: String, lat: String) -> AnyPublisher<SportStadium, Error>
+    func getCountry(_ completion: @escaping ObjCompletion<Result<CountryEntitie, CountryServiceError>>)
+}
+
+enum CountryServiceError: Error {
+    case unknown
 }
 
 final class CountryService: CountryServiceProtocol {
     
-    var apiClient: CountryApiClientProtocol
+    private let apiClient: NetworkProviderProtocol
     
-    init(apiClient: CountryApiClientProtocol) {
+    init(apiClient: NetworkProviderProtocol) {
         self.apiClient = apiClient
     }
     
-    func getCountry() -> AnyPublisher<CountryEntitie, Error> {
-        return apiClient.getCountry()
-            .eraseToAnyPublisher()
-    }
-    func getSportStadiums(long: String, lat: String) -> AnyPublisher<SportStadium, Error> {
-        return apiClient.getSportStadium(long: long, lat: lat)
-            .eraseToAnyPublisher()
+    func getCountry(_ completion: @escaping ObjCompletion<Result<CountryEntitie, CountryServiceError>>) {
+        apiClient.request(CountryEntitie.self, endpoint: Endpoint.country) { response in
+            switch response {
+            case let .success(country):
+                completion(.success(country))
+            case let .failure(error):
+                debugPrint(error)
+                completion(.failure(.unknown))
+            }
+        }
     }
    
 }
