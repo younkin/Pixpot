@@ -37,7 +37,7 @@ extension SceneDelegate {
         let router = Router(rootController: navigationController)
         let moduleFactory = ModuleFactory()
         let coordinatorFactory = CoordinatorFactory(moduleFactory: moduleFactory)
-        self.appCoordinator = AppCoordinator(router: router, coordinatorFactory: coordinatorFactory)
+        self.appCoordinator = coordinatorFactory.makeApplicationCoordinator(with: router)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         self.appCoordinator?.start()

@@ -1,5 +1,5 @@
 //
-//  LoadingScreenViewModel.swift
+//  AppLaunchWayViewModel.swift
 //  Pixpot
 //
 //  Created by Евгений Юнкин on 13.01.23.
@@ -9,9 +9,18 @@
 import Foundation
 import Combine
 
-final class CountrySelector {
+protocol AppLaunchWayViewModelProtocol {
+    func fetchData()
+}
+
+protocol AppLaunchOutput: AnyObject {
+    var appWay: ((LaunchInstructor) -> Void)? { get set }
+}
+
+final class AppLaunchWayViewModel: AppLaunchWayViewModelProtocol, AppLaunchOutput {
     
-    var appWay: ((LaunchInstructor,String) -> Void)?
+    // MARK: - Output
+    var appWay: ((LaunchInstructor) -> Void)?
 
     // MARK: - Properties
     private let countryData = PassthroughSubject<CountryEntitie, Never>()
@@ -19,27 +28,29 @@ final class CountrySelector {
     private let countryService: CountryServiceProtocol
     private let helperService: HelperServiceProtocol
     private var cancellable = Set<AnyCancellable>()
-    
- 
 
     // MARK: - Init
     init(
-        service: CountryServiceProtocol,
+        countryService: CountryServiceProtocol,
         helperService: HelperServiceProtocol
     ) {
-        self.countryService = service
+        self.countryService = countryService
         self.helperService = helperService
-        
-        getCountry()
-        sinkData()
     }
     
-    func sinkData() {
+    // MARK: - AppLaunchWayViewModelProtocol
+    
+    func fetchData() {
+        sinkData()
+        getCountry()
+    }
+    
+    private func sinkData() {
         countryData
             .sink { [weak self] data in
                 guard let self = self else {return}
                 if data.data.tabs == "1" {
-                    self.appWay?(.app, "")
+                    self.appWay?(.locationVerify)
                 } else {
                     self.linkRequest()
                 }
@@ -48,8 +59,7 @@ final class CountrySelector {
         
         getLink
             .sink { [weak self] link in
-                guard let self = self else {return}
-                self.appWay?(.webView, link)
+                self?.appWay?(.webView(link))
             }
             .store(in: &cancellable)
     }
@@ -58,8 +68,7 @@ final class CountrySelector {
 }
 
 // MARK: - Public Api
-extension CountrySelector {
-    
+extension AppLaunchWayViewModel {
     
     func getCountry() {
         countryService.getCountry { [weak self] result in

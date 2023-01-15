@@ -97,11 +97,11 @@ class AskPermisionsVS: UIViewController{
         setupUI()
         
        
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            let long = self.locationService.currentLocation?.longitude
-            print(long ?? "333")
-        }
+//        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            let long = self.locationService.currentLocation?.longitude
+//            print(long ?? "333")
+//        }
         
     }
     
@@ -131,7 +131,6 @@ class AskPermisionsVS: UIViewController{
 //            }
             break
         case .location:
-            locationService.delegate = self
             locationService.requestLocationUpdates()
         }
     }
@@ -186,19 +185,19 @@ class AskPermisionsVS: UIViewController{
 
 //MARK: DeviceLocationServiceDelegate
 
-extension AskPermisionsVS: DeviceLocationServiceDelegate {
-    
-    func didChangeLocationStatus() {
-        switch self.locationService.locationStatus {
-        case .authorizedWhenInUse, .authorizedAlways, .denied:
-            skipTapped()
-        default:
-            break
-        }
-    }
-    
-    func loacationDidChange(location: CLLocationCoordinate2D?) {
-        
-        return
-    }
-}
+//extension AskPermisionsVS: DeviceLocationServiceDelegate {
+//    
+//    func didChangeLocationStatus() {
+//        switch self.locationService.locationStatus {
+//        case .authorizedWhenInUse, .authorizedAlways, .denied:
+//            skipTapped()
+//        default:
+//            break
+//        }
+//    }
+//    
+//    func loacationDidChange(location: CLLocationCoordinate2D?) {
+//        
+//        return
+//    }
+//}

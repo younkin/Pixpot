@@ -8,12 +8,6 @@
 import UIKit
 import SnapKit
 
-enum LaunchInstructor {
-    case countryVerify
-    case webView
-    case app
-}
-
 final class TabBarCoordinator: BaseCoordinator {
 
     // MARK: - Private Properties
@@ -22,7 +16,7 @@ final class TabBarCoordinator: BaseCoordinator {
     private let router: Router
     private var tabBarController = TabBarController()
     private let moduleFactory: ModuleFactoryProtocol
-    private var launch: LaunchInstructor = .countryVerify
+    
     private lazy var container = DIContainer()
 
     // MARK: - Initialisers
@@ -36,71 +30,12 @@ final class TabBarCoordinator: BaseCoordinator {
     // MARK: - Public Methods
 
     override func start() {
-        switch launch {
-        case .countryVerify:
-            break
-//            performCountryFlow()
-        case .webView:
-            break
-//            performWebViewFlow()
-        case .app:
-            break
-//            performAppFlow()
-        }
-//        initializeTabBar()
-        showLoadingScreen()
-//        askPermisions()
+        performAppFlow()
     }
 
     // MARK: - Private Methods
-    private func askPermisions() {
-        var type: PermissionsType
-        type = .location
-    
-        let vc = AskPermisionsVS(permissionsType: type)
-        self.router.setRoot(vc, animated: false)
-        
-        vc.skipped = {
-            self.startApp()
-        }
-    }
 
-    lazy var viewmodel = CountrySelector(service: container.countryService, helperService: container.helperService)
-    
-    private func showLoadingScreen() {
-        
-//        let loadingPage = moduleFactory.makeLoadingModule()
-//        self.router.present(loadingPage, animated: true)
-        
-        viewmodel.appWay = { [weak self] appWay , link in
-            guard let self = self else {return}
-            switch appWay {
-            case.webView:
-                DispatchQueue.main.async {
-                    self.showWebScreen(link: link)
-                }
-            case.app:
-                DispatchQueue.main.async {
-                    self.startApp()
-                }
-            default:
-                break
-            }
-            
-        }
-    }
-    
-    
-    private func showWebScreen(link: String) {
-
-        let webView = WebViewController(site: link, title: "some title", withExitButton: false, withBackButton: false)
-        webView.modalPresentationStyle = .fullScreen
-        self.router.setRoot(webView, animated: false)
-//        self.router.present(webView, animated: false)
-    }
-    
-
-    private func startApp() {
+    private func performAppFlow() {
         // стандартная реализация таба
 
         let mainNavigationController = MainNavigationController()
@@ -111,12 +46,6 @@ final class TabBarCoordinator: BaseCoordinator {
         let calendarController = MainNavigationController()
         calendarController.tabBarItem = UITabBarItem(title: "", image: UIImage(named:"calendarOff"), tag: 1)
         let calendarCoordinator = coordinatorFactory.makeCalendarCoordinator(with: Router(rootController: calendarController))
-        
-//        let basketNavigationController = MainNavigationController()
-//        basketNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(named:"calendarOff"), tag: 1)
-//        let basketCoordinator = coordinatorFactory.makeBusketCoordinator(with: Router(rootController: basketNavigationController))
-//
-        
         
         let profileViewController = MainNavigationController()
         profileViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named:"userOff"), tag: 2)
@@ -134,11 +63,6 @@ final class TabBarCoordinator: BaseCoordinator {
         calendarCoordinator.start()
         profileCoordinator.start()
     }
-
-
-
-    
-
 
 }
 

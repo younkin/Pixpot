@@ -122,7 +122,6 @@ override func viewDidLoad() {
         switch sender.tag {
         case 1:
             print(sender.tag)
-            print(location.currentLocation)
         case 2:
             print(sender.tag)
             

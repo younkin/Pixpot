@@ -8,6 +8,7 @@
 import Foundation
 
 protocol ModuleFactoryProtocol {
+    func makeAppWayLaunch() -> (vc: AppLaunchWayViewController, output: AppLaunchOutput)
     func makeTabBarModule() -> TabBarController
     func makeCatalogFoodModule() -> CatalogFoodController
     
@@ -21,6 +22,15 @@ protocol ModuleFactoryProtocol {
 final class ModuleFactory: ModuleFactoryProtocol {
     
     private lazy var container = DIContainer()
+    
+    func makeAppWayLaunch() -> (vc: AppLaunchWayViewController, output: AppLaunchOutput) {
+        let vm = AppLaunchWayViewModel(
+            countryService: container.countryService,
+            helperService: container.helperService
+        )
+        let vc = AppLaunchWayViewController(viewModel: vm)
+        return (vc, vm)
+    }
     
     func makeCatalogFoodModule() -> CatalogFoodController {
         let viewModel = CatalogFoodViewModel()
@@ -39,6 +49,7 @@ final class ModuleFactory: ModuleFactoryProtocol {
     func makeProfileModule() -> ProfileViewController {
         return ProfileViewController()
     }
+    
     func makeCalendarModule() -> CalendarViewController {
         return CalendarViewController()
     }

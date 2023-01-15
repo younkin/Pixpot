@@ -94,7 +94,6 @@ class CalendarViewController: UIViewController {
     
     
     func allowTapped() {
-        locationService.delegate = self
         locationService.requestLocationUpdates()
     }
     
@@ -174,14 +173,14 @@ extension CalendarViewController: UICollectionViewDataSource {
 
 //MARK: DeviceLocationServiceDelegate
 
-extension CalendarViewController: DeviceLocationServiceDelegate {
-    
-    
-    func didChangeLocationStatus() {
-        return
-    }
-    
-    func loacationDidChange(location: CLLocationCoordinate2D?) {
-        return
-    }
-}
+//extension CalendarViewController: DeviceLocationServiceDelegate {
+//
+//
+//    func didChangeLocationStatus() {
+//        return
+//    }
+//
+//    func loacationDidChange(location: CLLocationCoordinate2D?) {
+//        return
+//    }
+//}
