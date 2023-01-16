@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class CatalogFoodViewModel {
+final class mainCategoryViewModel {
 //
 //    // MARK: - Properties
 ////    private let productService: ProductServiceProtocol

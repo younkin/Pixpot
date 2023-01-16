@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CatalogFoodCoordinator: BaseCoordinator {
+final class mainCategoryCoordinator: BaseCoordinator {
 
     // MARK: - Properies
     private let moduleFactory: ModuleFactoryProtocol

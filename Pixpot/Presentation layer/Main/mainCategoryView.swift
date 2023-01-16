@@ -9,12 +9,12 @@ import UIKit
 import Combine
 
 
-final class CatalogFoodView: UIView {
+final class mainCategoryView: UIView {
 
     
    private var sections = MockData.shared.pageData //временно пока нету фотографий с бэка
 
-    private let viewModel: CatalogFoodViewModel
+    private let viewModel: mainCategoryViewModel
     var canceballe = Set<AnyCancellable>()
     
     private let customBar: UICustomBar = {
@@ -44,7 +44,7 @@ final class CatalogFoodView: UIView {
 //    var didTapCell: ((ProductModel)->Void)?
 
     // MARK: - Init
-    init(viewModel: CatalogFoodViewModel) {
+    init(viewModel: mainCategoryViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero)
         addSubview(collectionView)
@@ -78,7 +78,7 @@ final class CatalogFoodView: UIView {
     }
 }
 
-extension CatalogFoodView {
+extension mainCategoryView {
     private func createLayout() -> UICollectionViewCompositionalLayout  {
         UICollectionViewCompositionalLayout { [weak self] sectionIndex, _ in
             guard let self = self else {return nil}
@@ -162,7 +162,7 @@ extension CatalogFoodView {
 
 
 // MARK: - Public API
-extension CatalogFoodView {
+extension mainCategoryView {
 
     func removeTextTextField() {
    
@@ -190,7 +190,7 @@ extension CatalogFoodView {
 }
 
  //MARK: - UICollectionViewDelegate
-extension CatalogFoodView: UICollectionViewDelegate {
+extension mainCategoryView: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 1 {
@@ -205,7 +205,7 @@ extension CatalogFoodView: UICollectionViewDelegate {
 }
 
 //MARK: - UICollectionViewDataSource
-extension CatalogFoodView: UICollectionViewDataSource {
+extension mainCategoryView: UICollectionViewDataSource {
  
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         2
@@ -287,7 +287,7 @@ extension CatalogFoodView: UICollectionViewDataSource {
 }
 
 // MARK: - ConfigureUI
-private extension CatalogFoodView {
+private extension mainCategoryView {
 
     func configureUI() {
        addSubview(customBar)

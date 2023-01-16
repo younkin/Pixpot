@@ -27,8 +27,8 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
         self.moduleFactory = moduleFactory
     }
 
-    func makeMainCoordinator(with router: Router) -> CatalogFoodCoordinator {
-        return CatalogFoodCoordinator(router: router, moduleFactory: moduleFactory)
+    func makeMainCoordinator(with router: Router) -> mainCategoryCoordinator {
+        return mainCategoryCoordinator(router: router, moduleFactory: moduleFactory)
     }
 
     

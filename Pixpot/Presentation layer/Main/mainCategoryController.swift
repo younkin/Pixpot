@@ -8,18 +8,18 @@
 import UIKit
 import Combine
 
-final class CatalogFoodController: UIViewController {
+final class mainCategoryController: UIViewController {
 
     
     // MARK: - Outlets
-    lazy var catalogFoodView = self.view as? CatalogFoodView
+    lazy var catalogFoodView = self.view as? mainCategoryView
 
     // MARK: - Properties
-    let viewModel: CatalogFoodViewModel
+    let viewModel: mainCategoryViewModel
     var canceballe = Set<AnyCancellable>()
 
     // MARK: - Init
-    init(viewModel: CatalogFoodViewModel) {
+    init(viewModel: mainCategoryViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -31,7 +31,7 @@ final class CatalogFoodController: UIViewController {
     // MARK: - View lifecycle
     override func loadView() {
         super.loadView()
-        let view = CatalogFoodView(viewModel: viewModel)
+        let view = mainCategoryView(viewModel: viewModel)
        
         self.view = view
     }
