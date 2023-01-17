@@ -8,18 +8,18 @@
 import UIKit
 import Combine
 
-final class mainCategoryController: UIViewController {
+final class MainCategoryController: UIViewController {
 
     
     // MARK: - Outlets
-    lazy var catalogFoodView = self.view as? mainCategoryView
-
+    lazy var mainCategoryView = self.view as? MainCategoryView
+    var tapIndex: ((ListItem) -> Void)?
     // MARK: - Properties
-    let viewModel: mainCategoryViewModel
+    let viewModel: MainCategoryViewModel
     var canceballe = Set<AnyCancellable>()
 
     // MARK: - Init
-    init(viewModel: mainCategoryViewModel) {
+    init(viewModel: MainCategoryViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -31,7 +31,7 @@ final class mainCategoryController: UIViewController {
     // MARK: - View lifecycle
     override func loadView() {
         super.loadView()
-        let view = mainCategoryView(viewModel: viewModel)
+        let view = MainCategoryView(viewModel: viewModel)
        
         self.view = view
     }
@@ -45,6 +45,9 @@ final class mainCategoryController: UIViewController {
         refreshingData()
 //        setupBindings()
         
+        mainCategoryView?.tappedIndex = { item in
+            self.tapIndex?(item)
+        }
 
     }
 

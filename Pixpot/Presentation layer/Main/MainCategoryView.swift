@@ -9,13 +9,14 @@ import UIKit
 import Combine
 
 
-final class mainCategoryView: UIView {
+final class MainCategoryView: UIView {
 
     
-   private var localData = MockData.shared.pageData //временно пока нету фотографий с бэка
+    private var localData = MockData.shared//временно пока нету фотографий с бэка
 
-    private let viewModel: mainCategoryViewModel
+    private let viewModel: MainCategoryViewModel
     var canceballe = Set<AnyCancellable>()
+    var tappedIndex: ((ListItem) -> Void)?
     
     private let customBar: UICustomBar = {
         let bar = UICustomBar()
@@ -44,7 +45,7 @@ final class mainCategoryView: UIView {
 //    var didTapCell: ((ProductModel)->Void)?
 
     // MARK: - Init
-    init(viewModel: mainCategoryViewModel) {
+    init(viewModel: MainCategoryViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero)
         addSubview(collectionView)
@@ -78,7 +79,7 @@ final class mainCategoryView: UIView {
     }
 }
 
-extension mainCategoryView {
+extension MainCategoryView {
     private func createLayout() -> UICollectionViewCompositionalLayout  {
         UICollectionViewCompositionalLayout { [weak self] sectionIndex, _ in
             guard let self = self else {return nil}
@@ -162,7 +163,7 @@ extension mainCategoryView {
 
 
 // MARK: - Public API
-extension mainCategoryView {
+extension MainCategoryView {
 
     func removeTextTextField() {
    
@@ -190,29 +191,30 @@ extension mainCategoryView {
 }
 
  //MARK: - UICollectionViewDelegate
-extension mainCategoryView: UICollectionViewDelegate {
+extension MainCategoryView: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section == 1 {
+        
+            
+        self.localData.selectedIndex = indexPath
+        self.tappedIndex?(self.localData.pageData[0].items[indexPath.row])
+//            self.inputViewController?.tabBarController?.selectedIndex = 1
 //            collectionView.deselectItem(at: indexPath, animated: false)
 //            let categoryFoodModel = categories[indexPath.row]
 //              delegate?.collectionView(didSelect: .productsPopular(catalogFoodModel: categoryFoodModel))
-          
-        }
-        
         
     }
 }
 
 //MARK: - UICollectionViewDataSource
-extension mainCategoryView: UICollectionViewDataSource {
+extension MainCategoryView: UICollectionViewDataSource {
  
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return localData[0].count
+        return localData.pageData[0].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -223,7 +225,7 @@ extension mainCategoryView: UICollectionViewDataSource {
             else {
                 return UICollectionViewCell()
             }
-            let image = self.localData[0].items[indexPath.row].imageBig
+            let image = self.localData.pageData[0].items[indexPath.row].imageBig
                cell.configureCell(imageString: image)
             
             return cell
@@ -237,7 +239,7 @@ extension mainCategoryView: UICollectionViewDataSource {
             }
 //            let name = self.sections[indexPath.section].items[indexPath.row].title
             let name = ""
-                let image = self.localData[0].items[indexPath.row].imageSmall
+            let image = self.localData.pageData[0].items[indexPath.row].imageSmall
                cell.configureCell(imageString: image, productTitle: name)
 
            
@@ -256,7 +258,7 @@ extension mainCategoryView: UICollectionViewDataSource {
             self.viewModel.pageIndicator.sink { page in
                 footer.configureCurrentPage(currentPage: page)
             }.store(in: &canceballe)
-            footer.configurePageCount(pageCount: localData[0].count)
+            footer.configurePageCount(pageCount: localData.pageData[0].count)
             return footer
         case UICollectionView.elementKindSectionHeader:
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderSupplementaryView", for: indexPath) as! HeaderSupplementaryView
@@ -279,7 +281,7 @@ extension mainCategoryView: UICollectionViewDataSource {
 }
 
 // MARK: - ConfigureUI
-private extension mainCategoryView {
+private extension MainCategoryView {
 
     func configureUI() {
        addSubview(customBar)

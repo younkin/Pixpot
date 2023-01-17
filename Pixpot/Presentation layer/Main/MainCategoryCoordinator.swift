@@ -7,8 +7,14 @@
 
 import UIKit
 
-final class mainCategoryCoordinator: BaseCoordinator {
+protocol MainCategoryCoordinatorOutput {
+    var onSelectItem: ((ListItem) -> Void)? {get set}
+}
 
+final class MainCategoryCoordinator: BaseCoordinator, MainCategoryCoordinatorOutput {
+
+    var onSelectItem: ((ListItem) -> Void)?
+    
     // MARK: - Properies
     private let moduleFactory: ModuleFactoryProtocol
     private let router: Router
@@ -30,6 +36,13 @@ final class mainCategoryCoordinator: BaseCoordinator {
         
         self.router.push(mainPage, animated: true)
         
+        
+        mainPage.tapIndex = { [weak self] item in
+            self?.onSelectItem?(item)
+//            print(indexPath)
+//            mainPage.tabBarController?.selectedIndex = 1
+           
+        }
 //        mainPage.showDitailProduct = {[weak self] IndexPath in
 //            let product = self?.moduleFactory.makeProductModule()
             
@@ -40,4 +53,6 @@ final class mainCategoryCoordinator: BaseCoordinator {
 //            self?.router.push(product!, animated: true)
 
          }
+    
+    
 }

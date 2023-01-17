@@ -8,7 +8,16 @@
 import Foundation
 import Combine
 
-final class mainCategoryViewModel {
+protocol MainCategoryViewModelOutput {
+    var data: ((ListItem) -> Void)? {get set}
+}
+
+
+final class MainCategoryViewModel: MainCategoryViewModelOutput {
+    
+    
+    var data: ((ListItem) -> Void)?
+    
 //
 //    // MARK: - Properties
 ////    private let productService: ProductServiceProtocol

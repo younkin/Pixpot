@@ -13,10 +13,18 @@ protocol CoordinatorFactoryProtocol {
     func makeApplicationCoordinator(with router: Router) -> AppCoordinator
     func makeTabBarCoordinator(with router: Router) -> TabBarCoordinator
 
+    func makeMainCoordinator(with router: Router) -> MainCategoryCoordinator & MainCategoryCoordinatorOutput
     func makeProfileCoordinator(with router: Router) -> ProfileCoordinator
-    func makeCalendarCoordinator(with router: Router) -> CalendarCoordinator
+    func makeCalendarCoordinator(with router: Router) -> CalendarCoordinator & PushRoutable
 
-    
+}
+
+enum Deeplink {
+    case item(ListItem)
+}
+
+protocol PushRoutable {
+    func consume(_ deeplink: Deeplink)
 }
 
 final class CoordinatorFactory: CoordinatorFactoryProtocol {
@@ -27,15 +35,15 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
         self.moduleFactory = moduleFactory
     }
 
-    func makeMainCoordinator(with router: Router) -> mainCategoryCoordinator {
-        return mainCategoryCoordinator(router: router, moduleFactory: moduleFactory)
+    func makeMainCoordinator(with router: Router) -> MainCategoryCoordinator  & MainCategoryCoordinatorOutput {
+        return MainCategoryCoordinator(router: router, moduleFactory: moduleFactory)
     }
 
     
     func makeProfileCoordinator(with router: Router) -> ProfileCoordinator {
         return ProfileCoordinator(router: router, moduleFactory: moduleFactory)
     }
-    func makeCalendarCoordinator(with router: Router) -> CalendarCoordinator {
+    func makeCalendarCoordinator(with router: Router) -> CalendarCoordinator & PushRoutable{
         return CalendarCoordinator(router: router, moduleFactory: moduleFactory)
     }
    

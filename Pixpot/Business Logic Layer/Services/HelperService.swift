@@ -16,6 +16,7 @@ enum HelperServiceError: Error {
 }
 
 final class HelperService: HelperServiceProtocol {
+    
     private let apiClient: NetworkProviderProtocol
     
     init(apiClient: NetworkProviderProtocol) {

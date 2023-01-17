@@ -7,11 +7,13 @@ import Combine
 
 class CalendarViewController: UIViewController {
     
-    private var sections = MockData.shared.pageData
+    private var localData = MockData.shared.pageData
     var locationService = DeviceLocationService.shared
     var calendarViewModel: CalendarViewModelProtocol
     private var sportStadiums: [SportStadium] = []
     private var sportCategory: GeoPlace = .baseSport
+    private var imageHead: String = "BasketBallBig"
+    private var ImageObjc: String = "BasketballObj"
     
     private var bag = Set<AnyCancellable>()
 //    private let countryData = PassthroughSubject<CountryEntitie, Never>()
@@ -32,7 +34,7 @@ class CalendarViewController: UIViewController {
         return bar
     }()
     
-    private var headLabel: UILabel = {
+    var headLabel: UILabel = {
         let label = UILabel()
         label.text = "Budaörs, Sport u. 2-4,\n 2040 Hungary"
         label.numberOfLines = 0
@@ -42,7 +44,6 @@ class CalendarViewController: UIViewController {
     
     private var headImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "BasketBallBig")
         return image
     }()
     
@@ -71,7 +72,7 @@ class CalendarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        headImage.image = UIImage(named: imageHead)
 
         calendarViewModel.stadiumsPublisher.sink(receiveValue: { stadiums in
             self.sportStadiums = stadiums
@@ -89,6 +90,8 @@ class CalendarViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
         self.infoView.isHidden = true
         self.collectionView.isHidden = true
+        setupUI()
+        calendarViewModel.getSelectedCategory()
         setupCollectionView()
         setupViews()
         getCoordinates()
@@ -100,6 +103,22 @@ class CalendarViewController: UIViewController {
         }
     }
     
+    func setupImages(imageBig: String, imageSmallObjc: String) {
+        self.headImage.image = UIImage(named: imageBig)
+        self.ImageObjc = imageSmallObjc
+        self.collectionView.reloadData()
+        
+    }
+    
+    func setupUI() {
+        calendarViewModel.selectedCategoryPublisher.sink { item in
+            print(item.imageObjectOnly)
+            
+            self.ImageObjc = item.imageObjectOnly
+            self.collectionView.reloadData()
+        }.store(in: &bag)
+        
+    }
     
     func getCoordinates() {
         calendarViewModel.getCoordinates { result in
@@ -209,7 +228,7 @@ extension CalendarViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
         let productTitle = sportStadiums[indexPath.row].address_line2
         let headLabel = sportStadiums[indexPath.row].name
-        let image = self.sections[0].items[1].imageObjectOnly
+        let image = self.ImageObjc
         cell.configureCell(imageString: image, productTitle: productTitle, headLabel: headLabel)
         
         

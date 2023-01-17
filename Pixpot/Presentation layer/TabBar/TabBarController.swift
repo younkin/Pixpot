@@ -23,6 +23,8 @@ final class TabBarController: UITabBarController {
         tabBar.itemWidth = tabBar.bounds.width / 5
         tabBar.itemPositioning = .centered
         tabBar.barTintColor = AppColors.darkBlue
+        
+        
 }
     
     func setupBackground() {
@@ -45,20 +47,22 @@ extension TabBarController: UITabBarControllerDelegate {
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         print(item.tag)
+        
+        
         if item == tabBar.items![0] {
-            tabBar.items![1].image = UIImage(named: "calendarOff")
-            tabBar.items![2].image = UIImage(named: "userOff")
-            item.image = UIImage(named: "homeOn")
+            tabBar.items![1].image = UIImage(named: "CalendarOff")
+            tabBar.items![2].image = UIImage(named: "UserOff")
+            item.image = UIImage(named: "HomeOn")
         }
         if item == tabBar.items![1] {
-            tabBar.items![0].image = UIImage(named: "homeOff")
-            tabBar.items![2].image = UIImage(named: "userOff")
-            item.image = UIImage(named: "calendarOn")
+            tabBar.items![0].image = UIImage(named: "HomeOff")
+            tabBar.items![2].image = UIImage(named: "UserOff")
+            item.image = UIImage(named: "CalendarOn")
         }
         if item == tabBar.items![2] {
-            tabBar.items![0].image = UIImage(named: "homeOff")
-            tabBar.items![1].image = UIImage(named: "calendarOff")
-            item.image = UIImage(named: "userOn")
+            tabBar.items![0].image = UIImage(named: "HomeOff")
+            tabBar.items![1].image = UIImage(named: "CalendarOff")
+            item.image = UIImage(named: "UserOn")
         }
     }
     

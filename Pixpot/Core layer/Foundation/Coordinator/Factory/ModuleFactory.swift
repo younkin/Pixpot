@@ -10,7 +10,7 @@ import Foundation
 protocol ModuleFactoryProtocol {
     func makeAppWayLaunch() -> (vc: AppLaunchWayViewController, output: AppLaunchOutput)
     func makeTabBarModule() -> TabBarController
-    func makeCatalogFoodModule() -> mainCategoryController
+    func makeCatalogFoodModule() -> MainCategoryController
     
   
     func makeProfileModule() -> ProfileViewController
@@ -32,10 +32,10 @@ final class ModuleFactory: ModuleFactoryProtocol {
         return (vc, vm)
     }
     
-    func makeCatalogFoodModule() -> mainCategoryController {
-        let viewModel = mainCategoryViewModel()
+    func makeCatalogFoodModule() -> MainCategoryController {
+        let viewModel = MainCategoryViewModel()
   
-        let controller = mainCategoryController(viewModel: viewModel)
+        let controller = MainCategoryController(viewModel: viewModel)
         return controller
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		740A61E72976F60700EBF72B /* LocalDataSevrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A61E62976F60700EBF72B /* LocalDataSevrice.swift */; };
 		741DB4692941DE4700F9AC84 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */; };
 		741DB46B2941DE5A00F9AC84 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB46A2941DE5A00F9AC84 /* ProfileViewController.swift */; };
 		741DB46E2942367500F9AC84 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 741DB46D2942367500F9AC84 /* SnapKit */; };
@@ -100,10 +101,10 @@
 		E769AE612974892D009299F8 /* GeoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769AE602974892D009299F8 /* GeoFilter.swift */; };
 		E769AE7629748ED3009299F8 /* CodableGeoJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E769AE7529748ED3009299F8 /* CodableGeoJSON */; };
 		E769AE7829748FF2009299F8 /* GeoProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769AE7729748FF2009299F8 /* GeoProperties.swift */; };
-		E769AE7D297494C5009299F8 /* mainCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769AE79297494C5009299F8 /* mainCategoryController.swift */; };
-		E769AE7E297494C5009299F8 /* mainCategoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769AE7A297494C5009299F8 /* mainCategoryCoordinator.swift */; };
-		E769AE7F297494C5009299F8 /* mainCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769AE7B297494C5009299F8 /* mainCategoryViewModel.swift */; };
-		E769AE80297494C5009299F8 /* mainCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769AE7C297494C5009299F8 /* mainCategoryView.swift */; };
+		E769AE7D297494C5009299F8 /* MainCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769AE79297494C5009299F8 /* MainCategoryController.swift */; };
+		E769AE7E297494C5009299F8 /* MainCategoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769AE7A297494C5009299F8 /* MainCategoryCoordinator.swift */; };
+		E769AE7F297494C5009299F8 /* MainCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769AE7B297494C5009299F8 /* MainCategoryViewModel.swift */; };
+		E769AE80297494C5009299F8 /* MainCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769AE7C297494C5009299F8 /* MainCategoryView.swift */; };
 		E769AE8229749946009299F8 /* GeoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769AE8129749946009299F8 /* GeoService.swift */; };
 		E769AE8429749CD1009299F8 /* HelperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769AE8329749CD1009299F8 /* HelperService.swift */; };
 		E769AE862974A0A0009299F8 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769AE852974A0A0009299F8 /* Link.swift */; };
@@ -128,6 +129,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		740A61E62976F60700EBF72B /* LocalDataSevrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSevrice.swift; sourceTree = "<group>"; };
 		741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		741DB46A2941DE5A00F9AC84 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		744E0ED229701EFB0036F531 /* PermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
@@ -223,10 +225,10 @@
 		E769AE5E297488DB009299F8 /* GeoApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoApiKey.swift; sourceTree = "<group>"; };
 		E769AE602974892D009299F8 /* GeoFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoFilter.swift; sourceTree = "<group>"; };
 		E769AE7729748FF2009299F8 /* GeoProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoProperties.swift; sourceTree = "<group>"; };
-		E769AE79297494C5009299F8 /* mainCategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainCategoryController.swift; sourceTree = "<group>"; };
-		E769AE7A297494C5009299F8 /* mainCategoryCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainCategoryCoordinator.swift; sourceTree = "<group>"; };
-		E769AE7B297494C5009299F8 /* mainCategoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainCategoryViewModel.swift; sourceTree = "<group>"; };
-		E769AE7C297494C5009299F8 /* mainCategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainCategoryView.swift; sourceTree = "<group>"; };
+		E769AE79297494C5009299F8 /* MainCategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCategoryController.swift; sourceTree = "<group>"; };
+		E769AE7A297494C5009299F8 /* MainCategoryCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCategoryCoordinator.swift; sourceTree = "<group>"; };
+		E769AE7B297494C5009299F8 /* MainCategoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCategoryViewModel.swift; sourceTree = "<group>"; };
+		E769AE7C297494C5009299F8 /* MainCategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCategoryView.swift; sourceTree = "<group>"; };
 		E769AE8129749946009299F8 /* GeoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoService.swift; sourceTree = "<group>"; };
 		E769AE8329749CD1009299F8 /* HelperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperService.swift; sourceTree = "<group>"; };
 		E769AE852974A0A0009299F8 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
@@ -369,10 +371,10 @@
 			children = (
 				74D5FFC829451D3700029FF8 /* Header */,
 				74D5FFBF29451C3000029FF8 /* Cells */,
-				E769AE79297494C5009299F8 /* mainCategoryController.swift */,
-				E769AE7C297494C5009299F8 /* mainCategoryView.swift */,
-				E769AE7B297494C5009299F8 /* mainCategoryViewModel.swift */,
-				E769AE7A297494C5009299F8 /* mainCategoryCoordinator.swift */,
+				E769AE79297494C5009299F8 /* MainCategoryController.swift */,
+				E769AE7C297494C5009299F8 /* MainCategoryView.swift */,
+				E769AE7B297494C5009299F8 /* MainCategoryViewModel.swift */,
+				E769AE7A297494C5009299F8 /* MainCategoryCoordinator.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -582,6 +584,7 @@
 				E769AE8129749946009299F8 /* GeoService.swift */,
 				E769AE8329749CD1009299F8 /* HelperService.swift */,
 				749460C62972C718008A0501 /* DeviceLocationService.swift */,
+				740A61E62976F60700EBF72B /* LocalDataSevrice.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -889,6 +892,7 @@
 				744E0ED329701EFB0036F531 /* PermissionsViewController.swift in Sources */,
 				744E0ED92970BFAF0036F531 /* CountryEntitie.swift in Sources */,
 				749460C72972C718008A0501 /* DeviceLocationService.swift in Sources */,
+				740A61E72976F60700EBF72B /* LocalDataSevrice.swift in Sources */,
 				746C78AE296C0A4900D8DAA6 /* ProductsCollectionViewCell.swift in Sources */,
 				E769AE4C29747B84009299F8 /* URLRequestConvertible + URLConvertible.swift in Sources */,
 				741DB46B2941DE5A00F9AC84 /* ProfileViewController.swift in Sources */,
@@ -901,10 +905,10 @@
 				745F4DD5294F91E0003FEA78 /* FilterView.swift in Sources */,
 				E769AE612974892D009299F8 /* GeoFilter.swift in Sources */,
 				74D5FFD129451DC200029FF8 /* MockData.swift in Sources */,
-				E769AE7E297494C5009299F8 /* mainCategoryCoordinator.swift in Sources */,
+				E769AE7E297494C5009299F8 /* MainCategoryCoordinator.swift in Sources */,
 				746F2E032975BA0F00A63F72 /* CalendarViewModel.swift in Sources */,
 				74D5FFC729451D2B00029FF8 /* BestSellerCollectionViewCell.swift in Sources */,
-				E769AE7D297494C5009299F8 /* mainCategoryController.swift in Sources */,
+				E769AE7D297494C5009299F8 /* MainCategoryController.swift in Sources */,
 				E769AE5529747F5C009299F8 /* Endpoints.swift in Sources */,
 				E769AE882974AAC8009299F8 /* AppLaunchWayViewController.swift in Sources */,
 				E769AE862974A0A0009299F8 /* Link.swift in Sources */,
@@ -936,7 +940,7 @@
 				E769AE7829748FF2009299F8 /* GeoProperties.swift in Sources */,
 				84AB9ACF29510B6600D35F2D /* SizeButton.swift in Sources */,
 				74D5FFC529451D1200029FF8 /* HotSalesCollectionViewCell.swift in Sources */,
-				E769AE7F297494C5009299F8 /* mainCategoryViewModel.swift in Sources */,
+				E769AE7F297494C5009299F8 /* MainCategoryViewModel.swift in Sources */,
 				749460D0297336F7008A0501 /* DefaultsManager.swift in Sources */,
 				744E0ED52970BF1F0036F531 /* CountryService.swift in Sources */,
 				741DB4692941DE4700F9AC84 /* ProfileCoordinator.swift in Sources */,
@@ -948,7 +952,7 @@
 				E769AE4529747975009299F8 /* Scheme.swift in Sources */,
 				848A2032294389C1001317C4 /* ProductEntitie.swift in Sources */,
 				7473221D2941074A008E7EB0 /* TabBarCoordinator.swift in Sources */,
-				E769AE80297494C5009299F8 /* mainCategoryView.swift in Sources */,
+				E769AE80297494C5009299F8 /* MainCategoryView.swift in Sources */,
 				747321DF2940ED4C008E7EB0 /* AppDelegate.swift in Sources */,
 				7473222A294115E2008E7EB0 /* AppFonts.swift in Sources */,
 				74F87619296E059400A8328C /* CalendarCoordinator.swift in Sources */,

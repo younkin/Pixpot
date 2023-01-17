@@ -42,7 +42,9 @@ struct MockData {
     
     static let shared = MockData()
     
-    private let headSection: ListSection = {
+    
+    
+    let headSection: ListSection = {
         .headSection([
             .init(name: "",
                   adress: "",
@@ -104,7 +106,10 @@ struct MockData {
     }()
     
   
-   
+  
+    var selectedCategory: GeoPlace = .baseSport
+    var selectedIndex: IndexPath?
+    
     
     var pageData: [ListSection] {
         [headSection]
