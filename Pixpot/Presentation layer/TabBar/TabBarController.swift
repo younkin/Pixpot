@@ -49,21 +49,17 @@ extension TabBarController: UITabBarControllerDelegate {
         print(item.tag)
         
         
-        if item == tabBar.items![0] {
-            tabBar.items![1].image = UIImage(named: "CalendarOff")
-            tabBar.items![2].image = UIImage(named: "UserOff")
-            item.image = UIImage(named: "HomeOn")
-        }
-        if item == tabBar.items![1] {
-            tabBar.items![0].image = UIImage(named: "HomeOff")
-            tabBar.items![2].image = UIImage(named: "UserOff")
-            item.image = UIImage(named: "CalendarOn")
-        }
-        if item == tabBar.items![2] {
-            tabBar.items![0].image = UIImage(named: "HomeOff")
-            tabBar.items![1].image = UIImage(named: "CalendarOff")
-            item.image = UIImage(named: "UserOn")
-        }
+//        if item == tabBar.items![0] {
+//            item.selectedImage = .init(named: "HomeOn")
+//        }
+//        if item == tabBar.items![1] {
+//            item.selectedImage = .init(named: "CalendarOn")
+//           
+//        }
+//        if item == tabBar.items![2] {
+//            item.selectedImage = .init(named: "UserOn")
+//            
+//        }
     }
     
 }

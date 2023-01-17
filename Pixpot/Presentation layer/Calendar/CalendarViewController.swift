@@ -10,10 +10,12 @@ class CalendarViewController: UIViewController {
     private var localData = MockData.shared.pageData
     var locationService = DeviceLocationService.shared
     var calendarViewModel: CalendarViewModelProtocol
-    private var sportStadiums: [SportStadium] = []
     private var sportCategory: GeoPlace = .baseSport
+    private var sportStadiums: [SportStadium] = []
     private var imageHead: String = "BasketBallBig"
     private var ImageObjc: String = "BasketballObj"
+    private var coordinates: ActualCoordinates? = nil
+    let loadingIndicator = UIActivityIndicatorView(style: .medium)
     
     private var bag = Set<AnyCancellable>()
 //    private let countryData = PassthroughSubject<CountryEntitie, Never>()
@@ -51,6 +53,11 @@ class CalendarViewController: UIViewController {
         let view = AskForPermissionView()
         return view
     }()
+    private lazy var itemNotFoundView: ItemNotFoundView = {
+        let view = ItemNotFoundView()
+        return view
+    }()
+    
     
     
     
@@ -72,29 +79,24 @@ class CalendarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        headImage.image = UIImage(named: imageHead)
-
-        calendarViewModel.stadiumsPublisher.sink(receiveValue: { stadiums in
-            self.sportStadiums = stadiums
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-            
-//            print(stadiums)
-        }).store(in: &bag)
         
-        
-        
-        
-        view.backgroundColor = AppColors.darkBlue
-        navigationController?.isNavigationBarHidden = true
-        self.infoView.isHidden = true
-        self.collectionView.isHidden = true
+        sinkData()
         setupUI()
-        calendarViewModel.getSelectedCategory()
-        setupCollectionView()
-        setupViews()
+
+        
+        
+        
+        
+    
+        
+        
+        
+        
         getCoordinates()
+        sendRequestToGetStadiums()
+
+        setupCollectionView()
+        setupConstraints()
         
         
         infoView.allowTap = {
@@ -103,31 +105,73 @@ class CalendarViewController: UIViewController {
         }
     }
     
-    func setupImages(imageBig: String, imageSmallObjc: String) {
-        self.headImage.image = UIImage(named: imageBig)
-        self.ImageObjc = imageSmallObjc
-        self.collectionView.reloadData()
-        
-    }
-    
-    func setupUI() {
-        calendarViewModel.selectedCategoryPublisher.sink { item in
-            print(item.imageObjectOnly)
+    private func sinkData() {
+        calendarViewModel.stadiumsPublisher.sink(receiveValue: { stadiums in
             
-            self.ImageObjc = item.imageObjectOnly
-            self.collectionView.reloadData()
-        }.store(in: &bag)
+            DispatchQueue.main.async {
+                self.sportStadiums = stadiums
+                if stadiums.count == 0 {
+                    self.itemNotFoundView.isHidden = false
+                    self.collectionView.isHidden = true
+                    self.loadingIndicator.stopAnimating()
+                } else {
+                    self.collectionView.isHidden = false
+                    self.itemNotFoundView.isHidden = true
+                    self.collectionView.reloadData()
+                    self.loadingIndicator.stopAnimating()
+                }
+            }
+//            print(stadiums)
+        }).store(in: &bag)
+
+    }
+    
+    private func setupUI() {
+        view.backgroundColor = AppColors.darkBlue
+        navigationController?.isNavigationBarHidden = true
+        loadingIndicator.color = AppColors.white
+        headImage.image = UIImage(named: imageHead)
+        loadingIndicator.startAnimating()
+        self.infoView.isHidden = true
+        self.collectionView.isHidden = true
+        self.itemNotFoundView.isHidden = true
+    }
+    
+    func setupCategory(localData: ListItem) {
+        sportCategory = localData.category
+        self.headImage.image = UIImage(named: localData.imageBig)
+        self.ImageObjc = localData.imageObjectOnly
+       
+        loadingIndicator.startAnimating()
+        self.infoView.isHidden = true
+        self.collectionView.isHidden = true
+        self.itemNotFoundView.isHidden = true
+        sendRequestToGetStadiums()
         
     }
     
-    func getCoordinates() {
+    
+    
+
+
+    
+    
+   private func sendRequestToGetStadiums() {
+        
+        guard let lat = coordinates?.lat, let long = coordinates?.long else { return }
+        calendarViewModel.getStadiums(lat: lat, long: long, radius: 5000, filter: self.sportCategory)
+//        collectionView.reloadData()
+    }
+    
+    private func getCoordinates() {
         calendarViewModel.getCoordinates { result in
             switch result {
             case .success(let coord):
                 print(coord)
-                self.calendarViewModel.getStadiums(lat: 37.785834, long: -122.406417, radius: 5000, filter: self.sportCategory)
+                self.coordinates = coord
                 self.collectionView.isHidden = false
             case .failure(_):
+                
                 self.infoView.isHidden = false
                 break
             }
@@ -159,20 +203,25 @@ class CalendarViewController: UIViewController {
     }
     
     
-    func allowTapped() {
+    private func allowTapped() {
         locationService.requestLocationUpdates()
         self.infoView.isHidden = true
     }
     
-    private func setupViews() {
+    private func setupConstraints() {
         // Add the buttons to the view
         view.addSubview(customBar)
         view.addSubview(headLabel)
         view.addSubview(headImage)
-        
+        view.addSubview(itemNotFoundView)
+        view.addSubview(loadingIndicator)
         view.addSubview(infoView)
         view.addSubview(collectionView)
         
+        loadingIndicator.snp.makeConstraints {
+            $0.center.equalTo(view.snp.center)
+            $0.height.width.equalTo(30)
+        }
         
         collectionView.snp.makeConstraints {
             $0.top.equalTo(headImage.snp.bottom).offset(20)
@@ -198,7 +247,12 @@ class CalendarViewController: UIViewController {
             $0.centerX.equalTo(view.snp.centerX)
             $0.width.equalToSuperview().multipliedBy(0.9)
         }
-        
+        itemNotFoundView.snp.makeConstraints {
+            $0.top.equalTo(headImage.snp.bottom).offset(10)
+            $0.centerX.equalTo(view.snp.centerX)
+            $0.width.equalToSuperview().multipliedBy(0.9)
+            $0.height.equalTo(view.snp.height).multipliedBy(0.15)
+        }
         infoView.snp.makeConstraints {
             $0.top.equalTo(headImage.snp.bottom).offset(10)
             $0.centerX.equalTo(view.snp.centerX)

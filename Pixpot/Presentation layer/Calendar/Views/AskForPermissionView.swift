@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
+
 class AskForPermissionView: UIView {
     
     var allowTap: (() -> Void)?

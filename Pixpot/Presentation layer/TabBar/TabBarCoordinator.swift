@@ -39,16 +39,18 @@ final class TabBarCoordinator: BaseCoordinator {
         // стандартная реализация таба
 
         let mainNavigationController = MainNavigationController()
-        mainNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(named:"HomeOn"), tag: 0)
-        
+        mainNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(named:"HomeOff"), tag: 0)
+        mainNavigationController.tabBarItem.selectedImage = UIImage(named:"HomeOn")
         let mainCoordinator = coordinatorFactory.makeMainCoordinator(with: Router(rootController: mainNavigationController))
         
         let calendarController = MainNavigationController()
         calendarController.tabBarItem = UITabBarItem(title: "", image: UIImage(named:"CalendarOff"), tag: 1)
+        calendarController.tabBarItem.selectedImage = UIImage(named:"CalendarOn")
         let calendarCoordinator = coordinatorFactory.makeCalendarCoordinator(with: Router(rootController: calendarController))
         
         let profileViewController = MainNavigationController()
         profileViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named:"UserOff"), tag: 2)
+        profileViewController.tabBarItem.selectedImage = UIImage(named:"UserOn")
         let profileCoordinator = coordinatorFactory.makeProfileCoordinator(with: Router(rootController: profileViewController))
     
         tabBarController.viewControllers = [mainNavigationController,calendarController,profileViewController]

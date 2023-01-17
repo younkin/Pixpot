@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		740A61E72976F60700EBF72B /* LocalDataSevrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A61E62976F60700EBF72B /* LocalDataSevrice.swift */; };
+		740A61EB2977511600EBF72B /* ItemNotFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A61EA2977511600EBF72B /* ItemNotFoundView.swift */; };
 		741DB4692941DE4700F9AC84 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */; };
 		741DB46B2941DE5A00F9AC84 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB46A2941DE5A00F9AC84 /* ProfileViewController.swift */; };
 		741DB46E2942367500F9AC84 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 741DB46D2942367500F9AC84 /* SnapKit */; };
@@ -130,6 +131,7 @@
 
 /* Begin PBXFileReference section */
 		740A61E62976F60700EBF72B /* LocalDataSevrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSevrice.swift; sourceTree = "<group>"; };
+		740A61EA2977511600EBF72B /* ItemNotFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNotFoundView.swift; sourceTree = "<group>"; };
 		741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		741DB46A2941DE5A00F9AC84 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		744E0ED229701EFB0036F531 /* PermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +265,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		740A61E829774B9D00EBF72B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				749510FF2973FEF50032E79B /* CustomCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		740A61E929774BBD00EBF72B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				74951101297400ED0032E79B /* AskForPermissionView.swift */,
+				740A61EA2977511600EBF72B /* ItemNotFoundView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		74139E0629435D1F0002DC0F /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,12 +564,12 @@
 		74F87617296E057200A8328C /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				740A61E929774BBD00EBF72B /* Views */,
+				740A61E829774B9D00EBF72B /* Cell */,
 				74F87618296E059400A8328C /* CalendarCoordinator.swift */,
 				74F8761A296E05C300A8328C /* CalendarViewController.swift */,
 				746F2E022975BA0F00A63F72 /* CalendarViewModel.swift */,
 				749460D129733F43008A0501 /* 123.swift */,
-				749510FF2973FEF50032E79B /* CustomCell.swift */,
-				74951101297400ED0032E79B /* AskForPermissionView.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -933,6 +952,7 @@
 				E769AE4E29747B99009299F8 /* URLRequest+.swift in Sources */,
 				84D6FFB8294D06B100405398 /* RamControl.swift in Sources */,
 				7473221B294106EE008E7EB0 /* AppCoordinator.swift in Sources */,
+				740A61EB2977511600EBF72B /* ItemNotFoundView.swift in Sources */,
 				E769AE8429749CD1009299F8 /* HelperService.swift in Sources */,
 				74D9A243294912870003C24F /* Button + Publisher.swift in Sources */,
 				E769AE4F29747B99009299F8 /* CharacterSet+.swift in Sources */,

@@ -112,8 +112,8 @@ class CustomCell: UICollectionViewCell {
         
         sportImage.snp.makeConstraints {
             $0.height.equalTo(self.snp.height).multipliedBy(1)
-            $0.right.equalToSuperview().offset(5)
-            $0.bottom.equalToSuperview().offset(30)
+            $0.right.equalToSuperview().offset(10)
+            $0.bottom.equalToSuperview().offset(0)
         }
         
         headLabel.snp.makeConstraints {
@@ -124,7 +124,7 @@ class CustomCell: UICollectionViewCell {
         discriptionLabel.snp.makeConstraints {
             $0.top.equalTo(headLabel.snp.bottom).offset(10)
             $0.left.equalToSuperview().offset(40)
-            $0.width.equalToSuperview().multipliedBy(0.7)
+            $0.width.equalToSuperview().multipliedBy(0.55)
         }
         
     }

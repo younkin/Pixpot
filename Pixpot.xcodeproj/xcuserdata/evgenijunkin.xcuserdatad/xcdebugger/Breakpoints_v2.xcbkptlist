@@ -590,8 +590,8 @@
             filePath = "Pixpot/Presentation layer/TabBar/TabBarCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -606,8 +606,8 @@
             filePath = "Pixpot/Presentation layer/TabBar/TabBarCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89">
+            startingLineNumber = "91"
+            endingLineNumber = "91">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -920,8 +920,8 @@
             filePath = "Pixpot/Presentation layer/Calendar/CalendarViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "getStadiums(lat:long:radius:filter:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -952,8 +952,8 @@
             filePath = "Pixpot/Presentation layer/Calendar/CalendarViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "getStadiums(lat:long:radius:filter:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -968,8 +968,8 @@
             filePath = "Pixpot/Presentation layer/Calendar/CalendarViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "getStadiums(lat:long:radius:filter:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -977,56 +977,8 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3816AC45-FD4F-4AA7-98E9-D86F4E3578EE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pixpot/Presentation layer/Calendar/CalendarViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3816AC45-FD4F-4AA7-98E9-D86F4E3578EE - 8bab53a70c717013"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pixpot.CalendarViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "Pixpot"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evgenijunkin/Documents/Pixpot/Pixpot/Presentation%20layer/Calendar/CalendarViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "464">
-               </Location>
-               <Location
-                  uuid = "3816AC45-FD4F-4AA7-98E9-D86F4E3578EE - d9d7a6972485583d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;Pixpot.SportStadium&gt;) -&gt; () in Pixpot.CalendarViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "Pixpot"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evgenijunkin/Documents/Pixpot/Pixpot/Presentation%20layer/Calendar/CalendarViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "388">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "C1E72B9E-C5A3-4B3C-915B-45B010635747"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pixpot/Business Logic Layer/Services/GeoService.swift"
@@ -1089,102 +1041,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "74809257-A0D6-475E-B464-8D08E42FA762"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pixpot/Presentation layer/Calendar/CalendarViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "setupUI()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E28E5227-9B1F-49E5-A2A7-6A6C906684B8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pixpot/Presentation layer/Calendar/CalendarViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "setupUI()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D8F0CE54-AE0D-4331-9EBF-DF111BB36BAA"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pixpot/Presentation layer/Calendar/CalendarViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "getSelectedCategory()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "11A70C10-76B9-41ED-A3FD-E7BB95C46545"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pixpot/Presentation layer/Calendar/CalendarViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "getSelectedCategory()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A1F25E2B-6F11-4F67-81EB-4ED4BE4549EC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pixpot/Presentation layer/Calendar/CalendarViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "getSelectedCategory()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E20C26F2-6396-4D58-86BB-48C44843D26A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pixpot/Presentation layer/Calendar/CalendarViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "setupUI()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "EEC47EA0-9443-4634-A49F-F5206072C903"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1192,58 +1048,10 @@
             filePath = "Pixpot/Presentation layer/Calendar/CalendarViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
+            startingLineNumber = "285"
+            endingLineNumber = "285"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "01971B02-E71A-466C-B621-06AEA5A96496"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pixpot/Presentation layer/Calendar/CalendarViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "getSelectedCategory()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "01971B02-E71A-466C-B621-06AEA5A96496 - f2ca2965480115ac"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pixpot.CalendarViewModel.getSelectedCategory() -&gt; ()"
-                  moduleName = "Pixpot"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evgenijunkin/Documents/Pixpot/Pixpot/Presentation%20layer/Calendar/CalendarViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53"
-                  offsetFromSymbolStart = "408">
-               </Location>
-               <Location
-                  uuid = "01971B02-E71A-466C-B621-06AEA5A96496 - f2ca2965480115ac"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pixpot.CalendarViewModel.getSelectedCategory() -&gt; ()"
-                  moduleName = "Pixpot"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/evgenijunkin/Documents/Pixpot/Pixpot/Presentation%20layer/Calendar/CalendarViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53"
-                  offsetFromSymbolStart = "556">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1272,10 +1080,74 @@
             filePath = "Pixpot/Presentation layer/Calendar/CalendarCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "consume(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FBCE23B0-4D65-453A-845D-BE8C49E501A8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pixpot/Business Logic Layer/Services/GeoService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "getSportStadiums(place:filter:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EA48C712-2843-4263-8C50-193B6BC01C7F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pixpot/Business Logic Layer/Services/GeoService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "getSportStadiums(place:filter:_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EA48C712-2843-4263-8C50-193B6BC01C7F - a7a10316d2bcb23e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;CodableGeoJSON.GeoJSONFeatureCollection&lt;CodableGeoJSON.PointGeometry, Pixpot.GeoProperties&gt;, Pixpot.SessionProviderError&gt;) -&gt; () in Pixpot.GeoService.getSportStadiums(place: Pixpot.GeoPlace, filter: Pixpot.GeoFilter, _: (Swift.Result&lt;Swift.Array&lt;Pixpot.SportStadium&gt;, Pixpot.GeoServiceError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Pixpot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evgenijunkin/Documents/Pixpot/Pixpot/Business%20Logic%20Layer/Services/GeoService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  uuid = "EA48C712-2843-4263-8C50-193B6BC01C7F - 4ce0cdb9fa4346ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (CodableGeoJSON.GeoJSONFeature&lt;CodableGeoJSON.PointGeometry, Pixpot.GeoProperties&gt;) -&gt; Pixpot.SportStadium in closure #1 (Swift.Result&lt;CodableGeoJSON.GeoJSONFeatureCollection&lt;CodableGeoJSON.PointGeometry, Pixpot.GeoProperties&gt;, Pixpot.SessionProviderError&gt;) -&gt; () in Pixpot.GeoService.getSportStadiums(place: Pixpot.GeoPlace, filter: Pixpot.GeoFilter, _: (Swift.Result&lt;Swift.Array&lt;Pixpot.SportStadium&gt;, Pixpot.GeoServiceError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Pixpot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evgenijunkin/Documents/Pixpot/Pixpot/Business%20Logic%20Layer/Services/GeoService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "152">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

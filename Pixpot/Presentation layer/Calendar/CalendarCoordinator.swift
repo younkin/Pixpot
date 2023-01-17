@@ -24,7 +24,8 @@ final class CalendarCoordinator: BaseCoordinator, PushRoutable {
     func consume(_ deeplink: Deeplink) {
         switch deeplink {
         case .item(let listItem):
-            calendar?.setupImages(imageBig: listItem.imageBig, imageSmallObjc: listItem.imageObjectOnly)
+        
+            calendar?.setupCategory(localData: listItem)
 //            UIImage(named: listItem.imageBig)
 //            calendar?.title = listItem.name
         }
