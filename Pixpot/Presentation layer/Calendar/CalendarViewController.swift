@@ -132,13 +132,15 @@ class CalendarViewController: UIViewController {
     }
     
     func setupCategory(localData: ListItem) {
+        sportCategory = localData.category
+        
+        headImage.image = UIImage(named: localData.imageBig)
+        ImageObjc = localData.imageObjectOnly
+        imageHead = localData.imageBig
+        
         if coordinates == nil {
             getCoordinates()
         } else {
-            sportCategory = localData.category
-            self.headImage.image = UIImage(named: localData.imageBig)
-            self.ImageObjc = localData.imageObjectOnly
-            
             loadingIndicator.startAnimating()
             self.infoView.isHidden = true
             self.collectionView.isHidden = true
