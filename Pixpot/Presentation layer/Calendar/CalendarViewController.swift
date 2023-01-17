@@ -10,10 +10,10 @@ class CalendarViewController: UIViewController {
     private var localData = MockData.shared.pageData
     var locationService = DeviceLocationService.shared
     var calendarViewModel: CalendarViewModelProtocol
-    private var sportCategory: GeoPlace = .baseSport
+    private var sportCategory: GeoPlace = .running
     private var sportStadiums: [SportStadium] = []
-    private var imageHead: String = "BasketBallBig"
-    private var ImageObjc: String = "BasketballObj"
+    private var imageHead: String = "RunningBig"
+    private var ImageObjc: String = "RunningObj"
     private var coordinates: ActualCoordinates? = nil
     let loadingIndicator = UIActivityIndicatorView(style: .medium)
     
@@ -85,13 +85,6 @@ class CalendarViewController: UIViewController {
 
         
         
-        
-        
-    
-        
-        
-        
-        
         getCoordinates()
         sendRequestToGetStadiums()
 
@@ -110,6 +103,7 @@ class CalendarViewController: UIViewController {
             
             DispatchQueue.main.async {
                 self.sportStadiums = stadiums
+                
                 if stadiums.count == 0 {
                     self.itemNotFoundView.isHidden = false
                     self.collectionView.isHidden = true
@@ -138,15 +132,19 @@ class CalendarViewController: UIViewController {
     }
     
     func setupCategory(localData: ListItem) {
-        sportCategory = localData.category
-        self.headImage.image = UIImage(named: localData.imageBig)
-        self.ImageObjc = localData.imageObjectOnly
-       
-        loadingIndicator.startAnimating()
-        self.infoView.isHidden = true
-        self.collectionView.isHidden = true
-        self.itemNotFoundView.isHidden = true
-        sendRequestToGetStadiums()
+        if coordinates == nil {
+            getCoordinates()
+        } else {
+            sportCategory = localData.category
+            self.headImage.image = UIImage(named: localData.imageBig)
+            self.ImageObjc = localData.imageObjectOnly
+            
+            loadingIndicator.startAnimating()
+            self.infoView.isHidden = true
+            self.collectionView.isHidden = true
+            self.itemNotFoundView.isHidden = true
+            sendRequestToGetStadiums()
+        }
         
     }
     
@@ -171,8 +169,8 @@ class CalendarViewController: UIViewController {
                 self.coordinates = coord
                 self.collectionView.isHidden = false
             case .failure(_):
-                
                 self.infoView.isHidden = false
+                self.loadingIndicator.stopAnimating()
                 break
             }
         }
