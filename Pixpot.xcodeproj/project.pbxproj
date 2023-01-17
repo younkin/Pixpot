@@ -21,6 +21,7 @@
 		746C78AA296C0A0600D8DAA6 /* HeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C78A9296C0A0600D8DAA6 /* HeaderCollectionViewCell.swift */; };
 		746C78AC296C0A3000D8DAA6 /* FooterSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C78AB296C0A3000D8DAA6 /* FooterSupplementaryView.swift */; };
 		746C78AE296C0A4900D8DAA6 /* ProductsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C78AD296C0A4900D8DAA6 /* ProductsCollectionViewCell.swift */; };
+		746F2E032975BA0F00A63F72 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746F2E022975BA0F00A63F72 /* CalendarViewModel.swift */; };
 		746F3B2A2948E7BC002BC66D /* UIButtonRounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746F3B292948E7BC002BC66D /* UIButtonRounded.swift */; };
 		747321DF2940ED4C008E7EB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747321DE2940ED4C008E7EB0 /* AppDelegate.swift */; };
 		747321E12940ED4C008E7EB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747321E02940ED4C008E7EB0 /* SceneDelegate.swift */; };
@@ -140,6 +141,7 @@
 		746C78A9296C0A0600D8DAA6 /* HeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		746C78AB296C0A3000D8DAA6 /* FooterSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterSupplementaryView.swift; sourceTree = "<group>"; };
 		746C78AD296C0A4900D8DAA6 /* ProductsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCollectionViewCell.swift; sourceTree = "<group>"; };
+		746F2E022975BA0F00A63F72 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		746F3B292948E7BC002BC66D /* UIButtonRounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonRounded.swift; sourceTree = "<group>"; };
 		747321DB2940ED4C008E7EB0 /* Pixpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pixpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		747321DE2940ED4C008E7EB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -365,13 +367,12 @@
 		7473220F2940F890008E7EB0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				74D5FFCB29451D7100029FF8 /* MockDataBase */,
 				74D5FFC829451D3700029FF8 /* Header */,
 				74D5FFBF29451C3000029FF8 /* Cells */,
 				E769AE79297494C5009299F8 /* mainCategoryController.swift */,
-				E769AE7A297494C5009299F8 /* mainCategoryCoordinator.swift */,
 				E769AE7C297494C5009299F8 /* mainCategoryView.swift */,
 				E769AE7B297494C5009299F8 /* mainCategoryViewModel.swift */,
+				E769AE7A297494C5009299F8 /* mainCategoryCoordinator.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -444,6 +445,7 @@
 		748EB4FB2943522500A94A79 /* Business Logic Layer */ = {
 			isa = PBXGroup;
 			children = (
+				74D5FFCB29451D7100029FF8 /* MockDataBase */,
 				848A203729438CF1001317C4 /* Services */,
 				848A202C29438832001317C4 /* Entities */,
 			);
@@ -543,6 +545,7 @@
 			children = (
 				74F87618296E059400A8328C /* CalendarCoordinator.swift */,
 				74F8761A296E05C300A8328C /* CalendarViewController.swift */,
+				746F2E022975BA0F00A63F72 /* CalendarViewModel.swift */,
 				749460D129733F43008A0501 /* 123.swift */,
 				749510FF2973FEF50032E79B /* CustomCell.swift */,
 				74951101297400ED0032E79B /* AskForPermissionView.swift */,
@@ -899,6 +902,7 @@
 				E769AE612974892D009299F8 /* GeoFilter.swift in Sources */,
 				74D5FFD129451DC200029FF8 /* MockData.swift in Sources */,
 				E769AE7E297494C5009299F8 /* mainCategoryCoordinator.swift in Sources */,
+				746F2E032975BA0F00A63F72 /* CalendarViewModel.swift in Sources */,
 				74D5FFC729451D2B00029FF8 /* BestSellerCollectionViewCell.swift in Sources */,
 				E769AE7D297494C5009299F8 /* mainCategoryController.swift in Sources */,
 				E769AE5529747F5C009299F8 /* Endpoints.swift in Sources */,

@@ -51,7 +51,9 @@ final class ModuleFactory: ModuleFactoryProtocol {
     }
     
     func makeCalendarModule() -> CalendarViewController {
-        return CalendarViewController()
+       let viewModel = CalendarViewModel(container: container)
+        let controller = CalendarViewController(viewModel: viewModel)
+        return controller
     }
     
 }

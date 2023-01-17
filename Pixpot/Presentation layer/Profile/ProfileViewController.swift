@@ -15,6 +15,10 @@ class ProfileViewController: UIViewController, UIWebViewDelegate {
     let location = DeviceLocationService.shared
 
     
+    
+    
+    
+    
     private let customBar: UICustomBar = {
         let bar = UICustomBar()
         bar.configure(title: "Find all sports \n near you", imageName: "PixtopLogo")

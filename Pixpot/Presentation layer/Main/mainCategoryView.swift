@@ -12,7 +12,7 @@ import Combine
 final class mainCategoryView: UIView {
 
     
-   private var sections = MockData.shared.pageData //временно пока нету фотографий с бэка
+   private var localData = MockData.shared.pageData //временно пока нету фотографий с бэка
 
     private let viewModel: mainCategoryViewModel
     var canceballe = Set<AnyCancellable>()
@@ -212,15 +212,7 @@ extension mainCategoryView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return sections[section].count
-        case 1:
-            return sections[section].count
-
-        default:
-            return 0
-        }
+            return localData[0].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -231,7 +223,7 @@ extension mainCategoryView: UICollectionViewDataSource {
             else {
                 return UICollectionViewCell()
             }
-            let image = self.sections[indexPath.section].items[indexPath.row].image
+            let image = self.localData[0].items[indexPath.row].imageBig
                cell.configureCell(imageString: image)
             
             return cell
@@ -245,7 +237,7 @@ extension mainCategoryView: UICollectionViewDataSource {
             }
 //            let name = self.sections[indexPath.section].items[indexPath.row].title
             let name = ""
-                let image = self.sections[indexPath.section].items[indexPath.row].image
+                let image = self.localData[0].items[indexPath.row].imageSmall
                cell.configureCell(imageString: image, productTitle: name)
 
            
@@ -264,7 +256,7 @@ extension mainCategoryView: UICollectionViewDataSource {
             self.viewModel.pageIndicator.sink { page in
                 footer.configureCurrentPage(currentPage: page)
             }.store(in: &canceballe)
-            footer.configurePageCount(pageCount: sections[0].count)
+            footer.configurePageCount(pageCount: localData[0].count)
             return footer
         case UICollectionView.elementKindSectionHeader:
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderSupplementaryView", for: indexPath) as! HeaderSupplementaryView
