@@ -176,10 +176,10 @@ override func viewDidLoad() {
         view.addSubview(button5)
  
         customBar.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(70)
+            $0.top.equalToSuperview().offset(40)
             $0.left.equalToSuperview().offset(20)
             $0.right.equalToSuperview().offset(-20)
-            $0.height.equalTo(60)
+            $0.height.equalTo(40)
         }
         
         // Use SnapKit to layout the buttons

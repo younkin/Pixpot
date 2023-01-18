@@ -93,10 +93,10 @@ class MyTrainsViewController: UIViewController, UICollectionViewDataSource, UICo
         
         
         customBar.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(70)
+            $0.top.equalToSuperview().offset(40)
             $0.left.equalToSuperview().offset(20)
             $0.right.equalToSuperview().offset(-20)
-            $0.height.equalTo(60)
+            $0.height.equalTo(40)
         }
         
         collectionView.snp.makeConstraints {

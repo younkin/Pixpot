@@ -52,6 +52,10 @@ final class CalendarCoordinator: BaseCoordinator, PushRoutable {
             sheduleVC.backTapped = {
                 self?.router.pop(animated: true)
             }
+            
+            sheduleVC.addScheduleTapped = {
+                
+            }
 //            print(sportStadium.name)
             
         }

@@ -12,6 +12,7 @@
 		741DB4692941DE4700F9AC84 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */; };
 		741DB46B2941DE5A00F9AC84 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB46A2941DE5A00F9AC84 /* ProfileViewController.swift */; };
 		741DB46E2942367500F9AC84 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 741DB46D2942367500F9AC84 /* SnapKit */; };
+		7432100029787F5500BB1563 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74320FFF29787F5500BB1563 /* DatePickerView.swift */; };
 		744E0ED329701EFB0036F531 /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E0ED229701EFB0036F531 /* PermissionsViewController.swift */; };
 		744E0ED52970BF1F0036F531 /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E0ED42970BF1F0036F531 /* CountryService.swift */; };
 		744E0ED92970BFAF0036F531 /* CountryEntitie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E0ED82970BFAF0036F531 /* CountryEntitie.swift */; };
@@ -143,6 +144,7 @@
 		740A61EA2977511600EBF72B /* ItemNotFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNotFoundView.swift; sourceTree = "<group>"; };
 		741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		741DB46A2941DE5A00F9AC84 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		74320FFF29787F5500BB1563 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		744E0ED229701EFB0036F531 /* PermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
 		744E0ED42970BF1F0036F531 /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
 		744E0ED82970BFAF0036F531 /* CountryEntitie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryEntitie.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 			children = (
 				74951101297400ED0032E79B /* AskForPermissionView.swift */,
 				740A61EA2977511600EBF72B /* ItemNotFoundView.swift */,
+				74320FFF29787F5500BB1563 /* DatePickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -632,9 +635,9 @@
 			children = (
 				740A61E929774BBD00EBF72B /* Views */,
 				740A61E829774B9D00EBF72B /* Cell */,
+				749274BE2978436F00FE9F77 /* SheduleVC */,
 				74F87618296E059400A8328C /* CalendarCoordinator.swift */,
 				74F8761A296E05C300A8328C /* CalendarViewController.swift */,
-				749274BE2978436F00FE9F77 /* SheduleVC */,
 				746F2E022975BA0F00A63F72 /* CalendarViewModel.swift */,
 				749460D129733F43008A0501 /* 123.swift */,
 			);
@@ -985,6 +988,7 @@
 				E769AE4C29747B84009299F8 /* URLRequestConvertible + URLConvertible.swift in Sources */,
 				749274C229784F4400FE9F77 /* sheduleCustomCell.swift in Sources */,
 				741DB46B2941DE5A00F9AC84 /* ProfileViewController.swift in Sources */,
+				7432100029787F5500BB1563 /* DatePickerView.swift in Sources */,
 				848A202E29438877001317C4 /* MainEntitie.swift in Sources */,
 				747322122940FB02008E7EB0 /* Router.swift in Sources */,
 				749274B42977F70200FE9F77 /* SheduleManager.swift in Sources */,
