@@ -11,7 +11,7 @@ import SnapKit
 final class TabBarCoordinator: BaseCoordinator {
 
     // MARK: - Private Properties
-
+    
     private let coordinatorFactory: CoordinatorFactoryProtocol
     private let router: Router
     private var tabBarController = TabBarController()
@@ -31,6 +31,8 @@ final class TabBarCoordinator: BaseCoordinator {
 
     override func start() {
         performAppFlow()
+        
+        
     }
 
     // MARK: - Private Methods

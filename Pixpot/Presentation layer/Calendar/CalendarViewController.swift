@@ -7,16 +7,18 @@ import Combine
 
 class CalendarViewController: UIViewController {
     
-    private var localData = MockData.shared.pageData
+    private var localData: ListItem?
     var locationService = DeviceLocationService.shared
     var calendarViewModel: CalendarViewModelProtocol
     private var sportCategory: GeoPlace = .running
     private var sportStadiums: [SportStadium] = []
     private var imageHead: String = "RunningBig"
-    private var ImageObjc: String = "RunningObj"
+    private var imageObjc: String = "RunningObj"
+    private var imageSmall: String = "RunningSmall"
     private var coordinates: ActualCoordinates? = nil
     let loadingIndicator = UIActivityIndicatorView(style: .medium)
     
+    var chosenSportStadium: ((SportStadium,ListItem) -> Void)?
     private var bag = Set<AnyCancellable>()
 //    private let countryData = PassthroughSubject<CountryEntitie, Never>()
     
@@ -31,7 +33,7 @@ class CalendarViewController: UIViewController {
     
     
     private let customBar: UICustomBar = {
-        let bar = UICustomBar()
+        let bar = UICustomBar(withBackButton: false)
         bar.configure(title: "Find all sports \n near you", imageName: "PixtopLogo")
         return bar
     }()
@@ -68,7 +70,7 @@ class CalendarViewController: UIViewController {
         layout.minimumInteritemSpacing = 20
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(CustomCell.self, forCellWithReuseIdentifier: "CustomCell")
+        collectionView.register(calendarCustomCell.self, forCellWithReuseIdentifier: "CustomCell")
         collectionView.backgroundColor = AppColors.darkBlue
         collectionView.contentMode = .center
         return collectionView
@@ -135,8 +137,10 @@ class CalendarViewController: UIViewController {
         sportCategory = localData.category
         
         headImage.image = UIImage(named: localData.imageBig)
-        ImageObjc = localData.imageObjectOnly
+        imageObjc = localData.imageObjectOnly
         imageHead = localData.imageBig
+        self.localData = localData
+        
         
         if coordinates == nil {
             getCoordinates()
@@ -272,6 +276,11 @@ extension CalendarViewController: UICollectionViewDelegate {
 //MARK: UICollectionViewDataSource
 extension CalendarViewController: UICollectionViewDataSource {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let data = localData else {return}
+        chosenSportStadium?(sportStadiums[indexPath.row], data)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return sportStadiums.count
@@ -279,10 +288,10 @@ extension CalendarViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as! calendarCustomCell
         let productTitle = sportStadiums[indexPath.row].address_line2
         let headLabel = sportStadiums[indexPath.row].name
-        let image = self.ImageObjc
+        let image = self.imageObjc
         cell.configureCell(imageString: image, productTitle: productTitle, headLabel: headLabel)
         
         

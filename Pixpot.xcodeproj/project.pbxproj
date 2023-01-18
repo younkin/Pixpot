@@ -39,12 +39,21 @@
 		7473222529411568008E7EB0 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7473222429411568008E7EB0 /* MainNavigationController.swift */; };
 		74732228294115B0008E7EB0 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74732227294115B0008E7EB0 /* AppColors.swift */; };
 		7473222A294115E2008E7EB0 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74732229294115E2008E7EB0 /* AppFonts.swift */; };
+		749274AB2977F17C00FE9F77 /* PixpotCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 749274A92977F17C00FE9F77 /* PixpotCoreData.xcdatamodeld */; };
+		749274AE2977F24300FE9F77 /* Shedule+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749274AC2977F24300FE9F77 /* Shedule+CoreDataClass.swift */; };
+		749274AF2977F24300FE9F77 /* Shedule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749274AD2977F24300FE9F77 /* Shedule+CoreDataProperties.swift */; };
+		749274B22977F29300FE9F77 /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749274B12977F29300FE9F77 /* CoreDataProvider.swift */; };
+		749274B42977F70200FE9F77 /* SheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749274B32977F70200FE9F77 /* SheduleManager.swift */; };
+		749274B62978120400FE9F77 /* MyTrainsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749274B52978120400FE9F77 /* MyTrainsViewController.swift */; };
+		749274B8297813CA00FE9F77 /* TrainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749274B7297813CA00FE9F77 /* TrainCell.swift */; };
+		749274C02978438300FE9F77 /* SheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749274BF2978438300FE9F77 /* SheduleVC.swift */; };
+		749274C229784F4400FE9F77 /* sheduleCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749274C129784F4400FE9F77 /* sheduleCustomCell.swift */; };
 		749460C72972C718008A0501 /* DeviceLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749460C62972C718008A0501 /* DeviceLocationService.swift */; };
 		749460CA2972D3AA008A0501 /* AskPermisionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749460C92972D3AA008A0501 /* AskPermisionsVC.swift */; };
 		749460CE297336B8008A0501 /* UDStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749460CD297336B8008A0501 /* UDStorage.swift */; };
 		749460D0297336F7008A0501 /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749460CF297336F7008A0501 /* DefaultsManager.swift */; };
 		749460D229733F43008A0501 /* 123.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749460D129733F43008A0501 /* 123.swift */; };
-		749511002973FEF50032E79B /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749510FF2973FEF50032E79B /* CustomCell.swift */; };
+		749511002973FEF50032E79B /* calendarCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749510FF2973FEF50032E79B /* calendarCustomCell.swift */; };
 		74951102297400ED0032E79B /* AskForPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74951101297400ED0032E79B /* AskForPermissionView.swift */; };
 		7495110429740D510032E79B /* UICollectionViewCell + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7495110329740D510032E79B /* UICollectionViewCell + Ext.swift */; };
 		7495110629743C020032E79B /* SportStadium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7495110529743C020032E79B /* SportStadium.swift */; };
@@ -165,12 +174,21 @@
 		7473222429411568008E7EB0 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		74732227294115B0008E7EB0 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		74732229294115E2008E7EB0 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
+		749274AA2977F17C00FE9F77 /* PixpotCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PixpotCoreData.xcdatamodel; sourceTree = "<group>"; };
+		749274AC2977F24300FE9F77 /* Shedule+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shedule+CoreDataClass.swift"; sourceTree = "<group>"; };
+		749274AD2977F24300FE9F77 /* Shedule+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shedule+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		749274B12977F29300FE9F77 /* CoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProvider.swift; sourceTree = "<group>"; };
+		749274B32977F70200FE9F77 /* SheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheduleManager.swift; sourceTree = "<group>"; };
+		749274B52978120400FE9F77 /* MyTrainsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTrainsViewController.swift; sourceTree = "<group>"; };
+		749274B7297813CA00FE9F77 /* TrainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainCell.swift; sourceTree = "<group>"; };
+		749274BF2978438300FE9F77 /* SheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheduleVC.swift; sourceTree = "<group>"; };
+		749274C129784F4400FE9F77 /* sheduleCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sheduleCustomCell.swift; sourceTree = "<group>"; };
 		749460C62972C718008A0501 /* DeviceLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceLocationService.swift; sourceTree = "<group>"; };
 		749460C92972D3AA008A0501 /* AskPermisionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskPermisionsVC.swift; sourceTree = "<group>"; };
 		749460CD297336B8008A0501 /* UDStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDStorage.swift; sourceTree = "<group>"; };
 		749460CF297336F7008A0501 /* DefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
 		749460D129733F43008A0501 /* 123.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 123.swift; sourceTree = "<group>"; };
-		749510FF2973FEF50032E79B /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		749510FF2973FEF50032E79B /* calendarCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendarCustomCell.swift; sourceTree = "<group>"; };
 		74951101297400ED0032E79B /* AskForPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskForPermissionView.swift; sourceTree = "<group>"; };
 		7495110329740D510032E79B /* UICollectionViewCell + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell + Ext.swift"; sourceTree = "<group>"; };
 		7495110529743C020032E79B /* SportStadium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportStadium.swift; sourceTree = "<group>"; };
@@ -268,7 +286,8 @@
 		740A61E829774B9D00EBF72B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				749510FF2973FEF50032E79B /* CustomCell.swift */,
+				749510FF2973FEF50032E79B /* calendarCustomCell.swift */,
+				749274C129784F4400FE9F77 /* sheduleCustomCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -295,8 +314,12 @@
 		741DB4672941DE0300F9AC84 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				749274BA29782A6400FE9F77 /* Header */,
+				749274B929782A5C00FE9F77 /* Cell */,
 				741DB46A2941DE5A00F9AC84 /* ProfileViewController.swift */,
 				741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */,
+				749274B52978120400FE9F77 /* MyTrainsViewController.swift */,
+				749274B7297813CA00FE9F77 /* TrainCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -372,6 +395,7 @@
 				E769AE5629747FE8009299F8 /* NetworkModule */,
 				747321E92940ED4E008E7EB0 /* LaunchScreen.storyboard */,
 				747321EC2940ED4E008E7EB0 /* Info.plist */,
+				749274A92977F17C00FE9F77 /* PixpotCoreData.xcdatamodeld */,
 			);
 			path = Pixpot;
 			sourceTree = "<group>";
@@ -476,6 +500,7 @@
 		748EB4FC294352A100A94A79 /* Core layer */ = {
 			isa = PBXGroup;
 			children = (
+				749274B02977F24A00FE9F77 /* CoreData */,
 				E769AE572974800D009299F8 /* Network */,
 				749460CB297333B8008A0501 /* UserDefaults */,
 				848A20582943DABF001317C4 /* Extensions */,
@@ -483,6 +508,47 @@
 				7473222229411526008E7EB0 /* UIKit */,
 			);
 			path = "Core layer";
+			sourceTree = "<group>";
+		};
+		749274B02977F24A00FE9F77 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				749274BD297842E600FE9F77 /* SheduleEntitie */,
+				749274B12977F29300FE9F77 /* CoreDataProvider.swift */,
+				749274B32977F70200FE9F77 /* SheduleManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		749274B929782A5C00FE9F77 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		749274BA29782A6400FE9F77 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		749274BD297842E600FE9F77 /* SheduleEntitie */ = {
+			isa = PBXGroup;
+			children = (
+				749274AC2977F24300FE9F77 /* Shedule+CoreDataClass.swift */,
+				749274AD2977F24300FE9F77 /* Shedule+CoreDataProperties.swift */,
+			);
+			path = SheduleEntitie;
+			sourceTree = "<group>";
+		};
+		749274BE2978436F00FE9F77 /* SheduleVC */ = {
+			isa = PBXGroup;
+			children = (
+				749274BF2978438300FE9F77 /* SheduleVC.swift */,
+			);
+			path = SheduleVC;
 			sourceTree = "<group>";
 		};
 		749460C82972D37E008A0501 /* AskPermisions */ = {
@@ -568,6 +634,7 @@
 				740A61E829774B9D00EBF72B /* Cell */,
 				74F87618296E059400A8328C /* CalendarCoordinator.swift */,
 				74F8761A296E05C300A8328C /* CalendarViewController.swift */,
+				749274BE2978436F00FE9F77 /* SheduleVC */,
 				746F2E022975BA0F00A63F72 /* CalendarViewModel.swift */,
 				749460D129733F43008A0501 /* 123.swift */,
 			);
@@ -899,6 +966,7 @@
 				E769AE5029747B9E009299F8 /* HTTPHeaders.swift in Sources */,
 				7468D26E2946390B00674261 /* RoundedImageView.swift in Sources */,
 				746C78AC296C0A3000D8DAA6 /* FooterSupplementaryView.swift in Sources */,
+				749274C02978438300FE9F77 /* SheduleVC.swift in Sources */,
 				84E58590294BCA050098C311 /* ProductBuyButton.swift in Sources */,
 				74F8761B296E05C300A8328C /* CalendarViewController.swift in Sources */,
 				84D6FFDE2950B1DA00405398 /* FilterBrandButton.swift in Sources */,
@@ -910,13 +978,16 @@
 				747322142940FC5B008E7EB0 /* BaseCoordinator.swift in Sources */,
 				744E0ED329701EFB0036F531 /* PermissionsViewController.swift in Sources */,
 				744E0ED92970BFAF0036F531 /* CountryEntitie.swift in Sources */,
+				749274B8297813CA00FE9F77 /* TrainCell.swift in Sources */,
 				749460C72972C718008A0501 /* DeviceLocationService.swift in Sources */,
 				740A61E72976F60700EBF72B /* LocalDataSevrice.swift in Sources */,
 				746C78AE296C0A4900D8DAA6 /* ProductsCollectionViewCell.swift in Sources */,
 				E769AE4C29747B84009299F8 /* URLRequestConvertible + URLConvertible.swift in Sources */,
+				749274C229784F4400FE9F77 /* sheduleCustomCell.swift in Sources */,
 				741DB46B2941DE5A00F9AC84 /* ProfileViewController.swift in Sources */,
 				848A202E29438877001317C4 /* MainEntitie.swift in Sources */,
 				747322122940FB02008E7EB0 /* Router.swift in Sources */,
+				749274B42977F70200FE9F77 /* SheduleManager.swift in Sources */,
 				746C78AA296C0A0600D8DAA6 /* HeaderCollectionViewCell.swift in Sources */,
 				747322192941065A008E7EB0 /* CoordinatorFactory.swift in Sources */,
 				746F3B2A2948E7BC002BC66D /* UIButtonRounded.swift in Sources */,
@@ -931,11 +1002,14 @@
 				E769AE5529747F5C009299F8 /* Endpoints.swift in Sources */,
 				E769AE882974AAC8009299F8 /* AppLaunchWayViewController.swift in Sources */,
 				E769AE862974A0A0009299F8 /* Link.swift in Sources */,
+				749274AF2977F24300FE9F77 /* Shedule+CoreDataProperties.swift in Sources */,
 				7473222529411568008E7EB0 /* MainNavigationController.swift in Sources */,
+				749274AE2977F24300FE9F77 /* Shedule+CoreDataClass.swift in Sources */,
 				E769AE4729747AD4009299F8 /* NetworkSessionProvider.swift in Sources */,
 				E769AE5D2974888D009299F8 /* GeoPlaces.swift in Sources */,
 				E769AE5129747B9E009299F8 /* HTTPMethod.swift in Sources */,
 				E769AE5F297488DB009299F8 /* GeoApiKey.swift in Sources */,
+				749274AB2977F17C00FE9F77 /* PixpotCoreData.xcdatamodeld in Sources */,
 				7495110429740D510032E79B /* UICollectionViewCell + Ext.swift in Sources */,
 				7460E715294A191B00BE0637 /* String + Exct.swift in Sources */,
 				749460CE297336B8008A0501 /* UDStorage.swift in Sources */,
@@ -944,10 +1018,11 @@
 				E769AE4D29747B87009299F8 /* RestEndpoint.swift in Sources */,
 				848A2029294366EC001317C4 /* RequestBuilder.swift in Sources */,
 				E769AE4429747975009299F8 /* Server.swift in Sources */,
+				749274B62978120400FE9F77 /* MyTrainsViewController.swift in Sources */,
 				8418E8F3294A5B6900D2E310 /* RoundedNavButton.swift in Sources */,
 				7495110629743C020032E79B /* SportStadium.swift in Sources */,
 				74951102297400ED0032E79B /* AskForPermissionView.swift in Sources */,
-				749511002973FEF50032E79B /* CustomCell.swift in Sources */,
+				749511002973FEF50032E79B /* calendarCustomCell.swift in Sources */,
 				747321E32940ED4C008E7EB0 /* TabBarController.swift in Sources */,
 				E769AE4E29747B99009299F8 /* URLRequest+.swift in Sources */,
 				84D6FFB8294D06B100405398 /* RamControl.swift in Sources */,
@@ -960,6 +1035,7 @@
 				E769AE7829748FF2009299F8 /* GeoProperties.swift in Sources */,
 				84AB9ACF29510B6600D35F2D /* SizeButton.swift in Sources */,
 				74D5FFC529451D1200029FF8 /* HotSalesCollectionViewCell.swift in Sources */,
+				749274B22977F29300FE9F77 /* CoreDataProvider.swift in Sources */,
 				E769AE7F297494C5009299F8 /* MainCategoryViewModel.swift in Sources */,
 				749460D0297336F7008A0501 /* DefaultsManager.swift in Sources */,
 				744E0ED52970BF1F0036F531 /* CountryService.swift in Sources */,
@@ -1363,6 +1439,19 @@
 			productName = CodableGeoJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		749274A92977F17C00FE9F77 /* PixpotCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				749274AA2977F17C00FE9F77 /* PixpotCoreData.xcdatamodel */,
+			);
+			currentVersion = 749274AA2977F17C00FE9F77 /* PixpotCoreData.xcdatamodel */;
+			path = PixpotCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 747321D32940ED4C008E7EB0 /* Project object */;
 }

@@ -43,6 +43,18 @@ final class CalendarCoordinator: BaseCoordinator, PushRoutable {
         self.calendar = profilePage
         
         self.router.push(profilePage, animated: true)
+        
+        
+        calendar?.chosenSportStadium = { [weak self] (sportStadium, localData)in
+            let sheduleVC = SheduleVC(sportStadium: sportStadium, localData: localData)
+            self?.router.push(sheduleVC, animated: true)
+            
+            sheduleVC.backTapped = {
+                self?.router.pop(animated: true)
+            }
+//            print(sportStadium.name)
+            
+        }
     }
 }
 

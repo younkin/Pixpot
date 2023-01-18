@@ -30,5 +30,16 @@ final class ProfileCoordinator: BaseCoordinator {
         let profilePage = moduleFactory.makeProfileModule()
         
         self.router.push(profilePage, animated: true)
+        
+        
+        profilePage.myTrainTap = {
+            let myTrainVC = MyTrainsViewController()
+            self.router.push(myTrainVC, animated: true)
+         
+            myTrainVC.exitTapped = {
+                self.router.pop(animated: true)
+            }
+            
+        }
     }
 }

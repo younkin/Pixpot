@@ -19,7 +19,7 @@ final class MainCategoryView: UIView {
     var tappedIndex: ((ListItem) -> Void)?
     
     private let customBar: UICustomBar = {
-        let bar = UICustomBar()
+        let bar = UICustomBar(withBackButton: false)
         bar.configure(title: "Find all sports \n near you", imageName: "PixtopLogo")
         return bar
     }()
@@ -195,14 +195,8 @@ extension MainCategoryView: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-            
         self.localData.selectedIndex = indexPath
         self.tappedIndex?(self.localData.pageData[0].items[indexPath.row])
-//            self.inputViewController?.tabBarController?.selectedIndex = 1
-//            collectionView.deselectItem(at: indexPath, animated: false)
-//            let categoryFoodModel = categories[indexPath.row]
-//              delegate?.collectionView(didSelect: .productsPopular(catalogFoodModel: categoryFoodModel))
-        
     }
 }
 

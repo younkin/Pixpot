@@ -63,6 +63,7 @@ import SnapKit
 
 class UICustomBar: UIView {
     
+    var exitTapped: (() -> Void)?
     
    private let imageContact: UIImageView = {
         let image = UIImageView()
@@ -77,12 +78,34 @@ class UICustomBar: UIView {
         label.textColor = AppColors.white
         return label
     }()
+    
 
+    private let backButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "backBatton"), for: .normal)
+        button.addTarget(self, action: #selector(exitTap), for: .touchUpInside)
+        return button
+    }()
+    
+    init(withBackButton: Bool) {
+        super.init(frame: .zero)
+        backButton.isHidden = !withBackButton
+        setupConstaints()
+    }
+   
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+    }
 
+    @objc func exitTap() {
+        exitTapped?()
+    }
+    
+   func setupConstaints() {
         addSubview(imageContact)
         addSubview(titleLabel)
+        addSubview(backButton)
 
         // Configure the image view
         imageContact.snp.makeConstraints {
@@ -99,14 +122,19 @@ class UICustomBar: UIView {
             $0.bottom.equalToSuperview().inset(8)
             $0.trailing.equalToSuperview().inset(8)
         }
+        backButton.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(8)
+            $0.trailing.equalToSuperview().inset(8)
+            $0.width.height.equalTo(30)
+            
+        }
     }
-
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(title: String, imageName: String){
+    func configure(title: String, imageName: String) {
         titleLabel.text = title
         imageContact.image = UIImage(named: imageName)
     }

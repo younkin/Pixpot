@@ -13,14 +13,14 @@ class ProfileViewController: UIViewController, UIWebViewDelegate {
     
     let webView = WKWebView()
     let location = DeviceLocationService.shared
-
+    var myTrainTap: (() -> Void)?
     
     
     
     
     
     private let customBar: UICustomBar = {
-        let bar = UICustomBar()
+        let bar = UICustomBar(withBackButton: false)
         bar.configure(title: "Find all sports \n near you", imageName: "PixtopLogo")
         return bar
     }()
@@ -125,6 +125,7 @@ override func viewDidLoad() {
     @objc func buttonTap(sender: UIButton) {
         switch sender.tag {
         case 1:
+            myTrainTap?()
             print(sender.tag)
         case 2:
             print(sender.tag)

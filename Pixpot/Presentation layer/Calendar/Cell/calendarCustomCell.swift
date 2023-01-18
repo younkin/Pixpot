@@ -12,7 +12,7 @@ import UIKit
 import SDWebImage
 
 
-class CustomCell: UICollectionViewCell {
+class calendarCustomCell: UICollectionViewCell {
     
     
     
