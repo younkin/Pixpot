@@ -16,7 +16,7 @@ class SheduleVC: UIViewController {
 
 
 
-
+    private let sheduleManager: SheduleManagerProtocol = SheduleManager()
    
     let loadingIndicator = UIActivityIndicatorView(style: .medium)
     private var bag = Set<AnyCancellable>()
@@ -116,11 +116,25 @@ class SheduleVC: UIViewController {
         return view
     }()
     
+    private var needToSave: Bool = false
     
+    private var dateForSafe: Date? {
+        didSet {
+            addScheduleButton.isEnabled = true
+            needToSave = true
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.isHidden = true
+       
+        datePickerView.setDate.zip(datePickerView.setTime).sink { (date, time) in
+            guard let date = date, let time = time else {return}
+            self.dateForSafe = self.margeDate(date: date, time: time)
+//            print(self.dateForSafe)
+        }.store(in: &bag)
+        
+        datePickerView.isHidden = true
        
         setupUI()
 
@@ -131,9 +145,43 @@ class SheduleVC: UIViewController {
             self.backTapped?()
         }
         
+        
        
     }
     
+    
+    func margeDate(date: Date, time: Date) -> Date {
+        let calendar = Calendar.current
+
+        let dateComponents = calendar.dateComponents([.year, .month, .day], from: date)
+
+        let timeComponents = calendar.dateComponents([.hour, .minute], from: time)
+
+        // Combine the date and time components
+        var finalComponents = DateComponents()
+        finalComponents.year = dateComponents.year
+        finalComponents.month = dateComponents.month
+        finalComponents.day = dateComponents.day
+        finalComponents.hour = timeComponents.hour
+        finalComponents.minute = timeComponents.minute
+
+        // Create a new date object by combining the date and time
+        let finalDate = calendar.date(from: finalComponents)
+        return finalDate!
+    }
+    
+    func saveSchedule() {
+        sheduleManager.addNewShedule(name: sportStadium!.name, image: localData!.imageObjectOnly , adress: sportStadium!.address_line2, date: dateForSafe!) { response in
+            switch response {
+            case .success(let data):
+                print(data)
+                print("удачно сохранилось")
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -153,7 +201,20 @@ class SheduleVC: UIViewController {
     }
     
     @objc func scheduleTap() {
-        addScheduleTapped?()
+//        addScheduleTapped?()
+        collectionView.isHidden = true
+        datePickerView.isHidden = false
+        addScheduleButton.setTitle("Save", for: .normal)
+        addScheduleButton.isEnabled = false
+        addScheduleButton.setTitleColor(AppColors.grey, for: .disabled)
+        if needToSave {
+            //save
+            saveSchedule()
+            print("saved")
+            needToSave = false
+            addScheduleButton.isEnabled = false
+        }
+        
     }
    
    

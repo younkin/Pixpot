@@ -8,20 +8,29 @@
 import Foundation
 import UIKit
 import SnapKit
-
+import Combine
 
 class DatePickerView: UIView {
+    
+     let setDate = PassthroughSubject<Date?, Never>()
+     let setTime = PassthroughSubject<Date?, Never>()
+    private var cancellables = Set<AnyCancellable>()
     
     let datePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
         datePicker.backgroundColor = AppColors.green
+        datePicker.minimumDate = Date() // current date
+        datePicker.maximumDate = Calendar.current.date(byAdding: .year, value: 1, to: Date()) // 1 year after current date
+        datePicker.addTarget(self, action: #selector(dateUpdated), for: .valueChanged)
         return datePicker
     }()
     let timePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .time
         datePicker.backgroundColor = AppColors.green
+        datePicker.addTarget(self, action: #selector(timeUpdated), for: .valueChanged)
+        
         return datePicker
     }()
     
@@ -48,7 +57,6 @@ class DatePickerView: UIView {
         return view
     }()
     
-    
     let chooseTimeView: UIView = {
        let view = UIView()
         view.backgroundColor = AppColors.blue
@@ -65,12 +73,22 @@ class DatePickerView: UIView {
         return label
     }()
     
-    
+    var currentSelectedDate: Date? {
+        didSet {
+            print("setted")
+        }
+        
+    }
+
       init() {
           super.init(frame: .zero)
           
-          
+      
+//          currentSelectedDate = datePicker.date
+//          datePicker.date.
           setupConstraints()
+          
+//          datePicker.
     }
     
     override init(frame: CGRect) {
@@ -80,6 +98,61 @@ class DatePickerView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+    @objc func dateUpdated() {
+        setDate.send(datePicker.date)
+        print("date setted")
+    }
+    
+    @objc func timeUpdated() {
+        setTime.send(timePicker.date)
+        print("time setted")
+    }
+    @objc func checkDates() {
+////         Get the selected dates from the date pickers
+//        let date = datePicker.date
+//        let time = timePicker.date
+//
+//        // Check if both date pickers have selected dates
+//        if date != nil, time != nil {
+//            print(date)
+//            print(time)
+//            print("yes")
+//        } else {
+//            print("not")
+//        }
+//        datePicker
+//            .publisher(for: \.date)
+//            .compactMap { $0 }
+//            .assign(to: \.selectedDate, on: self)
+//            .store(in: &cancellables)
+//
+//        timePicker
+//            .publisher(for: \.date)
+//            .compactMap { $0 }
+//            .assign(to: \.selectedTime, on: self)
+//            .store(in: &cancellables)
+//
+//
+//
+//        $selectedDate
+//            .combineLatest($selectedTime)
+//            .map { date, time -> Bool in
+//                return date != nil && time != nil
+//            }
+//            .sink(receiveValue: { data in
+//                print(data)
+//            })
+//            .store(in: &cancellables)
+//
+    }
+    
+
+
+
+    
+    
     
     override func layoutSubviews() {
         super.layoutSubviews()
