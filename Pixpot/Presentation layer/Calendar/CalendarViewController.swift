@@ -277,7 +277,11 @@ extension CalendarViewController: UICollectionViewDelegate {
 extension CalendarViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let data = localData else {return}
+        guard let data = localData else {
+            let data = MockData.shared.pageData[0].items[3]
+            chosenSportStadium?(sportStadiums[indexPath.row], data)
+            return
+        }
         chosenSportStadium?(sportStadiums[indexPath.row], data)
     }
     

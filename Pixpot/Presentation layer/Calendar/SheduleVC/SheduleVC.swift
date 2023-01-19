@@ -184,11 +184,8 @@ class SheduleVC: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         addScheduleButton.layer.cornerRadius = min(addScheduleButton.bounds.size.width, addScheduleButton.bounds.size.height) / 10
         addScheduleButton.clipsToBounds = true
-        
-        
     }
     
     private func setupUI() {

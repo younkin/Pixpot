@@ -40,6 +40,7 @@
 		7473222529411568008E7EB0 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7473222429411568008E7EB0 /* MainNavigationController.swift */; };
 		74732228294115B0008E7EB0 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74732227294115B0008E7EB0 /* AppColors.swift */; };
 		7473222A294115E2008E7EB0 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74732229294115E2008E7EB0 /* AppFonts.swift */; };
+		7484A2EF29798156007DBF47 /* SavedIsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7484A2EE29798156007DBF47 /* SavedIsEmptyView.swift */; };
 		749274AB2977F17C00FE9F77 /* PixpotCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 749274A92977F17C00FE9F77 /* PixpotCoreData.xcdatamodeld */; };
 		749274AE2977F24300FE9F77 /* Shedule+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749274AC2977F24300FE9F77 /* Shedule+CoreDataClass.swift */; };
 		749274AF2977F24300FE9F77 /* Shedule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749274AD2977F24300FE9F77 /* Shedule+CoreDataProperties.swift */; };
@@ -176,6 +177,7 @@
 		7473222429411568008E7EB0 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		74732227294115B0008E7EB0 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		74732229294115E2008E7EB0 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
+		7484A2EE29798156007DBF47 /* SavedIsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedIsEmptyView.swift; sourceTree = "<group>"; };
 		749274AA2977F17C00FE9F77 /* PixpotCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PixpotCoreData.xcdatamodel; sourceTree = "<group>"; };
 		749274AC2977F24300FE9F77 /* Shedule+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shedule+CoreDataClass.swift"; sourceTree = "<group>"; };
 		749274AD2977F24300FE9F77 /* Shedule+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shedule+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -322,7 +324,7 @@
 				741DB46A2941DE5A00F9AC84 /* ProfileViewController.swift */,
 				741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */,
 				749274B52978120400FE9F77 /* MyTrainsViewController.swift */,
-				749274B7297813CA00FE9F77 /* TrainCell.swift */,
+				7484A2EE29798156007DBF47 /* SavedIsEmptyView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -526,6 +528,7 @@
 		749274B929782A5C00FE9F77 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				749274B7297813CA00FE9F77 /* TrainCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1007,6 +1010,7 @@
 				E769AE882974AAC8009299F8 /* AppLaunchWayViewController.swift in Sources */,
 				E769AE862974A0A0009299F8 /* Link.swift in Sources */,
 				749274AF2977F24300FE9F77 /* Shedule+CoreDataProperties.swift in Sources */,
+				7484A2EF29798156007DBF47 /* SavedIsEmptyView.swift in Sources */,
 				7473222529411568008E7EB0 /* MainNavigationController.swift in Sources */,
 				749274AE2977F24300FE9F77 /* Shedule+CoreDataClass.swift in Sources */,
 				E769AE4729747AD4009299F8 /* NetworkSessionProvider.swift in Sources */,

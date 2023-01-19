@@ -20,12 +20,16 @@ class MyTrainsViewController: UIViewController, UICollectionViewDataSource, UICo
     var exitTapped: (() -> Void)?
     
     private var savedShedules: [Shedule] = []
-    
+    let loadingIndicator = UIActivityIndicatorView(style: .medium)
     
     private let customBar: UICustomBar = {
         let bar = UICustomBar(withBackButton: true)
         bar.configure(title: "Find all sports \n near you", imageName: "PixtopLogo")
         return bar
+    }()
+    private let savedIsEmptyView: SavedIsEmptyView = {
+        let view = SavedIsEmptyView()
+        return view
     }()
     
     private let collectionView: UICollectionView = {
@@ -45,6 +49,38 @@ class MyTrainsViewController: UIViewController, UICollectionViewDataSource, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        savedIsEmptyView.isHidden = true
+        collectionView.isHidden = true
+        loadingIndicator.startAnimating()
+        
+        sheduleManager.getAllShedules { result in
+            switch result {
+            case.success(let shedules):
+                self.savedShedules = shedules
+                if shedules.isEmpty {
+                    self.savedIsEmptyView.isHidden = false
+                    self.collectionView.isHidden = true
+                } else {
+                    self.savedIsEmptyView.isHidden = true
+                    self.collectionView.isHidden = false
+                }
+                self.collectionView.reloadData()
+                self.loadingIndicator.stopAnimating()
+            case.failure(let fail):
+                break
+            }
+            
+        }
+        
+        
+        
+        
+        if savedShedules.isEmpty {
+            
+            
+        }
+        
         setupCollectionView()
         setupViews()
         view.backgroundColor = AppColors.darkBlue
@@ -58,20 +94,7 @@ class MyTrainsViewController: UIViewController, UICollectionViewDataSource, UICo
         
         
         
-        sheduleManager.getAllShedules { result in
-            switch result {
-            case.success(let shedules):
-                self.savedShedules = shedules
-                self.collectionView.reloadData()
-            case.failure(let fail):
-                break
-            }
-           
-        }
     }
-    
-    
-    
     
     private func setupCollectionView() {
         collectionView.dataSource = self
@@ -90,7 +113,8 @@ class MyTrainsViewController: UIViewController, UICollectionViewDataSource, UICo
         // Add the buttons to the view
         view.addSubview(customBar)
         view.addSubview(collectionView)
-        
+        view.addSubview(savedIsEmptyView)
+        view.addSubview(loadingIndicator)
         
         customBar.snp.makeConstraints {
             $0.top.equalToSuperview().offset(40)
@@ -105,18 +129,18 @@ class MyTrainsViewController: UIViewController, UICollectionViewDataSource, UICo
             $0.right.equalToSuperview().offset(-20)
             $0.bottom.equalToSuperview().offset(-100)
         }
-        
+        savedIsEmptyView.snp.makeConstraints {
+            $0.top.equalTo(customBar.snp.bottom).offset(20)
+            $0.left.equalToSuperview().offset(20)
+            $0.right.equalToSuperview().offset(-20)
+            $0.height.equalTo(130)
+        }
+        loadingIndicator.snp.makeConstraints {
+            $0.center.equalTo(view.snp.center)
+        }
         
     }
-    
-    
-
    
-
-
-    
-    
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath)
     }
@@ -134,8 +158,9 @@ class MyTrainsViewController: UIViewController, UICollectionViewDataSource, UICo
         let adress = savedShedules[indexPath.row].adress
         let headLabel = savedShedules[indexPath.row].name
         let image = savedShedules[indexPath.row].image
+        guard let date = savedShedules[indexPath.row].date else {return cell}
         
-        cell.configureCell(imageString: image ?? "", productTitle: adress ?? "", headLabel: headLabel ?? "", indexPath: indexPath)
+        cell.configureCell(imageString: image ?? "", productTitle: adress ?? "", headLabel: headLabel ?? "", date: date, indexPath: indexPath)
         
         cell.cancellable = cell.tapDeleteBtn.sink { [weak self] indexPath in
 //            self?.deleteProduct?(index!)

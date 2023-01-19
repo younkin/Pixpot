@@ -22,7 +22,7 @@ class TrainCell: UICollectionViewCell {
     
     private var dateTitle: UILabel = {
         let title = UILabel()
-        title.text = "some Title"
+        title.text = ""
         title.backgroundColor = AppColors.darkBlue
         title.textColor = AppColors.white
         return title
@@ -114,10 +114,14 @@ class TrainCell: UICollectionViewCell {
         
     }
     
-    func configureCell(imageString: String, productTitle: String, headLabel: String, indexPath: IndexPath) {
+    func configureCell(imageString: String, productTitle: String, headLabel: String,date: Date, indexPath: IndexPath) {
 //        self.BackgroundImageView.sd_setImage(with: URL(string: imageString), placeholderImage: UIImage(named: "icDefaultFood"))
 //        self.BackgroundImageView.image = UIImage(named: imageString)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let dateString = formatter.string(from: date)
         
+        self.dateTitle.text = dateString
         self.sportImage.image = UIImage(named: imageString)
         self.discriptionLabel.text = productTitle
         self.headLabel.text = headLabel
