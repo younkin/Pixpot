@@ -15,6 +15,7 @@ import Network
 protocol SheduleManagerProtocol {
     func addNewShedule(name: String, image: String,adress: String, date: Date, complition: @escaping (Result<Void, AuthError>) -> Void)
     func getAllShedules(complition: @escaping (Result<[Shedule], AuthError>) -> Void)
+    func deleteSchedule(name: String) -> Bool
 }
 
 enum AuthError: Error {
@@ -139,6 +140,31 @@ final class SheduleManager: SheduleManagerProtocol {
         }
         return false
     }
+    
+    
+    func deleteSchedule(name: String) -> Bool {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.entity)
+        let predicate = NSPredicate(format: "name = %@", name)
+        fetchRequest.predicate = predicate
+        do {
+            let schedules = try CoreDataProvider.instance.context.fetch(fetchRequest) as! [NSManagedObject]
+            for schedule in schedules {
+                CoreDataProvider.instance.context.delete(schedule)
+            }
+            try CoreDataProvider.instance.context.save()
+            return true
+        } catch {
+            print(error)
+        }
+        return false
+    }
+
+
+
+
+
+    
+    
 //
 //    func authorize(mail: String, password: String, complition: @escaping (Result<Void, AuthError>) -> Void) {
 //        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.entity)

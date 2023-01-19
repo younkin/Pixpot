@@ -33,6 +33,8 @@ class SheduleVC: UIViewController {
         self.sportStadium = sportStadium
         self.category = localData.category
         self.localData = localData
+        self.stadiumName.text = sportStadium.name
+        self.stadiumAdress.text = sportStadium.address_line2
         super.init(nibName: nil, bundle: nil)
     }
     

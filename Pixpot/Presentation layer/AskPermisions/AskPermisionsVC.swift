@@ -140,7 +140,6 @@ class AskPermisionsVS: UIViewController{
       
         topLabel.layer.cornerRadius = min(topLabel.bounds.size.width, topLabel.bounds.size.height) / 10
         topLabel.clipsToBounds = true
-        
         askButton.layer.cornerRadius = min(askButton.bounds.size.width, askButton.bounds.size.height) / 10
     }
   

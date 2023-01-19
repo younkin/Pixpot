@@ -38,9 +38,9 @@ class CalendarViewController: UIViewController {
         return bar
     }()
     
-    var headLabel: UILabel = {
+    var countryLabel: UILabel = {
         let label = UILabel()
-        label.text = "Budaörs, Sport u. 2-4,\n 2040 Hungary"
+        label.text = "Country, city"
         label.numberOfLines = 0
         label.textColor = AppColors.white
         return label
@@ -104,13 +104,14 @@ class CalendarViewController: UIViewController {
         calendarViewModel.stadiumsPublisher.sink(receiveValue: { stadiums in
             
             DispatchQueue.main.async {
-                self.sportStadiums = stadiums
-                
                 if stadiums.count == 0 {
                     self.itemNotFoundView.isHidden = false
                     self.collectionView.isHidden = true
+                    self.collectionView.reloadData()
                     self.loadingIndicator.stopAnimating()
                 } else {
+                    self.sportStadiums = stadiums
+                    self.setCountryTitle(data: stadiums.first!)
                     self.collectionView.isHidden = false
                     self.itemNotFoundView.isHidden = true
                     self.collectionView.reloadData()
@@ -120,6 +121,11 @@ class CalendarViewController: UIViewController {
 //            print(stadiums)
         }).store(in: &bag)
 
+    }
+    
+    private func setCountryTitle(data: SportStadium ) {
+        countryLabel.text = "\(data.country), \(data.city)"
+        
     }
     
     private func setupUI() {
@@ -135,7 +141,7 @@ class CalendarViewController: UIViewController {
     
     func setupCategory(localData: ListItem) {
         sportCategory = localData.category
-        
+        sportStadiums = []
         headImage.image = UIImage(named: localData.imageBig)
         imageObjc = localData.imageObjectOnly
         imageHead = localData.imageBig
@@ -144,6 +150,7 @@ class CalendarViewController: UIViewController {
         
         if coordinates == nil {
             getCoordinates()
+            
         } else {
             loadingIndicator.startAnimating()
             self.infoView.isHidden = true
@@ -164,7 +171,7 @@ class CalendarViewController: UIViewController {
         
         guard let lat = coordinates?.lat, let long = coordinates?.long else { return }
         calendarViewModel.getStadiums(lat: lat, long: long, radius: 5000, filter: self.sportCategory)
-//        collectionView.reloadData()
+        collectionView.reloadData()
     }
     
     private func getCoordinates() {
@@ -173,14 +180,18 @@ class CalendarViewController: UIViewController {
             case .success(let coord):
                 print(coord)
                 self.coordinates = coord
-                self.collectionView.isHidden = false
             case .failure(_):
-                self.infoView.isHidden = false
-                self.loadingIndicator.stopAnimating()
                 break
             }
         }
         
+        if coordinates?.lat == nil {
+            self.infoView.isHidden = false
+            self.loadingIndicator.stopAnimating()
+        } else {
+            self.collectionView.isHidden = false
+            self.loadingIndicator.stopAnimating()
+        }
     
         
     }
@@ -215,7 +226,7 @@ class CalendarViewController: UIViewController {
     private func setupConstraints() {
         // Add the buttons to the view
         view.addSubview(customBar)
-        view.addSubview(headLabel)
+        view.addSubview(countryLabel)
         view.addSubview(headImage)
         view.addSubview(itemNotFoundView)
         view.addSubview(loadingIndicator)
@@ -241,13 +252,13 @@ class CalendarViewController: UIViewController {
             $0.height.equalTo(40)
         }
         
-        headLabel.snp.makeConstraints {
+        countryLabel.snp.makeConstraints {
             $0.top.equalTo(customBar.snp.bottom).offset(20)
             $0.left.equalToSuperview().offset(20)
             $0.height.equalTo(50)
         }
         headImage.snp.makeConstraints {
-            $0.top.equalTo(headLabel.snp.bottom).offset(10)
+            $0.top.equalTo(countryLabel.snp.bottom).offset(10)
             $0.centerX.equalTo(view.snp.centerX)
             $0.width.equalToSuperview().multipliedBy(0.9)
         }
@@ -282,7 +293,10 @@ extension CalendarViewController: UICollectionViewDataSource {
             chosenSportStadium?(sportStadiums[indexPath.row], data)
             return
         }
-        chosenSportStadium?(sportStadiums[indexPath.row], data)
+        if !sportStadiums.isEmpty {
+            chosenSportStadium?(sportStadiums[indexPath.row], data)
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

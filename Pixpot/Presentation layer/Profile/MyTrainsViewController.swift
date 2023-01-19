@@ -163,8 +163,21 @@ class MyTrainsViewController: UIViewController, UICollectionViewDataSource, UICo
         cell.configureCell(imageString: image ?? "", productTitle: adress ?? "", headLabel: headLabel ?? "", date: date, indexPath: indexPath)
         
         cell.cancellable = cell.tapDeleteBtn.sink { [weak self] indexPath in
+            guard let indexPath = indexPath,
+                  let name = self?.savedShedules[indexPath.row].name
+            else {return}
 //            self?.deleteProduct?(index!)
             print("index from vc \(indexPath)")
+            
+            print(name)
+            
+            self?.sheduleManager.deleteSchedule(name: name)
+            self?.savedShedules.remove(at: indexPath.row)
+            if  self?.savedShedules == [] {
+                self?.savedIsEmptyView.isHidden = false
+                self?.collectionView.isHidden = true
+            }
+            self?.collectionView.reloadData()
         }
         
         return cell

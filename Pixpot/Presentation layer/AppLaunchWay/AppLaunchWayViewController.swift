@@ -29,7 +29,13 @@ class AppLaunchWayViewController: UIViewController {
     }
     
     private func setupView() {
-        view.backgroundColor = .brown
+        view.backgroundColor = AppColors.darkBlue
         // TODO: MAKE Launcher
     }
 }
+
+
+
+
+
+
