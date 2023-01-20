@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15844454669187C145C1B65C /* Pods_PixpotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C37FDB66304F67B2D4280739 /* Pods_PixpotTests.framework */; };
+		493D241D76A83AE2E6E5726E /* Pods_Pixpot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6B9B44E2B4EE376182B1FD /* Pods_Pixpot.framework */; };
 		740A61E72976F60700EBF72B /* LocalDataSevrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A61E62976F60700EBF72B /* LocalDataSevrice.swift */; };
 		740A61EB2977511600EBF72B /* ItemNotFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A61EA2977511600EBF72B /* ItemNotFoundView.swift */; };
 		741DB4692941DE4700F9AC84 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */; };
@@ -59,6 +61,9 @@
 		74951102297400ED0032E79B /* AskForPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74951101297400ED0032E79B /* AskForPermissionView.swift */; };
 		7495110429740D510032E79B /* UICollectionViewCell + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7495110329740D510032E79B /* UICollectionViewCell + Ext.swift */; };
 		7495110629743C020032E79B /* SportStadium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7495110529743C020032E79B /* SportStadium.swift */; };
+		749EFA38297AB145005BA569 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749EFA37297AB145005BA569 /* SecureStorage.swift */; };
+		749EFA3A297AB460005BA569 /* AppInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749EFA39297AB460005BA569 /* AppInfoService.swift */; };
+		749EFA3E297AB58E005BA569 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749EFA3D297AB58E005BA569 /* UserDefaults.swift */; };
 		74D5FFC129451CCF00029FF8 /* SelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5FFC029451CCF00029FF8 /* SelectCollectionViewCell.swift */; };
 		74D5FFC329451CF600029FF8 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5FFC229451CF600029FF8 /* SearchCollectionViewCell.swift */; };
 		74D5FFC529451D1200029FF8 /* HotSalesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5FFC429451D1200029FF8 /* HotSalesCollectionViewCell.swift */; };
@@ -71,6 +76,7 @@
 		74F87616296D9F6300A8328C /* UICustomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F87615296D9F6300A8328C /* UICustomBar.swift */; };
 		74F87619296E059400A8328C /* CalendarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F87618296E059400A8328C /* CalendarCoordinator.swift */; };
 		74F8761B296E05C300A8328C /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F8761A296E05C300A8328C /* CalendarViewController.swift */; };
+		7B975D670B1453EB49567BF0 /* Pods_Pixpot_PixpotUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74AB88F90EEA821B1A78781D /* Pods_Pixpot_PixpotUITests.framework */; };
 		8418E8F1294A4CB800D2E310 /* MarkPro-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8418E8F0294A4CB800D2E310 /* MarkPro-Heavy.ttf */; };
 		8418E8F3294A5B6900D2E310 /* RoundedNavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418E8F2294A5B6900D2E310 /* RoundedNavButton.swift */; };
 		848A2029294366EC001317C4 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A2028294366EC001317C4 /* RequestBuilder.swift */; };
@@ -119,7 +125,7 @@
 		E769AE80297494C5009299F8 /* MainCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769AE7C297494C5009299F8 /* MainCategoryView.swift */; };
 		E769AE8229749946009299F8 /* GeoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769AE8129749946009299F8 /* GeoService.swift */; };
 		E769AE8429749CD1009299F8 /* HelperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769AE8329749CD1009299F8 /* HelperService.swift */; };
-		E769AE862974A0A0009299F8 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769AE852974A0A0009299F8 /* Link.swift */; };
+		E769AE862974A0A0009299F8 /* HelperEntitie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769AE852974A0A0009299F8 /* HelperEntitie.swift */; };
 		E769AE882974AAC8009299F8 /* AppLaunchWayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769AE872974AAC8009299F8 /* AppLaunchWayViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +147,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		012A0FD761E81856131ABDAE /* Pods-Pixpot-PixpotUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pixpot-PixpotUITests.release.xcconfig"; path = "Target Support Files/Pods-Pixpot-PixpotUITests/Pods-Pixpot-PixpotUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1C6B9B44E2B4EE376182B1FD /* Pods_Pixpot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pixpot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45C063F16B354E2AF880E7D0 /* Pods-Pixpot-PixpotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pixpot-PixpotUITests.debug.xcconfig"; path = "Target Support Files/Pods-Pixpot-PixpotUITests/Pods-Pixpot-PixpotUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7248F0892BEA4D3574ECC576 /* Pods-PixpotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixpotTests.release.xcconfig"; path = "Target Support Files/Pods-PixpotTests/Pods-PixpotTests.release.xcconfig"; sourceTree = "<group>"; };
 		740A61E62976F60700EBF72B /* LocalDataSevrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSevrice.swift; sourceTree = "<group>"; };
 		740A61EA2977511600EBF72B /* ItemNotFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNotFoundView.swift; sourceTree = "<group>"; };
 		741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
@@ -197,6 +207,10 @@
 		7495110329740D510032E79B /* UICollectionViewCell + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell + Ext.swift"; sourceTree = "<group>"; };
 		7495110529743C020032E79B /* SportStadium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportStadium.swift; sourceTree = "<group>"; };
 		749EFA35297A92F9005BA569 /* Pixpot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pixpot.entitlements; sourceTree = "<group>"; };
+		749EFA37297AB145005BA569 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
+		749EFA39297AB460005BA569 /* AppInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoService.swift; sourceTree = "<group>"; };
+		749EFA3D297AB58E005BA569 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		74AB88F90EEA821B1A78781D /* Pods_Pixpot_PixpotUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pixpot_PixpotUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D5FFC029451CCF00029FF8 /* SelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		74D5FFC229451CF600029FF8 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		74D5FFC429451D1200029FF8 /* HotSalesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSalesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -229,6 +243,10 @@
 		84D6FFDD2950B1DA00405398 /* FilterBrandButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBrandButton.swift; sourceTree = "<group>"; };
 		84E5858F294BCA050098C311 /* ProductBuyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductBuyButton.swift; sourceTree = "<group>"; };
 		84E58592294C805F0098C311 /* DetailsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsControl.swift; sourceTree = "<group>"; };
+		8EF260BF6BDD8F788F84B170 /* Pods-Pixpot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pixpot.debug.xcconfig"; path = "Target Support Files/Pods-Pixpot/Pods-Pixpot.debug.xcconfig"; sourceTree = "<group>"; };
+		9DE8D61C7A35472C37667DDE /* Pods-PixpotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixpotTests.debug.xcconfig"; path = "Target Support Files/Pods-PixpotTests/Pods-PixpotTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B1F422AFF3EEBE8875433FB4 /* Pods-Pixpot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pixpot.release.xcconfig"; path = "Target Support Files/Pods-Pixpot/Pods-Pixpot.release.xcconfig"; sourceTree = "<group>"; };
+		C37FDB66304F67B2D4280739 /* Pods_PixpotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PixpotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E769AE2D297477DE009299F8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E769AE2E297477DE009299F8 /* NCRESTError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCRESTError.swift; sourceTree = "<group>"; };
 		E769AE30297477DE009299F8 /* HTTPHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeaders.swift; sourceTree = "<group>"; };
@@ -256,7 +274,7 @@
 		E769AE7C297494C5009299F8 /* MainCategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCategoryView.swift; sourceTree = "<group>"; };
 		E769AE8129749946009299F8 /* GeoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoService.swift; sourceTree = "<group>"; };
 		E769AE8329749CD1009299F8 /* HelperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperService.swift; sourceTree = "<group>"; };
-		E769AE852974A0A0009299F8 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
+		E769AE852974A0A0009299F8 /* HelperEntitie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperEntitie.swift; sourceTree = "<group>"; };
 		E769AE872974AAC8009299F8 /* AppLaunchWayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchWayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -268,6 +286,7 @@
 				848A204029438E89001317C4 /* SDWebImage in Frameworks */,
 				741DB46E2942367500F9AC84 /* SnapKit in Frameworks */,
 				E769AE7629748ED3009299F8 /* CodableGeoJSON in Frameworks */,
+				493D241D76A83AE2E6E5726E /* Pods_Pixpot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +294,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15844454669187C145C1B65C /* Pods_PixpotTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,12 +302,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B975D670B1453EB49567BF0 /* Pods_Pixpot_PixpotUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65C2B50316E95463C33518C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C6B9B44E2B4EE376182B1FD /* Pods_Pixpot.framework */,
+				74AB88F90EEA821B1A78781D /* Pods_Pixpot_PixpotUITests.framework */,
+				C37FDB66304F67B2D4280739 /* Pods_PixpotTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		740A61E829774B9D00EBF72B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +405,8 @@
 			children = (
 				747321DD2940ED4C008E7EB0 /* Pixpot */,
 				747321DC2940ED4C008E7EB0 /* Products */,
+				A2891D408574B05ADA994F79 /* Pods */,
+				65C2B50316E95463C33518C7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -507,6 +540,7 @@
 		748EB4FC294352A100A94A79 /* Core layer */ = {
 			isa = PBXGroup;
 			children = (
+				749EFA36297AB112005BA569 /* KeyChain */,
 				749274B02977F24A00FE9F77 /* CoreData */,
 				E769AE572974800D009299F8 /* Network */,
 				749460CB297333B8008A0501 /* UserDefaults */,
@@ -570,10 +604,36 @@
 		749460CB297333B8008A0501 /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
+				749EFA3C297AB55C005BA569 /* SwiftyUserDefaults */,
+				749EFA3B297AB548005BA569 /* CustomUD */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		749EFA36297AB112005BA569 /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				749EFA37297AB145005BA569 /* SecureStorage.swift */,
+				749EFA39297AB460005BA569 /* AppInfoService.swift */,
+			);
+			path = KeyChain;
+			sourceTree = "<group>";
+		};
+		749EFA3B297AB548005BA569 /* CustomUD */ = {
+			isa = PBXGroup;
+			children = (
 				749460CD297336B8008A0501 /* UDStorage.swift */,
 				749460CF297336F7008A0501 /* DefaultsManager.swift */,
 			);
-			path = UserDefaults;
+			path = CustomUD;
+			sourceTree = "<group>";
+		};
+		749EFA3C297AB55C005BA569 /* SwiftyUserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				749EFA3D297AB58E005BA569 /* UserDefaults.swift */,
+			);
+			path = SwiftyUserDefaults;
 			sourceTree = "<group>";
 		};
 		74B452F9296CC5F800912206 /* AppLaunchWay */ = {
@@ -666,7 +726,7 @@
 				848A2031294389C1001317C4 /* ProductEntitie.swift */,
 				744E0ED82970BFAF0036F531 /* CountryEntitie.swift */,
 				7495110529743C020032E79B /* SportStadium.swift */,
-				E769AE852974A0A0009299F8 /* Link.swift */,
+				E769AE852974A0A0009299F8 /* HelperEntitie.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -719,6 +779,19 @@
 				84D6FFB7294D06B100405398 /* RamControl.swift */,
 			);
 			path = UIControl;
+			sourceTree = "<group>";
+		};
+		A2891D408574B05ADA994F79 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8EF260BF6BDD8F788F84B170 /* Pods-Pixpot.debug.xcconfig */,
+				B1F422AFF3EEBE8875433FB4 /* Pods-Pixpot.release.xcconfig */,
+				45C063F16B354E2AF880E7D0 /* Pods-Pixpot-PixpotUITests.debug.xcconfig */,
+				012A0FD761E81856131ABDAE /* Pods-Pixpot-PixpotUITests.release.xcconfig */,
+				9DE8D61C7A35472C37667DDE /* Pods-PixpotTests.debug.xcconfig */,
+				7248F0892BEA4D3574ECC576 /* Pods-PixpotTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		E769AE2C297477DD009299F8 /* Network */ = {
@@ -834,9 +907,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 747322052940ED4E008E7EB0 /* Build configuration list for PBXNativeTarget "Pixpot" */;
 			buildPhases = (
+				4AFEE0265561CFEB4ACB2124 /* [CP] Check Pods Manifest.lock */,
 				747321D72940ED4C008E7EB0 /* Sources */,
 				747321D82940ED4C008E7EB0 /* Frameworks */,
 				747321D92940ED4C008E7EB0 /* Resources */,
+				D04D60A447DCDCBAE744AED0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -856,6 +931,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 747322082940ED4E008E7EB0 /* Build configuration list for PBXNativeTarget "PixpotTests" */;
 			buildPhases = (
+				80219631323CA54E2EEF09DF /* [CP] Check Pods Manifest.lock */,
 				747321ED2940ED4E008E7EB0 /* Sources */,
 				747321EE2940ED4E008E7EB0 /* Frameworks */,
 				747321EF2940ED4E008E7EB0 /* Resources */,
@@ -874,9 +950,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7473220B2940ED4E008E7EB0 /* Build configuration list for PBXNativeTarget "PixpotUITests" */;
 			buildPhases = (
+				780DFC3C4DC4445E8BEECD8F /* [CP] Check Pods Manifest.lock */,
 				747321F72940ED4E008E7EB0 /* Sources */,
 				747321F82940ED4E008E7EB0 /* Frameworks */,
 				747321F92940ED4E008E7EB0 /* Resources */,
+				401BA415E8093D9EE9C11BEA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -966,11 +1044,115 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		401BA415E8093D9EE9C11BEA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pixpot-PixpotUITests/Pods-Pixpot-PixpotUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pixpot-PixpotUITests/Pods-Pixpot-PixpotUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pixpot-PixpotUITests/Pods-Pixpot-PixpotUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4AFEE0265561CFEB4ACB2124 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pixpot-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		780DFC3C4DC4445E8BEECD8F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pixpot-PixpotUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80219631323CA54E2EEF09DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PixpotTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D04D60A447DCDCBAE744AED0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pixpot/Pods-Pixpot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pixpot/Pods-Pixpot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pixpot/Pods-Pixpot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		747321D72940ED4C008E7EB0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				749EFA38297AB145005BA569 /* SecureStorage.swift in Sources */,
 				E769AE5029747B9E009299F8 /* HTTPHeaders.swift in Sources */,
 				7468D26E2946390B00674261 /* RoundedImageView.swift in Sources */,
 				746C78AC296C0A3000D8DAA6 /* FooterSupplementaryView.swift in Sources */,
@@ -1002,6 +1184,7 @@
 				746F3B2A2948E7BC002BC66D /* UIButtonRounded.swift in Sources */,
 				746A2475294E61720090FA8F /* UIButtonFilter.swift in Sources */,
 				745F4DD5294F91E0003FEA78 /* FilterView.swift in Sources */,
+				749EFA3A297AB460005BA569 /* AppInfoService.swift in Sources */,
 				E769AE612974892D009299F8 /* GeoFilter.swift in Sources */,
 				74D5FFD129451DC200029FF8 /* MockData.swift in Sources */,
 				E769AE7E297494C5009299F8 /* MainCategoryCoordinator.swift in Sources */,
@@ -1010,7 +1193,7 @@
 				E769AE7D297494C5009299F8 /* MainCategoryController.swift in Sources */,
 				E769AE5529747F5C009299F8 /* Endpoints.swift in Sources */,
 				E769AE882974AAC8009299F8 /* AppLaunchWayViewController.swift in Sources */,
-				E769AE862974A0A0009299F8 /* Link.swift in Sources */,
+				E769AE862974A0A0009299F8 /* HelperEntitie.swift in Sources */,
 				749274AF2977F24300FE9F77 /* Shedule+CoreDataProperties.swift in Sources */,
 				7484A2EF29798156007DBF47 /* SavedIsEmptyView.swift in Sources */,
 				7473222529411568008E7EB0 /* MainNavigationController.swift in Sources */,
@@ -1073,6 +1256,7 @@
 				84E58593294C805F0098C311 /* DetailsControl.swift in Sources */,
 				E769AE4A29747B58009299F8 /* NCRESTError.swift in Sources */,
 				E769AE5229747B9E009299F8 /* AuthType.swift in Sources */,
+				749EFA3E297AB58E005BA569 /* UserDefaults.swift in Sources */,
 				84D6FFB6294CE1F100405398 /* ColorControl .swift in Sources */,
 				E769AE8229749946009299F8 /* GeoService.swift in Sources */,
 				747321E12940ED4C008E7EB0 /* SceneDelegate.swift in Sources */,
@@ -1236,6 +1420,7 @@
 		};
 		747322062940ED4E008E7EB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EF260BF6BDD8F788F84B170 /* Pods-Pixpot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1256,6 +1441,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "-238829913.Pixpot";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1266,6 +1452,7 @@
 		};
 		747322072940ED4E008E7EB0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1F422AFF3EEBE8875433FB4 /* Pods-Pixpot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1286,6 +1473,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "-238829913.Pixpot";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1296,6 +1484,7 @@
 		};
 		747322092940ED4E008E7EB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DE8D61C7A35472C37667DDE /* Pods-PixpotTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1315,6 +1504,7 @@
 		};
 		7473220A2940ED4E008E7EB0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7248F0892BEA4D3574ECC576 /* Pods-PixpotTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1334,6 +1524,7 @@
 		};
 		7473220C2940ED4E008E7EB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45C063F16B354E2AF880E7D0 /* Pods-Pixpot-PixpotUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1351,6 +1542,7 @@
 		};
 		7473220D2940ED4E008E7EB0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 012A0FD761E81856131ABDAE /* Pods-Pixpot-PixpotUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

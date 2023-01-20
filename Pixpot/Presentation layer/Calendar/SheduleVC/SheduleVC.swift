@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import SnapKit
 import Combine
+import IronSource
 
 class SheduleVC: UIViewController {
     
@@ -129,7 +130,8 @@ class SheduleVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
+        IronSource.showRewardedVideo(with: self)
         datePickerView.setDate.zip(datePickerView.setTime).sink { (date, time) in
             guard let date = date, let time = time else {return}
             self.dateForSafe = self.margeDate(date: date, time: time)

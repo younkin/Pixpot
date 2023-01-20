@@ -118,7 +118,7 @@ class TrainCell: UICollectionViewCell {
 //        self.BackgroundImageView.sd_setImage(with: URL(string: imageString), placeholderImage: UIImage(named: "icDefaultFood"))
 //        self.BackgroundImageView.image = UIImage(named: imageString)
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.dateFormat = "yyyy.MM.dd HH:mm"
         let dateString = formatter.string(from: date)
         
         self.dateTitle.text = dateString

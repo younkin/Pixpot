@@ -39,4 +39,22 @@ final class HelperService: HelperServiceProtocol {
         }
     }
     
+    
+    func sendPushToken(token: String, country: String, _ completion: @escaping ObjCompletion<Result<PushAnswer, HelperServiceError>>) {
+        apiClient.request([PushAnswer].self, endpoint: Endpoint.pushNotification(token: token, country: country)) { response in
+            switch response {
+            case .success(let response):
+                guard let empty = response.first else {
+                    completion(.failure(.unknown))
+                    return
+                }
+                completion(.success(empty))
+            case .failure(let error):
+                debugPrint(error)
+                completion(.failure(.unknown))
+            }
+
+        }
+    }
+    
 }

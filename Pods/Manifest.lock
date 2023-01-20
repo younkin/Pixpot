@@ -1,0 +1,24 @@
+PODS:
+  - IronSourceSDK (7.2.6.0)
+  - KeychainSwift (20.0.0)
+  - SwiftyUserDefaults (5.3.0)
+
+DEPENDENCIES:
+  - IronSourceSDK (~> 7.2)
+  - KeychainSwift (~> 20.0)
+  - SwiftyUserDefaults (~> 5.3)
+
+SPEC REPOS:
+  trunk:
+    - IronSourceSDK
+    - KeychainSwift
+    - SwiftyUserDefaults
+
+SPEC CHECKSUMS:
+  IronSourceSDK: c1505d25bc587e8bc367941474e29b7dceba680c
+  KeychainSwift: 0ce6a4d13f7228054d1a71bb1b500448fb2ab837
+  SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
+
+PODFILE CHECKSUM: 0b65301345b1cffb89da0e1163ac5b58cf8f6768
+
+COCOAPODS: 1.11.3

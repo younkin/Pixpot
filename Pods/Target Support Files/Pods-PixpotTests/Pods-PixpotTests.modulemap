@@ -1,0 +1,6 @@
+framework module Pods_PixpotTests {
+  umbrella header "Pods-PixpotTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

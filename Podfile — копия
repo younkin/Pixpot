@@ -1,0 +1,23 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Pixpot' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Pixpot
+
+target 'Pixpot' do
+  pod 'KeychainSwift', '~> 20.0'
+end
+
+  target 'PixpotTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'PixpotUITests' do
+    # Pods for testing
+  end
+
+end

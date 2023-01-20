@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import WebKit
+import IronSource
 
 class ProfileViewController: UIViewController, UIWebViewDelegate {
     
@@ -129,7 +130,7 @@ override func viewDidLoad() {
             print(sender.tag)
         case 2:
             print(sender.tag)
-            
+            IronSource.showRewardedVideo(with: ProfileViewController())
         case 3:
             print(sender.tag)
             self.showWebView(url: "https://pixpot.host/#support", title: "support")

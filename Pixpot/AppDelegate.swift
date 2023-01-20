@@ -7,18 +7,41 @@
 
 import UIKit
 import UserNotifications
+import IronSource
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, ISInitializationDelegate {
+   
+    
+    
+    
+    
 
-
+    let conteiner = DIContainer()
+    
+    private enum Constants {
+        static let IronAppKey = "184a60125"
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setupFrameworks()
         registerForPushNotifications()
         return true
     }
 
+    
+    private func setupFrameworks() {
+        IronSource.initWithAppKey(Constants.IronAppKey, delegate: self)
+//        IronSource.setInterstitialDelegate(AppDelegate())
+//        IronSource.setRewardedVideoDelegate(AppDelegate())
+        
+//        IronSource.initWithAppKey(Constants.IronAppKey, adUnits: [IS_REWARDED_VIDEO])
+    }
+    
+    func initializationDidComplete() {
+        ISIntegrationHelper.validateIntegration()
+    }
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
@@ -52,7 +75,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+        let token = tokenParts.joined()
+        print("Device Token: \(token)")
+        
+        
         print(deviceToken)
+        
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {

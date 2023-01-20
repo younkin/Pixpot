@@ -10,14 +10,16 @@ import Foundation
 enum Endpoint: RestEndpoint {
     case country
     case link
+    case pushNotification(token: String, country: String)
     case geoApi(category: String, filter: String, limit: Int, apiKey: String)
     
     var server: Server {
         switch self {
-        case .country, .link:
+        case .country, .link, .pushNotification:
             return PixpotServers.default
         case .geoApi:
             return PixpotServers.geo
+            
         }
     }
     
@@ -29,12 +31,14 @@ enum Endpoint: RestEndpoint {
             return "/user/auth.json"
         case .geoApi:
             return "places"
+        case .pushNotification:
+            return "/api/push/"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .country, .link, .geoApi:
+        case .country, .link, .geoApi, .pushNotification:
             return .get
         }
     }
@@ -46,6 +50,8 @@ enum Endpoint: RestEndpoint {
         case .link:
             return .optionalBearer
         case .geoApi:
+            return .optionalBearer
+        case .pushNotification:
             return .optionalBearer
         }
     }
@@ -61,6 +67,11 @@ enum Endpoint: RestEndpoint {
                 "limit": params.limit,
                 "apiKey": params.apiKey
             ]
+        case .pushNotification(let params):
+            return [
+                "token": params.token,
+                "country": params.country
+            ]
         }
     }
     
@@ -72,6 +83,8 @@ enum Endpoint: RestEndpoint {
             return .methodDependent
         case .geoApi:
             return .queryString
+        case .pushNotification:
+            return .httpBody
         }
     }
     
@@ -79,6 +92,8 @@ enum Endpoint: RestEndpoint {
         switch self {
         case .country, .link, .geoApi:
             return URLEncoding.default
+        case .pushNotification:
+            return JSONEncoding.default
         }
     }
     
