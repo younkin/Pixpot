@@ -9,6 +9,7 @@ import Foundation
 
 protocol HelperServiceProtocol {
     func getBroswerLink(_ completion: @escaping ObjCompletion<Result<Link, HelperServiceError>>)
+    func sendPushToken(token: String, country: String, _ completion: @escaping ObjCompletion<Result<PushAnswer, HelperServiceError>>)
 }
 
 enum HelperServiceError: Error {

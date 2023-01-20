@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ISInitializationDelegate 
         // Override point for customization after application launch.
         setupFrameworks()
         registerForPushNotifications()
+        
         return true
     }
 
