@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pixtopLogoBig" translatesAutoresizingMaskIntoConstraints="NO" id="ETd-Vv-GQe">
-                                <rect key="frame" x="48" y="303" width="282" height="221"/>
+                                <rect key="frame" x="55.666666666666657" y="315.66666666666669" width="282" height="221.00000000000006"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="221" id="V3S-Fk-oH1"/>
                                     <constraint firstAttribute="width" constant="282" id="arB-Ub-HU7"/>
@@ -27,12 +27,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="darkBlue"/>
                         <constraints>
-                            <constraint firstItem="ETd-Vv-GQe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0qU-XV-onX"/>
-                            <constraint firstItem="ETd-Vv-GQe" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Clk-cJ-ccO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ETd-Vv-GQe" secondAttribute="trailing" constant="63" id="PcI-54-Xfe"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ETd-Vv-GQe" secondAttribute="bottom" constant="294" id="eT8-Tb-B3e"/>
-                            <constraint firstItem="ETd-Vv-GQe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="244" id="p0S-jH-UF8"/>
-                            <constraint firstItem="ETd-Vv-GQe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="tar-Uq-fO6"/>
+                            <constraint firstItem="ETd-Vv-GQe" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="mES-wF-7bf"/>
+                            <constraint firstItem="ETd-Vv-GQe" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="rc6-na-hkW"/>
                         </constraints>
                     </view>
                 </viewController>

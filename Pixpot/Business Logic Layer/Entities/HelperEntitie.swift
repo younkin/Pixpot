@@ -22,7 +22,7 @@ struct EmptyStruct: Decodable {
 struct PushAnswer: Decodable {
     let resultCode: Int
     let message: String
-    let data: DataClass
+    let data: PushData
 
     enum CodingKeys: String, CodingKey {
         case resultCode = "result_code"

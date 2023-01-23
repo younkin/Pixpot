@@ -11,6 +11,7 @@
 		493D241D76A83AE2E6E5726E /* Pods_Pixpot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6B9B44E2B4EE376182B1FD /* Pods_Pixpot.framework */; };
 		740A61E72976F60700EBF72B /* LocalDataSevrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A61E62976F60700EBF72B /* LocalDataSevrice.swift */; };
 		740A61EB2977511600EBF72B /* ItemNotFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A61EA2977511600EBF72B /* ItemNotFoundView.swift */; };
+		7417B058297B2B340033073E /* DevicePushService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7417B057297B2B340033073E /* DevicePushService.swift */; };
 		741DB4692941DE4700F9AC84 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */; };
 		741DB46B2941DE5A00F9AC84 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741DB46A2941DE5A00F9AC84 /* ProfileViewController.swift */; };
 		741DB46E2942367500F9AC84 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 741DB46D2942367500F9AC84 /* SnapKit */; };
@@ -153,6 +154,7 @@
 		7248F0892BEA4D3574ECC576 /* Pods-PixpotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixpotTests.release.xcconfig"; path = "Target Support Files/Pods-PixpotTests/Pods-PixpotTests.release.xcconfig"; sourceTree = "<group>"; };
 		740A61E62976F60700EBF72B /* LocalDataSevrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSevrice.swift; sourceTree = "<group>"; };
 		740A61EA2977511600EBF72B /* ItemNotFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNotFoundView.swift; sourceTree = "<group>"; };
+		7417B057297B2B340033073E /* DevicePushService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicePushService.swift; sourceTree = "<group>"; };
 		741DB4682941DE4700F9AC84 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		741DB46A2941DE5A00F9AC84 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		74320FFF29787F5500BB1563 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
@@ -739,6 +741,7 @@
 				E769AE8329749CD1009299F8 /* HelperService.swift */,
 				749460C62972C718008A0501 /* DeviceLocationService.swift */,
 				740A61E62976F60700EBF72B /* LocalDataSevrice.swift */,
+				7417B057297B2B340033073E /* DevicePushService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1209,6 +1212,7 @@
 				E769AE4B29747B82009299F8 /* ParameterEncoding.swift in Sources */,
 				74D9A245294912C60003C24F /* UIContol + Publisher.swift in Sources */,
 				E769AE4D29747B87009299F8 /* RestEndpoint.swift in Sources */,
+				7417B058297B2B340033073E /* DevicePushService.swift in Sources */,
 				848A2029294366EC001317C4 /* RequestBuilder.swift in Sources */,
 				E769AE4429747975009299F8 /* Server.swift in Sources */,
 				749274B62978120400FE9F77 /* MyTrainsViewController.swift in Sources */,
@@ -1422,7 +1426,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8EF260BF6BDD8F788F84B170 /* Pods-Pixpot.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon 2";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pixpot/Pixpot.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1436,13 +1440,14 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "-238829913.Pixpot";
+				PRODUCT_BUNDLE_IDENTIFIER = pixpot.com.Pixpot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1454,7 +1459,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B1F422AFF3EEBE8875433FB4 /* Pods-Pixpot.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon 2";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pixpot/Pixpot.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1468,13 +1473,14 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "-238829913.Pixpot";
+				PRODUCT_BUNDLE_IDENTIFIER = pixpot.com.Pixpot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

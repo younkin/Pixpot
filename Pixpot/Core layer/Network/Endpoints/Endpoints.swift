@@ -38,8 +38,10 @@ enum Endpoint: RestEndpoint {
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .country, .link, .geoApi, .pushNotification:
+        case .country, .link, .geoApi:
             return .get
+        case .pushNotification:
+            return .post
         }
     }
     

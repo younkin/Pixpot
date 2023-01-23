@@ -26,10 +26,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ISInitializationDelegate 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         setupFrameworks()
-        registerForPushNotifications()
+//        registerForPushNotifications()
+        
+        
+       
+        
         
         return true
     }
+    
+    
+    
 
     
     private func setupFrameworks() {
@@ -59,30 +66,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ISInitializationDelegate 
 
     
     
-    private func registerForPushNotifications() {
-        UNUserNotificationCenter.current().delegate = self
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
-            (granted, error) in
-            // 1. Check to see if permission is granted
-            guard granted else { return }
-            // 2. Attempt registration for remote notifications on the main thread
-            DispatchQueue.main.async {
-                UIApplication.shared.registerForRemoteNotifications()
-            }
-        }
-    }
+//    private func registerForPushNotifications() {
+//        UNUserNotificationCenter.current().delegate = self
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
+//            (granted, error) in
+//            // 1. Check to see if permission is granted
+//            guard granted else { return }
+//            // 2. Attempt registration for remote notifications on the main thread
+//            DispatchQueue.main.async {
+//                UIApplication.shared.registerForRemoteNotifications()
+//            }
+//        }
+//    }
 
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
         let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
         let token = tokenParts.joined()
+        let countryID = DefaultsManager.countryID
         print("Device Token: \(token)")
-        
-        
         print(deviceToken)
-        
+        conteiner.helperService.sendPushToken(token: token, country: countryID) { result in
+            switch result {
+            case .success(let pushAnswer):
+                print(pushAnswer)
+            case .failure(let  error):
+                print(error)
+            }
+        }
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {

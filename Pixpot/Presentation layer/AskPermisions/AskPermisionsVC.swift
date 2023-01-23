@@ -9,7 +9,14 @@ import Foundation
 import UIKit
 import SnapKit
 import CoreLocation
+import UserNotifications
 
+
+enum PushPermision {
+    case granted
+    case denied
+    case notDetermined
+}
 
 enum PermissionsType {
     case push
@@ -26,24 +33,24 @@ enum PermissionsType {
 }
 
 
-class AskPermisionsVS: UIViewController{
+class AskPermisionsVS: UIViewController, UNUserNotificationCenterDelegate {
     
     
-    let permissionsType: PermissionsType
-  
-    var locationService = DeviceLocationService.shared
+    private let permissionsType: PermissionsType
     
+    private var locationService = DeviceLocationService.shared
+    private let conteiner = DIContainer()
     var skipped: (() -> Void)?
     
     private lazy var topLabel: UILabel = {
-         let label = UILabel()
+        let label = UILabel()
         label.text = "We are almost ready!"
         label.backgroundColor = AppColors.green
         label.textColor = AppColors.black
         label.textAlignment = .center
         label.contentMode = .center
-         return label
-     }()
+        return label
+    }()
     
     
     private lazy var permisionText: UILabel = {
@@ -82,6 +89,7 @@ class AskPermisionsVS: UIViewController{
         super.init(nibName: nil, bundle: nil)
         
         self.permisionText.text = permissionsType.title
+        
     }
     
     required init?(coder: NSCoder) {
@@ -106,16 +114,7 @@ class AskPermisionsVS: UIViewController{
     }
     
    @objc func skipTapped() {
-       switch permissionsType {
-       case .push:
-           break
-       case .location:
-//           DefaultsManager.isAskedForLocation = true
            skipped?()
-           break
-           
-       }
-        
     }
     
     
@@ -123,21 +122,38 @@ class AskPermisionsVS: UIViewController{
     func allowTapped() {
         switch permissionsType {
         case .push:
-//            registerForPushNotifications() {
-//                self.userInfoService.changeAskPushValue()
-//                DispatchQueue.main.async {
-//                    self.skipTapped()
-//                }
-//            }
+            registerForPushNotifications {
+                DispatchQueue.main.async {
+                    self.skipTapped()
+                }
+            }
             break
         case .location:
             locationService.requestLocationUpdates()
         }
     }
     
+
+    
+
+    
+    private func registerForPushNotifications(completionHandler: @escaping () -> Void) {
+           UNUserNotificationCenter.current().delegate = self
+           UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
+               (granted, error) in
+               // 1. Check to see if permission is granted
+               guard granted else { return }
+               // 2. Attempt registration for remote notifications on the main thread
+               DispatchQueue.main.async {
+                   UIApplication.shared.registerForRemoteNotifications()
+                   completionHandler()
+               }
+           }
+       }
+    
+    
     
     override func viewWillLayoutSubviews() {
-      
         topLabel.layer.cornerRadius = min(topLabel.bounds.size.width, topLabel.bounds.size.height) / 10
         topLabel.clipsToBounds = true
         askButton.layer.cornerRadius = min(askButton.bounds.size.width, askButton.bounds.size.height) / 10
@@ -182,6 +198,32 @@ class AskPermisionsVS: UIViewController{
     }
 }
 
+
+
+
+//extension AskPermisionsVS: UNUserNotificationCenterDelegate {
+//    
+//    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+//        
+//        let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+//        let token = tokenParts.joined()
+//        let countryID = DefaultsManager.countryID
+//        print("Device Token: \(token)")
+//        print(deviceToken)
+//        conteiner.helperService.sendPushToken(token: token, country: countryID) { result in
+//            switch result {
+//            case .success(let pushAnswer):
+//                print(pushAnswer)
+//            case .failure(let  error):
+//                print(error)
+//            }
+//        }
+//    }
+//    
+//    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+//        print(error)
+//    }
+//}
 //MARK: DeviceLocationServiceDelegate
 
 //extension AskPermisionsVS: DeviceLocationServiceDelegate {

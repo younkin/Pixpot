@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import UserNotifications
 
 enum LaunchInstructor {
     case wayVerify
@@ -18,12 +19,13 @@ enum LaunchInstructor {
 final class AppCoordinator: BaseCoordinator {
 
     // MARK: - Private Properties
-
+   
     private let coordinatorFactory: CoordinatorFactory
     private let modulesFactory: ModuleFactoryProtocol
     private let router: Router
     
     private var launch: LaunchInstructor = .wayVerify
+    private var permisionType: PermissionsType = .push
     private let locationService: IDeviceLocationService & DeviceLocationServiceOutput = DeviceLocationService.shared
     private var bag = Set<AnyCancellable>()
     
@@ -51,15 +53,40 @@ final class AppCoordinator: BaseCoordinator {
         case .wayVerify:
             performAppWayFlow()
         case .locationVerify:
-            if locationService.authStatus == .notDetermined {
-                performLocationVerify()
-            } else {
-                performAppFlow()
+            
+            switch permisionType {
+            case .push:
+                checkPushPermission { status in
+                    switch status {
+                    case .notDetermined:
+                        DispatchQueue.main.async {
+                            self.performAskPush()
+                        }
+                    default:
+                        self.permisionType = .location
+                        self.performFlow()
+                    }
+                }
+                
+            case .location:
+                if locationService.authStatus == .notDetermined {
+                    DispatchQueue.main.async {
+                        self.performLocationVerify()
+                    }
+                } else {
+//                    permisionType = .push
+//                    performFlow
+                    performAppFlow()
+                }
+             
+                
             }
+           
         case .webView(let link):
             performWebViewFlow(link: link)
         case .app:
             performAppFlow()
+       
         }
     }
     
@@ -96,17 +123,20 @@ final class AppCoordinator: BaseCoordinator {
                     break
                 case .denied, .authorizedAlways, .restricted, .authorizedWhenInUse:
                     self?.launch = .app
+                    self?.permisionType = .location
                     self?.performFlow()
+                case .some(_):
+                    break
                 }
             }
             .store(in: &bag)
     }
     
+ 
+    
     private func performAskLocation() {
-        var type: PermissionsType
-        type = .location
-
-        let vc = AskPermisionsVS(permissionsType: type)
+        
+        let vc = AskPermisionsVS(permissionsType: self.permisionType)
         self.router.setRoot(vc, animated: false)
 
         vc.skipped = { [weak self] in
@@ -114,4 +144,68 @@ final class AppCoordinator: BaseCoordinator {
             self?.performFlow()
         }
     }
+    
+    
+    private func performAskPush() {
+        
+        let vc = AskPermisionsVS(permissionsType: self.permisionType)
+        self.router.setRoot(vc, animated: false)
+
+        vc.skipped = { [weak self] in
+            self?.launch = .locationVerify
+            self?.permisionType = .location
+            self?.performFlow()
+        }
+    }
+    
+    
+    
+    func checkPushPermission(completionHandler: @escaping (PushPermision) -> Void) {
+        let current = UNUserNotificationCenter.current()
+        current.getNotificationSettings(completionHandler: { permission in
+            switch permission.authorizationStatus  {
+            case .authorized:
+                completionHandler(.granted)
+                print("User granted permission for notification")
+            case .denied:
+                completionHandler(.denied)
+                print("User denied notification permission")
+            case .notDetermined:
+                completionHandler(.notDetermined)
+                print("Notification permission haven't been asked yet")
+            case .provisional:
+                completionHandler(.denied)
+                // @available(iOS 12.0, *)
+                print("The application is authorized to post non-interruptive user notifications.")
+            case .ephemeral:
+                completionHandler(.denied)
+                // @available(iOS 14.0, *)
+                print("The application is temporarily authorized to post notifications. Only available to app clips.")
+            @unknown default:
+                completionHandler(.denied)
+                print("Unknow Status")
+            }
+        })
+    }
 }
+
+
+//
+//private func performPushVerify() {
+//        center.getNotificationSettings(completionHandler: { settings in
+//            DispatchQueue.main.async {
+//                switch settings.authorizationStatus {
+//                case .authorized, .denied, .provisional, .ephemeral:
+//                    print(".authorized, .denied, .provisional, .ephemeral")
+//                    self.launch = .app
+//                    self.performFlow()
+//                case .notDetermined:
+//                    print("not determined, ask user for permission now")
+//                    self.performAsk(type: .push)
+//                @unknown default:
+//                    self.launch = .app
+//                    self.performFlow()
+//                }
+//            }
+//        })
+//    }

@@ -49,7 +49,9 @@ final class AppLaunchWayViewModel: AppLaunchWayViewModelProtocol, AppLaunchOutpu
         countryData
             .sink { [weak self] data in
                 guard let self = self else {return}
+                
                 if data.data.tabs == "1" {
+                    DefaultsManager.countryID = data.data.countryCode
                     self.appWay?(.locationVerify)
                 } else {
                     self.linkRequest()
