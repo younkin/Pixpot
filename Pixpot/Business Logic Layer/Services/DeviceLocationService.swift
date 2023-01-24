@@ -86,6 +86,7 @@ final class DeviceLocationService: NSObject, CLLocationManagerDelegate, IDeviceL
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
         // TODO: check
     }
 }
