@@ -78,7 +78,6 @@ final class AppCoordinator: BaseCoordinator {
 //                    performFlow
                     performAppFlow()
                 }
-             
                 
             }
            
@@ -100,6 +99,7 @@ final class AppCoordinator: BaseCoordinator {
         }
         router.setRoot(vc, animated: false)
     }
+    
     
     private func performAppFlow() {
         let tabBarCoordinator = coordinatorFactory.makeTabBarCoordinator(with: router)

@@ -1434,6 +1434,7 @@
 				DEVELOPMENT_TEAM = SW3B59K586;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pixpot/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please, allow us to track your location to find the most relevant sports facilities. ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1449,9 +1450,12 @@
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = pixpot.com.Pixpot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1467,6 +1471,7 @@
 				DEVELOPMENT_TEAM = SW3B59K586;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pixpot/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please, allow us to track your location to find the most relevant sports facilities. ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1482,9 +1487,12 @@
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = pixpot.com.Pixpot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
