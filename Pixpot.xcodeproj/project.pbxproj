@@ -65,6 +65,9 @@
 		749EFA38297AB145005BA569 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749EFA37297AB145005BA569 /* SecureStorage.swift */; };
 		749EFA3A297AB460005BA569 /* AppInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749EFA39297AB460005BA569 /* AppInfoService.swift */; };
 		749EFA3E297AB58E005BA569 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749EFA3D297AB58E005BA569 /* UserDefaults.swift */; };
+		74A50DEA2995065300D2DA65 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A50DE92995065300D2DA65 /* SigninViewController.swift */; };
+		74A50DEC299507C300D2DA65 /* EnterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A50DEB299507C300D2DA65 /* EnterView.swift */; };
+		74A50DEE29950C1C00D2DA65 /* UITextView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A50DED29950C1C00D2DA65 /* UITextView + Ext.swift */; };
 		74D5FFC129451CCF00029FF8 /* SelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5FFC029451CCF00029FF8 /* SelectCollectionViewCell.swift */; };
 		74D5FFC329451CF600029FF8 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5FFC229451CF600029FF8 /* SearchCollectionViewCell.swift */; };
 		74D5FFC529451D1200029FF8 /* HotSalesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5FFC429451D1200029FF8 /* HotSalesCollectionViewCell.swift */; };
@@ -212,6 +215,9 @@
 		749EFA37297AB145005BA569 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
 		749EFA39297AB460005BA569 /* AppInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoService.swift; sourceTree = "<group>"; };
 		749EFA3D297AB58E005BA569 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		74A50DE92995065300D2DA65 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
+		74A50DEB299507C300D2DA65 /* EnterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterView.swift; sourceTree = "<group>"; };
+		74A50DED29950C1C00D2DA65 /* UITextView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView + Ext.swift"; sourceTree = "<group>"; };
 		74AB88F90EEA821B1A78781D /* Pods_Pixpot_PixpotUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pixpot_PixpotUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D5FFC029451CCF00029FF8 /* SelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		74D5FFC229451CF600029FF8 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -518,6 +524,7 @@
 		748EB4FA2943519100A94A79 /* Presentation layer */ = {
 			isa = PBXGroup;
 			children = (
+				74A50DE82995061B00D2DA65 /* EnterScreen */,
 				7473220E2940F87C008E7EB0 /* TabBar */,
 				74B452F9296CC5F800912206 /* AppLaunchWay */,
 				749460C82972D37E008A0501 /* AskPermisions */,
@@ -638,6 +645,15 @@
 			path = SwiftyUserDefaults;
 			sourceTree = "<group>";
 		};
+		74A50DE82995061B00D2DA65 /* EnterScreen */ = {
+			isa = PBXGroup;
+			children = (
+				74A50DE92995065300D2DA65 /* SigninViewController.swift */,
+				74A50DEB299507C300D2DA65 /* EnterView.swift */,
+			);
+			path = EnterScreen;
+			sourceTree = "<group>";
+		};
 		74B452F9296CC5F800912206 /* AppLaunchWay */ = {
 			isa = PBXGroup;
 			children = (
@@ -693,6 +709,7 @@
 				7460E714294A191B00BE0637 /* String + Exct.swift */,
 				84D6FFBB294E082F00405398 /* UIColorHex.swift */,
 				7495110329740D510032E79B /* UICollectionViewCell + Ext.swift */,
+				74A50DED29950C1C00D2DA65 /* UITextView + Ext.swift */,
 			);
 			path = Exstensions;
 			sourceTree = "<group>";
@@ -1172,6 +1189,7 @@
 				744E0ED329701EFB0036F531 /* PermissionsViewController.swift in Sources */,
 				744E0ED92970BFAF0036F531 /* CountryEntitie.swift in Sources */,
 				749274B8297813CA00FE9F77 /* TrainCell.swift in Sources */,
+				74A50DEC299507C300D2DA65 /* EnterView.swift in Sources */,
 				749460C72972C718008A0501 /* DeviceLocationService.swift in Sources */,
 				740A61E72976F60700EBF72B /* LocalDataSevrice.swift in Sources */,
 				746C78AE296C0A4900D8DAA6 /* ProductsCollectionViewCell.swift in Sources */,
@@ -1197,10 +1215,12 @@
 				E769AE5529747F5C009299F8 /* Endpoints.swift in Sources */,
 				E769AE882974AAC8009299F8 /* AppLaunchWayViewController.swift in Sources */,
 				E769AE862974A0A0009299F8 /* HelperEntitie.swift in Sources */,
+				74A50DEE29950C1C00D2DA65 /* UITextView + Ext.swift in Sources */,
 				749274AF2977F24300FE9F77 /* Shedule+CoreDataProperties.swift in Sources */,
 				7484A2EF29798156007DBF47 /* SavedIsEmptyView.swift in Sources */,
 				7473222529411568008E7EB0 /* MainNavigationController.swift in Sources */,
 				749274AE2977F24300FE9F77 /* Shedule+CoreDataClass.swift in Sources */,
+				74A50DEA2995065300D2DA65 /* SigninViewController.swift in Sources */,
 				E769AE4729747AD4009299F8 /* NetworkSessionProvider.swift in Sources */,
 				E769AE5D2974888D009299F8 /* GeoPlaces.swift in Sources */,
 				E769AE5129747B9E009299F8 /* HTTPMethod.swift in Sources */,

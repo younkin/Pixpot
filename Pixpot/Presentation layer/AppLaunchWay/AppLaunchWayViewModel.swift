@@ -52,7 +52,7 @@ final class AppLaunchWayViewModel: AppLaunchWayViewModelProtocol, AppLaunchOutpu
                 
                 if data.data.tabs == "1" {
                     DefaultsManager.countryID = data.data.countryCode
-                    self.appWay?(.locationVerify)
+                    self.appWay?(.loginVerify)
                 } else {
                     self.linkRequest()
                 }

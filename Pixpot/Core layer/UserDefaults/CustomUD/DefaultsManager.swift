@@ -22,4 +22,10 @@ final class DefaultsManager {
     
     @UDStorage(key: "countryID", defaultValue: "")
     static var countryID: String
+    
+    @UDStorage(key: "loginID", defaultValue: "")
+    static var loginID: String
+    
+   
+    
 }

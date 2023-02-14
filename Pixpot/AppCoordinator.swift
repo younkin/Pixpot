@@ -14,6 +14,7 @@ enum LaunchInstructor {
     case webView(String)
     case locationVerify
     case app
+    case loginVerify
 }
 
 final class AppCoordinator: BaseCoordinator {
@@ -86,6 +87,8 @@ final class AppCoordinator: BaseCoordinator {
         case .app:
             performAppFlow()
        
+        case .loginVerify:
+            performeLoginCheck()
         }
     }
     
@@ -156,6 +159,27 @@ final class AppCoordinator: BaseCoordinator {
             self?.permisionType = .location
             self?.performFlow()
         }
+    }
+    
+    private func performeLoginCheck() {
+        launch = .locationVerify
+                    performFlow()
+        
+        //TODO: registration!
+//        if !DefaultsManager.isLoggedIn {
+//            let vc =  SigninViewController()
+//            self.router.setRoot(vc, animated: false)
+//            vc.loginResponse = { [weak self] way in
+//                self?.launch = .locationVerify
+//                self?.performFlow()
+//            }
+//        } else {
+//            launch = .locationVerify
+//            performFlow()
+//        }
+        
+        
+      
     }
     
     
